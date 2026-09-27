@@ -44,7 +44,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | 5 V buck (3.8–32 V in) | AP63205WU-7 | C2071056 |
 | 3.3 V LDO, digital | TLV75733PDBVR | C485517 |
 | 3.3 V LDO, sensors (low noise) | TPS7A2033PDBVR | C2862740 |
-| Battery TVS | SMAJ15A | C113958 |
+| Battery TVS (18 V standoff, safe up to 4S) | SMAJ18A | C908771 |
 | USB 5 V OR-ing diode | B5819W | C8598 |
 | USB ESD | USBLC6-2SC6 | C7519 |
 | USB-C (USB 2.0, 16-pin) | TYPE-C 16PIN 2MD(073) | C2765186 |
