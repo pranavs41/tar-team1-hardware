@@ -2,7 +2,7 @@
 
 Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin).
 
-Flight controller designed by **Pranav Shivashankar**.
+Flight controller in progress by **Pranav Shivashankar**.
 
 ## Repository layout
 
