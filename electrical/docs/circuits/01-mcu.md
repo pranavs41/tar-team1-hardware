@@ -1,89 +1,96 @@
 # 1. MCU: ESP32-S3FN8
 
-The brain of the board. It runs the flight controller, talks to the sensors, drives the ESC, and handles the Wi-Fi/BLE link for the relay mesh.
+The ESP32 runs the flight controller. It reads the sensors, sends motor commands to the ESC, and handles the Wi-Fi and BLE link that the relay mesh depends on.
 
-We use the **bare chip** (7 × 7 mm QFN-56), not a module. A module hides the crystal, flash, RF matching and decoupling inside a metal can; with the bare chip we build each of those ourselves. The reference we follow is Espressif's own schematic for the ESP32-S3-MINI-1U (datasheet Figure 8-2), which is this same chip with a U.FL antenna connector.
+We're using the bare chip, a 7 × 7 mm QFN with 56 pins. The usual shortcut is an ESP32 module, which is the same chip in a metal can with the crystal, flash, antenna matching and capacitors already inside. Our team rule is bare chips only, so everything the module would have done for us is on this page. The reference I followed is Espressif's own schematic for the ESP32-S3-MINI-1U (Figure 8-2 in its datasheet), which is this exact chip wired to a U.FL connector.
 
-"FN8" means 8 MB of flash memory is built into the chip package, so there is no separate flash chip.
+The "FN8" in the part number means 8 MB of flash is built into the chip package, so there's no separate flash chip to add.
 
 ## Power pins
 
-The chip has several supply pins because different parts of the silicon need clean power. All connect to `+3V3` except VDD_SPI.
+The chip has several supply pins because different parts of the silicon want their own clean power. All of them go to `+3V3` except VDD_SPI.
 
-| Pin(s) | Name | Feeds | Capacitors to GND |
+| Pin | Name | What it powers | Capacitors to GND |
 |---|---|---|---|
-| 2, 3 | VDD3P3 | radio power amplifier | 0.1 µF, then **L1 2.0 nH**, then 10 µF + 1 µF + 0.1 µF |
-| 55, 56 | VDDA | analog circuits | 1 µF + 10 nF |
-| 46 | VDD3P3_CPU | processor | 0.1 µF |
-| 20 | VDD3P3_RTC | low-power domain | 0.1 µF |
-| 29 | VDD_SPI | **output**: powers the internal flash | 0.1 µF + 1 µF, **not** connected to +3V3 |
-| 57 | exposed pad | GND and heat | — |
+| 2, 3 | VDD3P3 | the radio's power amplifier | 0.1 µF, then L1 (2.0 nH), then 10 µF, 1 µF and 0.1 µF |
+| 55, 56 | VDDA | analog circuits | 1 µF and 10 nF |
+| 46 | VDD3P3_CPU | the processor | 0.1 µF |
+| 20 | VDD3P3_RTC | the low power domain | 0.1 µF |
+| 29 | VDD_SPI | this one is an output that powers the internal flash | 0.1 µF and 1 µF, with no connection to +3V3 |
+| 57 | exposed pad | ground and heat | none |
 
-**Why L1 (2.0 nH) on VDD3P3.** An inductor's impedance rises with frequency: X = 2π·f·L. At 2.4 GHz, 2 nH is about 30 Ω, while at DC it's nearly zero. So power passes through freely, but radio-frequency energy from the power amplifier can't leak back onto the `+3V3` rail and disturb everything else. Together with the capacitors on each side it forms an LC low-pass filter. It must be rated 500 mA or more (we use Murata LQG15HS2N0B02D, 900 mA, ±0.1 nH) because the full transmit current flows through it.
+KiCad draws pins 3 and 56 hidden underneath pins 2 and 55, so one wire to each spot connects both.
 
-**Why 10 µF on VDD3P3.** When the radio starts transmitting, its current jumps by hundreds of milliamps in microseconds. The 10 µF supplies that burst so the rail doesn't sag.
+The inductor L1 is there because of the radio. An inductor's impedance goes up with frequency (X = 2π·f·L). At the 2.4 GHz radio frequency, 2 nH works out to about 30 Ω, while at DC it's close to zero. Power passes through without trouble, and radio frequency energy from the amplifier gets blocked from leaking back onto `+3V3`, where it would add noise to everything else. With the capacitors on both sides it makes an LC low pass filter. The whole transmit current flows through it, so it needs to be rated for at least 500 mA. We use a Murata LQG15HS2N0B02D, which is 900 mA and ±0.1 nH.
 
-## Reset: CHIP_PU (pin 4)
+The 10 µF on VDD3P3 exists for the moment the radio starts transmitting. Current jumps by a few hundred milliamps in microseconds, and that capacitor supplies the burst so the rail doesn't sag.
 
-CHIP_PU is "chip power-up": high means run, low means held in reset.
+## Reset (CHIP_PU, pin 4)
 
-- **R1 10 kΩ to +3V3** holds it high so the chip runs.
-- **C11 1 µF to GND** delays startup. At power-on the capacitor is empty, so the pin starts low and rises over about R × C = 10 ms. That keeps the chip in reset until the 3.3 V rail has settled; starting on a half-risen supply can hang it.
-- **SW1 RESET to GND** pulls the pin low when pressed.
+CHIP_PU is the chip's power-up pin. High means run, low means hold in reset.
 
-## Boot mode: GPIO0 (pin 5)
+R1 (10 kΩ to +3V3) keeps the pin high so the chip runs. C11 (1 µF to GND) delays startup: when power first arrives the capacitor is empty, so the pin starts low and climbs over roughly R × C = 10 ms. That holds the chip in reset until the 3.3 V rail has settled. An ESP32 that starts on a half-risen supply can hang. SW1 pulls the pin to GND when you press it, which resets the chip.
 
-**SW2 BOOT to GND.** No resistor: GPIO0 has an internal pull-up. If GPIO0 is low when the chip comes out of reset, it enters download (flashing) mode. Normally the flashing tool does this automatically over USB; the button is the recovery path when bad firmware crashes USB: hold BOOT, tap RESET, release BOOT.
+## Boot button (GPIO0, pin 5)
 
-Keep the wires from these buttons away from the pin rows. An early version had the BOOT wires crossing GPIO1 and the motor lines, and the junction dots shorted them together.
+SW2 connects GPIO0 to GND. There's no resistor because GPIO0 has a pull-up inside the chip. If GPIO0 is low when the chip comes out of reset, it starts in download mode for flashing. The flashing tool normally handles this over USB by itself. The button is for when bad firmware has crashed the USB peripheral: hold BOOT, tap RESET, let go of BOOT, and it will take new firmware.
 
-## 40 MHz crystal (pins 53, 54)
+Keep the wires from these two buttons away from the row of chip pins. My first version ran the BOOT wires across the GPIO1 and motor lines, and the junction dots where they crossed shorted GPIO0 to GPIO1 and two motor outputs to ground.
 
-The crystal is the chip's clock. Every internal clock, including the 2.4 GHz radio frequency, is derived from it, so it needs ±10 ppm accuracy or the radio drifts off-channel.
+## 40 MHz crystal (pins 53 and 54)
 
-- **X1** (Q22FA12800101, 2016 size) between XTAL_P and XTAL_N; its pins 2 and 4 go to GND.
-- **C12, C13 15 pF**, one from each side to GND. A crystal oscillates at exactly its rated frequency only when it sees its specified load capacitance CL (10 pF for ours). The two capacitors are effectively in series, plus about 3 pF of stray capacitance from the traces: CL = C/2 + C_stray → 10 = C/2 + 3 → C = 14 pF, nearest standard value 15 pF. Too much makes it run slow, too little fast; these may be tuned on the real board.
-- **R2 0 Ω in series with XTAL_P.** Espressif puts a footprint here so a 24 nH inductor can be fitted if the crystal's harmonics interfere with the radio. We start with a 0 Ω jumper, same as Espressif's module.
+The crystal is the chip's clock, and every internal clock comes from it, including the 2.4 GHz radio frequency. It has to be accurate to ±10 ppm or the radio drifts off its channel.
 
-Layout: the crystal must sit right next to pins 53/54 with short traces and nothing else routed nearby.
+X1 (Q22FA12800101, 2016 size) sits between XTAL_P and XTAL_N, with its pins 2 and 4 grounded. C12 and C13 are 15 pF each, one from each side to GND. A crystal only runs at its rated frequency when it sees a specific load capacitance, called CL, which is 10 pF for ours. The two capacitors act in series, and the traces and pins add roughly 3 pF of stray capacitance, so:
 
-## Antenna: LNA_IN (pin 1) → U.FL
+CL = C/2 + C_stray, which gives 10 = C/2 + 3, so C = 14 pF. The nearest standard value is 15 pF.
 
-- **R3 0 Ω** in series, **C14 and C15 DNP** from each side to GND, then **J1 U.FL** connector (shield pins to GND).
-- These three footprints form a **π matching network**. The chip's radio pin is not exactly 50 Ω, but the cable and antenna are; a mismatch reflects power back instead of radiating it. The right values depend on the finished board and are found with a vector network analyzer (VNA), which is why Espressif lists them as TBD.
-- We start with 0 Ω straight through and the capacitors empty, which usually works. The empty footprints mean we can tune later without a new board.
-- The trace from pin 1 to the U.FL must be a 50 Ω controlled-impedance trace: short, straight, ground plane underneath, ground vias along both sides.
-- A U.FL (rather than a PCB antenna) lets the antenna mount high on the drone, which matters for stacking.
+Too much capacitance makes the crystal run slow and too little makes it run fast, so these may need adjusting once we can measure a real board.
 
-## Flash pins 30–35
+R2 is a 0 Ω jumper in series with XTAL_P. Espressif leaves a footprint here so a 24 nH inductor can go in if the crystal's harmonics start interfering with the radio. Their own module ships with 0 Ω, and so do we.
 
-SPIHD, SPIWP, SPICS0, SPICLK, SPIQ, SPID connect to the internal flash. They must stay unconnected (no-connect flags).
+On the PCB, the crystal goes right next to pins 53 and 54, with short traces and nothing else routed nearby.
 
-Pins 28 (SPICS1), 36 (SPICLK_N) and 37 (SPICLK_P) have flash-sounding names but are ordinary GPIOs on this chip: GPIO26, GPIO48 and GPIO47.
+## Antenna (LNA_IN, pin 1, to U.FL)
+
+The radio pin goes through R3 (0 Ω), with C14 and C15 as empty footprints from each side to GND, and then to J1, the U.FL connector. The U.FL's shield pins go to GND.
+
+Those three footprints form a π matching network. The chip's radio pin isn't exactly 50 Ω, while the cable and antenna are, and a mismatch reflects some of the power back into the chip. Finding the right values means measuring the finished board with a vector network analyzer, which is why Espressif marks them TBD. We start with 0 Ω straight through and both capacitors left empty, which usually works well enough. If the range turns out poor, we can solder in tuning parts without a new board.
+
+The trace from pin 1 to the U.FL has to be a 50 Ω controlled impedance trace. Keep it short and straight, with solid ground on the layer below and ground vias along both sides.
+
+We used a U.FL because it lets the antenna mount up high on the drone, which matters when the drones stack in the case. A PCB antenna would sit flat on the board.
+
+## Flash pins (30 to 35)
+
+SPIHD, SPIWP, SPICS0, SPICLK, SPIQ and SPID are wired to the flash inside the package. They stay unconnected, each with a no-connect flag.
+
+Three nearby pins have flash-sounding names but are ordinary GPIOs on this chip: pin 28 (SPICS1) is GPIO26, pin 36 (SPICLK_N) is GPIO48 and pin 37 (SPICLK_P) is GPIO47.
 
 ## Strapping pins
 
-GPIO0, GPIO3, GPIO45 and GPIO46 are read at boot to choose modes. GPIO45 selects the flash voltage and must be low for our 3.3 V flash; its internal pull-down handles that, so it's left floating. GPIO3 and GPIO46 are also left floating. GPIO0 only has the BOOT button.
+The chip reads GPIO0, GPIO3, GPIO45 and GPIO46 at boot to decide how to start. GPIO45 picks the flash voltage and has to be low for our 3.3 V flash. Its internal pull-down takes care of that, so we leave it floating along with GPIO3 and GPIO46. GPIO0 only has the BOOT button on it.
 
 ## Status LEDs
 
-Each LED is source → resistor → LED → GND. Resistor from R = (V_supply − V_f) / I, aiming for about 1.3 mA, which is plenty bright for an indicator.
+Each LED is wired as source, resistor, LED, then GND. The resistor comes from R = (V_supply − V_f) / I, where V_f is the LED's forward voltage. I aimed for about 1.3 mA, which is plenty bright for an indicator.
 
-| LED | Driven by | Resistor | Meaning (suggested) |
+| LED | Driven by | Resistor | Suggested meaning |
 |---|---|---|---|
-| D2 red | `+3V3` directly | 1 kΩ | power is on |
-| D3 green | pin 37 (GPIO47) | 470 Ω | system OK / armed |
-| D4 yellow | pin 36 (GPIO48) | 1 kΩ | warning / radio activity |
+| D2, red | `+3V3` directly | 1 kΩ | power is on |
+| D3, green | pin 37 (GPIO47) | 470 Ω | running, or armed when solid |
+| D4, yellow | pin 36 (GPIO48) | 1 kΩ | warnings or radio activity |
 
-Green's forward voltage (~2.7 V) is higher than red's or yellow's (~2.0 V), so it gets a smaller resistor for the same current. An ESP32 pin can source about 20 mA, so it drives these directly.
+Green has a higher forward voltage (around 2.7 V) than red or yellow (around 2.0 V), so it gets a smaller resistor to reach the same current. An ESP32 pin can supply about 20 mA, which is far more than these need, so the pins drive the LEDs directly.
 
 ## UART test pads
 
-TP1 on U0TXD (pin 49) and TP2 on U0RXD (pin 50). The chip prints its boot log here even when USB isn't working, and it can be flashed through these pads with a USB-serial adapter. If a board won't show up on USB, these tell you whether the problem is the connector or the chip.
+TP1 is on U0TXD (pin 49) and TP2 is on U0RXD (pin 50). The chip prints its boot log on this UART even when USB isn't working, and you can flash it through these pads with a USB serial adapter. If a board doesn't show up on USB, these pads tell you whether the connector or the chip is the problem.
 
 ## Signal pins
 
-The remaining GPIOs carry net labels that connect to the sensor and connector boxes. See [pin-map.md](../pin-map.md) for the full table. Two choices worth knowing:
+The rest of the GPIOs have net labels that connect to the sensor and connector boxes. The full table is in [pin-map.md](../pin-map.md). Two of the choices matter for firmware:
 
-- `VBAT_SENSE` and `ESC_CUR` are on GPIO1/GPIO2 because those are on ADC1. ADC2 is shared with the Wi-Fi radio and gives bad readings while Wi-Fi is on.
-- The IMU SPI bus uses GPIO10–13, the chip's native SPI pins, which run fastest.
+`VBAT_SENSE` and `ESC_CUR` are on GPIO1 and GPIO2 because those pins belong to ADC1. The ESP32's other ADC, ADC2, shares hardware with the Wi-Fi radio and gives bad readings while Wi-Fi is running.
+
+The IMU SPI bus is on GPIO10 to GPIO13, the chip's native SPI pins. Other pins can do SPI through the internal routing matrix, but the native ones run fastest.

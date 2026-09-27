@@ -1,75 +1,78 @@
 # 3. Power
 
-Turns the battery into the clean supply rails every chip needs.
+This box turns the battery into the supply rails that every chip on the board runs from.
 
 ```
-Battery (via ESC connector)
-  VBAT 6–8.4 V (2S), up to 16.8 V (4S)
-   │
-   ├── D5 SMAJ18A TVS          surge protection
-   ├── R 100k / 10k divider ─► VBAT_SENSE (ESP32 ADC)
-   │
-   └── U3 AP63205 buck ──► +5V ◄── USB (through D1)
-                            │
-                            ├── U4 TLV75733 LDO ──► +3V3        ESP32, LEDs
-                            └── U5 TPS7A2033 LDO ─► +3V3_SENS   IMUs, barometer, GPS
+Battery (through the ESC connector)
+  VBAT: 6 to 8.4 V on 2S, up to 16.8 V on 4S
+   |
+   +-- D5 SMAJ18A TVS          surge protection
+   +-- 100k / 10k divider ---> VBAT_SENSE (ESP32 ADC)
+   |
+   +-- U3 AP63205 buck -----> +5V <--- USB (through D1)
+                               |
+                               +-- U4 TLV75733 ----> +3V3        ESP32, LEDs
+                               +-- U5 TPS7A2033 ---> +3V3_SENS   IMUs, barometer, GPS
 ```
 
-`VBAT` is the raw battery voltage and must never touch an ESP32 pin (they tolerate about 3.6 V). The ESP32 only sees `VBAT_SENSE`, a scaled-down copy.
+`VBAT` is the raw battery voltage and it must never reach an ESP32 pin, since those only tolerate about 3.6 V. The ESP32 sees `VBAT_SENSE`, a scaled-down copy.
 
-## Surge protection: D5 SMAJ18A
+## Surge protection (D5, SMAJ18A)
 
-When the motors brake, the ESC pushes voltage spikes back onto the battery wires. A TVS (transient voltage suppressor) diode sits across the battery and starts conducting when the voltage goes above its breakdown, clamping the spike before it reaches the regulators.
+When the motors brake, the ESC pushes voltage spikes back up the battery wires. A TVS (transient voltage suppressor) diode sits across the battery and starts conducting once the voltage passes its breakdown point, which clamps the spike before it reaches the regulators.
 
-- Cathode (bar) on `VBAT`, anode on GND. It is **unidirectional**: backwards, it conducts all the time and shorts the battery. Use KiCad's `Diode:SMAJ18A` symbol, which marks the cathode; the generic `Device:D_TVS` is the bidirectional kind.
-- **Why 18 V and not 15 V.** A TVS starts conducting at its breakdown voltage. The SMAJ15A's is 16.7 V, below a full 4S pack (16.8 V), so on 4S it would conduct constantly and overheat. The SMAJ18A breaks down around 20 V and clamps at about 29 V, still under the buck's 32 V maximum.
+The cathode, the side with the bar, goes on `VBAT` and the other side goes to GND. This is a one-direction TVS, and if you put it in backwards it conducts all the time and shorts the battery. Use KiCad's `Diode:SMAJ18A` symbol, which marks the cathode. The generic `Device:D_TVS` symbol is the two-direction kind and doesn't show which side is which.
 
-## 5 V buck regulator: U3 AP63205
+We first picked the SMAJ15A and changed it. A TVS starts conducting at its breakdown voltage, and the SMAJ15A's is 16.7 V, just under a fully charged 4S pack at 16.8 V. On 4S it would conduct constantly and cook itself. The SMAJ18A breaks down around 20 V and clamps at about 29 V, which is still below the 32 V the buck regulator can take.
 
-A buck converter steps voltage down efficiently (~90%). An LDO dropping 8.4 V to 5 V would burn the difference as heat (3.4 V × current); on a battery drone, efficiency is flight time.
+## 5 V buck regulator (U3, AP63205)
 
-How it works: the chip switches its SW pin rapidly (about 1 MHz) between VBAT and GND. The inductor and output capacitors smooth that square wave into steady 5 V. The chip measures its own output on FB and adjusts how long it stays on each cycle.
+A buck converter steps voltage down at about 90% efficiency. A linear regulator dropping 8.4 V to 5 V would turn the difference into heat, 3.4 V times whatever current flows, and on a battery powered drone that lost energy is flight time.
 
-| Part | Value | Why |
+The chip switches its SW pin between VBAT and GND about a million times a second. The inductor and output capacitors smooth that square wave into a steady 5 V, and the chip watches its own output on the FB pin to decide how long to stay on each cycle.
+
+| Part | Value | What it's for |
 |---|---|---|
-| C16 | 10 µF **25 V** | Input capacitor. Supplies the buck's sharp current pulses so they don't travel down the battery wires. 25 V rating because it sees battery voltage; ceramic capacitors lose much of their capacitance when run close to their rated voltage. |
-| EN (pin 2) → VBAT | — | Enable. Tied high, the regulator runs whenever a battery is connected. |
-| C17 BST–SW | 100 nF | Bootstrap capacitor. The chip's high-side switch needs a gate voltage above VIN to turn fully on; this capacitor stores it. The buck won't run without it. |
-| L2 | 4.7 µH | The energy-storage element that turns switching into smooth DC. Value from the datasheet's table for 5 V output. |
-| C18, C19 | 22 µF 10 V each | Output capacitors. Smooth the ripple and supply current during load jumps. |
-| FB (pin 1) → +5V | — | Feedback. The "05" in AP63205 means fixed 5 V output, so FB connects straight to the output with no resistor divider. |
+| C16 | 10 µF, 25 V | Input capacitor. Supplies the buck's sharp current pulses locally so they don't run down the battery wires. It's rated 25 V because it sees battery voltage, and ceramic capacitors lose a lot of capacitance when run near their rating. |
+| EN, pin 2 | tied to VBAT | Enable. Tied high, the regulator runs whenever a battery is connected. |
+| C17, between BST and SW | 100 nF | Bootstrap capacitor. The chip's high side switch needs a gate voltage above VIN to turn fully on, and this capacitor holds that voltage. The buck won't run without it. |
+| L2 | 4.7 µH | Stores energy between switching cycles. This is the value the datasheet gives for 5 V out. |
+| C18, C19 | 22 µF, 10 V each | Output capacitors. Smooth the ripple and cover sudden load changes. |
+| FB, pin 1 | tied to +5V | Feedback. The "05" in AP63205 means it's the fixed 5 V version, so FB connects straight to the output with no resistor divider. |
 
-All values are from the AP63205 datasheet, Table 3 and Figure 1.
+All of these values come from Table 3 and Figure 1 of the AP63205 datasheet.
 
-Layout: the input capacitor, chip, inductor and output capacitors must be packed tightly together. The switching current loop acts like a radio transmitter if it's large, so the buck goes in its own corner, away from the antenna, GPS and IMU.
+On the PCB, the input capacitor, chip, inductor and output capacitors need to be packed close together. The switching current flows around that loop, and a large loop acts like a small radio transmitter. So the buck goes in its own corner, well away from the antennas, the GPS and the IMU.
 
-## 3.3 V regulators: U4 TLV75733 and U5 TPS7A2033
+## 3.3 V regulators (U4, TLV75733 and U5, TPS7A2033)
 
-Both are LDOs (low-dropout linear regulators) taking `+5V` down to 3.3 V. Each has 1 µF on the input and 1 µF on the output, EN tied to its input so it's always on, and pin 4 (NC) left unconnected. Dropping 5 V to 3.3 V in an LDO wastes some power, but the currents here are small and an LDO's output is much quieter than a buck's.
+Both are LDOs (low dropout linear regulators) that take `+5V` down to 3.3 V. Each has 1 µF on its input and 1 µF on its output, its EN pin tied to its input so it's always on, and pin 4 left unconnected. Dropping 5 V to 3.3 V in a linear regulator wastes some power, but the currents here are small, and an LDO's output is much quieter than a buck's.
 
-**Why two separate 3.3 V rails.** The ESP32's radio draws spiky current, bursts of 300 mA or more when transmitting. On a shared rail those spikes ripple into the sensors' supply and show up as IMU and barometer noise. So:
+There are two of them because the ESP32's radio draws current in bursts of 300 mA or more whenever it transmits. If the sensors shared that rail, the bursts would ripple into their supply and show up as noise in the IMU and barometer readings. So each gets its own:
 
-| Rail | Regulator | Powers |
+| Rail | Regulator | What it powers |
 |---|---|---|
-| `+3V3` | TLV75733 (1 A) | ESP32, LEDs |
-| `+3V3_SENS` | TPS7A2033 (300 mA, low noise) | ICM-42688-P, BNO085, BMP581, GPS |
+| `+3V3` | TLV75733, 1 A | ESP32 and LEDs |
+| `+3V3_SENS` | TPS7A2033, 300 mA, low noise | ICM-42688-P, BNO085, BMP581 and GPS |
 
 ## Battery voltage sensing
 
 ```
-VBAT ── 100k ──┬── 10k ── GND
-               ├── 100nF ── GND
-               └── VBAT_SENSE → ESP32 pin 6 (GPIO1, ADC1)
+VBAT --- 100k ---+--- 10k --- GND
+                 +--- 100nF --- GND
+                 +--- VBAT_SENSE  to ESP32 pin 6 (GPIO1, on ADC1)
 ```
 
-- The divider outputs VBAT × 10k / (100k + 10k) = **VBAT ÷ 11**: 8.4 V (full 2S) → 0.76 V, 16.8 V (full 4S) → 1.53 V, both safely inside the ADC range. Firmware multiplies the reading by 11.
-- **Why 100 kΩ, not smaller.** The divider draws current from the battery constantly, even with the drone off: 8.4 V / 110 kΩ = 76 µA. With 10k + 1k it would be 760 µA, enough to noticeably drain a battery left plugged in for a week in the case.
-- **The 100 nF capacitor.** The ADC samples in quick bursts and 100 kΩ can't recharge its input instantly; the capacitor holds a steady voltage for it to read and filters motor noise off the measurement.
+The divider outputs VBAT × 10k / (100k + 10k), which is VBAT divided by 11. A full 2S pack at 8.4 V reads as 0.76 V and a full 4S pack at 16.8 V reads as 1.53 V, both comfortably inside the ADC's range. Firmware multiplies the reading by 11 to get the battery voltage.
+
+The resistors are large on purpose. The divider pulls current from the battery all the time, even with the drone switched off: 8.4 V across 110 kΩ is 76 µA. With 10k and 1k it would be 760 µA, enough to noticeably drain a battery that sits plugged in inside the case for a week.
+
+The 100 nF capacitor is there because the ADC samples in short bursts and a 100 kΩ source can't refill its input fast enough. The capacitor holds a steady voltage for the ADC to read, and it filters motor noise out of the measurement too.
 
 ## Test points
 
-`VBAT`, `+5V`, `+3V3`, `+3V3_SENS` each get a test pad for probing during bring-up (see [bring-up.md](../bring-up.md)).
+`VBAT`, `+5V`, `+3V3` and `+3V3_SENS` each have a test pad for probing during bring-up. The steps are in [bring-up.md](../bring-up.md).
 
 ## PWR_FLAG
 
-KiCad's rules check wants every power net to have a "source". Our rails come from connector pins or regulator symbols whose pins aren't marked as power outputs, so it complains that they are "not driven". A `PWR_FLAG` symbol on each rail tells it the source is real. Only place one where a real source exists; it silences the check.
+KiCad's rules check wants every power net to have a source it recognises. Our rails come from connector pins and regulator symbols whose pins aren't marked as power outputs, so without help it reports them as "not driven". A `PWR_FLAG` symbol on each rail tells KiCad the source is real. It has no effect on the PCB. Only put one on a net that really has a source, because it turns off the check for that net.
