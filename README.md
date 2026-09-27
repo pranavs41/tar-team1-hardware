@@ -23,6 +23,8 @@ mechanical/             frame and mount CAD, board STEP exports
 
 KiCad 9 project in [`network-drone-fc/`](network-drone-fc/). Open `network-drone-fc.kicad_pro`.
 
+**[View the schematic (PDF)](network-drone-fc/schematic.pdf)** — no KiCad needed. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
+
 - 4-layer board, 36 × 36 mm, four M2 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
 - All parts on the top side only, so the whole board can be reflowed on a hot plate; test points (bare pads) may go on the bottom
 - Designed for a 2S battery; input stage tolerates up to 4S
