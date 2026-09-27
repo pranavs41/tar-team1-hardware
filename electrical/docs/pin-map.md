@@ -4,7 +4,7 @@ Net names match the labels in the schematic exactly. Firmware should use this ta
 
 | Pin | GPIO | Net | Connects to |
 |---|---|---|---|
-| 5 | GPIO0 | — | BOOT button (strapping pin) |
+| 5 | GPIO0 | none | BOOT button (strapping pin) |
 | 6 | GPIO1 | `VBAT_SENSE` | Battery divider (ADC1) |
 | 7 | GPIO2 | `ESC_CUR` | ESC current sense (ADC1) |
 | 9 | GPIO4 | `MOTOR1` | ESC motor 1 (DShot) |
@@ -28,8 +28,8 @@ Net names match the labels in the schematic exactly. Firmware should use this ta
 | 41 | GPIO36 | `GPS_RX` | GPS TXD |
 | 42 | GPIO37 | `UART_TX` | Spare UART port |
 | 43 | GPIO38 | `UART_RX` | Spare UART port |
-| 49 | U0TXD | — | Test pad TP1 (boot log / fallback console) |
-| 50 | U0RXD | — | Test pad TP2 |
+| 49 | U0TXD | none | Test pad TP1 (boot log / fallback console) |
+| 50 | U0RXD | none | Test pad TP2 |
 
 Not connected: pins 8, 19, 22, 23, 24, 27, 28, 44, 45, 47, 48, 51, 52. Pins 19 and 22 to 24 are free for later use. Pins 30 to 35 are the in-package flash and must stay unconnected.
 

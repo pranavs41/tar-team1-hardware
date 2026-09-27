@@ -3,8 +3,8 @@
 Links rather than PDFs, so the repo stays small and we always get the current revision. LCSC pages link the datasheet PDF.
 
 ## Espressif
-- [ESP32-S3 Hardware Design Guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/) — the schematic checklist for everything around the chip
-- [ESP32-S3-MINI-1/1U datasheet](https://documentation.espressif.com/esp32-s3-mini-1_mini-1u_datasheet_en.pdf) — Figure 8-2 (p. 40) is the reference schematic we follow for the bare chip, crystal and RF
+- [ESP32-S3 Hardware Design Guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/) is the schematic checklist for everything around the chip
+- [ESP32-S3-MINI-1/1U datasheet](https://documentation.espressif.com/esp32-s3-mini-1_mini-1u_datasheet_en.pdf) has Figure 8-2 (p. 40) is the reference schematic we follow for the bare chip, crystal and RF
 
 ## Parts (LCSC)
 | Part | Link |
