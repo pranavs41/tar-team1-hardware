@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "tar_fc")(type "KiCad")(uri "${KIPRJMOD}/lib/tar_fc.kicad_sym")(options "")(descr "Team 1 FC parts (LCSC/EasyEDA)"))
+)

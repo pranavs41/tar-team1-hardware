@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "tar_fc")(type "KiCad")(uri "${KIPRJMOD}/lib/tar_fc.pretty")(options "")(descr "Team 1 FC footprints (LCSC/EasyEDA)"))
+)

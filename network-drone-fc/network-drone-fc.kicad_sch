@@ -1,0 +1,19 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "f9d16c76-ade1-4aab-9e3b-738e650d90d6")
+	(paper "A4")
+	(title_block
+		(title "Network Drone Flight Controller")
+		(company "Texas Aerial Robotics - Team 1")
+		(rev "A")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
