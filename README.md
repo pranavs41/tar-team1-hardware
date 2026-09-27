@@ -4,6 +4,20 @@ Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin)
 
 Flight controller designed by **Pranav Shivashankar**.
 
+## Repository layout
+
+```
+docs/
+  design-decisions.md   why the board is built the way it is (dated log)
+  pin-map.md            ESP32 pin → net → destination, for firmware
+  datasheets.md         links to every datasheet and reference design
+  bring-up.md           first power-on checklist
+network-drone-fc/       KiCad 9 project
+  lib/                  custom symbols, footprints, 3D models
+  production/           gerbers, BOM and notes per board revision
+mechanical/             frame and mount CAD, board STEP exports
+```
+
 ## Network drone flight controller
 
 KiCad 9 project in [`network-drone-fc/`](network-drone-fc/). Open `network-drone-fc.kicad_pro`.
