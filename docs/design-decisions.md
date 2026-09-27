@@ -16,3 +16,5 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-09-26 | Wi-Fi antenna on U.FL, RF pi network footprints kept | Antenna can mount high for stacking; matching can be tuned later with a VNA |
 | 2026-09-26 | USB-C is the only programming port | Native USB flashes and debugs with no extra chip; UART0 test pads are the fallback |
 | 2026-09-26 | Charging is a separate board | Out of scope for the FC |
+| 2026-09-27 | SMAJ18A TVS instead of SMAJ15A | SMAJ15A breaks down at 16.7 V, below a full 4S pack |
+| 2026-09-27 | Separate low-noise `+3V3_SENS` rail for sensors | Keeps ESP32 radio TX current spikes out of the IMU and barometer supply |

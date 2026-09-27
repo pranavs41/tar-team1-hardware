@@ -8,6 +8,7 @@ Flight controller designed by **Pranav Shivashankar**.
 
 ```
 docs/
+  circuits/             how every circuit works and why it's there, box by box
   design-decisions.md   why the board is built the way it is (dated log)
   pin-map.md            ESP32 pin → net → destination, for firmware
   datasheets.md         links to every datasheet and reference design
