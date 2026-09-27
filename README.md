@@ -7,13 +7,15 @@ Flight controller in progress by **Pranav Shivashankar**.
 ## Repository layout
 
 ```
-docs/
-  circuits/             how every circuit works and why it's there, box by box
-  design-decisions.md   why the board is built the way it is (dated log)
-  pin-map.md            ESP32 pin → net → destination, for firmware
-  datasheets.md         links to every datasheet and reference design
-  bring-up.md           first power-on checklist
-network-drone-fc/       KiCad 9 project
+electrical/
+  DESIGN.md             design doc: requirements, block diagram, parts, power, board layout plan
+  docs/
+    circuits/           how every circuit works and why it's there, box by box
+    design-decisions.md dated log of design decisions
+    pin-map.md          ESP32 pin, net name and destination, for firmware
+    datasheets.md       links to every datasheet and reference design
+    bring-up.md         first power-on checklist
+network-drone-fc/       KiCad 9 project (moving to electrical/pcb/)
   lib/                  custom symbols, footprints, 3D models
   production/           gerbers, BOM and notes per board revision
 mechanical/             frame and mount CAD, board STEP exports
