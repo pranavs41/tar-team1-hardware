@@ -1,4 +1,4 @@
-# TAR Team 1 — Hardware
+# TAR Team 1 Hardware
 
 Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin).
 
@@ -15,17 +15,18 @@ electrical/
     pin-map.md          ESP32 pin, net name and destination, for firmware
     datasheets.md       links to every datasheet and reference design
     bring-up.md         first power-on checklist
-network-drone-fc/       KiCad 9 project (moving to electrical/pcb/)
-  lib/                  custom symbols, footprints, 3D models
-  production/           gerbers, BOM and notes per board revision
+  pcb/
+    network-drone-fc/   KiCad 9 project: schematic, PCB, schematic.pdf
+      lib/              custom symbols, footprints, 3D models
+      production/       gerbers, BOM and notes per board revision
 mechanical/             frame and mount CAD, board STEP exports
 ```
 
 ## Network drone flight controller
 
-KiCad 9 project in [`network-drone-fc/`](network-drone-fc/). Open `network-drone-fc.kicad_pro`.
+KiCad 9 project in [`electrical/pcb/network-drone-fc/`](electrical/pcb/network-drone-fc/). Open `network-drone-fc.kicad_pro`. The design plan is in [`electrical/DESIGN.md`](electrical/DESIGN.md).
 
-**[View the schematic (PDF)](network-drone-fc/schematic.pdf)** — no KiCad needed. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
+[View the schematic as a PDF](electrical/pcb/network-drone-fc/schematic.pdf) if you don't have KiCad. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
 
 - 4-layer board, 36 × 36 mm, four M2 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
 - All parts on the top side only, so the whole board can be reflowed on a hot plate; test points (bare pads) may go on the bottom
@@ -46,7 +47,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | Barometer | BMP581 | C5362283 |
 | GPS | u-blox MAX-M10S | C4153167 |
 | Antenna connector (ESP32 / GPS) | U.FL-R-SMT-1 | C88374 |
-| 5 V buck (3.8–32 V in) | AP63205WU-7 | C2071056 |
+| 5 V buck (3.8 to 32 V in) | AP63205WU-7 | C2071056 |
 | 3.3 V LDO, digital | TLV75733PDBVR | C485517 |
 | 3.3 V LDO, sensors (low noise) | TPS7A2033PDBVR | C2862740 |
 | Battery TVS (18 V standoff, safe up to 4S) | SMAJ18A | C908771 |
@@ -68,7 +69,7 @@ From the stock KiCad libraries (already have 3D models):
 
 ```
 pip install easyeda2kicad
-python -m easyeda2kicad --full --lcsc_id=C123456 --output network-drone-fc/lib/tar_fc
+python -m easyeda2kicad --full --lcsc_id=C123456 --output electrical/pcb/network-drone-fc/lib/tar_fc
 ```
 
 Then change the new footprint's `model` path to `${KIPRJMOD}/lib/tar_fc.3dshapes/<name>.step` so it works on every machine.
