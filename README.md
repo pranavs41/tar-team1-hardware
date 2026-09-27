@@ -36,7 +36,8 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | USB ESD | USBLC6-2SC6 | C7519 |
 | USB-C | USB4105-GF-A | C3020560 |
 | ESC connector (8-pin JST-SH) | SM08B-SRSS-TB | C160407 |
-| Peripheral port (4-pin JST-GH) | SM04B-GHS-TB | C189895 |
+| Peripheral port (4-pin JST-GH) | SM04B-GHS-TB (LCSC stock low; drop-in alt XY-SM04B-GHS-TB C51940118) | C189895 |
+| VDD3P3 filter inductor, 2.0 nH ±0.1 nH, 900 mA | Murata LQG15HS2N0B02D (0402) | C2986275 |
 
 From the stock KiCad libraries (already have 3D models):
 
