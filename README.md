@@ -8,10 +8,9 @@ Flight controller designed by **Pranav Shivashankar**.
 
 KiCad 9 project in [`network-drone-fc/`](network-drone-fc/). Open `network-drone-fc.kicad_pro`.
 
-- 4-layer board, 27 × 27 mm, four M2 holes on a 20 × 20 mm pattern so it stacks on a bought 4-in-1 ESC
-- Parts on both sides: ESP32 + sensors on top, power + connectors on the bottom (facing the ESC)
+- 4-layer board, 36 × 36 mm, four M2 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
+- All parts on the top side only, so the whole board can be reflowed on a hot plate; test points (bare pads) may go on the bottom
 - Designed for a 2S battery; input stage tolerates up to 4S
-- Resize the outline to match the ESC once it is chosen
 
 ### Parts in `lib/tar_fc`
 
