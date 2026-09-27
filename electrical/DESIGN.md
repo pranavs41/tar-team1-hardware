@@ -47,8 +47,7 @@ Charging is handled by a separate board.
                                    │                        │                  │── 3 LEDs, RESET, BOOT
                                    ▼                        └──┬─────┬─────┬───┘
                          ┌─────────────────────┐   SPI bus     │ I2C │ UART│ UART
-                         │ ICM-42688-P (gyro)  │◄──────────────┘     │     │
-                         │ BNO085 (orientation)│◄──────────────┘     │     │
+                         │ ICM-42688-P (IMU)   │◄──────────────┘     │     │
                          │ BMP581 (barometer)  │◄────────────────────┘     │
                          │ MAX-M10S (GPS) ─► U.FL (GPS antenna)  ◄─────────┘
                          └─────────────────────┘
@@ -67,8 +66,7 @@ Charging is handled by a separate board.
 | U3 | AP63205WU | 5 V buck, 2 A | TSOT-23-6 |
 | U4 | TLV75733 | 3.3 V LDO for ESP32 (`+3V3`) | SOT-23-5 |
 | U5 | TPS7A2033 | low-noise 3.3 V LDO for sensors (`+3V3_SENS`) | SOT-23-5 |
-| TBD | ICM-42688-P | gyro + accelerometer for the rate loop (SPI) | LGA-14 2.5 × 3 |
-| TBD | BNO085 | orientation with on-chip fusion (SPI) | LGA-28 3.8 × 5.2 |
+| TBD | ICM-42688-P | gyro and accelerometer (SPI); orientation fusion runs on the ESP32 | LGA-14 2.5 × 3 |
 | TBD | BMP581 | barometer (I2C) | LGA-10 2 × 2 |
 | TBD | u-blox MAX-M10S | GPS (UART) | LCC 9.7 × 10.1 |
 
@@ -94,7 +92,7 @@ Refs marked TBD are assigned when the sensors box is drawn. LCSC part numbers ar
 | `VBAT` | battery via ESC connector | buck, divider, TVS | limited by the battery |
 | `+5V` | AP63205 buck (or USB through D1) | both LDOs, spare-port 5 V | 2 A max |
 | `+3V3` | TLV75733 | ESP32, LEDs | ~350 mA peak (Wi-Fi TX) |
-| `+3V3_SENS` | TPS7A2033 | ICM-42688-P, BNO085, BMP581, GPS | ~60 mA |
+| `+3V3_SENS` | TPS7A2033 | ICM-42688-P, BMP581, GPS | ~60 mA |
 
 The sensors get their own low-noise rail so radio transmit bursts don't show up as IMU and barometer noise.
 
@@ -104,7 +102,7 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 
 | Bus | Devices | ESP32 pins |
 |---|---|---|
-| SPI | ICM-42688-P, BNO085 (separate chip selects) | GPIO10 to 14 |
+| SPI | ICM-42688-P | GPIO10 to 13 |
 | I2C | BMP581, spare I2C port | GPIO33, 34 |
 | UART | GPS | GPIO35, 36 |
 | UART | spare port | GPIO37, 38 |
@@ -122,7 +120,7 @@ Top view, 36 × 36 mm. Holes (●) on the 20 × 20 pattern sit 8 mm in from each
  │ [GPS U.FL]  GPS          ▲ north   [Wi-Fi  │
  │  MAX-M10S                          U.FL]   │
  │        ●                        ●   π net  │
- │                   BNO085                   │
+ │                                            │
  │   BMP581                 ESP32-S3  crystal │
  │   (foam)     ICM-42688-P  (QFN)            │  ← USB-C
  │              (centre)                      │
@@ -136,7 +134,7 @@ Why things go where they do:
 
 | Area | Contents | Reason |
 |---|---|---|
-| Centre | ICM-42688-P, BNO085 | Least vibration and closest to the centre of rotation; far from the buck |
+| Centre | ICM-42688-P | Least vibration and closest to the centre of rotation; far from the buck |
 | Right | ESP32, crystal, Wi-Fi U.FL | Crystal hard against pins 53/54; RF trace to the U.FL short and straight at the board edge |
 | Top left | GPS and its U.FL | Opposite corner from the Wi-Fi antenna and away from the buck, whose switching noise desenses GPS |
 | Bottom left | buck, LDOs | Next to the ESC connector where VBAT enters; tight switching loop kept away from sensors and RF |

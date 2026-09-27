@@ -53,7 +53,7 @@ There are two of them because the ESP32's radio draws current in bursts of 300 m
 | Rail | Regulator | What it powers |
 |---|---|---|
 | `+3V3` | TLV75733, 1 A | ESP32 and LEDs |
-| `+3V3_SENS` | TPS7A2033, 300 mA, low noise | ICM-42688-P, BNO085, BMP581 and GPS |
+| `+3V3_SENS` | TPS7A2033, 300 mA, low noise | ICM-42688-P, BMP581 and GPS |
 
 ## Battery voltage sensing
 

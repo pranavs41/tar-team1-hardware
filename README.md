@@ -42,8 +42,6 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | MCU crystal, 40 MHz ±10 ppm | Q22FA12800101 (2016) | C255898 |
 | MCU module (fallback only, not used) | ESP32-S3-MINI-1U-N8 | C2980299 |
 | Flight IMU (SPI) | ICM-42688-P | C1850418 |
-| Orientation IMU | BNO085 | C5189642 |
-| 32.768 kHz crystal (BNO085) | FC-12M 32.768 kHz 7 pF | C99009 |
 | Barometer | BMP581 | C5362283 |
 | GPS | u-blox MAX-M10S | C4153167 |
 | Antenna connector (ESP32 / GPS) | U.FL-R-SMT-1 | C88374 |

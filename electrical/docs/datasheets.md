@@ -12,7 +12,6 @@ Links rather than PDFs, so the repo stays small and we always get the current re
 | ESP32-S3FN8 | https://www.lcsc.com/product-detail/C2913196.html |
 | 40 MHz crystal Q22FA12800101 | https://www.lcsc.com/product-detail/C255898.html |
 | ICM-42688-P | https://www.lcsc.com/product-detail/C1850418.html |
-| BNO085 | https://www.lcsc.com/product-detail/C5189642.html |
 | BMP581 | https://www.lcsc.com/product-detail/C5362283.html |
 | MAX-M10S | https://www.lcsc.com/product-detail/C4153167.html |
 | AP63205WU-7 | https://www.lcsc.com/product-detail/C2071056.html |
@@ -24,4 +23,3 @@ Links rather than PDFs, so the repo stays small and we always get the current re
 
 ## Still to add
 - u-blox MAX-M10S Integration Manual (RF input section)
-- BNO08x datasheet (SPI mode, crystal, reset)

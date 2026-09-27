@@ -12,15 +12,12 @@ Net names match the labels in the schematic exactly. Firmware should use this ta
 | 11 | GPIO6 | `MOTOR3` | ESC motor 3 |
 | 12 | GPIO7 | `MOTOR4` | ESC motor 4 |
 | 13 | GPIO8 | `ESC_TELEM` | ESC telemetry (UART RX) |
+| 14 | GPIO9 | `ICM_INT2` | ICM-42688-P INT2/FSYNC/CLKIN |
 | 15 | GPIO10 | `ICM_CS` | ICM-42688-P chip select |
-| 16 | GPIO11 | `SPI_MOSI` | IMU SPI bus |
-| 17 | GPIO12 | `SPI_SCK` | IMU SPI bus |
-| 18 | GPIO13 | `SPI_MISO` | IMU SPI bus |
-| 19 | GPIO14 | `BNO_CS` | BNO085 chip select |
+| 16 | GPIO11 | `SPI_MOSI` | ICM-42688-P SPI |
+| 17 | GPIO12 | `SPI_SCK` | ICM-42688-P SPI |
+| 18 | GPIO13 | `SPI_MISO` | ICM-42688-P SPI |
 | 21 | GPIO15 | `ICM_INTR` | ICM-42688-P interrupt |
-| 22 | GPIO16 | `BNO_INTR` | BNO085 H_INTN |
-| 23 | GPIO17 | `BNO_RST` | BNO085 NRST |
-| 24 | GPIO18 | `BNO_WAKE` | BNO085 PS0/WAKE |
 | 25 | GPIO19 | `USB_DN` | USB D− |
 | 26 | GPIO20 | `USB_DP` | USB D+ |
 | 36 | GPIO48 | `Yellow` | Yellow status LED |
@@ -34,6 +31,6 @@ Net names match the labels in the schematic exactly. Firmware should use this ta
 | 49 | U0TXD | — | Test pad TP1 (boot log / fallback console) |
 | 50 | U0RXD | — | Test pad TP2 |
 
-Not connected: pins 8, 14, 27, 28, 44, 45, 47, 48, 51, 52. Pins 30–35 are the in-package flash and must stay unconnected.
+Not connected: pins 8, 19, 22, 23, 24, 27, 28, 44, 45, 47, 48, 51, 52. Pins 19 and 22 to 24 are free for later use. Pins 30 to 35 are the in-package flash and must stay unconnected.
 
 Keep GPIO3, GPIO45 and GPIO46 floating: they are strapping pins, and GPIO45 selects the flash voltage (must be low for our 3.3 V flash).
