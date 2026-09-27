@@ -2,6 +2,8 @@
 
 Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin).
 
+Flight controller designed by **Pranav Shivashankar**.
+
 ## Network drone flight controller
 
 KiCad 9 project in [`network-drone-fc/`](network-drone-fc/). Open `network-drone-fc.kicad_pro`.
