@@ -52,6 +52,7 @@ Charging is handled by a separate board.
                          │ MAX-M10S (GPS) ─► U.FL (GPS antenna)  ◄─────────┘
                          └─────────────────────┘
    Spare ports: JST-GH I2C (ToF etc.), JST-GH UART (companion / telemetry)
+   Charging port: JST-GH to the charging board, DOCK_DET (GPIO) and AUX_ADC (ADC1)
 ```
 
 ## 4. Components
@@ -81,6 +82,7 @@ Refs marked TBD are assigned when the sensors box is drawn. LCSC part numbers ar
 | TBD | U.FL | GPS antenna |
 | TBD | JST-SH 8-pin | ESC: VBAT, GND, current, telemetry, 4 motor signals |
 | TBD | JST-GH 4-pin ×2 | spare I2C port, spare UART port |
+| TBD | JST-GH 4-pin | charging board port: GND, DOCK_DET, AUX_ADC, spare |
 | SW1, SW2 | tactile switches | RESET, BOOT |
 | D2, D3, D4 | 0603 LEDs | red power, green status, yellow status |
 | TP1 to TP6 | test pads (bottom) | UART0 TX/RX, VBAT, +5V, +3V3, +3V3_SENS |
@@ -106,7 +108,9 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 | I2C | BMP581, spare I2C port | GPIO33, 34 |
 | UART | GPS | GPIO35, 36 |
 | UART | spare port | GPIO37, 38 |
-| UART RX | ESC telemetry | GPIO8 |
+| UART RX | ESC telemetry | GPIO17 |
+| GPIO in | dock connected (`DOCK_DET`), from the charging board | GPIO18 |
+| ADC1 | analog input from the charging board (`AUX_ADC`) | GPIO8 |
 | DShot | 4 motors | GPIO4 to 7 |
 | ADC1 | battery voltage, ESC current | GPIO1, 2 |
 | USB | USB-C | GPIO19, 20 |
