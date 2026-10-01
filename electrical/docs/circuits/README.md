@@ -9,7 +9,7 @@ Each page covers one box of the schematic. Read them in order if you're new to b
 | [1. MCU](01-mcu.md) | The ESP32-S3 and everything it needs to run: power pins, reset, boot, crystal, antenna, status LEDs |
 | [2. USB](02-usb.md) | The USB-C port, its protection, and powering the board from a laptop |
 | [3. Power](03-power.md) | Getting from the battery to clean 5 V and 3.3 V, plus measuring battery voltage |
-| 4. Sensors | Not written yet |
+| [4. Sensors](04-sensors.md) | The ICM-42688-P IMU, BMP581 barometer and MAX-M10S GPS |
 | 5. Connectors | Not written yet |
 
 ## A few ideas you'll see on every page
