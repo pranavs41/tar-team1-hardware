@@ -42,3 +42,51 @@ INT2/FSYNC/CLKIN (pin 9) goes to `ICM_INT2` on ESP32 pin 14 (GPIO9). This pin ca
 ### Placement
 
 The IMU goes near the centre of the board, where vibration is lowest and it's closest to the drone's centre of rotation. Keep it away from the buck regulator and its inductor, whose magnetic field and heat add noise. Its capacitors sit right against pins 8 and 5.
+
+## Barometer (U7, BMP581)
+
+The barometer measures air pressure, which gives altitude to within a few centimetres and is what holds the drone at a steady height. It only needs reading a few dozen times a second, so it sits on I2C, the slower two-wire bus, and saves the SPI pins for the IMU.
+
+### Power
+
+VDD (pin 10) and VDDIO (pin 1) both go to `+3V3_SENS`, each with a 100 nF capacitor to GND (C28 and C29). Pins 3, 8 and 9 are ground.
+
+### I2C
+
+| Pin | Name | Connects to |
+|---|---|---|
+| 2 | SCK | `I2C_SCL`, ESP32 pin 39 (GPIO34) |
+| 4 | SDI | `I2C_SDA`, ESP32 pin 38 (GPIO33) |
+| 6 | CSB | `+3V3_SENS` |
+| 5 | SDO | GND |
+| 7 | INT | no-connect |
+
+The chip can speak SPI or I2C and checks CSB at power-up: high means I2C. SDO sets the I2C address: tied to GND it is 0x46, tied high it would be 0x47. The chip reuses its SPI pin names, so SCK is the I2C clock and SDI is the I2C data.
+
+R12 and R13 (4.7 kΩ from SDA and SCL to `+3V3_SENS`) are the bus pull-ups. I2C lines are open-drain: chips can only pull them low, and nothing drives them high. The resistors pull them back up when nobody is pulling down. One pair serves the whole bus, including the spare I2C port.
+
+INT is left unconnected. Firmware reads the sensor on a timer, and pins 19 and 22 are free if someone wants the data-ready interrupt later.
+
+### Placement
+
+Keep the barometer away from the buck regulator's heat and from the LEDs, and on the finished drone cover it with a small piece of open-cell foam so prop wash doesn't show up as altitude jumps.
+
+## GPS (U8, MAX-M10S)
+
+The GPS gives the drone a position to reference against the RTK ground station for landing. It talks to the ESP32 over a UART.
+
+### Power
+
+VCC (pin 8) and V_IO (pin 7) are tied together to `+3V3_SENS`, with C30 (10 µF) and C31 (100 nF) to GND. u-blox allows VCC and V_IO to be one supply for a 3.3 V design. VIO_SEL (pin 15) stays open, which selects the 3.3 V I/O range; it would be grounded for a 1.8 V design. V_BCKP (pin 6) is open because there is no backup battery; the manual says to leave it open in that case. The cost is a cold start after every power cycle, which the time-to-fix budget allows.
+
+### UART
+
+TXD (pin 2) goes to `GPS_RX` on ESP32 pin 41 and RXD (pin 3) to `GPS_TX` on pin 40. The names are from the ESP32's side: the GPS transmits into the ESP32's receive pin.
+
+### Antenna
+
+RF_IN (pin 11) goes to J3, a U.FL connector, so the antenna can mount up high on the drone. The trace between them must be 50 Ω, short, with ground on the layer below and ground vias along both sides, the same rules as the Wi-Fi antenna trace. RF_IN is DC-blocked inside the module and the module has its own LNA and SAW filter, so a passive patch antenna needs nothing else.
+
+L3 (27 nH, not fitted) and C32 (10 nF) form a bias-T for an active antenna. VCC_RF (pin 14) is a filtered copy of VCC the module provides for exactly this. Fitting L3 puts that voltage on the antenna line, which powers an active antenna's built-in amplifier through the same cable that carries the signal. With a passive antenna L3 stays off, because many passive patches are a DC short and would drag VCC_RF to ground.
+
+Everything else (TIMEPULSE, EXTINT, RESET_N, SAFEBOOT_N, LNA_EN, SDA, SCL) is left open as the integration manual allows.

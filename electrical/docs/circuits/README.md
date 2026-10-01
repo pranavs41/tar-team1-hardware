@@ -10,7 +10,7 @@ Each page covers one box of the schematic. Read them in order if you're new to b
 | [2. USB](02-usb.md) | The USB-C port, its protection, and powering the board from a laptop |
 | [3. Power](03-power.md) | Getting from the battery to clean 5 V and 3.3 V, plus measuring battery voltage |
 | [4. Sensors](04-sensors.md) | The ICM-42688-P IMU, BMP581 barometer and MAX-M10S GPS |
-| 5. Connectors | Not written yet |
+| [5. Connectors](05-connectors.md) | The ESC cable, the two spare ports, the charging-board port and the test pads |
 
 ## A few ideas you'll see on every page
 
