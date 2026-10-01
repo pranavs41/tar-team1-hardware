@@ -4,7 +4,8 @@ Net names match the labels in the schematic exactly. Firmware should use this ta
 
 | Pin | GPIO | Net | Connects to |
 |---|---|---|---|
-| 5 | GPIO0 | none | BOOT button (strapping pin) |
+| 4 | CHIP_PU | none | RESET pad pair JP1 |
+| 5 | GPIO0 | none | BOOT pad pair JP2 (strapping pin) |
 | 6 | GPIO1 | `VBAT_SENSE` | Battery divider (ADC1) |
 | 7 | GPIO2 | `ESC_CUR` | ESC current sense (ADC1) |
 | 9 | GPIO4 | `MOTOR1` | ESC motor 1 (DShot) |
@@ -28,11 +29,13 @@ Net names match the labels in the schematic exactly. Firmware should use this ta
 | 39 | GPIO34 | `I2C_SCL` | BMP581, I2C port |
 | 40 | GPIO35 | `GPS_TX` | GPS RXD |
 | 41 | GPIO36 | `GPS_RX` | GPS TXD |
-| 42 | GPIO37 | `UART_TX` | Spare UART port |
-| 43 | GPIO38 | `UART_RX` | Spare UART port |
+| 42 | GPIO37 | `UART_TX` | Spare UART, test pad TP17 |
+| 43 | GPIO38 | `UART_RX` | Spare UART, test pad TP18 |
 | 49 | U0TXD | none | Test pad TP1 (boot log / fallback console) |
 | 50 | U0RXD | none | Test pad TP2 |
 
 Not connected: pins 8, 19, 22, 27, 28, 44, 45, 47, 48, 51, 52. Pins 19 and 22 are free for later use. Pins 30 to 35 are the in-package flash and must stay unconnected.
 
 Keep GPIO3, GPIO45 and GPIO46 floating: they are strapping pins, and GPIO45 selects the flash voltage (must be low for our 3.3 V flash).
+
+Test pads TP7 to TP16 (bottom side): SPI_SCK, SPI_MOSI, SPI_MISO, ICM_CS, ICM_INTR, I2C_SDA, I2C_SCL, GPS_TX, GPS_RX, ESC_TELEM.

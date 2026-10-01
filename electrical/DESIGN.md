@@ -51,7 +51,7 @@ Charging is handled by a separate board.
                          │ BMP581 (barometer)  │◄────────────────────┘     │
                          │ MAX-M10S (GPS) ─► U.FL (GPS antenna)  ◄─────────┘
                          └─────────────────────┘
-   Spare ports: JST-GH I2C (ToF etc.), JST-GH UART (companion / telemetry)
+   Spare port: JST-GH I2C (ToF etc.); spare UART on test pads
    Charging port: JST-GH to the charging board, DOCK_DET (GPIO) and AUX_ADC (ADC1)
 ```
 
@@ -81,11 +81,11 @@ LCSC part numbers are in the [repo README](../README.md).
 | J2 | USB-C 16-pin | programming, debug, bench power |
 | J3 | U.FL | GPS antenna |
 | J4 | JST-SH 8-pin | ESC: VBAT, GND, current, telemetry, 4 motor signals |
-| J5, J6 | JST-GH 4-pin ×2 | spare I2C port, spare UART port |
+| J5 | JST-GH 4-pin | spare I2C port |
 | J7 | JST-GH 4-pin | charging board port: GND, DOCK_DET, AUX_ADC, spare |
-| SW1, SW2 | tactile switches | RESET, BOOT |
+| JP1, JP2 | pad pairs on the bottom | RESET, BOOT (short to GND with tweezers) |
 | D2, D3, D4 | 0603 LEDs | red power, green status, yellow status |
-| TP1 to TP6 | test pads (bottom) | UART0 TX/RX, VBAT, +5V, +3V3, +3V3_SENS |
+| TP1 to TP18 | test pads (bottom) | UART0 TX/RX, the four rails, IMU SPI, I2C, GPS UART, ESC telemetry, spare UART |
 
 ## 5. Power
 
@@ -107,7 +107,7 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 | SPI | ICM-42688-P | GPIO10 to 13 |
 | I2C | BMP581, spare I2C port | GPIO33, 34 |
 | UART | GPS | GPIO35, 36 |
-| UART | spare port | GPIO37, 38 |
+| UART | spare, on test pads | GPIO37, 38 |
 | UART RX | ESC telemetry | GPIO17 |
 | GPIO in | dock connected (`DOCK_DET`), from the charging board | GPIO18 |
 | ADC1 | analog input from the charging board (`AUX_ADC`) | GPIO8 |
@@ -117,17 +117,17 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 
 ## 7. Board layout
 
-Top view, 36 × 36 mm, 2 mm corner radius. The four M2 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from each edge, with a 2.5 mm keep-out around each for the screw head or grommet. The ESC is underneath. All parts are on the top side; only the six test pads are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
+Top view, 36 × 36 mm, 2 mm corner radius. The four M2 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from each edge, with a 3 mm keep-out around each so a 6 mm grommet or standoff fits. The ESC is underneath. All parts are on the top side; only the six test pads are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
 
 ```
  ┌────────────────────────────────────────────┐
- │ [J3 GPS U.FL]  bias-T   U8 GPS      SW2  SW1 │  top edge
+ │ [J3 GPS U.FL]  bias-T   U8 GPS   [J7 charge] │  top edge
  │    ●                            ●   LEDs    │
  │ [J5 I2C]  LDOs   U6 IMU   U1 ESP32  U2  USB │  right edge: J2 USB-C
  │   D1       C4/C19        crystal   caps     │
  │ U7 baro  buck: U3 L2 D5 C16 C18     π net   │
  │    ●     divider           ●   [J1 Wi-Fi]   │
- │ [J6 UART]   [J4 ESC JST-SH 8]  [J7 charge]  │  bottom edge
+ │          [J4 ESC JST-SH 8]                  │  bottom edge
  └────────────────────────────────────────────┘
 ```
 
@@ -136,11 +136,11 @@ Top view, 36 × 36 mm, 2 mm corner radius. The four M2 holes (plain, no copper) 
 | Centre | U6 ICM-42688-P with its three capacitors and the CS pull-up | Least vibration, closest to the centre of rotation, far from the buck |
 | Centre-right | U1 ESP32 (rotated 180° so the RF pin faces the right edge), decoupling in one column beside it, crystal below it | Short paths from every power pin to its capacitor; crystal hard against pins 53/54 |
 | Right edge | J2 USB-C, U2 ESD chip and the CC resistors above it, three LEDs with their resistors, J1 Wi-Fi U.FL at the lower right with the π network beside it | Cable and LEDs reachable with the stack assembled; RF trace short and straight to the edge |
-| Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, RESET and BOOT buttons at the top right | GPS in the corner opposite the Wi-Fi antenna and away from the buck; buttons reachable |
+| Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, J7 charging-board port at the top right | GPS in the corner opposite the Wi-Fi antenna and away from the buck; the top-right slot is the only edge left for a third port |
 | Left edge | J5 I2C port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
 | Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
-| Bottom edge | J6 UART port, J4 ESC connector, J7 charging-board port | Cables drop straight down to the ESC and out the sides |
-| Bottom side | TP1 to TP6 test pads | Nothing to solder, so the top stays the only reflow side |
+| Bottom edge | J4 ESC connector, centred between the holes | The only connector that must face the ESC |
+| Bottom side | TP1 to TP18 test pads and the RESET/BOOT pad pairs | Nothing to solder, so the top stays the only reflow side |
 
 Design rules set in the board: 0.12 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.3 mm copper-to-edge, 4 copper layers.
 

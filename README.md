@@ -62,7 +62,8 @@ From the stock KiCad libraries (already have 3D models):
 - Passives: `Resistor_SMD` / `Capacitor_SMD` 0402
 - Buck inductor, 4.7 µH: `Inductor_SMD:L_1008_2520Metric` (e.g. FTC252010S4R7MBCA, C5832360). Check the value against the AP63205 datasheet.
 - 6-pin JST-GH: `Connector_JST:JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal`
-- Mounting holes: `MountingHole:MountingHole_2.2mm_M2_Pad`
+- Mounting holes: `MountingHole:MountingHole_2.2mm_M2` (plain, no copper)
+- RESET/BOOT pad pairs: `Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm`
 
 ### Adding a part
 

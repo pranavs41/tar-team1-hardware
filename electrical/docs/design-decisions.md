@@ -24,4 +24,8 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-09-30 | Charging-board port carries DOCK_DET (GPIO18) and AUX_ADC (GPIO8, ADC1); ESC telemetry moved to GPIO17 | ADC2 is unusable while Wi-Fi runs, so the port needed an ADC1 pin; GPIO17 was freed by dropping the BNO085 |
 | 2026-09-30 | Mounting holes are plain 2.2 mm holes with no copper ring | Nothing needs to connect to the screws; copper rings only made clearance to the connectors harder |
 | 2026-09-30 | USB diode D1 sits by the I2C port on the left edge, not next to the USB-C | The right edge is full; D1 only carries the 5 V feed, so a longer trace costs nothing |
+| 2026-09-30 | RESET and BOOT are pad pairs on the bottom, not pushbuttons | Only needed for recovery; USB resets the chip for normal flashing; frees the top edge |
+| 2026-09-30 | 3 mm keep-out around each mounting hole | Room for a 6 mm soft-mount grommet or standoff, per the team review |
+| 2026-09-30 | Spare UART port dropped to test pads TP17/TP18 | With the 3 mm keep-out there is one connector slot per edge; GPS, USB-C, ESC and the I2C port take four, the charging port takes the top-right |
+| 2026-09-30 | Twelve more bottom-side test pads (SPI, I2C, GPS UART, ESC telemetry) | Every bus can be probed when a chip doesn't answer; they cost nothing on a single-side assembly |
 
