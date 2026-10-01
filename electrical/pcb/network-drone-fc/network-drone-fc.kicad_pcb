@@ -2316,7 +2316,7 @@
 	(footprint "CONN-SMD_4P-P1.25_SM04B-GHS-TB-LF-SN"
 		(layer "F.Cu")
 		(uuid "17f8065b-6f48-4de5-8de8-ef0bc3b92cbe")
-		(at 112.9 85.6 180)
+		(at 112.6 85.6 180)
 		(property "Reference" "J7"
 			(at -0 0 180)
 			(layer "F.Fab")
