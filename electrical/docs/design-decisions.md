@@ -19,3 +19,9 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-09-27 | SMAJ18A TVS instead of SMAJ15A | SMAJ15A breaks down at 16.7 V, below a full 4S pack |
 | 2026-09-27 | Separate low-noise `+3V3_SENS` rail for sensors | Keeps ESP32 radio TX current spikes out of the IMU and barometer supply |
 | 2026-09-27 | Dropped the BNO085 | Overlaps the ICM-42688-P (both are accel and gyro). Its fused output is too slow for the rate loop, orientation fusion runs fine on the ESP32 as on Betaflight and PX4 boards, and its magnetometer would sit centimetres from motor currents. Saves about $20, a dozen parts and five ESP32 pins. If heading is needed later, add a small I2C magnetometer or use the GPS puck's compass. |
+| 2026-09-30 | ESC connector follows the Betaflight 4-in-1 order (GND, VBAT, CUR, TLM, M1 to M4) | Most 20 × 20 ESCs use it; confirm against the ESC before ordering |
+| 2026-09-30 | I2C and UART ports use the Dronecode order (VCC, signal, signal, GND) | Off-the-shelf cables fit |
+| 2026-09-30 | Charging-board port carries DOCK_DET (GPIO18) and AUX_ADC (GPIO8, ADC1); ESC telemetry moved to GPIO17 | ADC2 is unusable while Wi-Fi runs, so the port needed an ADC1 pin; GPIO17 was freed by dropping the BNO085 |
+| 2026-09-30 | Mounting holes are plain 2.2 mm holes with no copper ring | Nothing needs to connect to the screws; copper rings only made clearance to the connectors harder |
+| 2026-09-30 | USB diode D1 sits by the I2C port on the left edge, not next to the USB-C | The right edge is full; D1 only carries the 5 V feed, so a longer trace costs nothing |
+

@@ -67,11 +67,11 @@ Charging is handled by a separate board.
 | U3 | AP63205WU | 5 V buck, 2 A | TSOT-23-6 |
 | U4 | TLV75733 | 3.3 V LDO for ESP32 (`+3V3`) | SOT-23-5 |
 | U5 | TPS7A2033 | low-noise 3.3 V LDO for sensors (`+3V3_SENS`) | SOT-23-5 |
-| TBD | ICM-42688-P | gyro and accelerometer (SPI); orientation fusion runs on the ESP32 | LGA-14 2.5 × 3 |
-| TBD | BMP581 | barometer (I2C) | LGA-10 2 × 2 |
-| TBD | u-blox MAX-M10S | GPS (UART) | LCC 9.7 × 10.1 |
+| U6 | ICM-42688-P | gyro and accelerometer (SPI); orientation fusion runs on the ESP32 | LGA-14 2.5 × 3 |
+| U7 | BMP581 | barometer (I2C) | LGA-10 2 × 2 |
+| U8 | u-blox MAX-M10S | GPS (UART) | LCC 9.7 × 10.1 |
 
-Refs marked TBD are assigned when the sensors box is drawn. LCSC part numbers are in the [repo README](../README.md).
+LCSC part numbers are in the [repo README](../README.md).
 
 ### Connectors and user interface
 
@@ -79,10 +79,10 @@ Refs marked TBD are assigned when the sensors box is drawn. LCSC part numbers ar
 |---|---|---|
 | J1 | U.FL | Wi-Fi antenna |
 | J2 | USB-C 16-pin | programming, debug, bench power |
-| TBD | U.FL | GPS antenna |
-| TBD | JST-SH 8-pin | ESC: VBAT, GND, current, telemetry, 4 motor signals |
-| TBD | JST-GH 4-pin ×2 | spare I2C port, spare UART port |
-| TBD | JST-GH 4-pin | charging board port: GND, DOCK_DET, AUX_ADC, spare |
+| J3 | U.FL | GPS antenna |
+| J4 | JST-SH 8-pin | ESC: VBAT, GND, current, telemetry, 4 motor signals |
+| J5, J6 | JST-GH 4-pin ×2 | spare I2C port, spare UART port |
+| J7 | JST-GH 4-pin | charging board port: GND, DOCK_DET, AUX_ADC, spare |
 | SW1, SW2 | tactile switches | RESET, BOOT |
 | D2, D3, D4 | 0603 LEDs | red power, green status, yellow status |
 | TP1 to TP6 | test pads (bottom) | UART0 TX/RX, VBAT, +5V, +3V3, +3V3_SENS |
@@ -115,39 +115,34 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 | ADC1 | battery voltage, ESC current | GPIO1, 2 |
 | USB | USB-C | GPIO19, 20 |
 
-## 7. Board layout plan
+## 7. Board layout
 
-Top view, 36 × 36 mm. Holes (●) on the 20 × 20 pattern sit 8 mm in from each edge. The ESC is underneath.
+Top view, 36 × 36 mm, 2 mm corner radius. The four M2 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from each edge, with a 2.5 mm keep-out around each for the screw head or grommet. The ESC is underneath. All parts are on the top side; only the six test pads are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
 
 ```
  ┌────────────────────────────────────────────┐
- │ [GPS U.FL]  GPS          ▲ north   [Wi-Fi  │
- │  MAX-M10S                          U.FL]   │
- │        ●                        ●   π net  │
- │                                            │
- │   BMP581                 ESP32-S3  crystal │
- │   (foam)     ICM-42688-P  (QFN)            │  ← USB-C
- │              (centre)                      │
- │        ●                        ●  LEDs    │
- │  buck + inductor   LDOs    RESET BOOT      │
- │  [JST-GH]   [ESC JST-SH 8]      [JST-GH]   │
+ │ [J3 GPS U.FL]  bias-T   U8 GPS      SW2  SW1 │  top edge
+ │    ●                            ●   LEDs    │
+ │ [J5 I2C]  LDOs   U6 IMU   U1 ESP32  U2  USB │  right edge: J2 USB-C
+ │   D1       C4/C19        crystal   caps     │
+ │ U7 baro  buck: U3 L2 D5 C16 C18     π net   │
+ │    ●     divider           ●   [J1 Wi-Fi]   │
+ │ [J6 UART]   [J4 ESC JST-SH 8]  [J7 charge]  │  bottom edge
  └────────────────────────────────────────────┘
 ```
 
-Why things go where they do:
-
 | Area | Contents | Reason |
 |---|---|---|
-| Centre | ICM-42688-P | Least vibration and closest to the centre of rotation; far from the buck |
-| Right | ESP32, crystal, Wi-Fi U.FL | Crystal hard against pins 53/54; RF trace to the U.FL short and straight at the board edge |
-| Top left | GPS and its U.FL | Opposite corner from the Wi-Fi antenna and away from the buck, whose switching noise desenses GPS |
-| Bottom left | buck, LDOs | Next to the ESC connector where VBAT enters; tight switching loop kept away from sensors and RF |
-| Bottom edge | ESC and spare-port connectors | Cables drop straight down to the ESC and out the sides |
-| Right edge | USB-C, LEDs | Reachable and visible with the stack assembled |
-| Left | BMP581 | Out of direct prop wash and away from LED light and buck heat; covered with open-cell foam |
-| Bottom side | test pads only | Hot-plate assembly: nothing to solder on the bottom |
+| Centre | U6 ICM-42688-P with its three capacitors and the CS pull-up | Least vibration, closest to the centre of rotation, far from the buck |
+| Centre-right | U1 ESP32 (rotated 180° so the RF pin faces the right edge), decoupling in one column beside it, crystal below it | Short paths from every power pin to its capacitor; crystal hard against pins 53/54 |
+| Right edge | J2 USB-C, U2 ESD chip and the CC resistors above it, three LEDs with their resistors, J1 Wi-Fi U.FL at the lower right with the π network beside it | Cable and LEDs reachable with the stack assembled; RF trace short and straight to the edge |
+| Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, RESET and BOOT buttons at the top right | GPS in the corner opposite the Wi-Fi antenna and away from the buck; buttons reachable |
+| Left edge | J5 I2C port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
+| Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
+| Bottom edge | J6 UART port, J4 ESC connector, J7 charging-board port | Cables drop straight down to the ESC and out the sides |
+| Bottom side | TP1 to TP6 test pads | Nothing to solder, so the top stays the only reflow side |
 
-Keep-outs: the four mounting holes plus grommet clearance (about 5 mm diameter), and the area under the Wi-Fi and GPS RF traces (no other routing).
+Design rules set in the board: 0.12 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.3 mm copper-to-edge, 4 copper layers.
 
 ### Layer stackup (4 layers)
 
@@ -166,9 +161,10 @@ The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stacku
 |---|---|
 | Parts selected, libraries imported | done |
 | Schematic: MCU, USB, power | done, ERC clean |
-| Schematic: sensors | in progress (ICM-42688-P next) |
-| Schematic: connectors | to do |
-| Footprints assigned, final ERC | to do |
-| PCB layout | to do |
+| Schematic: sensors | done |
+| Schematic: connectors | done |
+| Footprints assigned, final ERC | done, 0 errors, 0 warnings |
+| PCB placement | done, DRC clean apart from silkscreen warnings |
+| PCB routing | in progress (by hand) |
 | Order rev A | to do |
 | Bring-up | to do ([checklist](docs/bring-up.md)) |

@@ -26,7 +26,7 @@ mechanical/             frame and mount CAD, board STEP exports
 
 KiCad 9 project in [`electrical/pcb/network-drone-fc/`](electrical/pcb/network-drone-fc/). Open `network-drone-fc.kicad_pro`. The design plan is in [`electrical/DESIGN.md`](electrical/DESIGN.md).
 
-[View the schematic as a PDF](electrical/pcb/network-drone-fc/schematic.pdf) if you don't have KiCad. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
+[View the schematic as a PDF](electrical/pcb/network-drone-fc/schematic.pdf) or the [placement render](electrical/pcb/network-drone-fc/placement-top.png) if you don't have KiCad. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
 
 - 4-layer board, 36 × 36 mm, four M2 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
 - All parts on the top side only, so the whole board can be reflowed on a hot plate; test points (bare pads) may go on the bottom
@@ -49,6 +49,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | 3.3 V LDO, digital | TLV75733PDBVR | C485517 |
 | 3.3 V LDO, sensors (low noise) | TPS7A2033PDBVR | C2862740 |
 | Battery TVS (18 V standoff, safe up to 4S) | SMAJ18A | C908771 |
+| GPS bias-T inductor, 27 nH (fit only for an active antenna) | Murata LQG15HS27NJ02D (0402) | C12669 |
 | USB 5 V OR-ing diode | B5819W | C8598 |
 | USB ESD | USBLC6-2SC6 | C7519 |
 | USB-C (USB 2.0, 16-pin) | TYPE-C 16PIN 2MD(073) | C2765186 |
