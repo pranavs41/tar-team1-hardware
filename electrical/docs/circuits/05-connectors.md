@@ -39,6 +39,8 @@ Pins: GND, DOCK_DET, AUX_ADC, spare.
 
 Protection for these two lines lives on the charging board, by agreement with that team.
 
+On the board this port sits at the top right, in a 3 mm strip added above the mounting-hole line. Before that strip existed the connector body was 1.5 mm from the H2 hole, which left no room for the ESC's grommet or a nut on top; now it clears the hole centre by 5 mm.
+
 ## Test points and recovery pads
 
 Eighteen bare pads on the bottom of the board. TP1 and TP2 are UART0 TX and RX, the fallback console and flashing path if USB fails. TP3 to TP6 are VBAT, +5V, +3V3 and +3V3_SENS for checking the rails during bring-up. TP7 to TP16 bring out the IMU SPI bus (SCK, MOSI, MISO, CS, INT), I2C (SDA, SCL), the GPS UART and the ESC telemetry line, so every bus can be probed when a chip doesn't answer. TP17 and TP18 are the spare UART.

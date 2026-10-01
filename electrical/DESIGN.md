@@ -21,7 +21,7 @@ Charging is handled by a separate board.
 |---|---|
 | Components | bare chips only, no modules or breakout boards |
 | Battery | 2S LiPo/Li-ion (6.0 to 8.4 V); input survives up to 4S (16.8 V) |
-| Board size | 36 × 36 mm, 2 mm corner radius |
+| Board size | 36 wide × 39 tall mm, 2 mm corner radius |
 | Mounting | four M2 holes on a 20 × 20 mm pattern, centred, to stack on a 20 × 20 ESC |
 | Assembly | hot plate only, so all parts on the top side; bottom has test pads only |
 | Layers | 4 |
@@ -117,11 +117,12 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 
 ## 7. Board layout
 
-Top view, 36 × 36 mm, 2 mm corner radius. The four M2 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from each edge, with a 3 mm keep-out around each so a 6 mm grommet or standoff fits. The ESC is underneath. All parts are on the top side; only the six test pads are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
+Top view, 36 wide by 39 tall, 2 mm corner radius. The four M2 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from the left, right and bottom edges and 11 mm from the top. Nothing on the top side comes within 3 mm of a hole centre, so a 6 mm grommet, nut or standoff fits at every hole, and the bottom side has nothing near the holes at all. The extra 3 mm strip along the top exists for one reason: it is the only place the charging port fits without crowding the H2 hole. The ESC is underneath. All parts are on the top side; only the test pads and the RESET/BOOT pad pairs are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
 
 ```
  ┌────────────────────────────────────────────┐
- │ [J3 GPS U.FL]  bias-T   U8 GPS   [J7 charge] │  top edge
+ │                                [J7 charge]  │  top strip
+ │ [J3 GPS U.FL]  bias-T   U8 GPS                │
  │    ●                            ●   LEDs    │
  │ [J5 I2C]  LDOs   U6 IMU   U1 ESP32  U2  USB │  right edge: J2 USB-C
  │   D1       C4/C19        crystal   caps     │
@@ -136,7 +137,7 @@ Top view, 36 × 36 mm, 2 mm corner radius. The four M2 holes (plain, no copper) 
 | Centre | U6 ICM-42688-P with its three capacitors and the CS pull-up | Least vibration, closest to the centre of rotation, far from the buck |
 | Centre-right | U1 ESP32 (rotated 180° so the RF pin faces the right edge), decoupling in one column beside it, crystal below it | Short paths from every power pin to its capacitor; crystal hard against pins 53/54 |
 | Right edge | J2 USB-C, U2 ESD chip and the CC resistors above it, three LEDs with their resistors, J1 Wi-Fi U.FL at the lower right with the π network beside it | Cable and LEDs reachable with the stack assembled; RF trace short and straight to the edge |
-| Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, J7 charging-board port at the top right | GPS in the corner opposite the Wi-Fi antenna and away from the buck; the top-right slot is the only edge left for a third port |
+| Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, J7 charging-board port at the top right, in the 3 mm strip above the hole line | GPS in the corner opposite the Wi-Fi antenna and away from the buck; the strip lets J7 clear H2 by 5 mm instead of sitting on top of it |
 | Left edge | J5 I2C port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
 | Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
 | Bottom edge | J4 ESC connector, centred between the holes | The only connector that must face the ESC |
