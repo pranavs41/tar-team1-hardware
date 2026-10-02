@@ -15,6 +15,9 @@ electrical/
     pin-map.md          ESP32 pin, net name and destination, for firmware
     datasheets.md       links to every datasheet and reference design
     bring-up.md         first power-on checklist
+    power-budget.md     current per rail, regulator heat, copper and sag check
+  tools/
+    power_budget.py     the model behind power-budget.md
   pcb/
     network-drone-fc/   KiCad 9 project: schematic, PCB, schematic.pdf
       lib/              custom symbols, footprints, 3D models

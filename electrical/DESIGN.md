@@ -96,7 +96,7 @@ LCSC part numbers are in the [repo README](../README.md).
 | `+3V3` | TLV75733 | ESP32, LEDs | ~350 mA peak (Wi-Fi TX) |
 | `+3V3_SENS` | TPS7A2033 | ICM-42688-P, BMP581, GPS | ~60 mA |
 
-The sensors get their own low-noise rail so radio transmit bursts don't show up as IMU and barometer noise.
+The sensors get their own low-noise rail so radio transmit bursts don't show up as IMU and barometer noise. Measured budget, heat and sag check: [docs/power-budget.md](docs/power-budget.md).
 
 ## 6. Interfaces
 
