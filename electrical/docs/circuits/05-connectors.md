@@ -24,17 +24,13 @@ C33 (100 nF from ESC_CUR to GND) smooths the current-sense signal before it reac
 
 Pins: VCC (+3V3), SCL, SDA, GND. It shares the I2C bus with the barometer, so the 4.7 kΩ pull-ups near the BMP581 serve this port too and anything plugged in should not add its own strong pull-ups. This is the port for a downward-facing time-of-flight sensor if docking needs one.
 
-## Spare UART (TP17, TP18)
-
-The spare UART (ESP32 GPIO37 TX, GPIO38 RX) was going to be a fourth cable port. Once the mounting holes got a 3 mm keep-out for grommets there was no edge left for it, so it now ends on two bottom-side test pads. A telemetry radio or companion board can still be wired in during development, and if a real port turns out to be needed the signals are there for the next revision.
-
 Both the I2C port and the charging port use the Dronecode connector order (VCC, signal, signal, GND), so off-the-shelf cables fit.
 
 ## Charging board port (J7, JST-GH 4 pin)
 
 Pins: GND, DOCK_DET, AUX_ADC, spare.
 
-- DOCK_DET goes to GPIO18. The charging board pulls it to a definite level when the drone is docked; firmware can enable the ESP32's internal pull-up and treat low as docked.
+- DOCK_DET goes to GPIO9. The charging board pulls it to a definite level when the drone is docked; firmware can enable the ESP32's internal pull-up and treat low as docked.
 - AUX_ADC goes to GPIO8, which is on ADC1 so it keeps working while Wi-Fi is on. Whatever the charging board puts here must stay under 3.1 V. C34 (100 nF to GND) steadies the reading.
 
 Protection for these two lines lives on the charging board, by agreement with that team.
@@ -43,7 +39,9 @@ On the board this port sits at the top right, in a 3 mm strip added above the mo
 
 ## Test points and recovery pads
 
-Eighteen bare pads on the bottom of the board. TP1 and TP2 are UART0 TX and RX, the fallback console and flashing path if USB fails. TP3 to TP6 are VBAT, +5V, +3V3 and +3V3_SENS for checking the rails during bring-up. TP7 to TP16 bring out the IMU SPI bus (SCK, MOSI, MISO, CS, INT), I2C (SDA, SCL), the GPS UART and the ESC telemetry line, so every bus can be probed when a chip doesn't answer. TP17 and TP18 are the spare UART.
+Seven bare pads on the bottom of the board, each sitting on a via of its net. TP1 and TP2 are UART0 TX and RX, the fallback console and flashing path if USB fails. TP3 to TP6 are VBAT, +5V, +3V3 and +3V3_SENS for checking the rails during bring-up. TP13 is I2C SCL, handy for confirming the bus is alive when the barometer or the port does not answer.
+
+The first layout had eighteen pads, one for every bus line. Routing showed there was no room for most of them: a pad needs a clear 1 mm circle on the bottom copper, and the bottom layer around the ESP32 is full of motor and USB tracks. The IMU SPI lines, SDA, the GPS UART, ESC telemetry and the spare UART lost their pads. They can still be probed on the component pads themselves with a fine tip.
 
 JP1 (RESET) and JP2 (BOOT) are pairs of pads, one on the signal and one on GND, in place of pushbuttons. Shorting a pair with tweezers does what the button would have. USB flashing resets the chip by itself, so these only matter for recovering a board whose firmware has crashed the USB port: short BOOT, short and release RESET, release BOOT.
 

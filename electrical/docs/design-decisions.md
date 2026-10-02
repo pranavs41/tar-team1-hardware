@@ -30,3 +30,10 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-09-30 | Twelve more bottom-side test pads (SPI, I2C, GPS UART, ESC telemetry) | Every bus can be probed when a chip doesn't answer; they cost nothing on a single-side assembly |
 | 2026-10-01 | Board grows to 36 × 39 mm (3 mm strip along the top) | The charging port J7 was 1.5 mm from hole H2; with the strip every top-side part clears every hole centre by 3 mm, so the ESC's grommets or nuts fit at all four corners |
 | 2026-10-01 | Mounting holes 3.2 mm (M3) instead of 2.2 mm | The ESC the team picked (30 A 4-in-1, 5.4 g) has M3 holes on the 20 mm pattern; the FC has to take the same screws and grommets |
+| 2026-10-02 | ESP32 pins reassigned for routing (motors GPIO11/13/16/6, SPI on GPIO33 to 35 and 47, I2C GPIO37/38, LEDs GPIO39/40, dock detect GPIO9, GPS RX GPIO18, ESC telemetry GPIO10, battery sense GPIO4) | A 0.6 mm via fits beside only every other 0.4 mm pitch pin, so the pins that must leave on the bottom layer are spaced out and the rest escape on top; the routing matrix makes any GPIO equivalent for these signals |
+| 2026-10-02 | IMU INT2/FSYNC left open | The ESP32 pin was needed as a motor escape; the datasheet allows the pin to float |
+| 2026-10-02 | R2 (0 Ω jumper in XTAL_P) removed | The crystal sits against the chip; the footprint only lengthened the trace |
+| 2026-10-02 | Test pads cut from 18 to 7, each placed on a via of its net | No bottom-layer room near the ESP32 for the bus pads; a pad on a via costs no extra copper |
+| 2026-10-02 | `+3V3` on a solid inner plane (L3), `+5V` and `+3V3_SENS` as top-layer tracks | Thirteen `+3V3` pads scattered across the board; a plane plus one via each is fewer vias than tracks would need |
+| 2026-10-02 | Two vias in pads (C6 pin 1, J5 pin 1, both `+3V3`) and one in the GPS cap C30's GND pad | No clear spot beside those pads; expect a little solder wicking there when hand soldering |
+

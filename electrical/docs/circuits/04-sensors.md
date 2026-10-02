@@ -35,9 +35,9 @@ R11 is a 10 kΩ pull-up from `ICM_CS` to `+3V3_SENS`. The ICM-42688-P starts up 
 
 ### Interrupts
 
-INT1 (pin 4) goes to `ICM_INTR` on ESP32 pin 21 (GPIO15). The IMU pulses it when a new sample is ready, so the firmware reads each sample once, right when it arrives, instead of polling.
+INT1 (pin 4) goes to `ICM_INTR` on ESP32 pin 36 (GPIO48). The IMU pulses it when a new sample is ready, so the firmware reads each sample once, right when it arrives, instead of polling.
 
-INT2/FSYNC/CLKIN (pin 9) goes to `ICM_INT2` on ESP32 pin 14 (GPIO9). This pin can be a second interrupt, a frame sync input, or an external clock input, and some flight firmware feeds it a precise clock to tighten timing. Wiring it to a spare GPIO keeps all three options open and means it never floats.
+INT2/FSYNC/CLKIN (pin 9) is left open. It can be a second interrupt, a frame sync input or an external clock input, and some flight firmware feeds it a precise clock to tighten timing. The datasheet allows it to float when unused, and the ESP32 pin it would have taken was needed for a motor signal. If a future revision wants the clock-in trick, the pin is free on the IMU side and GPIO1 is free on the ESP32 side.
 
 ### Placement
 

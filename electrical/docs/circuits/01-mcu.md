@@ -29,13 +29,13 @@ The 10 µF on VDD3P3 exists for the moment the radio starts transmitting. Curren
 
 CHIP_PU is the chip's power-up pin. High means run, low means hold in reset.
 
-R1 (10 kΩ to +3V3) keeps the pin high so the chip runs. C11 (1 µF to GND) delays startup: when power first arrives the capacitor is empty, so the pin starts low and climbs over roughly R × C = 10 ms. That holds the chip in reset until the 3.3 V rail has settled. An ESP32 that starts on a half-risen supply can hang. SW1 pulls the pin to GND when you press it, which resets the chip.
+R1 (10 kΩ to +3V3) keeps the pin high so the chip runs. C11 (1 µF to GND) delays startup: when power first arrives the capacitor is empty, so the pin starts low and climbs over roughly R × C = 10 ms. That holds the chip in reset until the 3.3 V rail has settled. An ESP32 that starts on a half-risen supply can hang. JP1 is a pair of pads, one on CHIP_PU and one on GND; shorting them with tweezers pulls the pin low and resets the chip.
 
-## Boot button (GPIO0, pin 5)
+## Boot pads (GPIO0, pin 5)
 
-SW2 connects GPIO0 to GND. There's no resistor because GPIO0 has a pull-up inside the chip. If GPIO0 is low when the chip comes out of reset, it starts in download mode for flashing. The flashing tool normally handles this over USB by itself. The button is for when bad firmware has crashed the USB peripheral: hold BOOT, tap RESET, let go of BOOT, and it will take new firmware.
+JP2 is a second pad pair, GPIO0 to GND. There's no resistor because GPIO0 has a pull-up inside the chip. If GPIO0 is low when the chip comes out of reset, it starts in download mode for flashing. The flashing tool normally handles this over USB by itself. The pads are for when bad firmware has crashed the USB peripheral: short BOOT, short and release RESET, release BOOT, and it will take new firmware. Pad pairs replaced the two pushbuttons on 2026-09-30 because the buttons took up edge space the connectors needed.
 
-Keep the wires from these two buttons away from the row of chip pins. My first version ran the BOOT wires across the GPIO1 and motor lines, and the junction dots where they crossed shorted GPIO0 to GPIO1 and two motor outputs to ground.
+Keep the wires from these two pad pairs away from the row of chip pins. My first version ran the BOOT wires across the GPIO1 and motor lines, and the junction dots where they crossed shorted GPIO0 to GPIO1 and two motor outputs to ground.
 
 ## 40 MHz crystal (pins 53 and 54)
 
@@ -47,7 +47,7 @@ CL = C/2 + C_stray, which gives 10 = C/2 + 3, so C = 14 pF. The nearest standard
 
 Too much capacitance makes the crystal run slow and too little makes it run fast, so these may need adjusting once we can measure a real board.
 
-R2 is a 0 Ω jumper in series with XTAL_P. Espressif leaves a footprint here so a 24 nH inductor can go in if the crystal's harmonics start interfering with the radio. Their own module ships with 0 Ω, and so do we.
+Espressif's reference design leaves a 0 Ω jumper footprint in series with XTAL_P so a 24 nH inductor can go in if the crystal's harmonics interfere with the radio. We dropped it: their own module ships with 0 Ω, and on our board the crystal sits so close to the chip that the extra footprint only lengthened the trace.
 
 On the PCB, the crystal goes right next to pins 53 and 54, with short traces and nothing else routed nearby.
 
@@ -65,11 +65,11 @@ We used a U.FL because it lets the antenna mount up high on the drone, which mat
 
 SPIHD, SPIWP, SPICS0, SPICLK, SPIQ and SPID are wired to the flash inside the package. They stay unconnected, each with a no-connect flag.
 
-Three nearby pins have flash-sounding names but are ordinary GPIOs on this chip: pin 28 (SPICS1) is GPIO26, pin 36 (SPICLK_N) is GPIO48 and pin 37 (SPICLK_P) is GPIO47.
+Three nearby pins have flash-sounding names but are ordinary GPIOs on this chip: pin 28 (SPICS1) is GPIO26, pin 36 (SPICLK_N) is GPIO48 and pin 37 (SPICLK_P) is GPIO47. We use the last two for the IMU interrupt and SPI MISO.
 
 ## Strapping pins
 
-The chip reads GPIO0, GPIO3, GPIO45 and GPIO46 at boot to decide how to start. GPIO45 picks the flash voltage and has to be low for our 3.3 V flash. Its internal pull-down takes care of that, so we leave it floating along with GPIO3 and GPIO46. GPIO0 only has the BOOT button on it.
+The chip reads GPIO0, GPIO3, GPIO45 and GPIO46 at boot to decide how to start. GPIO45 picks the flash voltage and has to be low for our 3.3 V flash. Its internal pull-down takes care of that, so we leave it floating along with GPIO3 and GPIO46. GPIO0 only has the BOOT pad pair JP2 on it.
 
 ## Status LEDs
 
@@ -78,8 +78,8 @@ Each LED is wired as source, resistor, LED, then GND. The resistor comes from R 
 | LED | Driven by | Resistor | Suggested meaning |
 |---|---|---|---|
 | D2, red | `+3V3` directly | 1 kΩ | power is on |
-| D3, green | pin 37 (GPIO47) | 470 Ω | running, or armed when solid |
-| D4, yellow | pin 36 (GPIO48) | 1 kΩ | warnings or radio activity |
+| D3, green | pin 45 (GPIO40) | 470 Ω | running, or armed when solid |
+| D4, yellow | pin 44 (GPIO39) | 1 kΩ | warnings or radio activity |
 
 Green has a higher forward voltage (around 2.7 V) than red or yellow (around 2.0 V), so it gets a smaller resistor to reach the same current. An ESP32 pin can supply about 20 mA, which is far more than these need, so the pins drive the LEDs directly.
 
@@ -91,6 +91,6 @@ TP1 is on U0TXD (pin 49) and TP2 is on U0RXD (pin 50). The chip prints its boot 
 
 The rest of the GPIOs have net labels that connect to the sensor and connector boxes. The full table is in [pin-map.md](../pin-map.md). Two of the choices matter for firmware:
 
-`VBAT_SENSE` and `ESC_CUR` are on GPIO1 and GPIO2 because those pins belong to ADC1. The ESP32's other ADC, ADC2, shares hardware with the Wi-Fi radio and gives bad readings while Wi-Fi is running.
+`VBAT_SENSE`, `ESC_CUR` and `AUX_ADC` are on GPIO4, GPIO2 and GPIO8 because those pins belong to ADC1. The ESP32's other ADC, ADC2, shares hardware with the Wi-Fi radio and gives bad readings while Wi-Fi is running.
 
-The IMU SPI bus is on GPIO10 to GPIO13, the chip's native SPI pins. Other pins can do SPI through the internal routing matrix, but the native ones run fastest.
+The IMU SPI bus is on GPIO33, 34, 35 and 47, which the chip reaches through its internal routing matrix. The native SPI pins (GPIO10 to 13) would run a little faster, but at the IMU's 8 kHz sample rate the matrix is nowhere near its limit, and those pins were needed as top-layer escapes for the motor signals. The one rule the matrix does not bend: a signal on GPIO0, 3, 45 or 46 would upset the boot straps, so none of ours are there.

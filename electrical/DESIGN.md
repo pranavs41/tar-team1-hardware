@@ -51,7 +51,7 @@ Charging is handled by a separate board.
                          │ BMP581 (barometer)  │◄────────────────────┘     │
                          │ MAX-M10S (GPS) ─► U.FL (GPS antenna)  ◄─────────┘
                          └─────────────────────┘
-   Spare port: JST-GH I2C (ToF etc.); spare UART on test pads
+   Spare port: JST-GH I2C (ToF etc.)
    Charging port: JST-GH to the charging board, DOCK_DET (GPIO) and AUX_ADC (ADC1)
 ```
 
@@ -85,7 +85,7 @@ LCSC part numbers are in the [repo README](../README.md).
 | J7 | JST-GH 4-pin | charging board port: GND, DOCK_DET, AUX_ADC, spare |
 | JP1, JP2 | pad pairs on the bottom | RESET, BOOT (short to GND with tweezers) |
 | D2, D3, D4 | 0603 LEDs | red power, green status, yellow status |
-| TP1 to TP18 | test pads (bottom) | UART0 TX/RX, the four rails, IMU SPI, I2C, GPS UART, ESC telemetry, spare UART |
+| TP1 to TP6, TP13 | test pads (bottom, on vias) | UART0 TX/RX, the four rails, I2C SCL |
 
 ## 5. Power
 
@@ -104,15 +104,14 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 
 | Bus | Devices | ESP32 pins |
 |---|---|---|
-| SPI | ICM-42688-P | GPIO10 to 13 |
-| I2C | BMP581, spare I2C port | GPIO33, 34 |
-| UART | GPS | GPIO35, 36 |
-| UART | spare, on test pads | GPIO37, 38 |
-| UART RX | ESC telemetry | GPIO17 |
-| GPIO in | dock connected (`DOCK_DET`), from the charging board | GPIO18 |
+| SPI | ICM-42688-P | GPIO33, 34, 35, 47 (MISO); interrupt on GPIO48 |
+| I2C | BMP581, spare I2C port | GPIO37, 38 |
+| UART | GPS | GPIO36 (TX), GPIO18 (RX) |
+| UART RX | ESC telemetry | GPIO10 |
+| GPIO in | dock connected (`DOCK_DET`), from the charging board | GPIO9 |
 | ADC1 | analog input from the charging board (`AUX_ADC`) | GPIO8 |
-| DShot | 4 motors | GPIO4 to 7 |
-| ADC1 | battery voltage, ESC current | GPIO1, 2 |
+| DShot | 4 motors | GPIO11, 13, 16, 6 |
+| ADC1 | battery voltage, ESC current | GPIO4, 2 |
 | USB | USB-C | GPIO19, 20 |
 
 ## 7. Board layout
@@ -141,7 +140,7 @@ Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plai
 | Left edge | J5 I2C port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
 | Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
 | Bottom edge | J4 ESC connector, centred between the holes | The only connector that must face the ESC |
-| Bottom side | TP1 to TP18 test pads and the RESET/BOOT pad pairs | Nothing to solder, so the top stays the only reflow side |
+| Bottom side | Seven test pads on vias, the RESET/BOOT pad pairs, and the second signal layer | Nothing to solder, so the top stays the only reflow side |
 
 Design rules set in the board: 0.12 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.3 mm copper-to-edge, 4 copper layers.
 
@@ -149,10 +148,10 @@ Design rules set in the board: 0.12 mm clearance, 0.2 mm default track, 0.6/0.3 
 
 | Layer | Use |
 |---|---|
-| L1 (top) | all components, short signal routing, RF traces |
+| L1 (top) | all components, most signal routing, RF traces, `+5V` and `+3V3_SENS`, GND fill |
 | L2 | solid GND plane, unbroken under RF traces, crystal and IMU |
-| L3 | power (`+5V`, `+3V3`, `+3V3_SENS`) and remaining signals |
-| L4 (bottom) | test pads, leftover signals, GND fill |
+| L3 | solid `+3V3` plane; every `+3V3` pad reaches it through a via |
+| L4 (bottom) | motor, USB and I2C escapes from the ESP32, test pads, GND fill |
 
 The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stackup chosen at order time.
 
@@ -166,6 +165,6 @@ The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stacku
 | Schematic: connectors | done |
 | Footprints assigned, final ERC | done, 0 errors, 0 warnings |
 | PCB placement | done, DRC clean apart from silkscreen warnings |
-| PCB routing | in progress (by hand) |
+| PCB routing | done, 160 vias, DRC 0 errors (silkscreen warnings only) |
 | Order rev A | to do |
 | Bring-up | to do ([checklist](docs/bring-up.md)) |
