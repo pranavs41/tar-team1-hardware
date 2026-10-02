@@ -33,7 +33,7 @@ The chip switches its SW pin between VBAT and GND about a million times a second
 
 | Part | Value | What it's for |
 |---|---|---|
-| C16 | 10 µF, 25 V | Input capacitor. Supplies the buck's sharp current pulses locally so they don't run down the battery wires. It's rated 25 V because it sees battery voltage, and ceramic capacitors lose a lot of capacitance when run near their rating. |
+| C16 | 10 µF, 25 V | Input capacitor. Supplies the buck's sharp current pulses locally so they don't run down the battery wires. It's rated 25 V because it sees battery voltage, and ceramic capacitors lose a lot of capacitance when run near their rating: this 0805 part is worth about 5 µF at 8.4 V and 2.5 µF at 16.8 V. Fine on 2S; a 4S build should use a 1206 here. The bulk filtering for motor noise is the 470 µF electrolytic on the ESC's battery pads, see the connectors page. |
 | EN, pin 2 | tied to VBAT | Enable. Tied high, the regulator runs whenever a battery is connected. |
 | C17, between BST and SW | 100 nF | Bootstrap capacitor. The chip's high side switch needs a gate voltage above VIN to turn fully on, and this capacitor holds that voltage. The buck won't run without it. |
 | L2 | 4.7 µH | Stores energy between switching cycles. This is the value the datasheet gives for 5 V out. |

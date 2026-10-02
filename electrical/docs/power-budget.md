@@ -78,6 +78,20 @@ So the flight controller stays up through the worst of the motor current. The ES
 
 A transmit burst steps the ESP32 from about 100 to 355 mA in under a microsecond. The LDO's control loop takes a few microseconds to respond, and in that time the capacitors on the rail supply the difference. With 13 µF on `+3V3` (C4 10 µF plus three 1 µF) the dip is roughly 40 to 100 mV, leaving 3.2 V or better. The ESP32 needs 3.0 V and its brownout detector trips at 2.8 V by default. This is the case that kills many ESP32 boards built with too little capacitance; here the 10 µF Espressif asks for is present.
 
+## What other flight controllers do
+
+Checked against the boards people actually fly: Betaflight-class racing controllers (SpeedyBee F405, the Betaflight F4), Holybro's Pixhawk 6C, and Espressif's own ESP32 design guidance.
+
+- Every one of them uses the same tree as ours: a switching regulator makes 5 V from the battery, then linear regulators make 3.3 V from that. SpeedyBee advertises "MCU and gyro with independent LDO", which is exactly our `+3V3` and `+3V3_SENS` split. Nobody feeds a microcontroller with a radio straight from a buck.
+- Pixhawk takes 5 V from an external power module and runs everything from LDOs behind it; its inputs are rated 4.1 to 5.7 V. Our USB path lands at 4.65 V, inside the same window.
+- Espressif's guidance for the ESP32-S3 is an LDO of at least 500 mA with 10 µF close to the chip. Ours is 1 A with 10 µF plus three 1 µF.
+- Racing controllers' 5 V rails are 1.5 to 3 A because they also power a camera, video transmitter, receiver and GPS. Ours powers nothing external, so 0.4 A is the whole load.
+
+Two things they do that we did not have written down:
+
+1. **A low-ESR electrolytic on the battery input, 470 µF at 35 V.** Every FPV build guide and most ESC manuals call for one, soldered on the ESC's battery pads. It absorbs the motors' current ripple and the spikes from braking, which otherwise appear as noise on the gyro and as yaw twitch. It is not on this board because the noise source is the ESC and a capacitor works best at the source, and because a 10 mm can does not fit under a 36 mm board. It is now in the ESC connection notes and the bring-up checklist as a required part of the build.
+2. **Input capacitance that survives the battery voltage.** C16 is an 0805 10 µF 25 V ceramic, as the buck datasheet asks. Ceramics lose capacitance under DC bias: at 8.4 V an 0805 of this rating is worth about 5 µF, at 16.8 V about 2.5 µF. On 2S that is enough with the electrolytic on the ESC behind it. On 4S it is thin, and a rev B with 4S in mind should make C16 a 1206 or add a second 10 µF. There is no room for either in the rev A layout without moving the crystal.
+
 ## Verdict
 
 The board holds up. No rail, track, via or connector is near its limit, the regulators ride out motor-induced sag, and the radio bursts are covered by the capacitors. The one part that works hard is the `+3V3` LDO, which will run warm; measure it with a thermocouple at bring-up with Wi-Fi streaming. If it is over about 80 °C in the frame, plan the 3.3 V buck for rev B.

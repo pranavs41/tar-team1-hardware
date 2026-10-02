@@ -57,6 +57,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | USB ESD | USBLC6-2SC6 | C7519 |
 | USB-C (USB 2.0, 16-pin) | TYPE-C 16PIN 2MD(073) | C2765186 |
 | ESC connector (8-pin JST-SH) | SM08B-SRSS-TB | C160407 |
+| Battery capacitor, on the ESC's pads, not on this board | 470 µF 35 V low-ESR electrolytic (any of the ones sold for FPV ESCs) | per build |
 | Peripheral port (4-pin JST-GH) | SM04B-GHS-TB (LCSC stock low; drop-in alt XY-SM04B-GHS-TB C51940118) | C189895 |
 | VDD3P3 filter inductor, 2.0 nH ±0.1 nH, 900 mA | Murata LQG15HS2N0B02D (0402) | C2986275 |
 

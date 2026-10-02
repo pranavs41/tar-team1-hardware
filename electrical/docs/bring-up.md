@@ -10,6 +10,8 @@ Do these in order on every new board. Stop at the first failure.
 6. **Flash a blink test:** green and yellow LEDs.
 7. **Sensors one at a time:** read the WHO_AM_I / chip ID of the ICM-42688-P and BMP581. LGA joints are hidden, so this is the only proof they soldered.
 8. **GPS:** confirm NMEA sentences on `GPS_RX`.
-9. **ESC:** with props off, spin each motor with DShot.
+9. **Radio heat:** stream telemetry over Wi-Fi for ten minutes and measure U4 (the `+3V3` LDO) with a thermocouple or an IR gun. Under about 80 °C is fine. Over that, note it for rev B (thermally enhanced package or a 3.3 V buck).
+10. **ESC capacitor:** confirm the 470 µF 35 V low-ESR electrolytic is soldered on the ESC's battery pads with the stripe on negative. Do not spin motors without it.
+11. **ESC:** with props off, spin each motor with DShot.
 
 Log results for each board serial in `production/<rev>/bringup-log.md`.

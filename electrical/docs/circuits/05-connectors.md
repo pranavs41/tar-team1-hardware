@@ -18,6 +18,8 @@ This is the pin order most Betaflight-style 4-in-1 ESCs use (GND, VBAT, current,
 
 The board has no battery connector of its own. VBAT arrives here from the ESC's battery pads, which is why the TVS and the buck's input capacitor sit close to this connector on the PCB.
 
+Solder a low-ESR electrolytic capacitor, 470 µF 35 V, across the ESC's battery pads, as close to the pads as the leads allow. Every commercial build does this and most ESC manuals require it. The motors draw current in sharp pulses and throw voltage spikes back when they brake; the capacitor soaks those up at the source, before they reach the FC's VBAT line and show up as gyro noise. The FC's own 10 µF ceramic and the TVS are not a substitute, they are the second line. Keep the capacitor's leads short and its polarity right: the stripe is the negative lead.
+
 C33 (100 nF from ESC_CUR to GND) smooths the current-sense signal before it reaches the ESP32's ADC on GPIO2, the same job the 100 nF does on the battery divider.
 
 ## I2C port (J5, JST-GH 4 pin)
