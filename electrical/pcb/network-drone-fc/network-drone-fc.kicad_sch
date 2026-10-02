@@ -9109,7 +9109,7 @@
 			)
 		)
 	)
-	(global_label "D+"
+	(global_label "D-"
 		(shape input)
 		(at 243.84 118.11 90)
 		(fields_autoplaced yes)
@@ -9571,7 +9571,7 @@
 			)
 		)
 	)
-	(global_label "D-"
+	(global_label "D+"
 		(shape input)
 		(at 243.84 120.65 270)
 		(fields_autoplaced yes)
@@ -9703,7 +9703,7 @@
 			)
 		)
 	)
-	(global_label "USB_DP"
+	(global_label "USB_DN"
 		(shape input)
 		(at 255.27 118.11 0)
 		(fields_autoplaced yes)
@@ -9923,7 +9923,7 @@
 			)
 		)
 	)
-	(global_label "USB_DN"
+	(global_label "USB_DP"
 		(shape input)
 		(at 255.27 120.65 0)
 		(fields_autoplaced yes)
