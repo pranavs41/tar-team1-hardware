@@ -21335,7 +21335,7 @@
 			)
 		)
 	)
-	(text "I2C port uses the Dronecode order: VCC, SCL, SDA, GND.  The spare UART is on test pads TP17/TP18.\nCharging port: GND, DOCK_DET, AUX_ADC, spare."
+	(text "I2C port uses the Dronecode order: VCC, SCL, SDA, GND.\nCharging port: GND, DOCK_DET, AUX_ADC, spare."
 		(exclude_from_sim no)
 		(at 304.8 248.92 0)
 		(effects
