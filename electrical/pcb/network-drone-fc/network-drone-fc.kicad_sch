@@ -6568,10 +6568,6 @@
 		(uuid "1fc82a56-67f5-4670-953f-67e12949c22e")
 	)
 	(no_connect
-		(at 326.39 105.41)
-		(uuid "2bf80f48-3cf8-4f3f-9ba0-6bd08d3ebd9e")
-	)
-	(no_connect
 		(at 326.39 120.65)
 		(uuid "31801a96-2720-4d52-bdf9-09c03141746a")
 	)
@@ -6604,10 +6600,6 @@
 		(uuid "716ffb4c-d5a9-4a11-9015-e2924b13c0d7")
 	)
 	(no_connect
-		(at 278.13 123.19)
-		(uuid "7798b303-402e-4bd2-ac82-e55decdcc645")
-	)
-	(no_connect
 		(at 161.29 83.82)
 		(uuid "7ce33c71-db9b-4eba-8b58-0bfe3b968fab")
 	)
@@ -6628,20 +6620,12 @@
 		(uuid "892a18d9-c395-433e-a065-9883d0fdbf6a")
 	)
 	(no_connect
-		(at 326.39 107.95)
-		(uuid "9b9b941d-625d-48de-bed9-1da22c071a0c")
-	)
-	(no_connect
 		(at 280.67 115.57)
 		(uuid "b045c80e-2e4b-4a6d-b82f-95887b81c7cd")
 	)
 	(no_connect
 		(at 326.39 69.85)
 		(uuid "c340111f-1e5d-4385-897a-206bb9a640b4")
-	)
-	(no_connect
-		(at 278.13 102.87)
-		(uuid "d1e5eb3d-79be-4769-b08d-9f93675d5bb4")
 	)
 	(no_connect
 		(at 223.52 115.57)
@@ -6697,16 +6681,6 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 69.85) (xy 246.38 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d143412-045c-4e40-bed5-aa6c3da7a751")
-	)
-	(wire
-		(pts
 			(xy 255.27 110.49) (xy 255.27 113.03)
 		)
 		(stroke
@@ -6724,16 +6698,6 @@
 			(type default)
 		)
 		(uuid "117d0abb-894e-4699-8131-af8b22a2c937")
-	)
-	(wire
-		(pts
-			(xy 251.46 77.47) (xy 280.67 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "120d6510-a42d-45b6-9c9e-2c42a35682da")
 	)
 	(wire
 		(pts
@@ -6827,16 +6791,6 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 69.85) (xy 280.67 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "235afce3-b160-4388-9fff-6168c3c4615b")
-	)
-	(wire
-		(pts
 			(xy 359.41 25.4) (xy 359.41 26.67)
 		)
 		(stroke
@@ -6904,16 +6858,6 @@
 			(type default)
 		)
 		(uuid "322e1c35-06f1-44da-b0e8-82b33cffbd57")
-	)
-	(wire
-		(pts
-			(xy 278.13 105.41) (xy 280.67 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3367d598-cb62-4db6-8b65-778e87007140")
 	)
 	(wire
 		(pts
@@ -7054,16 +6998,6 @@
 			(type default)
 		)
 		(uuid "44a3e8ff-78c9-49da-9bd9-2c0bf9d4df7f")
-	)
-	(wire
-		(pts
-			(xy 175.26 254) (xy 187.96 254)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44cf48e4-f471-4283-a05e-bc613c5c2bd7")
 	)
 	(wire
 		(pts
@@ -7527,16 +7461,6 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 80.01) (xy 280.67 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f1a0196-e923-4985-b105-3216d4e6798f")
-	)
-	(wire
-		(pts
 			(xy 393.7 16.51) (xy 381 16.51)
 		)
 		(stroke
@@ -7754,16 +7678,6 @@
 			(type default)
 		)
 		(uuid "9128169b-4415-4f98-9741-0a5375a357f8")
-	)
-	(wire
-		(pts
-			(xy 278.13 102.87) (xy 280.67 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9145e3d6-2ad8-43f8-baa7-50c2032ce279")
 	)
 	(wire
 		(pts
@@ -8077,26 +7991,6 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 85.09) (xy 280.67 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "acf61b93-2f3b-4e5c-8c01-893179ec247f")
-	)
-	(wire
-		(pts
-			(xy 278.13 120.65) (xy 280.67 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "addc17e1-e708-49c5-92df-7361a921d77a")
-	)
-	(wire
-		(pts
 			(xy 121.92 134.62) (xy 121.92 135.89)
 		)
 		(stroke
@@ -8164,16 +8058,6 @@
 			(type default)
 		)
 		(uuid "b7f12f43-97d1-47ec-b281-7f65294659ff")
-	)
-	(wire
-		(pts
-			(xy 278.13 97.79) (xy 280.67 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b83a1a4a-c1cf-475e-8e9f-10296dc9c71f")
 	)
 	(wire
 		(pts
@@ -8547,16 +8431,6 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 107.95) (xy 280.67 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "daa17055-dc68-4a53-b70d-484826c83def")
-	)
-	(wire
-		(pts
 			(xy 189.23 40.64) (xy 191.77 40.64)
 		)
 		(stroke
@@ -8574,16 +8448,6 @@
 			(type default)
 		)
 		(uuid "dd227337-c7b8-46fc-9950-201ec1967b3c")
-	)
-	(wire
-		(pts
-			(xy 251.46 82.55) (xy 280.67 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dd52af20-352d-4e76-9bbb-f37e8cb51555")
 	)
 	(wire
 		(pts
@@ -8845,28 +8709,6 @@
 		)
 		(uuid "fd4fbd79-7187-4e35-b0f0-79e8b871ba58")
 	)
-	(global_label "ESC_TELEM"
-		(shape input)
-		(at 278.13 105.41 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "02986b9c-4271-4b3e-89fe-2cac7aa38c39")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 264.8036 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "ICM_CS"
 		(shape input)
 		(at 186.69 246.38 0)
@@ -8889,7 +8731,7 @@
 			)
 		)
 	)
-	(global_label "ICM_INT2"
+	(global_label "DOCK_DET"
 		(shape input)
 		(at 276.86 90.17 180)
 		(fields_autoplaced yes)
@@ -8911,7 +8753,7 @@
 			)
 		)
 	)
-	(global_label "Yellow"
+	(global_label "ICM_INTR"
 		(shape input)
 		(at 328.93 85.09 0)
 		(fields_autoplaced yes)
@@ -8955,7 +8797,7 @@
 			)
 		)
 	)
-	(global_label "GPS_RX"
+	(global_label "GPS_TX"
 		(shape input)
 		(at 328.93 97.79 0)
 		(fields_autoplaced yes)
@@ -8968,28 +8810,6 @@
 		(uuid "1344b3e0-6514-4e65-a858-7ffd7af07b68")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 339.1118 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ICM_INT2"
-		(shape input)
-		(at 187.96 254 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1a8e4491-4a7f-491f-a00c-4038d45548b8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 199.3514 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9043,7 +8863,7 @@
 			)
 		)
 	)
-	(global_label "I2C_SCL"
+	(global_label "SPI_SCK"
 		(shape input)
 		(at 328.93 92.71 0)
 		(fields_autoplaced yes)
@@ -9131,28 +8951,6 @@
 			)
 		)
 	)
-	(global_label "VBAT_SENSE"
-		(shape input)
-		(at 246.38 71.12 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "452120c8-04fb-4e30-9914-af17b2cba53e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.9649 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Antenna"
 		(shape input)
 		(at 346.71 128.27 0)
@@ -9171,28 +8969,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SPI_SCK"
-		(shape input)
-		(at 278.13 97.79 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4cfe96b0-1d3d-492d-b4bb-2fbdf2703607")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 267.3434 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -9263,7 +9039,7 @@
 			)
 		)
 	)
-	(global_label "I2C_SDA"
+	(global_label "SPI_MOSI"
 		(shape input)
 		(at 328.93 90.17 0)
 		(fields_autoplaced yes)
@@ -9285,7 +9061,7 @@
 			)
 		)
 	)
-	(global_label "ICM_CS"
+	(global_label "ESC_TELEM"
 		(shape input)
 		(at 278.13 92.71 180)
 		(fields_autoplaced yes)
@@ -9298,28 +9074,6 @@
 		(uuid "5ba93c0a-82ea-4058-afe1-79561f563fcb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 268.3715 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MOTOR1"
-		(shape input)
-		(at 251.46 77.47 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6547b9c8-3145-449d-8dc8-8dd87544341f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 240.9153 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9351,28 +9105,6 @@
 			)
 		)
 	)
-	(global_label "MOTOR4"
-		(shape input)
-		(at 251.46 85.09 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6c63bb4d-4e7c-493d-92e3-b699e6e31270")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 240.9153 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "VBUS"
 		(shape input)
 		(at 250.19 111.76 90)
@@ -9395,7 +9127,7 @@
 			)
 		)
 	)
-	(global_label "UART_RX"
+	(global_label "I2C_SCL"
 		(shape input)
 		(at 328.93 102.87 0)
 		(fields_autoplaced yes)
@@ -9413,28 +9145,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MOTOR2"
-		(shape input)
-		(at 251.46 80.01 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9002f6d2-1751-4f02-b9fa-34b07ebcf926")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 240.9153 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -9483,7 +9193,7 @@
 			)
 		)
 	)
-	(global_label "SPI_MISO"
+	(global_label "MOTOR2"
 		(shape input)
 		(at 278.13 100.33 180)
 		(fields_autoplaced yes)
@@ -9549,7 +9259,7 @@
 			)
 		)
 	)
-	(global_label "UART_TX"
+	(global_label "I2C_SDA"
 		(shape input)
 		(at 328.93 100.33 0)
 		(fields_autoplaced yes)
@@ -9615,28 +9325,6 @@
 			)
 		)
 	)
-	(global_label "DOCK_DET"
-		(shape input)
-		(at 278.13 107.95 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c653a9ea-f761-4bcb-872f-b7687daa6aa5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 265.6501 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Green"
 		(shape input)
 		(at 381 91.44 90)
@@ -9659,7 +9347,7 @@
 			)
 		)
 	)
-	(global_label "Green"
+	(global_label "SPI_MISO"
 		(shape input)
 		(at 328.93 87.63 0)
 		(fields_autoplaced yes)
@@ -9747,7 +9435,7 @@
 			)
 		)
 	)
-	(global_label "GPS_TX"
+	(global_label "ICM_CS"
 		(shape input)
 		(at 328.93 95.25 0)
 		(fields_autoplaced yes)
@@ -9791,28 +9479,6 @@
 			)
 		)
 	)
-	(global_label "ICM_INTR"
-		(shape input)
-		(at 278.13 120.65 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e875c791-d320-47a7-92a7-3c78ea0f89e2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 266.6781 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "XTAL_N"
 		(shape input)
 		(at 387.35 26.67 0)
@@ -9835,7 +9501,7 @@
 			)
 		)
 	)
-	(global_label "SPI_MOSI"
+	(global_label "MOTOR1"
 		(shape input)
 		(at 278.13 95.25 180)
 		(fields_autoplaced yes)
@@ -9941,28 +9607,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MOTOR3"
-		(shape input)
-		(at 251.46 82.55 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fe931575-0783-42ed-b5d1-b8ee4516914f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 240.9153 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -15111,74 +14755,6 @@
 			(project "network-drone-fc"
 				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
 					(reference "#PWR110")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 351.79 31.75 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ad3c93ff-692a-45b0-8571-239783695c89")
-		(property "Reference" "R2"
-			(at 351.79 25.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0"
-			(at 351.79 27.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 351.79 33.528 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 351.79 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 351.79 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "6b98c0ba-238c-4ce7-9bd8-f588a970586e")
-		)
-		(pin "1"
-			(uuid "c9fa2b03-2cdc-431d-a05e-9a2f5982b232")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -24154,564 +23730,6 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 24.13 234.95 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fc5d9712-7115-4fc5-92cd-fd2debb0a720")
-		(property "Reference" "TP7"
-			(at 17.78 232.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 24.13 234.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 24.13 234.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 234.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 24.13 234.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "979d40fa-b830-40cd-bcf3-0fb0dda5dd46")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "SPI_SCK"
-		(shape input)
-		(at 24.13 234.95 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cf644230-7a8b-4b27-b157-dae6fb16ac13")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.13 234.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 24.13 240.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "854f765a-ef8a-4bef-9a17-0f95ca568d2e")
-		(property "Reference" "TP8"
-			(at 17.78 237.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 24.13 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 24.13 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 24.13 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c1fdb44b-048c-43a4-9718-3fcc2ff65715")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "SPI_MOSI"
-		(shape input)
-		(at 24.13 240.03 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f4ddc62f-9549-4e16-8645-0f8ff9ee1753")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.13 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 24.13 245.10999999999999 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d04e9252-12ab-4f9c-958d-b3ff8fd15eab")
-		(property "Reference" "TP9"
-			(at 17.78 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 24.13 245.10999999999999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 24.13 245.10999999999999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 245.10999999999999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 24.13 245.10999999999999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fbb38a5f-9cc9-4816-b7c2-4f4fdfa65d95")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "SPI_MISO"
-		(shape input)
-		(at 24.13 245.10999999999999 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a603a330-82b9-43c4-9411-71b46e09ba1b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.13 245.10999999999999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 24.13 250.19 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dc854ec4-f438-47f7-af50-b86f2f985c44")
-		(property "Reference" "TP10"
-			(at 17.78 247.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 24.13 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 24.13 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 24.13 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c2fe2f97-243a-4330-9246-08b44be3600d")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "ICM_CS"
-		(shape input)
-		(at 24.13 250.19 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "67c0d43e-2493-4701-8793-057dd19383a5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.13 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 24.13 255.26999999999998 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4a5d10b1-1ef7-495c-9b57-5694fa09d8d0")
-		(property "Reference" "TP11"
-			(at 17.78 252.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 24.13 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 24.13 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 24.13 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "63cb544b-a51a-4773-9965-58024acc978e")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "ICM_INTR"
-		(shape input)
-		(at 24.13 255.26999999999998 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a548832c-48df-431b-8c01-936e9d6d1460")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.13 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 24.13 260.34999999999997 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "08f04b89-34e6-4797-ba61-f3ca8dfd2a15")
-		(property "Reference" "TP12"
-			(at 17.78 257.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 24.13 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 24.13 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 24.13 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "96e07c27-bd1c-45a0-805f-bcf260a23a2d")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "I2C_SDA"
-		(shape input)
-		(at 24.13 260.34999999999997 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "18699181-a3dd-4612-9491-2ea9055bc2d2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.13 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
 		(at 50.8 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24803,80 +23821,35 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 50.8 240.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+	(no_connect
+		(at 280.67 85.09)
+		(uuid "a882206f-084c-45d7-a361-317899be3567")
+	)
+	(global_label "MOTOR3"
+		(shape input)
+		(at 278.13 123.19 180)
 		(fields_autoplaced yes)
-		(uuid "ec255407-d758-4d92-8a0c-8eb404e67230")
-		(property "Reference" "TP14"
-			(at 44.45 237.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
-		(property "Value" "TestPoint"
-			(at 50.8 240.03 0)
+		(uuid "ba0c4fbe-d798-4e58-90ed-7df40ab21454")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 278.13 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 50.8 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 240.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e162dc54-e0e9-4ab8-86ef-cbfca1beee78")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP14")
-					(unit 1)
-				)
 			)
 		)
 	)
-	(global_label "GPS_TX"
+	(global_label "Yellow"
 		(shape input)
-		(at 50.8 240.03 0)
+		(at 326.39 105.41 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -24884,9 +23857,9 @@
 			)
 			(justify left)
 		)
-		(uuid "20bf6e87-931d-4b89-845c-6acb383bbf1d")
+		(uuid "6677677d-5365-413c-80c0-e37aebdf98d3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 240.03 0)
+			(at 326.39 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24896,37 +23869,19 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 50.8 245.10999999999999 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+	(global_label "Green"
+		(shape input)
+		(at 326.39 107.95 0)
 		(fields_autoplaced yes)
-		(uuid "3fe16cc3-b11d-4da6-872f-6d2a4933c1c5")
-		(property "Reference" "TP15"
-			(at 44.45 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "TestPoint"
-			(at 50.8 245.10999999999999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 50.8 245.10999999999999 0)
+		(uuid "af4fac12-20e7-49de-8177-4a8a2a22e6ba")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 326.39 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24935,337 +23890,109 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 50.8 245.10999999999999 0)
+	)
+	(no_connect
+		(at 280.67 105.41)
+		(uuid "54eb5ad1-58a7-4f1c-9e87-967aeee1154b")
+	)
+	(no_connect
+		(at 280.67 80.01)
+		(uuid "24554109-82cc-417c-9475-fd20fbddf9b5")
+	)
+	(wire
+		(pts
+			(xy 347.98 31.75) (xy 355.6 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d00dc56-d702-4e4e-9cbe-b04aa36b253e")
+	)
+	(global_label "VBAT_SENSE"
+		(shape input)
+		(at 280.67 77.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7ca3b90f-5024-45d6-9188-9e041bfa2b0f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 280.67 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 50.8 245.10999999999999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ab5e0bd-d423-4e17-8118-762011274e6e")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP15")
-					(unit 1)
-				)
-			)
-		)
+	)
+	(no_connect
+		(at 280.67 69.85)
+		(uuid "3163d000-088d-49c1-8f30-2e0be7221707")
 	)
 	(global_label "GPS_RX"
 		(shape input)
-		(at 50.8 245.10999999999999 0)
+		(at 280.67 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "8c941fcb-6cc6-447a-9932-29aaacbb4070")
+		(uuid "4c7990f4-1117-47db-9dbe-5305182eacf7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 245.10999999999999 0)
+			(at 280.67 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 50.8 250.19 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dedb694c-c30e-4cb3-b0ba-b34c9666180d")
-		(property "Reference" "TP16"
-			(at 44.45 247.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 50.8 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 50.8 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0dbca984-e7cf-4f60-9135-bbd2049225ed")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "ESC_TELEM"
+	(global_label "MOTOR4"
 		(shape input)
-		(at 50.8 250.19 0)
+		(at 280.67 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "ae910b77-9ee7-4ff6-bd1a-b6bd6becbb07")
+		(uuid "e9d69f43-3a39-423c-ad18-dc689202b251")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 250.19 0)
+			(at 280.67 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 50.8 255.26999999999998 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "890d52b0-b203-41fe-9d27-aa2fba5b8d06")
-		(property "Reference" "TP17"
-			(at 44.45 252.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 50.8 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 50.8 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "28dca68d-e34e-4469-995e-27f7bcdea137")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP17")
-					(unit 1)
-				)
-			)
-		)
+	(no_connect
+		(at 280.67 97.79)
+		(uuid "b6a1c1fe-9874-4455-a370-0a76ab405e22")
 	)
-	(global_label "UART_TX"
-		(shape input)
-		(at 50.8 255.26999999999998 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b9a8ff59-0447-46af-b9a5-af8a113ec88c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 255.26999999999998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
+	(no_connect
+		(at 280.67 102.87)
+		(uuid "4fd46474-7d4d-4f66-b5fe-d2c6c5ce2999")
 	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 50.8 260.34999999999997 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "059c12d0-34d3-46b6-9334-ea4e68b7410b")
-		(property "Reference" "TP18"
-			(at 44.45 257.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 50.8 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 50.8 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "93fab2cf-79aa-4bd9-a50e-dc49a1321900")
-		)
-		(instances
-			(project "network-drone-fc"
-				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "TP18")
-					(unit 1)
-				)
-			)
-		)
+	(no_connect
+		(at 280.67 120.65)
+		(uuid "c52cc8f4-fa03-4d03-88e1-e6eef6d6a7a9")
 	)
-	(global_label "UART_RX"
-		(shape input)
-		(at 50.8 260.34999999999997 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "07524a9d-4a81-4084-acb4-c787ef375bb5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 50.8 260.34999999999997 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
+	(no_connect
+		(at 175.26 254.0)
+		(uuid "aa460c62-21fa-4661-a161-8e75475e4b3f")
 	)
 )
