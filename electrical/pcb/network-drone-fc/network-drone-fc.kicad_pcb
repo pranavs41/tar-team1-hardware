@@ -2071,7 +2071,7 @@
 		)
 		(fp_circle
 			(center 0 0)
-			(end 3.45 0)
+			(end 3 0)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -5013,7 +5013,7 @@
 		)
 		(fp_circle
 			(center 0 0)
-			(end 3.45 0)
+			(end 3 0)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -5763,7 +5763,7 @@
 		)
 		(fp_circle
 			(center 0 0)
-			(end 3.45 0)
+			(end 3 0)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -11196,7 +11196,7 @@
 		)
 		(fp_circle
 			(center 0 0)
-			(end 3.45 0)
+			(end 3 0)
 			(stroke
 				(width 0.05)
 				(type solid)
