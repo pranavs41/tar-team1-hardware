@@ -29,3 +29,4 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-09-30 | Spare UART port dropped to test pads TP17/TP18 | With the 3 mm keep-out there is one connector slot per edge; GPS, USB-C, ESC and the I2C port take four, the charging port takes the top-right |
 | 2026-09-30 | Twelve more bottom-side test pads (SPI, I2C, GPS UART, ESC telemetry) | Every bus can be probed when a chip doesn't answer; they cost nothing on a single-side assembly |
 | 2026-10-01 | Board grows to 36 × 39 mm (3 mm strip along the top) | The charging port J7 was 1.5 mm from hole H2; with the strip every top-side part clears every hole centre by 3 mm, so the ESC's grommets or nuts fit at all four corners |
+| 2026-10-01 | Mounting holes 3.2 mm (M3) instead of 2.2 mm | The ESC the team picked (30 A 4-in-1, 5.4 g) has M3 holes on the 20 mm pattern; the FC has to take the same screws and grommets |

@@ -22,7 +22,7 @@ Charging is handled by a separate board.
 | Components | bare chips only, no modules or breakout boards |
 | Battery | 2S LiPo/Li-ion (6.0 to 8.4 V); input survives up to 4S (16.8 V) |
 | Board size | 36 wide × 39 tall mm, 2 mm corner radius |
-| Mounting | four M2 holes on a 20 × 20 mm pattern, centred, to stack on a 20 × 20 ESC |
+| Mounting | four 3.2 mm (M3) holes on a 20 × 20 mm pattern, matching the bought ESC |
 | Assembly | hot plate only, so all parts on the top side; bottom has test pads only |
 | Layers | 4 |
 | Programming | USB-C (native ESP32-S3 USB); UART test pads as fallback |
@@ -117,7 +117,7 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 
 ## 7. Board layout
 
-Top view, 36 wide by 39 tall, 2 mm corner radius. The four M2 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from the left, right and bottom edges and 11 mm from the top. Nothing on the top side comes within 3 mm of a hole centre, so a 6 mm grommet, nut or standoff fits at every hole, and the bottom side has nothing near the holes at all. The extra 3 mm strip along the top exists for one reason: it is the only place the charging port fits without crowding the H2 hole. The ESC is underneath. All parts are on the top side; only the test pads and the RESET/BOOT pad pairs are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
+Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from the left, right and bottom edges and 11 mm from the top. Nothing on the top side comes within 3 mm of a hole centre, so a 6 mm grommet, nut or standoff fits at every hole, and the bottom side has nothing near the holes at all. The extra 3 mm strip along the top exists for one reason: it is the only place the charging port fits without crowding the H2 hole. The ESC is underneath. All parts are on the top side; only the test pads and the RESET/BOOT pad pairs are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
 
 ```
  ┌────────────────────────────────────────────┐

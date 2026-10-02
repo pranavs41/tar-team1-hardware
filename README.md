@@ -28,7 +28,7 @@ KiCad 9 project in [`electrical/pcb/network-drone-fc/`](electrical/pcb/network-d
 
 [View the schematic as a PDF](electrical/pcb/network-drone-fc/schematic.pdf) or the [placement render](electrical/pcb/network-drone-fc/placement-top.png) if you don't have KiCad. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
 
-- 4-layer board, 36 × 39 mm, four M2 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
+- 4-layer board, 36 × 39 mm, four 3.2 mm M3 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
 - All parts on the top side only, so the whole board can be reflowed on a hot plate; test points (bare pads) may go on the bottom
 - Designed for a 2S battery; input stage tolerates up to 4S
 
@@ -62,7 +62,7 @@ From the stock KiCad libraries (already have 3D models):
 - Passives: `Resistor_SMD` / `Capacitor_SMD` 0402
 - Buck inductor, 4.7 µH: `Inductor_SMD:L_1008_2520Metric` (e.g. FTC252010S4R7MBCA, C5832360). Check the value against the AP63205 datasheet.
 - 6-pin JST-GH: `Connector_JST:JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal`
-- Mounting holes: `MountingHole:MountingHole_2.2mm_M2` (plain, no copper)
+- Mounting holes: `MountingHole:MountingHole_3.2mm_M3` (plain, no copper, courtyard trimmed to the 3 mm keep-out)
 - RESET/BOOT pad pairs: `Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm`
 
 ### Adding a part
