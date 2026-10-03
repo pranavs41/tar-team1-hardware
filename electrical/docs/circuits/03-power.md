@@ -7,6 +7,7 @@ Battery (through the ESC connector)
   VBAT: 6 to 8.4 V on 2S, up to 16.8 V on 4S
    |
    +-- D5 SMAJ18A TVS          surge protection
+   +-- C35 100 uF polymer      bulk capacitor, soaks up ESC noise
    +-- 100k / 10k divider ---> VBAT_SENSE (ESP32 ADC)
    |
    +-- U3 AP63205 buck -----> +5V <--- USB (through D1)
@@ -24,6 +25,12 @@ When the motors brake, the ESC pushes voltage spikes back up the battery wires. 
 The cathode, the side with the bar, goes on `VBAT` and the other side goes to GND. This is a one-direction TVS, and if you put it in backwards it conducts all the time and shorts the battery. Use KiCad's `Diode:SMAJ18A` symbol, which marks the cathode. The generic `Device:D_TVS` symbol is the two-direction kind and doesn't show which side is which.
 
 We first picked the SMAJ15A and changed it. A TVS starts conducting at its breakdown voltage, and the SMAJ15A's is 16.7 V, just under a fully charged 4S pack at 16.8 V. On 4S it would conduct constantly and cook itself. The SMAJ18A breaks down around 20 V and clamps at about 29 V, which is still below the 32 V the buck regulator can take.
+
+## Bulk capacitor (C35, 100 µF 25 V polymer tantalum)
+
+The motors draw current in pulses and throw voltage back onto the battery wires when they brake. The TVS clamps the big spikes, but the everyday ripple needs a capacitor that can take and give back charge quickly, which means a large value with a low ESR (equivalent series resistance). A ceramic cannot reach 100 µF at 25 V in a package this board can carry, and an aluminium electrolytic can is too tall, so C35 is a polymer tantalum: 100 µF, 25 V, 55 mΩ, in a flat D case on the bottom of the board next to the ESC connector. Polymer tantalums do not fail short the way old manganese tantalums did, and 25 V is three times the 2S battery voltage. The 470 µF electrolytic that FPV builds put on the ESC's battery pads is still worth adding there, closer to the source of the noise.
+
+It is polarised. The stripe on the part is the positive end and goes to VBAT; the board's silkscreen marks it. Backwards, a tantalum shorts and burns.
 
 ## 5 V buck regulator (U3, AP63205)
 

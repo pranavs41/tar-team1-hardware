@@ -38,4 +38,4 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-02 | Two vias in pads (C6 pin 1, J5 pin 1, both `+3V3`) and one in the GPS cap C30's GND pad | No clear spot beside those pads; expect a little solder wicking there when hand soldering |
 | 2026-10-02 | Power tree kept as buck to 5 V then two LDOs, after checking SpeedyBee, Betaflight F4, Pixhawk 6C and Espressif's guidance | Same tree on every one of them; the ESP32 LDO's 0.22 W average is inside its rating on a board with planes, and the LDO keeps switching noise off the radio rail |
 | 2026-10-02 | 470 µF 35 V low-ESR electrolytic required on the ESC's battery pads, listed in the BOM and bring-up | Standard on every FPV build; the FC's 10 µF ceramic alone does not filter motor noise, and the can does not fit under a 36 mm board |
-
+| 2026-10-02 | C35, 100 µF 25 V polymer tantalum on VBAT, bottom side, lower-left corner | Largest low-ESR part that fits; the 470 µF can FPV builds use does not. Bottom side because the top is full; the corner is outside the ESC's outline so it does not touch the stack |

@@ -32,7 +32,7 @@ KiCad 9 project in [`electrical/pcb/network-drone-fc/`](electrical/pcb/network-d
 [View the schematic as a PDF](electrical/pcb/network-drone-fc/schematic.pdf) or the [placement render](electrical/pcb/network-drone-fc/placement-top.png) if you don't have KiCad. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
 
 - 4-layer board, 36 × 39 mm, four 3.2 mm M3 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
-- All parts on the top side only, so the whole board can be reflowed on a hot plate; test points (bare pads) may go on the bottom
+- All parts on the top side except C35, the bulk capacitor on the bottom, so the top can be reflowed on a hot plate and C35 soldered after with an iron; test points (bare pads) are on the bottom
 - Designed for a 2S battery; input stage tolerates up to 4S
 
 ### Parts in `lib/tar_fc`
@@ -57,7 +57,8 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | USB ESD | USBLC6-2SC6 | C7519 |
 | USB-C (USB 2.0, 16-pin) | TYPE-C 16PIN 2MD(073) | C2765186 |
 | ESC connector (8-pin JST-SH) | SM08B-SRSS-TB | C160407 |
-| Battery capacitor, on the ESC's pads, not on this board | 470 µF 35 V low-ESR electrolytic (any of the ones sold for FPV ESCs) | per build |
+| Bulk capacitor on VBAT (C35, bottom side) | Kyocera AVX TCJD107M025R0055E, 100 µF 25 V polymer tantalum, D case | C2159920 |
+| Battery capacitor on the ESC's pads, not on this board | 470 µF 35 V low-ESR electrolytic (any of the ones sold for FPV ESCs) | per build |
 | Peripheral port (4-pin JST-GH) | SM04B-GHS-TB (LCSC stock low; drop-in alt XY-SM04B-GHS-TB C51940118) | C189895 |
 | VDD3P3 filter inductor, 2.0 nH ±0.1 nH, 900 mA | Murata LQG15HS2N0B02D (0402) | C2986275 |
 

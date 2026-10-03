@@ -91,7 +91,7 @@ LCSC part numbers are in the [repo README](../README.md).
 
 | Rail | Source | Feeds | Budget |
 |---|---|---|---|
-| `VBAT` | battery via ESC connector | buck, divider, TVS | limited by the battery |
+| `VBAT` | battery via ESC connector | buck, divider, TVS, 100 µF bulk capacitor | limited by the battery |
 | `+5V` | AP63205 buck (or USB through D1) | both LDOs, spare-port 5 V | 2 A max |
 | `+3V3` | TLV75733 | ESP32, LEDs | ~350 mA peak (Wi-Fi TX) |
 | `+3V3_SENS` | TPS7A2033 | ICM-42688-P, BMP581, GPS | ~60 mA |
@@ -140,7 +140,7 @@ Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plai
 | Left edge | J5 I2C port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
 | Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
 | Bottom edge | J4 ESC connector, centred between the holes | The only connector that must face the ESC |
-| Bottom side | Seven test pads on vias, the RESET/BOOT pad pairs, and the second signal layer | Nothing to solder, so the top stays the only reflow side |
+| Bottom side | C35 bulk capacitor at the lower-left corner, seven test pads on vias, the RESET/BOOT pad pairs, and the second signal layer | One iron-soldered part; the top stays the only reflow side |
 
 Design rules set in the board: 0.12 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.3 mm copper-to-edge, 4 copper layers.
 
