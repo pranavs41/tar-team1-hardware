@@ -10,6 +10,122 @@
 		(company "Texas Aerial Robotics - Team 1")
 	)
 	(lib_symbols
+	(symbol "tar_fc:TLV75733PDRVR"
+	    (in_bom yes)
+	    (on_board yes)
+	    (property
+	      "Reference"
+	      "U"
+	      (id 0)
+	      (at 0 8.89 0)
+	      (effects (font (size 1.27 1.27) ) )
+	    )
+	    (property
+	      "Value"
+	      "TLV75733PDRVR"
+	      (id 1)
+	      (at 0 -8.89 0)
+	      (effects (font (size 1.27 1.27) ) )
+	    )
+	    (property
+	      "Footprint"
+	      "tar_fc:TDFN-6_L2.0-W2.0-P0.65-TL-EP"
+	      (id 2)
+	      (at 0 -11.43 0)
+	      (effects (font (size 1.27 1.27) ) hide)
+	    )
+	    (property
+	      "Datasheet"
+	      "https://www.lcsc.com/datasheet/C2868428.pdf"
+	      (id 3)
+	      (at 0 -13.97 0)
+	      (effects (font (size 1.27 1.27) ) hide)
+	    )
+	    (property
+	      "Manufacturer"
+	      "TI(德州仪器)"
+	      (id 4)
+	      (at 0 -16.51 0)
+	      (effects (font (size 1.27 1.27) ) hide)
+	    )
+	    (property
+	      "MPN"
+	      "TLV75733PDRVR"
+	      (id 5)
+	      (at 0 -19.05 0)
+	      (effects (font (size 1.27 1.27) ) hide)
+	    )
+	    (property
+	      "LCSC Part"
+	      "C2868428"
+	      (id 6)
+	      (at 0 -21.59 0)
+	      (effects (font (size 1.27 1.27) ) hide)
+	    )
+	    (property
+	      "ki_keywords"
+	      "Voltage Regulators - Linear, Low Drop Out (LDO) Regulators"
+	      (id 8)
+	      (at 0 -24.13 0)
+	      (effects (font (size 1.27 1.27) ) hide)
+	    )
+	    (symbol "TLV75733PDRVR_0_1"
+	      (rectangle
+	        (start -6.35 6.35)
+	        (end 6.35 -6.35)
+	        (stroke (width 0) (type default))
+	        (fill (type background))
+	      )
+	      (circle
+	        (center -5.08 5.08)
+	        (radius 0.38)
+	        (stroke (width 0) (type default))
+	        (fill (type none))
+	      )
+	      (pin passive line
+	        (at -8.89 1.27 0)
+	        (length 2.54)
+	        (name "OUT" (effects (font (size 1.27 1.27))))
+	        (number "1" (effects (font (size 1.27 1.27))))
+	      )
+	      (pin passive line
+	        (at -8.89 -1.27 0)
+	        (length 2.54)
+	        (name "NC" (effects (font (size 1.27 1.27))))
+	        (number "2" (effects (font (size 1.27 1.27))))
+	      )
+	      (pin passive line
+	        (at -8.89 -3.81 0)
+	        (length 2.54)
+	        (name "GND" (effects (font (size 1.27 1.27))))
+	        (number "3" (effects (font (size 1.27 1.27))))
+	      )
+	      (pin passive line
+	        (at 8.89 -3.81 180)
+	        (length 2.54)
+	        (name "EN" (effects (font (size 1.27 1.27))))
+	        (number "4" (effects (font (size 1.27 1.27))))
+	      )
+	      (pin passive line
+	        (at 8.89 -1.27 180)
+	        (length 2.54)
+	        (name "NC" (effects (font (size 1.27 1.27))))
+	        (number "5" (effects (font (size 1.27 1.27))))
+	      )
+	      (pin passive line
+	        (at 8.89 1.27 180)
+	        (length 2.54)
+	        (name "IN" (effects (font (size 1.27 1.27))))
+	        (number "6" (effects (font (size 1.27 1.27))))
+	      )
+	      (pin passive line
+	        (at 8.89 3.81 180)
+	        (length 2.54)
+	        (name "EP" (effects (font (size 1.27 1.27))))
+	        (number "7" (effects (font (size 1.27 1.27))))
+	      )
+	    )
+	  )
 	(symbol "Device:C_Polarized"
 			(pin_numbers
 				(hide yes)
@@ -6761,10 +6877,6 @@
 		(uuid "716ffb4c-d5a9-4a11-9015-e2924b13c0d7")
 	)
 	(no_connect
-		(at 161.29 83.82)
-		(uuid "7ce33c71-db9b-4eba-8b58-0bfe3b968fab")
-	)
-	(no_connect
 		(at 326.39 110.49)
 		(uuid "83703c40-4771-4c6e-bb36-0a82a4d3fc86")
 	)
@@ -6799,6 +6911,124 @@
 	(no_connect
 		(at 326.39 113.03)
 		(uuid "faaf23f2-a137-4583-915a-d60e7ccf09e0")
+	)
+	(wire
+		(pts
+			(xy 133.35 78.74) (xy 140.97 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe4ad7aa-1374-47ad-845f-e775157e9cdb")
+	)
+	(wire
+		(pts
+			(xy 140.97 78.74) (xy 140.97 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b5be247-917a-4183-b757-04994ed55cbe")
+	)
+	(wire
+		(pts
+			(xy 140.97 80.01) (xy 143.51 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1db4af4-7b7c-4079-a7ae-dd1323bca634")
+	)
+	(wire
+		(pts
+			(xy 128.27 83.82) (xy 140.97 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46ebd266-9224-424d-bd9b-1a3e13bde86e")
+	)
+	(wire
+		(pts
+			(xy 140.97 83.82) (xy 140.97 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35a13cc4-0938-49ab-9a75-9af474088580")
+	)
+	(wire
+		(pts
+			(xy 140.97 85.09) (xy 143.51 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d071d92-7861-431c-82da-885bce414688")
+	)
+	(wire
+		(pts
+			(xy 161.29 80.01) (xy 165.1 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce27cfb7-b56c-417b-bc07-4496ed3a8a06")
+	)
+	(wire
+		(pts
+			(xy 165.1 80.01) (xy 165.1 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba244b54-e07b-4bd9-9e61-dcfbb366e49e")
+	)
+	(wire
+		(pts
+			(xy 165.1 78.74) (xy 168.91 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e71f5f28-17fc-4734-aa7c-fd9ce9d9ff70")
+	)
+	(wire
+		(pts
+			(xy 161.29 85.09) (xy 161.29 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9443d224-8494-42ab-b7bd-c2a2a061daf0")
+	)
+	(wire
+		(pts
+			(xy 143.51 77.47) (xy 143.51 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d859b08-1846-4acb-b2e7-ece6c4b9f3df")
+	)
+	(no_connect
+		(at 161.29 82.55)
+		(uuid "81b0a408-2155-4235-b878-c5bb74da6be8")
+	)
+	(no_connect
+		(at 143.51 82.55)
+		(uuid "9fb93549-f301-4c3c-b2be-127aabfddbf5")
 	)
 	(wire
 		(pts
@@ -7428,16 +7658,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 78.74) (xy 143.51 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58f67904-21ce-4a1d-9bf0-c8c9623b4700")
-	)
-	(wire
-		(pts
 			(xy 222.25 125.73) (xy 222.25 121.92)
 		)
 		(stroke
@@ -7448,16 +7668,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 81.28) (xy 140.97 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5a213dc9-8542-4350-9d73-5a1d704adfa2")
-	)
-	(wire
-		(pts
 			(xy 137.16 50.8) (xy 137.16 55.88)
 		)
 		(stroke
@@ -7465,16 +7675,6 @@
 			(type default)
 		)
 		(uuid "5aaec5cd-552d-4f65-9bf1-8320b3b9b00d")
-	)
-	(wire
-		(pts
-			(xy 128.27 83.82) (xy 143.51 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b1cb089-0036-46a7-aa6c-b2b23ceb83df")
 	)
 	(wire
 		(pts
@@ -7795,16 +7995,6 @@
 			(type default)
 		)
 		(uuid "85e99db3-716f-43f9-9f8b-82caf6df6c12")
-	)
-	(wire
-		(pts
-			(xy 161.29 78.74) (xy 168.91 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8cb30d55-33c9-4496-ac5a-caa31ed69657")
 	)
 	(wire
 		(pts
@@ -8885,16 +9075,6 @@
 			(type default)
 		)
 		(uuid "fc4beab8-6267-4d20-8066-7a62ba4d3482")
-	)
-	(wire
-		(pts
-			(xy 143.51 81.28) (xy 140.97 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd4fbd79-7187-4e35-b0f0-79e8b871ba58")
 	)
 	(global_label "ICM_CS"
 		(shape input)
@@ -11934,8 +12114,9 @@
 		)
 	)
 	(symbol
-		(lib_id "tar_fc:TLV75733PDBVR")
+		(lib_id "tar_fc:TLV75733PDRVR")
 		(at 152.4 81.28 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11951,7 +12132,7 @@
 				)
 			)
 		)
-		(property "Value" "TLV75733PDBVR"
+		(property "Value" "TLV75733PDRVR"
 			(at 152.4 73.66 0)
 			(effects
 				(font
@@ -11959,7 +12140,7 @@
 				)
 			)
 		)
-		(property "Footprint" "tar_fc:SOT-23-5_L2.9-W1.6-P0.95-LS2.8-BL"
+		(property "Footprint" "tar_fc:TDFN-6_L2.0-W2.0-P0.65-TL-EP"
 			(at 152.4 91.44 0)
 			(effects
 				(font
@@ -11995,7 +12176,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "TLV75733PDBVR"
+		(property "MPN" "TLV75733PDRVR"
 			(at 152.4 99.06 0)
 			(effects
 				(font
@@ -12013,20 +12194,26 @@
 				(hide yes)
 			)
 		)
-		(pin "3"
-			(uuid "47d67690-2767-4ea6-8e6f-316cb4a4c783")
-		)
 		(pin "1"
-			(uuid "f1e5dbeb-a029-4774-9971-cc28f96ca257")
+			(uuid "ed677ad6-290b-4cb5-94ac-022f5717060d")
 		)
 		(pin "2"
-			(uuid "a0b2f44e-f8dd-4155-872e-27cae3238eef")
+			(uuid "58b13f00-9bb1-4bd8-95a3-3c695a6b2e0f")
+		)
+		(pin "3"
+			(uuid "f4b43c9f-521b-4eb1-abfe-988b8b4ef3ae")
 		)
 		(pin "4"
-			(uuid "5d6fe9f6-48b7-4496-bbc0-5bbed6756802")
+			(uuid "d96bc684-7957-4636-844e-a77b6cb2feae")
 		)
 		(pin "5"
-			(uuid "1f948977-8665-4cc0-b24a-c7df46a90c9a")
+			(uuid "9f89c016-27f4-48f8-8de8-798d8f0eed33")
+		)
+		(pin "6"
+			(uuid "862e77e1-0fb8-4fa6-a934-ddd8da88ae42")
+		)
+		(pin "7"
+			(uuid "58e558fd-0d38-4cdf-b98f-2766a00e66fa")
 		)
 		(instances
 			(project ""
@@ -12039,16 +12226,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 140.97 83.82 0)
+		(at 161.29 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "5412f48b-3907-46bd-9bd5-8ff3537875ab")
-		(property "Reference" "#PWR018"
-			(at 140.97 90.17 0)
+		(uuid "80ace6a4-3e49-44d1-af0a-aefc461d1e26")
+		(property "Reference" "#PWR0136"
+			(at 161.29 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12057,7 +12244,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 140.97 87.63 0)
+			(at 161.29 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12065,7 +12252,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 140.97 83.82 0)
+			(at 161.29 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12074,7 +12261,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 140.97 83.82 0)
+			(at 161.29 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12083,7 +12270,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 140.97 83.82 0)
+			(at 161.29 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12092,12 +12279,78 @@
 			)
 		)
 		(pin "1"
-			(uuid "37774beb-c4c6-408a-b8de-470237bec289")
+			(uuid "d9acab8e-6711-4156-955f-7b2d5f1873cf")
 		)
 		(instances
 			(project "network-drone-fc"
 				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
-					(reference "#PWR018")
+					(reference "#PWR0136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 143.51 73.66 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "396a9b75-4be0-4ab0-b57b-26663c05647b")
+		(property "Reference" "#PWR0137"
+			(at 143.51 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 143.51 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 143.51 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "863d95e5-4227-4095-a962-f816d8a98ebe")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
