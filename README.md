@@ -49,7 +49,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | GPS | u-blox MAX-M10S | C4153167 |
 | Antenna connector (ESP32 / GPS) | U.FL-R-SMT-1 | C88374 |
 | 5 V buck (3.8 to 32 V in) | AP63205WU-7 | C2071056 |
-| 3.3 V LDO, digital | TLV75733PDBVR | C485517 |
+| 3.3 V LDO, digital (WSON-6 with thermal pad) | TLV75733PDRVR | C2868428 |
 | 3.3 V LDO, sensors (low noise) | TPS7A2033PDBVR | C2862740 |
 | Battery TVS (18 V standoff, safe up to 4S) | SMAJ18A | C908771 |
 | GPS bias-T inductor, 27 nH (fit only for an active antenna) | Murata LQG15HS27NJ02D (0402) | C12669 |

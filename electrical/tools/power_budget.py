@@ -21,7 +21,8 @@ def rails(esp, gps, port3v3=0.0):
 
 # ---------------- regulators ----------------
 V5, V33 = 5.0, 3.3
-THJA_TLV757_DBV = 231.1   # ds: TI JEDEC board, DBV package
+THJA_TLV757_DBV = 231.1   # ds: TI JEDEC board, DBV package (the first layout; kept as the worst case)
+THJA_TLV757_DRV = 100.2   # ds: TI JEDEC board, DRV (WSON-6, thermal pad), the package now on the board
 THJA_TLV757_4L = 100.8    # ds: TI EVM board (planes under the part), the closer match to our 4-layer board
 THJA_AP63205 = 100.0      # TSOT-26, order of magnitude from the Diodes datasheet
 def buck_eff(vin, iout):

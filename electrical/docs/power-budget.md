@@ -35,7 +35,7 @@ Every rail is inside its regulator's rating with room to spare: the buck is rate
 
 ## Heat: the one thing to watch
 
-The `+3V3` LDO (U4, TLV75733) drops 5 V to 3.3 V linearly, so it dissipates 1.7 V times the ESP32 current. That is 0.22 W averaged over a flight and 0.61 W during a transmit burst. In a SOT-23-5 that is a lot of heat for the package size. TI quotes two thermal resistances for this package (ds): 231 °C/W on the JEDEC test board and 101 °C/W on their evaluation board, which has copper planes under the part like our 4-layer board does.
+The `+3V3` LDO (U4, TLV75733) drops 5 V to 3.3 V linearly, so it dissipates 1.7 V times the ESP32 current. That is 0.22 W averaged over a flight and 0.61 W during a transmit burst. The first layout had it in a plain SOT-23-5, which TI rates at 231 °C/W on the JEDEC test board and 101 °C/W on their evaluation board with planes. It is now the WSON-6 version with a thermal pad (TLV75733PDRVR), rated 100 °C/W on the JEDEC board (ds); the thermally enhanced SOT-23 (DYD) would have been the drop-in choice at 60 °C/W on an EVM board, but it is on back-order everywhere. The rows below keep the SOT-23 figures as the worst case; the WSON with a via into the ground plane should sit at roughly half of them.
 
 | Condition | Junction rise, JEDEC figure | Junction rise, EVM figure |
 |---|---|---|
@@ -90,8 +90,8 @@ Checked against the boards people actually fly: Betaflight-class racing controll
 Two things they do that we did not have written down:
 
 1. **A low-ESR bulk capacitor on the battery input.** Every FPV build guide and most ESC manuals call for a 470 µF 35 V electrolytic on the ESC's battery pads. It absorbs the motors' current ripple and the spikes from braking, which otherwise appear as noise on the gyro and as yaw twitch. A 10 mm can does not fit on a 36 mm board, so the board got the biggest low-ESR part that lies flat: C35, a 100 µF 25 V polymer tantalum in a D case (7.3 × 4.3 × 3.1 mm, 55 mΩ) on the bottom side at the lower-left corner, 3.5 mm from the VBAT entry. The 470 µF on the ESC pads is still the recommended first line for the motor noise, and is in the ESC notes and the bring-up checklist.
-2. **Input capacitance that survives the battery voltage.** C16 is an 0805 10 µF 25 V ceramic, as the buck datasheet asks. Ceramics lose capacitance under DC bias: at 8.4 V an 0805 of this rating is worth about 5 µF, at 16.8 V about 2.5 µF. On 2S that is enough with the electrolytic on the ESC behind it. On 4S it is thin, and a rev B with 4S in mind should make C16 a 1206 or add a second 10 µF. There is no room for either in the rev A layout without moving the crystal.
+2. **Input capacitance that survives the battery voltage.** Ceramics lose capacitance under DC bias: an 0805 10 µF 25 V is worth about 5 µF at 8.4 V and 2.5 µF at 16.8 V. C16 is now a 1206 of the same rating, which holds roughly 7 µF at 8.4 V and 4 µF at 16.8 V, and C35 sits behind it. The crystal moved up 0.6 mm to make the room.
 
 ## Verdict
 
-The board holds up. No rail, track, via or connector is near its limit, the regulators ride out motor-induced sag, and the radio bursts are covered by the capacitors. The one part that works hard is the `+3V3` LDO, which will run warm; measure it with a thermocouple at bring-up with Wi-Fi streaming. If it is over about 80 °C in the frame, plan the 3.3 V buck for rev B.
+The board holds up. No rail, track, via or connector is near its limit, the regulators ride out motor-induced sag, and the radio bursts are covered by the capacitors. The one part that works hard is the `+3V3` LDO, which will run warm; measure it with a thermocouple at bring-up with Wi-Fi streaming. If it is over about 80 °C in the frame even in the WSON package, plan the 3.3 V buck for rev B.

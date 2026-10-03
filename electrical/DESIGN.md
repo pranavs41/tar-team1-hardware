@@ -65,7 +65,7 @@ Charging is handled by a separate board.
 | X1 | 40 MHz ±10 ppm crystal | MCU clock | 2016 |
 | U2 | USBLC6-2SC6 | USB ESD protection | SOT-23-6 |
 | U3 | AP63205WU | 5 V buck, 2 A | TSOT-23-6 |
-| U4 | TLV75733 | 3.3 V LDO for ESP32 (`+3V3`) | SOT-23-5 |
+| U4 | TLV75733 | 3.3 V LDO for ESP32 (`+3V3`) | WSON-6 2 × 2 with thermal pad |
 | U5 | TPS7A2033 | low-noise 3.3 V LDO for sensors (`+3V3_SENS`) | SOT-23-5 |
 | U6 | ICM-42688-P | gyro and accelerometer (SPI); orientation fusion runs on the ESP32 | LGA-14 2.5 × 3 |
 | U7 | BMP581 | barometer (I2C) | LGA-10 2 × 2 |

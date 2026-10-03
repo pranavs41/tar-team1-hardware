@@ -40,7 +40,7 @@ The chip switches its SW pin between VBAT and GND about a million times a second
 
 | Part | Value | What it's for |
 |---|---|---|
-| C16 | 10 µF, 25 V | Input capacitor. Supplies the buck's sharp current pulses locally so they don't run down the battery wires. It's rated 25 V because it sees battery voltage, and ceramic capacitors lose a lot of capacitance when run near their rating: this 0805 part is worth about 5 µF at 8.4 V and 2.5 µF at 16.8 V. Fine on 2S; a 4S build should use a 1206 here. The bulk filtering for motor noise is the 470 µF electrolytic on the ESC's battery pads, see the connectors page. |
+| C16 | 10 µF, 25 V, 1206 | Input capacitor. Supplies the buck's sharp current pulses locally so they don't run down the battery wires. It's rated 25 V because it sees battery voltage, and ceramic capacitors lose a lot of capacitance when run near their rating. A 1206 keeps more of its value under bias than an 0805 of the same rating, roughly 7 µF at 8.4 V and 4 µF at 16.8 V, which is why the bigger package is used even though it meant nudging the crystal up by 0.6 mm. The bulk filtering for motor noise is C35 on this board and the 470 µF electrolytic on the ESC's battery pads. |
 | EN, pin 2 | tied to VBAT | Enable. Tied high, the regulator runs whenever a battery is connected. |
 | C17, between BST and SW | 100 nF | Bootstrap capacitor. The chip's high side switch needs a gate voltage above VIN to turn fully on, and this capacitor holds that voltage. The buck won't run without it. |
 | L2 | 4.7 µH | Stores energy between switching cycles. This is the value the datasheet gives for 5 V out. |
@@ -53,7 +53,9 @@ On the PCB, the input capacitor, chip, inductor and output capacitors need to be
 
 ## 3.3 V regulators (U4, TLV75733 and U5, TPS7A2033)
 
-Both are LDOs (low dropout linear regulators) that take `+5V` down to 3.3 V. Each has 1 µF on its input and 1 µF on its output, its EN pin tied to its input so it's always on, and pin 4 left unconnected. Dropping 5 V to 3.3 V in a linear regulator wastes some power, but the currents here are small, and an LDO's output is much quieter than a buck's.
+Both are LDOs (low dropout linear regulators) that take `+5V` down to 3.3 V. Each has 1 µF on its input and 1 µF on its output, its EN pin tied to its input so it's always on, and the unused pins left open. Dropping 5 V to 3.3 V in a linear regulator wastes some power, but the currents here are small, and an LDO's output is much quieter than a buck's.
+
+U4 does the hard work: at the ESP32's average flight current it turns about 0.2 W into heat, and during a radio burst 0.6 W. In the plain SOT-23-5 that heat has to leave through five thin leads, and the package is rated 231 °C/W on a bare test board. U4 is therefore the WSON-6 version of the same chip (TLV75733PDRVR), a 2 × 2 mm package with a metal pad on its belly. The pad is soldered to a GND pad on the board with a via through to the ground plane, which carries the heat into the copper. TI rates it at 100 °C/W on the bare test board, and with the planes under it on this board it should land well under that. The cost is that a package with a belly pad cannot be soldered with an iron; it needs the hot plate or hot air, which the top side gets anyway. U5 stays in the SOT-23-5, it dissipates under 0.05 W.
 
 There are two of them because the ESP32's radio draws current in bursts of 300 mA or more whenever it transmits. If the sensors shared that rail, the bursts would ripple into their supply and show up as noise in the IMU and barometer readings. So each gets its own:
 
