@@ -116,7 +116,7 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 
 ## 7. Board layout
 
-Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from the left, right and bottom edges and 11 mm from the top. Nothing on the top side comes within 3 mm of a hole centre, so a 6 mm grommet, nut or standoff fits at every hole, and the bottom side has nothing near the holes at all. The extra 3 mm strip along the top exists for one reason: it is the only place the charging port fits without crowding the H2 hole. The ESC is underneath. All parts are on the top side; only the test pads and the RESET/BOOT pad pairs are on the bottom. This is the placement as scripted in `electrical/pcb/`; routing is done by hand.
+Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from the left, right and bottom edges and 11 mm from the top. Nothing on the top side comes within 3 mm of a hole centre, so a 6 mm grommet, nut or standoff fits at every hole, and the bottom side has nothing near the holes at all. The extra 3 mm strip along the top exists for one reason: it is the only place the charging port fits without crowding the H2 hole. The ESC is underneath. All parts are on the top side except C35, the bulk capacitor, which sits on the bottom at the lower-left corner outside the ESC's outline; the test pads and the RESET/BOOT pad pairs are on the bottom too. Routing is complete: the critical nets by hand, the rest with a grid router, then straightened and checked (see docs/power-budget.md and the decisions log).
 
 ```
  ┌────────────────────────────────────────────┐
