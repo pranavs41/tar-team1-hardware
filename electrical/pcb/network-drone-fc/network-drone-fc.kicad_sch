@@ -7728,13 +7728,23 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 39.37) (xy 129.54 39.37)
+			(xy 120.65 39.37) (xy 124.46 39.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "608dad6c-e8c1-415e-8649-8d7266c4a2d4")
+	)
+		(wire
+		(pts
+			(xy 124.46 39.37) (xy 129.54 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f17ab11a-173c-46fa-b25f-5e42ee44eac4")
 	)
 	(wire
 		(pts
