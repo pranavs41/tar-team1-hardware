@@ -18,7 +18,14 @@ The motors. A 2S cinewhoop with 1303 motors pulls 10 to 15 A hovering and 40 A o
 | `+3V3_SENS` | MAX-M10S GPS, tracking | ~8 mA | ds, 25 mW continuous |
 | `+3V3_SENS` | ICM-42688-P, BMP581, I2C pull-ups | ~3 mA | ds |
 
-An active GPS antenna through the bias-T would add 10 to 30 mA to `+3V3_SENS`. Nothing is on the spare I2C port yet; a time-of-flight sensor there would add 20 to 50 mA to `+3V3`.
+An active GPS antenna through the bias-T would add 10 to 30 mA to `+3V3_SENS`.
+
+Two off-board devices now take 5 V straight from the buck, through the sensor port J5 and the radio port J6:
+
+| Rail | Consumer | Current | Source |
+|---|---|---|---|
+| `+5V` | TF-Luna obstacle sensor | 70 mA average, 150 mA peak | ds |
+| `+5V` | VoCore2 networking module | 74 mA idle, 230 mA at full speed, about 400 mA for a moment at startup | ds, startup figure from user reports |
 
 ## Budget by scenario
 
@@ -31,7 +38,14 @@ An active GPS antenna through the bias-T would add 10 to 30 mA to `+3V3_SENS`. N
 
 The TX burst lasts milliseconds. A flight with telemetry streaming at a 10 % transmit duty averages 129 mA on `+3V3` and 107 mA from a 2S battery, about 0.8 W. On a 650 mAh pack the flight controller alone would run for six hours; the motors empty the pack in five minutes. The FC's draw is not a flight-time concern.
 
-Every rail is inside its regulator's rating with room to spare: the buck is rated 2 A and sees 0.4 A at most, the TLV75733 is rated 1 A and sees 0.36 A, the TPS7A2033 is rated 300 mA and sees 25 mA.
+With the sensor and the radio plugged in, the `+5V` rail carries more:
+
+| Case | `+5V` | from a 2S battery |
+|---|---|---|
+| flight average, sensor and radio running | 0.44 A | 0.33 A, about 2.4 W |
+| everything peaking at once | 0.93 A | 0.70 A |
+
+Every rail is still inside its regulator's rating: the buck is rated 2 A and sees 0.93 A at the very worst, the TLV75733 is rated 1 A and sees 0.36 A, the TPS7A2033 is rated 300 mA and sees 25 mA. The flight controller's share of a 650 mAh pack is still small next to the motors.
 
 ## Heat: the one thing to watch
 
@@ -47,6 +61,8 @@ Bursts are too short to heat the package, so the average is what counts. At 45 �
 The buck itself loses 0.05 to 0.2 W and the sensor LDO under 0.05 W. Neither warms noticeably.
 
 ## Buck inductor
+
+The figures in the next paragraph are for the board alone. With the sensor and radio drawing their peaks at the same moment the load is 0.93 A, and the inductor's peak current becomes 1.09 A on 2S and 1.27 A on 4S. The 1008-size part first listed saturates near 1.1 A, which is no longer enough. Order a 4.7 µH inductor with a saturation current of 2 A or more in the same 1008 (2520) footprint; several exist, and the README names the requirement.
 
 The 4.7 µH inductor sees a ripple of 0.3 A peak to peak on 2S and 0.65 A on 4S, on top of the 0.38 A worst-case load. Peak inductor current is 0.54 A on 2S and 0.71 A on 4S. The 1008-size part listed in the README saturates around 1.1 A, so there is margin on 2S and still some on 4S. Check the saturation rating of the exact inductor ordered; anything under 1 A would be marginal on 4S.
 
@@ -64,9 +80,11 @@ The routed board, 1 oz outer copper, IPC-2221 rating at 10 °C rise:
 
 Everything has at least 2.5× margin. The `+5V` net also has a bottom-layer run from the buck's FB pin back to the output; it carries no current, it is a sense line.
 
-J4 is a JST-SH, rated 1 A per contact. VBAT and GND each use one pin and carry 0.29 A worst case on 2S. Fine, and worth remembering: never run anything that draws real current through this connector.
+J4 is a JST-SH, rated 1 A per contact. VBAT and GND each use one pin. With the sensor and radio fitted they carry 0.33 A on average and 0.70 A when everything peaks together on 2S. That is inside the rating but no longer far inside it, so nothing more should be added to the 5 V rail without giving the board a second VBAT pin.
 
-On USB bench power the Schottky D1 drops 0.35 V, so the LDOs see 4.65 V. The TLV75733 needs 3.43 V at this load, so USB is enough to run the whole board with the radio on, and the 0.38 A worst case is inside a USB port's 0.5 A.
+The radio port's 5 V runs on its own 0.4 mm branch from the buck's output capacitor, 39 mm long with four vias. It is rated for 1.2 A and drops about 20 mV at 0.4 A, so the VoCore2 sees 4.98 V against its 4.5 V minimum. The sensor port's 5 V is a 0.3 mm link 2 mm long.
+
+On USB bench power the Schottky D1 drops 0.35 V, so the LDOs see 4.65 V. The TLV75733 needs 3.43 V at this load, so USB is enough to run the board itself with its own Wi-Fi on, and that 0.38 A worst case is inside a USB port's 0.5 A. With the TF-Luna and the VoCore2 also plugged in the peak is 0.93 A, more than a computer's USB port supplies. On the bench, unplug the VoCore2 or power the board from a battery or a bench supply.
 
 ## Battery sag in flight
 

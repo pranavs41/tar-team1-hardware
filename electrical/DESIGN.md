@@ -51,7 +51,8 @@ Charging is handled by a separate board.
                          │ BMP581 (barometer)  │◄────────────────────┘     │
                          │ MAX-M10S (GPS) ─► U.FL (GPS antenna)  ◄─────────┘
                          └─────────────────────┘
-   Spare port: JST-GH I2C (ToF etc.)
+   Sensor port: JST-GH, 5 V I2C, for the TF-Luna obstacle sensor
+   Radio port: JST-SH top entry, 5 V UART, for the VoCore2 networking module
    Charging port: JST-GH to the charging board, DOCK_DET (GPIO) and AUX_ADC (ADC1)
 ```
 
@@ -81,7 +82,8 @@ LCSC part numbers are in the [repo README](../README.md).
 | J2 | USB-C 16-pin | programming, debug, bench power |
 | J3 | U.FL | GPS antenna |
 | J4 | JST-SH 8-pin | ESC: VBAT, GND, current, telemetry, 4 motor signals |
-| J5 | JST-GH 4-pin | spare I2C port |
+| J5 | JST-GH 4-pin | sensor port: 5 V, SCL, SDA, GND (TF-Luna obstacle sensor) |
+| J6 | JST-SH 4-pin, top entry | radio port: 5 V, TX, RX, GND (VoCore2 networking module); data lines shared with J4 pins 3 and 4 |
 | J7 | JST-GH 4-pin | charging board port: GND, DOCK_DET, AUX_ADC, spare |
 | JP1, JP2 | pad pairs on the bottom | RESET, BOOT (short to GND with tweezers) |
 | D2, D3, D4 | 0603 LEDs | red power, green status, yellow status |
@@ -92,7 +94,7 @@ LCSC part numbers are in the [repo README](../README.md).
 | Rail | Source | Feeds | Budget |
 |---|---|---|---|
 | `VBAT` | battery via ESC connector | buck, divider, TVS, 100 µF bulk capacitor | limited by the battery |
-| `+5V` | AP63205 buck (or USB through D1) | both LDOs, spare-port 5 V | 2 A max |
+| `+5V` | AP63205 buck (or USB through D1) | both LDOs, sensor port J5, radio port J6 | 2 A max |
 | `+3V3` | TLV75733 | ESP32, LEDs | ~350 mA peak (Wi-Fi TX) |
 | `+3V3_SENS` | TPS7A2033 | ICM-42688-P, BMP581, GPS | ~60 mA |
 
@@ -105,13 +107,13 @@ Full pin table: [docs/pin-map.md](docs/pin-map.md).
 | Bus | Devices | ESP32 pins |
 |---|---|---|
 | SPI | ICM-42688-P | GPIO33, 34, 35, 47 (MISO); interrupt on GPIO48 |
-| I2C | BMP581, spare I2C port | GPIO37, 38 |
+| I2C | BMP581, sensor port J5 (TF-Luna) | GPIO37, 38 |
 | UART | GPS | GPIO36 (TX), GPIO18 (RX) |
-| UART RX | ESC telemetry | GPIO10 |
+| UART | radio port J6 (VoCore2), or ESC telemetry on RX | GPIO2 (TX), GPIO10 (RX) |
 | GPIO in | dock connected (`DOCK_DET`), from the charging board | GPIO9 |
 | ADC1 | analog input from the charging board (`AUX_ADC`) | GPIO8 |
 | DShot | 4 motors | GPIO11, 13, 16, 6 |
-| ADC1 | battery voltage, ESC current | GPIO4, 2 |
+| ADC1 | battery voltage; ESC current when the radio port is not used | GPIO4, 2 |
 | USB | USB-C | GPIO19, 20 |
 
 ## 7. Board layout
@@ -137,9 +139,10 @@ Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plai
 | Centre-right | U1 ESP32 (rotated 180° so the RF pin faces the right edge), decoupling in one column beside it, crystal below it | Short paths from every power pin to its capacitor; crystal hard against pins 53/54 |
 | Right edge | J2 USB-C, U2 ESD chip and the CC resistors above it, three LEDs with their resistors, J1 Wi-Fi U.FL at the lower right with the π network beside it | Cable and LEDs reachable with the stack assembled; RF trace short and straight to the edge |
 | Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, J7 charging-board port at the top right, in the 3 mm strip above the hole line | GPS in the corner opposite the Wi-Fi antenna and away from the buck; the strip lets J7 clear H2 by 5 mm instead of sitting on top of it |
-| Left edge | J5 I2C port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
+| Left edge | J5 sensor port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
 | Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
 | Bottom edge | J4 ESC connector, centred between the holes | The only connector that must face the ESC |
+| Bottom-right corner | J6 radio port, top entry | The only free spot; no edge has room for another side-entry connector |
 | Bottom side | C35 bulk capacitor at the lower-left corner, seven test pads on vias, the RESET/BOOT pad pairs, and the second signal layer | One iron-soldered part; the top stays the only reflow side |
 
 Design rules set in the board: 0.12 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.3 mm copper-to-edge, 4 copper layers.
@@ -165,6 +168,6 @@ The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stacku
 | Schematic: connectors | done |
 | Footprints assigned, final ERC | done, 0 errors, 0 warnings |
 | PCB placement | done, DRC clean apart from silkscreen warnings |
-| PCB routing | done, 160 vias, DRC 0 errors (silkscreen warnings only) |
+| PCB routing | done, 159 vias, DRC 0 errors (silkscreen and three courtyard warnings only) |
 | Order rev A | to do |
 | Bring-up | to do ([checklist](docs/bring-up.md)) |

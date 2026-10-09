@@ -32,6 +32,7 @@ KiCad 9 project in [`electrical/pcb/network-drone-fc/`](electrical/pcb/network-d
 [View the schematic as a PDF](electrical/pcb/network-drone-fc/schematic.pdf) or the [placement render](electrical/pcb/network-drone-fc/placement-top.png) if you don't have KiCad. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
 
 - 4-layer board, 36 × 39 mm, four 3.2 mm M3 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
+- Two cable ports for off-board parts: J5 carries 5 V and I2C to the TF-Luna obstacle sensor at the front of the drone, J6 carries 5 V and a UART to the VoCore2 networking module
 - All parts on the top side except C35, the bulk capacitor on the bottom, so the top can be reflowed on a hot plate and C35 soldered after with an iron; test points (bare pads) are on the bottom
 - Designed for a 2S battery; input stage tolerates up to 4S
 
@@ -57,6 +58,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | USB ESD | USBLC6-2SC6 | C7519 |
 | USB-C (USB 2.0, 16-pin) | TYPE-C 16PIN 2MD(073) | C2765186 |
 | ESC connector (8-pin JST-SH) | SM08B-SRSS-TB | C160407 |
+| Radio port J6 (4-pin JST-SH, top entry) | BM04B-SRSS-TB | C160390 |
 | Bulk capacitor on VBAT (C35, bottom side) | Kyocera AVX TCJD107M025R0055E, 100 µF 25 V polymer tantalum, D case | C2159920 |
 | Battery capacitor on the ESC's pads, not on this board | 470 µF 35 V low-ESR electrolytic (any of the ones sold for FPV ESCs) | per build |
 | Peripheral port (4-pin JST-GH) | SM04B-GHS-TB (LCSC stock low; drop-in alt XY-SM04B-GHS-TB C51940118) | C189895 |
@@ -65,7 +67,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 From the stock KiCad libraries (already have 3D models):
 
 - Passives: `Resistor_SMD` / `Capacitor_SMD` 0402
-- Buck inductor, 4.7 µH: `Inductor_SMD:L_1008_2520Metric` (e.g. FTC252010S4R7MBCA, C5832360). Check the value against the AP63205 datasheet.
+- Buck inductor, 4.7 µH: `Inductor_SMD:L_1008_2520Metric`. It must have a saturation current of 2 A or more now that the sensor and radio ports draw from the 5 V rail; the FTC252010S4R7MBCA (C5832360) listed earlier saturates near 1.1 A and is no longer enough. Check the value against the AP63205 datasheet.
 - 6-pin JST-GH: `Connector_JST:JST_GH_SM06B-GHS-TB_1x06-1MP_P1.25mm_Horizontal`
 - Mounting holes: `MountingHole:MountingHole_3.2mm_M3` (plain, no copper, courtyard trimmed to the 3 mm keep-out)
 - RESET/BOOT pad pairs: `Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm`

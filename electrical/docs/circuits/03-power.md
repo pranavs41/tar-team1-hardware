@@ -12,6 +12,7 @@ Battery (through the ESC connector)
    |
    +-- U3 AP63205 buck -----> +5V <--- USB (through D1)
                                |
+                               +-- J5 pin 1, J6 pin 1         TF-Luna sensor, VoCore2 radio
                                +-- U4 TLV75733 ----> +3V3        ESP32, LEDs
                                +-- U5 TPS7A2033 ---> +3V3_SENS   IMUs, barometer, GPS
 ```

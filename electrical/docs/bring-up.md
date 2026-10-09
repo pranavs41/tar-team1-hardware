@@ -10,8 +10,11 @@ Do these in order on every new board. Stop at the first failure.
 6. **Flash a blink test:** green and yellow LEDs.
 7. **Sensors one at a time:** read the WHO_AM_I / chip ID of the ICM-42688-P and BMP581. LGA joints are hidden, so this is the only proof they soldered.
 8. **GPS:** confirm NMEA sentences on `GPS_RX`.
-9. **Radio heat:** stream telemetry over Wi-Fi for ten minutes and measure U4 (the `+3V3` LDO) with a thermocouple or an IR gun. Under about 80 °C is fine. Over that, note it for rev B (thermally enhanced package or a 3.3 V buck).
-10. **Capacitors:** check C35 on the bottom of the FC has its stripe (positive) toward the VBAT side, and that the 470 µF 35 V electrolytic is soldered on the ESC's battery pads with its stripe on negative. Do not spin motors without the ESC capacitor.
-11. **ESC:** with props off, spin each motor with DShot.
+9. **Ports, before plugging anything in:** measure 5 V on J5 pin 1 and on J6 pin 1. J5 used to be a 3.3 V port; it is 5 V now, so a 3.3 V-only I2C device must never go there.
+10. **Obstacle sensor:** plug the TF-Luna into J5 with its pin 5 tied to ground in the cable, and scan the I2C bus. It answers at address 0x10, next to the barometer.
+11. **Radio:** plug the VoCore2 into J6 and watch the 5 V rail on a scope or meter while it boots. It should stay above 4.8 V. Then send bytes both ways over the UART (GPIO2 out, GPIO10 in).
+12. **Radio heat:** stream telemetry over Wi-Fi for ten minutes and measure U4 (the `+3V3` LDO) with a thermocouple or an IR gun. Under about 80 °C is fine. Over that, note it for rev B (thermally enhanced package or a 3.3 V buck).
+13. **Capacitors:** check C35 on the bottom of the FC has its stripe (positive) toward the VBAT side, and that the 470 µF 35 V electrolytic is soldered on the ESC's battery pads with its stripe on negative. Do not spin motors without the ESC capacitor.
+14. **ESC:** with props off, spin each motor with DShot.
 
 Log results for each board serial in `production/<rev>/bringup-log.md`.
