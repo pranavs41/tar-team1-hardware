@@ -4,32 +4,43 @@ Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin)
 
 Flight controller in progress by **Pranav Shivashankar**.
 
+## Start here
+
+- **Wiring something to the board, or writing firmware for it:** [`docs/hardware-reference.md`](docs/hardware-reference.md) has every connector, pin, voltage and limit on one page.
+- **Reading the schematic without KiCad:** [`schematics/network-drone-fc-schematic.pdf`](schematics/network-drone-fc-schematic.pdf).
+- **Designing the frame around the board:** [`cad/network-drone-fc.step`](cad/network-drone-fc.step) is the assembled board as a 3D part.
+
+![Flight controller, top side](cad/board-top.png)
+
 ## Repository layout
 
 ```
-electrical/
-  DESIGN.md             design doc: requirements, block diagram, parts, power, board layout plan
-  docs/
-    circuits/           how every circuit works and why it's there, box by box
-    design-decisions.md dated log of design decisions
-    pin-map.md          ESP32 pin, net name and destination, for firmware
-    datasheets.md       links to every datasheet and reference design
-    bring-up.md         first power-on checklist
-    power-budget.md     current per rail, regulator heat, copper and sag check
-  tools/
-    power_budget.py     the model behind power-budget.md
-  pcb/
-    network-drone-fc/   KiCad 9 project: schematic, PCB, schematic.pdf
-      lib/              custom symbols, footprints, 3D models
-      production/       gerbers, BOM and notes per board revision
-mechanical/             frame and mount CAD, board STEP exports
+pcb/
+  network-drone-fc/     KiCad 9 project: the board and the schematic source
+    lib/                custom symbols, footprints, 3D models
+    production/         gerbers, BOM and notes per board revision
+schematics/             the schematic as a PDF
+cad/                    board 3D model (STEP), board pictures, frame CAD
+docs/
+  hardware-reference.md every connector, pin, voltage and limit on one page
+  DESIGN.md             design doc: requirements, block diagram, parts, power, layout
+  circuits/             how every circuit works and why it's there, box by box
+  pin-map.md            ESP32 pin, net name and destination, for firmware
+  power-budget.md       current per rail, regulator heat, copper and sag check
+  bring-up.md           first power-on checklist
+  design-decisions.md   dated log of design decisions
+  datasheets.md         links to every datasheet and reference design
+tools/
+  power_budget.py       the model behind power-budget.md
 ```
+
+KiCad keeps a project's schematic and board in one folder, so both source files are in `pcb/`. The `schematics/` folder holds the readable PDF.
 
 ## Network drone flight controller
 
-KiCad 9 project in [`electrical/pcb/network-drone-fc/`](electrical/pcb/network-drone-fc/). Open `network-drone-fc.kicad_pro`. The design plan is in [`electrical/DESIGN.md`](electrical/DESIGN.md).
+KiCad 9 project in [`pcb/network-drone-fc/`](pcb/network-drone-fc/). Open `network-drone-fc.kicad_pro`. The design plan is in [`docs/DESIGN.md`](docs/DESIGN.md).
 
-[View the schematic as a PDF](electrical/pcb/network-drone-fc/schematic.pdf) or the [placement render](electrical/pcb/network-drone-fc/placement-top.png) if you don't have KiCad. Regenerate it after schematic changes: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o schematic.pdf`.
+[View the schematic as a PDF](schematics/network-drone-fc-schematic.pdf) or the board pictures in [`cad/`](cad/) if you don't have KiCad. Regenerate the PDF after schematic changes, from the project folder: `kicad-cli sch export pdf network-drone-fc.kicad_sch -o ../../schematics/network-drone-fc-schematic.pdf`.
 
 - 4-layer board, 36 × 39 mm, four 3.2 mm M3 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
 - Two cable ports for off-board parts: J5 carries 5 V and I2C to the TF-Luna obstacle sensor at the front of the drone, J6 carries 5 V and a UART to the VoCore2 networking module
@@ -76,7 +87,7 @@ From the stock KiCad libraries (already have 3D models):
 
 ```
 pip install easyeda2kicad
-python -m easyeda2kicad --full --lcsc_id=C123456 --output electrical/pcb/network-drone-fc/lib/tar_fc
+python -m easyeda2kicad --full --lcsc_id=C123456 --output pcb/network-drone-fc/lib/tar_fc
 ```
 
 Then change the new footprint's `model` path to `${KIPRJMOD}/lib/tar_fc.3dshapes/<name>.step` so it works on every machine.
