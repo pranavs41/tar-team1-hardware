@@ -9,7 +9,7 @@ rev-A/
   cpl.csv            # component positions (only if JLCPCB assembles)
   schematic.pdf      # PDF of the schematic at the time of ordering
   order-notes.md     # date, fab, quantity, stackup, stencil, cost
-  bringup-log.md     # per-board results from ../../../docs/bring-up.md
+  bringup-log.md     # per-board results from docs/bring-up.md at the top of the repo
 ```
 
 Never edit a revision folder after the order is placed. Changes go into the next revision.

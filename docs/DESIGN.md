@@ -2,7 +2,7 @@
 
 Designer: Pranav Shivashankar · Texas Aerial Robotics, Team 1 · Rev A (in progress)
 
-This is the plan for the board: what it has to do, what's on it, how power and signals flow, and where everything goes on the PCB. For how each individual circuit works, see [docs/circuits](docs/circuits/README.md).
+This is the plan for the board: what it has to do, what's on it, how power and signals flow, and where everything goes on the PCB. For how each individual circuit works, see [circuits](circuits/README.md).
 
 ## 1. What the board does
 
@@ -98,11 +98,11 @@ LCSC part numbers are in the [repo README](../README.md).
 | `+3V3` | TLV75733 | ESP32, LEDs | ~350 mA peak (Wi-Fi TX) |
 | `+3V3_SENS` | TPS7A2033 | ICM-42688-P, BMP581, GPS | ~60 mA |
 
-The sensors get their own low-noise rail so radio transmit bursts don't show up as IMU and barometer noise. Measured budget, heat and sag check: [docs/power-budget.md](docs/power-budget.md).
+The sensors get their own low-noise rail so radio transmit bursts don't show up as IMU and barometer noise. Measured budget, heat and sag check: [power-budget.md](power-budget.md).
 
 ## 6. Interfaces
 
-Full pin table: [docs/pin-map.md](docs/pin-map.md).
+Full pin table: [pin-map.md](pin-map.md).
 
 | Bus | Devices | ESP32 pins |
 |---|---|---|
@@ -170,4 +170,4 @@ The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stacku
 | PCB placement | done, DRC clean apart from silkscreen warnings |
 | PCB routing | done, 159 vias, DRC 0 errors (silkscreen and three courtyard warnings only) |
 | Order rev A | to do |
-| Bring-up | to do ([checklist](docs/bring-up.md)) |
+| Bring-up | to do ([checklist](bring-up.md)) |
