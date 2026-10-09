@@ -6914,6 +6914,76 @@
 	)
 	(wire
 		(pts
+			(xy 351.79 209.55) (xy 351.79 201.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da4de927-5f9d-46dd-b569-ebcc25e1c1a8")
+	)
+	(wire
+		(pts
+			(xy 354.33 209.55) (xy 354.33 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f5b1374-a01f-4f14-b4ae-30d5cafce641")
+	)
+	(wire
+		(pts
+			(xy 356.87 209.55) (xy 356.87 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d33f0df8-a3b2-47a5-9780-6339aaba083d")
+	)
+	(wire
+		(pts
+			(xy 359.41 209.55) (xy 359.41 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0393d48-9d78-460e-ad82-9f11430394c6")
+	)
+	(wire
+		(pts
+			(xy 359.41 204.47) (xy 364.49 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d28891ca-8b0c-41b7-b29b-81a0d17a6877")
+	)
+	(wire
+		(pts
+			(xy 367.03 219.71) (xy 367.03 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a714017-10a1-497c-b848-393beb0af999")
+	)
+	(wire
+		(pts
+			(xy 344.17 219.71) (xy 344.17 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bac63e94-2366-461b-a37a-f766c649f0f0")
+	)
+	(wire
+		(pts
 			(xy 133.35 78.74) (xy 140.97 78.74)
 		)
 		(stroke
@@ -7744,7 +7814,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f17ab11a-173c-46fa-b25f-5e42ee44eac4")
+		(uuid "893775b8-814f-416e-9f49-3f8a3c78beb6")
 	)
 	(wire
 		(pts
@@ -21193,7 +21263,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "I2C port"
+		(property "Value" "Sensor port 5V I2C"
 			(at 312.42 224.79 0)
 			(effects
 				(font
@@ -21288,7 +21358,7 @@
 		(uuid "4c0e55be-5eef-4a52-bfab-0d76d1bb8559")
 	)
 	(symbol
-		(lib_id "power:+3V3")
+		(lib_id "power:+5V")
 		(at 321.31 201.93 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -21306,7 +21376,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3V3"
+		(property "Value" "+5V"
 			(at 321.31 196.85 0)
 			(effects
 				(font
@@ -21595,6 +21665,409 @@
 					(reference "J7")
 					(unit 1)
 				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "tar_fc:SM04B-GHS-TB")
+		(at 355.6 215.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b0b4616-0cfa-4957-a157-29e892ba548e")
+		(property "Reference" "J6"
+			(at 342.9 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Radio UART 5V"
+			(at 342.9 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "tar_fc:JST_SH_BM04B-SRSS-TB_1x04_Vertical"
+			(at 355.6 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 355.6 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 355.6 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C189895"
+			(at 355.6 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "feb3a07f-4d88-453a-b916-1ae3f07db887")
+		)
+		(pin "2"
+			(uuid "244c370a-897b-4dbe-8bd8-5a16bc9c4b3e")
+		)
+		(pin "3"
+			(uuid "14ea5da1-0db8-4007-8e33-40995435740f")
+		)
+		(pin "4"
+			(uuid "cb17b5b7-3e2f-48ee-8744-ca7ddf39066a")
+		)
+		(pin "5"
+			(uuid "600f55e2-2245-4827-bd2e-6ff4b1e06083")
+		)
+		(pin "6"
+			(uuid "0c961f06-8be0-44b2-a456-7b9db2bb0f30")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 351.79 201.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c999bf6-f35d-4cfa-accc-3152891f6677")
+		(property "Reference" "#PWR201"
+			(at 351.79 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 351.79 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 351.79 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 351.79 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 351.79 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5a4fff29-8eae-4fcb-99a5-d4851a4b79e3")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "#PWR201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 364.49 204.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "929362b2-2695-4aca-84c4-8c93ab60f52a")
+		(property "Reference" "#PWR202"
+			(at 364.49 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 364.49 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 364.49 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 364.49 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 364.49 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7e285e7a-4f4e-4112-9301-4cf5b657c2b4")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "#PWR202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 367.03 223.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0de06348-b9c3-4c23-a16a-a274bc93d299")
+		(property "Reference" "#PWR203"
+			(at 367.03 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 367.03 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 367.03 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 367.03 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 367.03 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a933b9f3-d2fc-4006-9b61-8c8858b9755d")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "#PWR203")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 344.17 223.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5e269dda-d47b-4332-b81b-ab132057faee")
+		(property "Reference" "#PWR204"
+			(at 344.17 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 344.17 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 344.17 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 344.17 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 344.17 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a16653f-954e-4c7b-95ca-99d8f499250b")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "#PWR204")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "ESC_CUR"
+		(shape input)
+		(at 354.33 194.31 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "04a1df54-ec32-4e7b-a066-f6033ef351ee")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 354.33 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESC_TELEM"
+		(shape input)
+		(at 356.87 191.77 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7bb99e7d-e0d0-4ea2-8ed9-b0be5eadcbf7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 356.87 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
 			)
 		)
 	)
@@ -21921,7 +22394,7 @@
 			)
 		)
 	)
-	(text "I2C port uses the Dronecode order: VCC, SCL, SDA, GND.\nCharging port: GND, DOCK_DET, AUX_ADC, spare."
+	(text "Sensor port J5 (TF-Luna): 5V, SCL, SDA, GND.\nCharging port J7: GND, DOCK_DET, AUX_ADC, spare.\nRadio port J6: 5V, TX (GPIO2), RX (GPIO10), GND. It shares the\nESC CUR and TLM pins: use the ESC signals or the radio, not both."
 		(exclude_from_sim no)
 		(at 304.8 248.92 0)
 		(effects
