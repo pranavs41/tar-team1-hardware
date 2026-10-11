@@ -13,7 +13,7 @@ The flight controller for the network (relay) drones in the swarm. It:
 - reads GPS so the drone can reference the RTK ground station for landing
 - runs from a 2S battery through a bought 4-in-1 ESC stacked underneath
 
-Charging is handled by a separate board.
+Charging is handled by a separate board, described in [charging-board.md](charging-board.md).
 
 ## 2. Requirements
 
@@ -53,7 +53,8 @@ Charging is handled by a separate board.
                          └─────────────────────┘
    Sensor port: JST-GH, 5 V I2C, for the TF-Luna obstacle sensor
    Radio port: JST-SH top entry, 5 V UART, for the VoCore2 networking module
-   Charging port: JST-GH to the charging board, DOCK_DET (GPIO) and AUX_ADC (ADC1)
+   Charging port: JST-SH to the charging board: battery, I2C, power good, charge status, charge disable
+   Landing sensor port: JST-SH, 5 V I2C, for the downward distance sensor
 ```
 
 ## 4. Components
@@ -84,7 +85,8 @@ LCSC part numbers are in the [repo README](../README.md).
 | J4 | JST-SH 8-pin | ESC: VBAT, GND, current, telemetry, 4 motor signals |
 | J5 | JST-GH 4-pin | sensor port: 5 V, SCL, SDA, GND (TF-Luna obstacle sensor) |
 | J6 | JST-SH 4-pin, top entry | radio port: 5 V, TX, RX, GND (VoCore2 networking module); data lines shared with J4 pins 3 and 4 |
-| J7 | JST-GH 4-pin | charging board port: GND, DOCK_DET, AUX_ADC, spare |
+| J7 | JST-SH 7-pin | charging board port: BATT+, GND, SDA, SCL, /PG, STAT, CD |
+| J8 | JST-SH 4-pin, top entry | landing sensor port: 5 V, SCL, SDA, GND |
 | JP1, JP2 | pad pairs on the bottom | RESET, BOOT (short to GND with tweezers) |
 | D2, D3, D4 | 0603 LEDs | red power, green status, yellow status |
 | TP1 to TP6, TP13 | test pads (bottom, on vias) | UART0 TX/RX, the four rails, I2C SCL |
@@ -110,8 +112,9 @@ Full pin table: [pin-map.md](pin-map.md).
 | I2C | BMP581, sensor port J5 (TF-Luna) | GPIO37, 38 |
 | UART | GPS | GPIO36 (TX), GPIO18 (RX) |
 | UART | radio port J6 (VoCore2), or ESC telemetry on RX | GPIO2 (TX), GPIO10 (RX) |
-| GPIO in | dock connected (`DOCK_DET`), from the charging board | GPIO9 |
-| ADC1 | analog input from the charging board (`AUX_ADC`) | GPIO8 |
+| GPIO in | charger power good (`CHG_PG`), low when docked | GPIO9 |
+| GPIO in | charge status (`CHG_STAT`) | GPIO8 |
+| GPIO out | charge disable (`CHG_CD`), high stops charging | GPIO7 |
 | DShot | 4 motors | GPIO11, 13, 16, 6 |
 | ADC1 | battery voltage; ESC current when the radio port is not used | GPIO4, 2 |
 | USB | USB-C | GPIO19, 20 |
@@ -138,7 +141,7 @@ Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plai
 | Centre | U6 ICM-42688-P with its three capacitors and the CS pull-up | Least vibration, closest to the centre of rotation, far from the buck |
 | Centre-right | U1 ESP32 (rotated 180° so the RF pin faces the right edge), decoupling in one column beside it, crystal below it | Short paths from every power pin to its capacitor; crystal hard against pins 53/54 |
 | Right edge | J2 USB-C, U2 ESD chip and the CC resistors above it, three LEDs with their resistors, J1 Wi-Fi U.FL at the lower right with the π network beside it | Cable and LEDs reachable with the stack assembled; RF trace short and straight to the edge |
-| Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, J7 charging-board port at the top right, in the 3 mm strip above the hole line | GPS in the corner opposite the Wi-Fi antenna and away from the buck; the strip lets J7 clear H2 by 5 mm instead of sitting on top of it |
+| Top edge | U8 GPS at top centre with J3 and the bias-T at the top-left corner, J7 charging-board port at the top right, in the 3 mm strip above the hole line, with the landing sensor port J8 below it on the right edge | GPS in the corner opposite the Wi-Fi antenna and away from the buck; the strip lets J7 clear H2 by 5 mm instead of sitting on top of it |
 | Left edge | J5 sensor port, D1 USB diode above it, the two LDOs beside the IMU, U7 barometer at the lower left | Barometer away from the buck's heat and the LEDs' light |
 | Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
 | Bottom edge | J4 ESC connector, centred between the holes | The only connector that must face the ESC |
@@ -168,6 +171,6 @@ The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stacku
 | Schematic: connectors | done |
 | Footprints assigned, final ERC | done, 0 errors, 0 warnings |
 | PCB placement | done, DRC clean apart from silkscreen warnings |
-| PCB routing | done, 159 vias, DRC 0 errors (silkscreen and three courtyard warnings only) |
+| PCB routing | done, 165 vias, DRC 0 errors (silkscreen and five courtyard warnings only) |
 | Order rev A | to do |
 | Bring-up | to do ([checklist](bring-up.md)) |

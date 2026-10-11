@@ -23,7 +23,8 @@ One page with every connector, pin, voltage and limit on the board. If you are w
 | J2 | right edge | USB-C | flashing, serial console, bench power |
 | J5 | left edge | JST-GH 4-pin, 1.25 mm, side entry | obstacle sensor (TF-Luna), 5 V I2C |
 | J6 | bottom-right corner | JST-SH 4-pin, 1.0 mm, top entry | networking module (VoCore2), 5 V UART |
-| J7 | top-right corner | JST-GH 4-pin, 1.25 mm, side entry | charging board |
+| J7 | top-right corner | JST-SH 7-pin, 1.0 mm, side entry | charging board: battery, I2C and three status lines |
+| J8 | right edge, below J7 | JST-SH 4-pin, 1.0 mm, top entry | landing sensor (downward ToF), 5 V I2C |
 | J1 | lower right | U.FL | 2.4 GHz Wi-Fi antenna |
 | J3 | top-left corner | U.FL | GPS antenna |
 
@@ -70,12 +71,32 @@ Signal levels are 3.3 V on both sides. The two data pins are the same wires as J
 
 | Pin | Signal | ESP32 | Notes |
 |---|---|---|---|
-| 1 | GND | | |
-| 2 | DOCK_DET | GPIO9 | digital input. Firmware enables the internal pull-up; the charging board pulls the line low when docked |
-| 3 | AUX_ADC | GPIO8 | analog input, 100 nF to ground. Must stay under 3.1 V |
-| 4 | not connected | | spare |
+| 1 | BATT+ | | battery positive, joined to VBAT on the board. Powers the flight controller, 1 A at most |
+| 2 | GND | | |
+| 3 | SDA | GPIO37 | the same I2C bus as the barometer and the two sensor ports |
+| 4 | SCL | GPIO38 | |
+| 5 | /PG | GPIO9 | input. Low means the charger has good input power, so the drone is on the dock |
+| 6 | STAT | GPIO8 | input. Low while charging, high when done or idle, blinking on a fault. Has 100 nF to ground (C34) |
+| 7 | CD | GPIO7 | output. High stops charging, low or floating lets it run |
 
-There is no power pin. The flight controller neither powers the charging board nor takes charge current from it. Protection for the two signal lines is on the charging board.
+This is the charging board's own pin order, minus its pin 8. Pin 8 was VBAT_SENSE, a divided copy of the battery voltage. The flight controller already measures the battery through its own divider on GPIO4, on the same wire that pin 1 brings in, so a second copy adds nothing and the connector stays at seven pins.
+
+/PG and STAT are open-drain outputs on the charger: they can pull low but not drive high. Firmware turns on the ESP32's internal pull-ups for GPIO8 and GPIO9. The I2C pull-ups are already on this board (R12 and R13). So the four 10 kΩ pull-up resistors in the charging board's parts list are not needed, and there is no 3.3 V pin on J7 for them to connect to.
+
+Pin 1 is at the right-hand end of the connector, nearest the board corner.
+
+### J8, landing sensor
+
+| Pin | Signal | TF-Luna pin |
+|---|---|---|
+| 1 | 5 V out | 1 (+5V) |
+| 2 | SCL | 3 (TXD/SCL) |
+| 3 | SDA | 2 (RXD/SDA) |
+| 4 | GND | 4 (GND) and 5 (mode select) |
+
+The same four signals in the same order as J5, for the downward-facing distance sensor used for landing. The connector is a JST-SH that points straight up, like J6, because a side-entry JST-GH would not fit between the charging connector, the mounting hole and the USB socket. Pin 1 is the end nearest the USB socket.
+
+J6 and J8 are the same connector type. Swapping their plugs by mistake damages nothing, since both have 5 V on pin 1 and ground on pin 4, but neither device will work until they are swapped back.
 
 ### J2, USB-C
 
@@ -93,8 +114,9 @@ Both are U.FL sockets (also sold as IPEX or MHF1). J1 takes any 2.4 GHz antenna.
 | 2 | 7 | ESC_CUR | UART TX to the networking module (J6), or ESC current on ADC1 |
 | 4 | 9 | VBAT_SENSE | battery voltage divided by 11, on ADC1 |
 | 6 | 11 | MOTOR4 | DShot |
-| 8 | 13 | AUX_ADC | charging board analog input, ADC1 |
-| 9 | 14 | DOCK_DET | charging board digital input |
+| 7 | 12 | CHG_CD | output to the charger: high stops charging |
+| 8 | 13 | CHG_STAT | input from the charger: charge status |
+| 9 | 14 | CHG_PG | input from the charger: power good, which also means docked |
 | 10 | 15 | ESC_TELEM | UART RX from the networking module (J6), or ESC telemetry |
 | 11 | 16 | MOTOR1 | DShot |
 | 13 | 18 | MOTOR2 | DShot |
@@ -106,8 +128,8 @@ Both are U.FL sockets (also sold as IPEX or MHF1). J1 takes any 2.4 GHz antenna.
 | 34 | 39 | SPI_SCK | IMU |
 | 35 | 40 | ICM_CS | IMU chip select, 10 kΩ pull-up |
 | 36 | 41 | GPS_TX | UART TX, data to the GPS |
-| 37 | 42 | I2C_SDA | barometer and J5, 4.7 kΩ pull-up to 3.3 V |
-| 38 | 43 | I2C_SCL | barometer and J5, 4.7 kΩ pull-up to 3.3 V |
+| 37 | 42 | I2C_SDA | barometer, J5, J7 and J8, 2.2 kΩ pull-up to 3.3 V |
+| 38 | 43 | I2C_SCL | barometer, J5, J7 and J8, 2.2 kΩ pull-up to 3.3 V |
 | 39 | 44 | Yellow | yellow LED, high is on |
 | 40 | 45 | Green | green LED, high is on |
 | 43 | 49 | U0TXD | test pad TP1, boot log and fallback flashing |
@@ -115,7 +137,7 @@ Both are U.FL sockets (also sold as IPEX or MHF1). J1 takes any 2.4 GHz antenna.
 | 47 | 37 | SPI_MISO | IMU |
 | 48 | 36 | ICM_INTR | IMU data-ready interrupt |
 
-Reset (CHIP_PU, chip pin 4) is pad pair JP1. GPIO3, 45 and 46 are boot straps and are left floating. GPIO1, 5, 7, 12, 14, 15, 17, 21, 26, 41 and 42 are unused but cannot be brought out: there is no room for another via beside those pins.
+Reset (CHIP_PU, chip pin 4) is pad pair JP1. GPIO3, 45 and 46 are boot straps and are left floating. GPIO1, 5, 12, 14, 15, 17, 21, 26, 41 and 42 are unused but cannot be brought out: there is no room for another via beside those pins.
 
 Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only needs this table.
 
@@ -124,7 +146,9 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 | Bus | Device | Address or note |
 |---|---|---|
 | I2C | BMP581 barometer (on board) | 0x46 |
-| I2C | TF-Luna obstacle sensor (on J5) | 0x10. Run the bus at 100 kHz when it is plugged in |
+| I2C | TF-Luna obstacle sensor (on J5) | 0x10. Run the bus at 100 kHz when anything is plugged into J5, J7 or J8 |
+| I2C | landing sensor (on J8) | a second TF-Luna also starts at 0x10, so one of the two must be given a new address once, for example 0x11 |
+| I2C | BQ25887 charger (on J7) | 0x6A or 0x6B, check the charger's datasheet. Neither clashes |
 | SPI | ICM-42688-P gyro and accelerometer | chip select GPIO35, interrupt GPIO48 |
 | UART | u-blox MAX-M10S GPS | TX GPIO36, RX GPIO18 |
 | UART | VoCore2 networking module (on J6) | TX GPIO2, RX GPIO10 |
@@ -133,8 +157,8 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 
 | Rail | Made by | Feeds | Limit |
 |---|---|---|---|
-| VBAT | battery, through J4 pin 2 | buck regulator, voltage divider | 6 to 16.8 V in; the J4 pin is rated 1 A |
-| +5V | AP63205 buck, or USB | both 3.3 V regulators, J5 pin 1, J6 pin 1 | 2 A regulator; plan for 1 A total |
+| VBAT | battery, through J4 pin 2 or J7 pin 1 | buck regulator, voltage divider | 6 to 16.8 V in; each of those pins is rated 1 A |
+| +5V | AP63205 buck, or USB | both 3.3 V regulators, J5 pin 1, J6 pin 1, J8 pin 1 | 2 A regulator; plan for 1.1 A total |
 | +3V3 | TLV75733 | ESP32, LEDs | 1 A regulator, 0.36 A peak used |
 | +3V3_SENS | TPS7A2033, low noise | IMU, barometer, GPS | 0.3 A regulator, 25 mA used |
 
@@ -142,10 +166,11 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 |---|---|---|
 | board alone | 0.14 A | 0.38 A |
 | TF-Luna on J5 | +0.07 A | +0.15 A |
+| second TF-Luna on J8 | +0.07 A | +0.15 A |
 | VoCore2 on J6 | +0.23 A | +0.40 A |
-| all of it | 0.44 A | 0.93 A |
+| all of it | 0.51 A | 1.08 A |
 
-From a 2S battery that is 0.33 A on average and 0.70 A at the worst moment. The motors do not draw through this board at all.
+From a 2S battery that is 0.38 A on average and 0.81 A at the worst moment. The motors do not draw through this board at all.
 
 ## Lights, test pads and recovery
 
@@ -163,8 +188,8 @@ From a 2S battery that is 0.33 A on average and 0.70 A at the worst moment. The 
 ## Rules that prevent damage
 
 1. Battery is 2S. Up to 4S is tolerated. 6S destroys the input protection.
-2. J5 supplies 5 V. No 3.3 V-only devices on it.
-3. Nothing over 3.1 V into AUX_ADC (J7 pin 3).
+2. J5 and J8 supply 5 V. No 3.3 V-only devices on them. J8 looks like a Qwiic or STEMMA QT socket but is not wired like one, so never plug one of those cables into it.
+3. J7 pin 1 is the battery, up to 8.4 V, and it is rated 1 A. It is there to power the flight controller. Charge current must reach the battery on its own wires, never through this pin.
 4. Do not run Wi-Fi with no antenna on J1.
 5. Use the ESC's current and telemetry pins or the networking module, not both. Leave C33 off when the module is used.
 6. A 470 µF 35 V low-ESR capacitor goes on the ESC's battery pads before the motors ever spin.

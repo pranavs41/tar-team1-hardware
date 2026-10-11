@@ -11,8 +11,9 @@ The pins were reassigned on 2026-10-02 to make the board routable: the chip's ri
 | 7 | GPIO2 | `ESC_CUR` | Radio port J6 pin 2, UART TX to the VoCore2. Same net as J4 pin 3 (ESC current sense, ADC1): use one or the other |
 | 9 | GPIO4 | `VBAT_SENSE` | Battery divider (ADC1) |
 | 11 | GPIO6 | `MOTOR4` | ESC motor 4 (DShot) |
-| 13 | GPIO8 | `AUX_ADC` | Charging board port, analog input (ADC1, keep under 3.1 V) |
-| 14 | GPIO9 | `DOCK_DET` | Charging board port, dock connected input |
+| 12 | GPIO7 | `CHG_CD` | Charging board port, output: high stops charging |
+| 13 | GPIO8 | `CHG_STAT` | Charging board port, charge status input |
+| 14 | GPIO9 | `CHG_PG` | Charging board port, power good input (low when docked) |
 | 15 | GPIO10 | `ESC_TELEM` | Radio port J6 pin 3, UART RX from the VoCore2. Same net as J4 pin 4 (ESC telemetry): use one or the other |
 | 16 | GPIO11 | `MOTOR1` | ESC motor 1 (DShot) |
 | 18 | GPIO13 | `MOTOR2` | ESC motor 2 (DShot) |
@@ -37,6 +38,6 @@ Not connected: pins 6, 8, 10, 12, 17, 19, 21, 23, 27, 28, 47, 48, 51, 52. Pins 6
 
 Keep GPIO3, GPIO45 and GPIO46 floating: they are strapping pins, and GPIO45 selects the flash voltage (must be low for our 3.3 V flash).
 
-Ports: J5 is the sensor port (5 V, SCL, SDA, GND) for the TF-Luna on the I2C bus at address 0x10. J6 is the radio port (5 V, TX GPIO2, RX GPIO10, GND) for the VoCore2. J7 is the charging board port (GND, DOCK_DET, AUX_ADC, spare).
+Ports: J5 is the sensor port (5 V, SCL, SDA, GND) for the TF-Luna on the I2C bus at address 0x10. J6 is the radio port (5 V, TX GPIO2, RX GPIO10, GND) for the VoCore2. J7 is the charging board port (BATT+, GND, SDA, SCL, /PG on GPIO9, STAT on GPIO8, CD on GPIO7). J8 is the landing sensor port, wired like J5 (5 V, SCL, SDA, GND).
 
 Test pads on the bottom: TP1 U0TXD, TP2 U0RXD, TP3 VBAT, TP4 +5V, TP5 +3V3, TP6 +3V3_SENS, TP13 I2C_SCL. Each one sits on a via of its net.

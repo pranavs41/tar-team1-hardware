@@ -26,7 +26,7 @@ C33 (100 nF from ESC_CUR to GND) smooths the current-sense signal before it reac
 
 Pins: 5 V, SCL, SDA, GND. This is the port for the obstacle sensor, a Benewake TF-Luna, which mounts at the front of the drone on a cable.
 
-The power pin is 5 V, not 3.3 V. The TF-Luna needs 3.7 to 5.2 V, so the pin was moved from the 3.3 V rail to the 5 V rail. The two signal pins did not change: I2C is an open-drain bus, which means nothing on it ever drives a line high. Devices only pull the lines low, and the 4.7 kΩ pull-ups near the barometer lift them back to 3.3 V. So the bus sits at 3.3 V no matter what voltage the sensor runs on, and the TF-Luna's signal pins are 3.3 V parts anyway.
+The power pin is 5 V, not 3.3 V. The TF-Luna needs 3.7 to 5.2 V, so the pin was moved from the 3.3 V rail to the 5 V rail. The two signal pins did not change: I2C is an open-drain bus, which means nothing on it ever drives a line high. Devices only pull the lines low, and the 2.2 kΩ pull-ups near the barometer lift them back to 3.3 V. So the bus sits at 3.3 V no matter what voltage the sensor runs on, and the TF-Luna's signal pins are 3.3 V parts anyway.
 
 The warning that comes with this: do not plug a 3.3 V-only device into J5. Its power pin would see 5 V.
 
@@ -63,18 +63,37 @@ That makes it one or the other per drone:
 
 Firmware sets GPIO2 as a UART transmit pin and GPIO10 as a UART receive pin. Any ESP32-S3 pin can take any UART signal, so nothing else changes.
 
-The sensor port and the charging port use the Dronecode connector order (VCC, signal, signal, GND), so off-the-shelf JST-GH cables fit them.
+The sensor port uses the Dronecode connector order (VCC, signal, signal, GND), so off-the-shelf JST-GH cables fit it.
 
-## Charging board port (J7, JST-GH 4 pin)
+## Charging board port (J7, JST-SH 7 pin)
 
-Pins: GND, DOCK_DET, AUX_ADC, spare.
+Pins: BATT+, GND, SDA, SCL, /PG, STAT, CD. The charging board carries a BQ25887, a chip that charges a 2S battery from a 5 V dock and keeps the two cells balanced. Its design notes are in [charging-board.md](../charging-board.md).
 
-- DOCK_DET goes to GPIO9. The charging board pulls it to a definite level when the drone is docked; firmware can enable the ESP32's internal pull-up and treat low as docked.
-- AUX_ADC goes to GPIO8, which is on ADC1 so it keeps working while Wi-Fi is on. Whatever the charging board puts here must stay under 3.1 V. C34 (100 nF to GND) steadies the reading.
+What each line is for:
 
-Protection for these two lines lives on the charging board, by agreement with that team.
+- **BATT+ and GND** power the flight controller from the battery. BATT+ joins the board's VBAT net, the same net the ESC connector feeds, so the board runs from whichever cable is plugged in. The pin is rated 1 A and the board draws 0.8 A at its worst, so this pin is for the flight controller only. Charge current, up to 2 A, must go from the charger to the battery on its own wires.
+- **SDA and SCL** put the charger on the I2C bus. Over I2C the flight controller can read the battery and cell voltages, the charge current and any fault, and can change the charge settings.
+- **/PG** (power good) goes to GPIO9. The charger pulls it low when it has good input power, which only happens on the dock, so this is also the "I am docked" signal.
+- **STAT** goes to GPIO8. Low while charging, released when charging is done, blinking at 1 Hz on a fault. C34 (100 nF to GND) is left over from when this pin was an analog input. It does no harm here, since the signal changes at most once a second.
+- **CD** (charge disable) comes from GPIO7. Driving it high stops the charger. If the ESP32 is in reset or unpowered the pin floats, and the charger's own pull-down keeps charging enabled, so a dead flight controller cannot block charging. Confirm that pull-down in the BQ25887 datasheet, and add a 100 kΩ resistor to ground on the charging board if it is not there.
 
-On the board this port sits at the top right, in a 3 mm strip added above the mounting-hole line. Before that strip existed the connector body was 1.5 mm from the H2 hole, which left no room for the ESC's grommet or a nut on top; now it clears the hole centre by 5 mm.
+/PG and STAT are open-drain, so they need a pull-up. Firmware enables the ESP32's internal ones. The I2C pull-ups are R12 and R13 on this board. That is why J7 has no 3.3 V pin.
+
+Why seven pins and not the eight the charging board first listed: its eighth pin was a divided copy of the battery voltage. This board already measures VBAT on GPIO4, and with BATT+ wired in that is the same voltage. The ESP32 also had no pin left to read it with.
+
+Why a JST-SH and not a JST-GH like the old port: a 7-pin JST-GH is 12 mm wide, and in this corner its body would sit on top of the GPS module's solder pads. The JST-SH is 9 mm wide and fits with room on both sides. Both families are rated 1 A per pin.
+
+GPIO7 was one of the pins that had no way out from under the chip. Reaching it meant moving one existing track: the ESC telemetry line now dips to the top layer and passes between the two pads of R1, which freed the gap GPIO7 needed. The charge-disable track then runs on the bottom layer around the right side of the H2 mounting hole.
+
+## Landing sensor port (J8, JST-SH 4 pin, top entry, 5 V I2C)
+
+Pins: 5 V, SCL, SDA, GND, the same as J5. The swarm drones carry two distance sensors, one facing forward for obstacles on J5 and one facing down for landing on J8.
+
+Both ports share one I2C bus, and two TF-Lunas both start at address 0x10. Before fitting them, connect one sensor by itself and send it the command that changes and saves its address (0x11 is free). After that the two can share the bus.
+
+The bus now leaves the board on three cables: two sensors and the charger. Every cable adds capacitance, which slows the rising edge of the signal, because the only thing pulling a line high is a resistor. For that reason R12 and R13 dropped from 4.7 kΩ to 2.2 kΩ. With all three cables fitted the edges take about 370 ns, comfortable at 100 kHz, which allows 1000 ns, and too slow for 400 kHz, which allows 300 ns. So run this bus at 100 kHz.
+
+The I2C tracks to J7 and J8 are long. They run on the bottom layer down the left edge and along the top edge, about 60 mm each. At 100 kHz that length does not matter.
 
 ## Test points and recovery pads
 

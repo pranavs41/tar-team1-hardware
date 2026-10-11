@@ -22,9 +22,9 @@ Copies can be added to this folder so the frame is versioned with the board.
 - Outline: 36 mm wide, 39 mm tall, 1.6 mm thick, 2 mm corner radius.
 - Holes: four, 3.2 mm for M3, on a 20 × 20 mm square. They sit 8 mm in from the left, right and bottom edges and 11 mm from the top.
 - Clear zone: nothing on the top side within 3 mm of a hole centre, and the bottom near the holes is bare, so the ESC's grommets or an M3 nut fit on either side.
-- Tallest parts on top: the USB-C socket on the right edge and the radio port J6 in the bottom-right corner, which points straight up and needs room above it for its plug and cable.
+- Tallest parts on top: the USB-C socket on the right edge and the radio port J6 in the bottom-right corner and the landing sensor port J8 on the right edge near the top. Both point straight up and need room above them for a plug and cable.
 - Bottom side: one capacitor (C35), 3.1 mm tall, at the lower-left corner.
-- Cables leave on every edge: USB-C right, ESC bottom centre, obstacle sensor left, charging board top right.
+- Cables leave on every edge: USB-C right, ESC bottom centre, obstacle sensor left, charging board top right. The landing sensor's cable leaves upward from J8.
 
 Regenerate the STEP after board changes, from `pcb/network-drone-fc/`:
 

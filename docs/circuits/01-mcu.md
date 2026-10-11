@@ -91,6 +91,6 @@ TP1 is on U0TXD (pin 49) and TP2 is on U0RXD (pin 50). The chip prints its boot 
 
 The rest of the GPIOs have net labels that connect to the sensor and connector boxes. The full table is in [pin-map.md](../pin-map.md). Two of the choices matter for firmware:
 
-`VBAT_SENSE`, `ESC_CUR` and `AUX_ADC` are on GPIO4, GPIO2 and GPIO8 because those pins belong to ADC1. The ESP32's other ADC, ADC2, shares hardware with the Wi-Fi radio and gives bad readings while Wi-Fi is running.
+`VBAT_SENSE` and `ESC_CUR` are on GPIO4 and GPIO2 because those pins belong to ADC1. The ESP32's other ADC, ADC2, shares hardware with the Wi-Fi radio and gives bad readings while Wi-Fi is running.
 
 The IMU SPI bus is on GPIO33, 34, 35 and 47, which the chip reaches through its internal routing matrix. The native SPI pins (GPIO10 to 13) would run a little faster, but at the IMU's 8 kHz sample rate the matrix is nowhere near its limit, and those pins were needed as top-layer escapes for the motor signals. The one rule the matrix does not bend: a signal on GPIO0, 3, 45 or 46 would upset the boot straps, so none of ours are there.

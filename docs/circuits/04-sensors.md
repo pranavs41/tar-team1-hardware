@@ -63,7 +63,7 @@ VDD (pin 10) and VDDIO (pin 1) both go to `+3V3_SENS`, each with a 100 nF capaci
 
 The chip can speak SPI or I2C and checks CSB at power-up: high means I2C. SDO sets the I2C address: tied to GND it is 0x46, tied high it would be 0x47. The chip reuses its SPI pin names, so SCK is the I2C clock and SDI is the I2C data.
 
-R12 and R13 (4.7 kΩ from SDA and SCL to `+3V3_SENS`) are the bus pull-ups. I2C lines are open-drain: chips can only pull them low, and nothing drives them high. The resistors pull them back up when nobody is pulling down. One pair serves the whole bus, including the spare I2C port.
+R12 and R13 (2.2 kΩ from SDA and SCL to `+3V3_SENS`) are the bus pull-ups. I2C lines are open-drain: chips can only pull them low, and nothing drives them high. The resistors pull them back up when nobody is pulling down. One pair serves the whole bus, including the two sensor ports and the charging port. They were 4.7 kΩ until those ports were added; the lower value keeps the signal edges fast enough with three cables hanging on the bus.
 
 INT is left unconnected. Firmware reads the sensor on a timer, and pins 19 and 22 are free if someone wants the data-ready interrupt later.
 
