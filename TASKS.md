@@ -22,9 +22,14 @@ Networking drone flight controller, rev A:
 - [x] Power budget checked
 - [x] Sensor port (J5) and radio port (J6) added
 - [x] Pin reference written: [`docs/hardware-reference.md`](docs/hardware-reference.md)
+- [ ] Decide how to get the gyro: it is out of stock at every authorised distributor (options in [`docs/parts-list.md`](docs/parts-list.md))
+- [ ] Ask the purchasing or research-security office which sourcing rule applies to the project
+- [ ] Choose the board fab. For a US or European fab, six spots need 0.006 mm more spacing and the antenna trace width needs rechecking
+- [ ] Widen the USB-C footprint's mounting slots for the GCT socket
+- [ ] Pick a green LED that lights at about 2 V, or change R7
 - [ ] Confirm the ESC's connector pinout against J4, and whether it outputs current or telemetry
-- [ ] Choose the buck inductor (4.7 µH, saturation current 2 A or more)
-- [ ] Fill in part numbers for the resistors, capacitors, LEDs and diodes
+- [x] Choose the buck inductor (4.7 µH, saturation current 2 A or more)
+- [x] Fill in part numbers for the resistors, capacitors, LEDs and diodes
 - [x] Pinout and pad-pitch audit against the datasheets
 - [ ] Pad shapes and pin 1 orientation checked against each datasheet's land pattern drawing
 - [x] Antenna trace width checked for 50 Ω on the fab's layer stack

@@ -8,7 +8,7 @@ Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin)
 - **Reading the schematic without KiCad:** [`schematics/network-drone-fc-schematic.pdf`](schematics/network-drone-fc-schematic.pdf).
 - **Designing the frame around the board:** [`cad/network-drone-fc.step`](cad/network-drone-fc.step) is the assembled board as a 3D part.
 - **Who is doing what:** [`TASKS.md`](TASKS.md) lists each person's tasks and where their work meets someone else's.
-- **What one drone is made of:** [`docs/parts-list.md`](docs/parts-list.md) has every part with its weight, price and where to buy it.
+- **What one drone is made of and costs:** [`docs/parts-list.md`](docs/parts-list.md) has every part with its maker, a US or European seller, the price, and the total.
 
 ![Flight controller, top side](cad/board-top.png)
 
@@ -24,7 +24,7 @@ schematics/             the schematic as a PDF
 cad/                    board 3D model (STEP), board pictures, frame CAD
 docs/
   hardware-reference.md every connector, pin, voltage and limit on one page
-  parts-list.md         whole-drone parts list: weight, price, where to buy
+  parts-list.md         every part: maker, seller, price, stock problems, total cost
   pcb-test-plan.md      how the board gets checked: before ordering, on the bench, in flight
   frame-test-plan.md    load, drop and vibration tests for the printed frame
   DESIGN.md             design doc: requirements, block diagram, parts, power, layout
@@ -50,6 +50,8 @@ KiCad 9 project in [`pcb/network-drone-fc/`](pcb/network-drone-fc/). Open `netwo
 - Two cable ports for off-board parts: J5 carries 5 V and I2C to the TF-Luna obstacle sensor at the front of the drone, J6 carries 5 V and a UART to the VoCore2 networking module
 - All parts on the top side except C35, the bulk capacitor on the bottom, so the top can be reflowed on a hot plate and C35 soldered after with an iron; test points (bare pads) are on the bottom
 - Designed for a 2S battery; input stage tolerates up to 4S
+
+Where to buy every part, with prices and each maker's country, is in [`docs/parts-list.md`](docs/parts-list.md). The LCSC numbers in the table below are where the KiCad symbols and footprints were imported from; LCSC is a Chinese distributor, and the parts list gives a DigiKey source for each one.
 
 ### Parts in `lib/tar_fc`
 
