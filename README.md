@@ -25,6 +25,7 @@ cad/                    board 3D model (STEP), board pictures, frame CAD
 docs/
   hardware-reference.md every connector, pin, voltage and limit on one page
   parts-list.md         every part: maker, seller, price, stock problems, total cost
+  charging-board.md     the charging board: plan, parts, and its 7-pin link to the flight controller
   pcb-test-plan.md      how the board gets checked: before ordering, on the bench, in flight
   frame-test-plan.md    load, drop and vibration tests for the printed frame
   DESIGN.md             design doc: requirements, block diagram, parts, power, layout
