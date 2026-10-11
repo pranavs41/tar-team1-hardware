@@ -1,40 +1,178 @@
-# Parts list: networking drone
+# Parts list and sourcing: networking drone
 
-Everything that goes into one networking drone, with weight, where to buy it and what it costs. This table moved here from the team's Box note on 2026-10-11 and this copy is now the one to edit.
+Everything that goes into one networking drone: what it is, who makes it, where to buy it, and what it costs. The team prefers not to source from China, so each part is listed with the country its maker is based in, and the sellers chosen are in the US or Europe.
 
-The parts soldered onto the flight controller are listed in the [README](../README.md) with their LCSC numbers. This page is the whole-drone view.
+Prices were read from the sellers' pages on 2026-10-11, for a quantity of one, before shipping, tax and tariffs. Stock changes daily, so check again on the day of ordering.
 
-| Component | Weight | Need to purchase | Link | Price |
-|---|---|---|---|---|
-| ESP32-S3FN8, processor and Wi-Fi (on the PCB) | <1 g | Yes | [DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446) | $4.17 |
-| ICM-42688-P IMU, gyro and accelerometer (on the PCB) | <1 g | Yes | [DigiKey](https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934) | $4.80 |
-| MAX-M10S-00B GPS (on the PCB) | 0.5 g | Yes | [DigiKey](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906) | $11.42 |
-| VoCore2-32MB-2xU.FL, OpenWrt Wi-Fi networking module | ~5 g, provisional, antenna allowance not yet measured | Yes | VoCore official store | $21.48 |
-| RCINPower GTS V3 1303 8000KV Plus ×4, 2 to 3 inch motors | 5.6 g each, 22.4 g total | Yes | [Pyrodrone](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange) | $83.96 total ($20.99 ×4) |
-| 30 A 4-in-1 ESC, 2 to 4S (6 to 18 V), M3 holes on a 20 mm pattern | 5.4 g | Yes | AERO SELFIE 30A 4-in-1 brushless ESC (Amazon) | $28.90 |
-| 2S LiPo, about 800 mAh, 45C or higher | ~45 g | Yes | [model not chosen yet](https://www.amazon.com/URGENEX-Battery-1000mAh-Rechargeable-Compatible/dp/B0FFBB59TM/ref=sr_1_1?crid=LACLY0AI0YAC&dib=eyJ2IjoiMSJ9.CJEXtKuY_dHG416KNuZnUbfHAL1MdDdxaMFR7FWIgSGsZfBsGdosZzWE2AosxRZwr5WiTk4rOKjlWbE0SyBaDBP4BKoWdq1N1LZg7P1VifGTahsPOGkcVpu4AO2sHZ6RR-M8Tb77edo1zooUAKZPm27d0xrV1Kq6GEWuC1YzDOKDwYDclnv1sJ5Bt5ccOupAdyRXTjmVAxC7s1gNsDmMUUmP5jrE3mgycoXdJGE3Y1AdhASarzqAZCZoGu7ddOw5XdKd_MIK8-YregXfdonO1eaus8JfGYx-aBHXs9QJ0oU.--_fb_vICGeM6ANhNaC29O8CsUI61aIgYzutNeYhxxI&dib_tag=se&keywords=2s%2B800mah%2Blipo&qid=1791737300&sprefix=2s%2B800mah%2Blip%2Caps%2C183&sr=8-1&th=1) | TBD |
-| 3D-printed frame | TBD from CAD | No, printed | files linked in [`cad/`](../cad/README.md) | ~$0 |
-| 3-inch propeller set and spares | ~6 g | Yes | not chosen yet | ~$15 budget |
-| 5 V regulator | included in the PCB | No | built into the PCB (AP63205 buck), no separate BEC | $0 |
-| PCB, flight controller: 36 × 39 mm, 4-layer, 1.6 mm thick, M3 holes on a 20 mm pattern | ~8 g, estimate | Yes | JLCPCB | ~$30 prototype budget |
-| XT30 connector, wiring, capacitor | 6 to 8 g | Mostly no | existing parts and ESC hardware | ~$0 to 10 |
-| Benewake TF-Luna, single-point sensor for obstacle avoidance | <5 g | Yes | [Amazon](https://www.amazon.com/dp/B0DKCSF8C5) | $25.99 |
+## Cost of one drone
 
-## Totals so far
+| Group | Cost |
+|---|---|
+| Flight controller parts, 68 placed components | $43.91 |
+| Flight controller bare board, one of three from OSH Park | $7.25 |
+| Motors, ESC, propellers | $117.85 |
+| Networking module and obstacle sensor | $47.47 |
+| Antennas, ESC capacitor, battery connector | $11.64 |
+| Battery, Tattu 850 mAh as a placeholder price | $10.99 |
+| **Total for one drone** | **about $239** |
 
-The first three rows are chips on the flight controller, so their weight is already inside the PCB's 8 g.
+Three things move this number:
 
-| | Value | What is missing |
+- The bare board's smallest order is three boards for $21.76, so the first drone carries the cost of all three.
+- The gyro is out of stock at every authorised distributor. Buying it where it is in stock raises the total by about $16. See "Stock problems" below.
+- The battery in the table further down is the one Daniel picked. Its price is not filled in yet, so the total uses a similar pack's price.
+
+## What is and is not made outside China
+
+Buying from a US seller does not change where a part was designed or built. This is the honest picture:
+
+| Part | Maker's home country | Non-Chinese option at this size |
 |---|---|---|
-| Weight | about 105 g | the frame, and measured weights for the PCB, VoCore2 and wiring |
-| Cost per drone | about $226 | the battery, and wiring if any has to be bought |
+| Sensors, regulators, connectors, capacitors, resistors on the flight controller | US, Japan, Germany, Switzerland, Korea, Taiwan, UK | already non-Chinese |
+| ESP32-S3 processor | China (Espressif, Shanghai) | none without redesigning the board around a different chip |
+| Motors | China | none found. US-made motors start at about twice this size |
+| ESC | China | none at 20 × 20 mm. A US-made one exists at $230 and 36 mm square |
+| Battery | China | none found for small LiPo packs |
+| Propellers | China | none found |
+| XT30 battery connector | China | none that mates with an XT30 battery |
+| VoCore2 networking module | China | yes, listed below |
+| TF-Luna obstacle sensor | China | yes, listed below |
+| Bare circuit board | depends on the fab | yes, US and European fabs listed below |
 
-Both numbers are estimates until the parts are on a scale and the battery is chosen.
+So a fully non-Chinese drone is not possible at this size with parts anyone sells today. What is possible: buy everything through US sellers, keep the whole flight controller except the processor non-Chinese, and swap the two modules that do have alternatives.
 
-## Still to decide
+Which of these matters depends on the rule the team is working under. A rule about the seller is met by this list as written. A rule about where components are made is not, and cannot be at this size. Ask the university's purchasing or research-security office which one applies before ordering. This page is a parts list, not legal advice.
 
-- Battery model. It needs 2S, around 800 mAh and 45C or more to supply the motors.
-- Propellers. 3-inch, matched to the 1303 motors.
-- Where the VoCore2 comes from. The table says the official store but has no link yet.
-- Antennas for the flight controller's Wi-Fi (J1) and GPS (J3). They are not in the table. Both need a U.FL plug.
-- A 470 µF 35 V low-ESR capacitor for the ESC's battery pads, if the "capacitor" in the wiring row is not already that part.
+## Whole drone
+
+| Part | Maker (home country) | Seller | Weight | Price |
+|---|---|---|---|---|
+| Flight controller, assembled | see the next section | DigiKey for parts, OSH Park for the board | ~8 g, estimate | $51.16 |
+| RCINPower GTS V3 1303 8000KV Plus motors ×4 | RCINPower (China) | [Pyrodrone](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange) | 5.6 g each, 22.4 g | $83.96 ($20.99 ×4) |
+| 30 A 4-in-1 ESC, 2 to 4S, M3 holes on a 20 mm pattern | AERO SELFIE (maker not confirmed) | Amazon | 5.4 g | $28.90 |
+| 3-inch propellers, Gemfan Hurricane 3018, pack of 8 | Gemfan (China) | [RaceDayQuads](https://www.racedayquads.com/products/gemfan-hurricane-3018-durable-bi-blade-3-prop-8-pack-1-5mm-choose-your-color) | 0.75 g each, 3 g | $4.99 |
+| 2S LiPo battery, URGENEX 1000 mAh, Daniel's pick | URGENEX (not confirmed) | [Amazon](https://www.amazon.com/dp/B0FFBB59TM) | TBD | TBD |
+| VoCore2 Wi-Fi networking module | VoCore (China) | VoCore store | ~5 g, estimate | $21.48 |
+| Benewake TF-Luna obstacle sensor | Benewake (China) | [Amazon](https://www.amazon.com/dp/B0DKCSF8C5) | <5 g | $25.99 |
+| 2.4 GHz Wi-Fi antenna, flexible, U.FL plug, Taoglas FXP73.07.0100A | Taoglas (Ireland) | [DigiKey](https://www.digikey.com/en/products/detail/taoglas-limited/FXP73-07-0100A/2332703) | about 1 g | $5.41 |
+| GPS antenna, flat adhesive, U.FL plug, Molex 2065600100 | Molex (US) | [DigiKey](https://www.digikey.com/en/products/result?keywords=2065600100) | not listed | $4.16 |
+| 470 µF 35 V low-ESR capacitor for the ESC, Panasonic EEU-FR1V471 | Panasonic (Japan) | [DigiKey](https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1V471/2433575) | about 2 g | $1.08 |
+| XT30 battery connector | Amass (China) | [RaceDayQuads](https://www.racedayquads.com/products/xt30-connector-male-or-female) | about 1 g | $0.99 |
+| 3D-printed frame | printed by the team | files in [`cad/`](../cad/README.md) | TBD from CAD | ~$0 |
+
+Notes on this table:
+
+- The propellers must fit the motor's 1.5 mm shaft. Confirm the motor's prop mount before ordering.
+- The battery Daniel linked is 1000 mAh, larger than the 800 mAh first planned. Check its weight, its discharge rating (45C or more) and that it has an XT30 plug.
+- Alternative batteries in stock at Pyrodrone, both with XT30: [Tattu 850 mAh 2S 95C](https://pyrodrone.com/collections/2s-batteries/products/tattu-850mah-2s-7-6v-hv-95c-lipo-battery-long-pack-with-xt30-plug), 40 g, $10.99, and [GNB 930 mAh 2S 120C](https://pyrodrone.com/collections/2s-batteries/products/gaoneng-gnb-930mah-7-4v-2s-120c-lipo-battery-xt30), 54 g, $12.99. The Tattu is a high-voltage pack that charges to 8.7 V, which the board accepts.
+- The GPS antenna listed is flat and has no amplifier listed. An active ceramic patch receives better: [Taoglas AP.12F.07.0045A](https://www.digikey.com/en/products/result?keywords=AP.12F.07.0045A), $18.02, and it needs inductor L3 fitted on the board.
+- The Panasonic capacitor was out of stock at DigiKey on the day checked, due back 2026-11-09.
+
+## Swaps that remove a Chinese-made module
+
+| Replaces | Option | Maker (home country) | Seller | Price | What changes |
+|---|---|---|---|---|---|
+| TF-Luna | [VL53L4CX breakout](https://www.adafruit.com/product/5425) | Adafruit (US), sensor chip by STMicroelectronics (Switzerland) | Adafruit | $14.95 | range 6 m instead of 8 m. I2C only, runs on 3 to 5 V, so it plugs into J5 as is |
+| TF-Luna | [VL53L1X carrier](https://www.pololu.com/product/3415) | Pololu (US), sensor chip by STMicroelectronics | Pololu | $22.95 | range 4 m, weighs 0.5 g. I2C only, 2.6 to 5.5 V, plugs into J5 as is |
+| TF-Luna | [Garmin LIDAR-Lite v4 LED](https://www.sparkfun.com/garmin-lidar-lite-v4-led-distance-measurement-sensor.html) | Garmin (US) | SparkFun | $69.99 | range 10 m, weighs 14.6 g, needs 5 V |
+| VoCore2 | [Raspberry Pi Zero 2 W](https://www.adafruit.com/product/5291) | Raspberry Pi (UK) | Adafruit | $19.05 | full Linux, 10 g, 65 × 30 mm, built-in antenna only. Out of stock when checked |
+
+The two STMicroelectronics-based sensors are cheaper and lighter than the TF-Luna and need no board change, at the cost of range. The VoCore2 has no drop-in replacement: the Raspberry Pi is larger and heavier, and the frame would have to be designed around it.
+
+## Flight controller parts
+
+All from DigiKey. Quantity is per board.
+
+| Refs | Part | Order number | Maker (home country) | Qty | Each | Total |
+|---|---|---|---|---|---|---|
+| U1 | ESP32-S3 processor | [ESP32-S3FN8](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446) | Espressif (China) | 1 | $4.17 | $4.17 |
+| U8 | GPS module | [MAX-M10S-00B](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906) | u-blox (Switzerland) | 1 | $11.42 | $11.42 |
+| U6 | Gyro and accelerometer | [ICM-42688-P](https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934) | TDK InvenSense (US, Japan) | 1 | $4.86 | $4.86 |
+| U7 | Barometer | [BMP581](https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134) | Bosch Sensortec (Germany) | 1 | $3.35 | $3.35 |
+| U3 | 5 V buck regulator | [AP63205WU-7](https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432) | Diodes Incorporated (US) | 1 | $0.89 | $0.89 |
+| U4 | 3.3 V regulator, 1 A | [TLV75733PDRVR](https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260) | Texas Instruments (US) | 1 | $0.48 | $0.48 |
+| U5 | 3.3 V low-noise regulator | [TPS7A2033PDBVR](https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866) | Texas Instruments (US) | 1 | $0.35 | $0.35 |
+| U2 | USB protection | [USBLC6-2SC6](https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559) | STMicroelectronics (Switzerland) | 1 | $0.54 | $0.54 |
+| X1 | 40 MHz crystal, 10 pF, ±10 ppm | [FA-128 40.0000MF10Z-K3](https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630) | Epson (Japan) | 1 | $1.11 | $1.11 |
+| C35 | 100 µF 25 V polymer capacitor | [TCJD107M025R0055](https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375) | Kyocera AVX (US, Japan) | 1 | $3.65 | $3.65 |
+| D5 | Battery surge diode | [SMAJ18A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282) | Littelfuse (US) | 1 | $0.51 | $0.51 |
+| D1 | Schottky diode, 1 A 40 V, SOD-123 | [1N5819HW-7-F](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970) | Diodes Incorporated (US) | 1 | $0.31 | $0.31 |
+| D2, D3, D4 | LEDs, 0603: red, green, yellow | 150060RS75000, 150060GS75000, 150060YS75000 | Würth Elektronik (Germany) | 3 | $0.15 | $0.45 |
+| J4 | ESC connector, JST-SH 8-pin | [SM08B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714) | JST (Japan) | 1 | $0.85 | $0.85 |
+| J5, J7 | Sensor and charging ports, JST-GH 4-pin | SM04B-GHS-TB | JST (Japan) | 2 | $0.39 | $0.78 |
+| J6 | Radio port, JST-SH 4-pin top entry | [BM04B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696) | JST (Japan) | 1 | $0.53 | $0.53 |
+| J1, J3 | Antenna sockets, U.FL | [U.FL-R-SMT-1(10)](https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570) | Hirose (Japan) | 2 | $1.67 | $3.34 |
+| J2 | USB-C socket, 16-pin | [USB4105-GF-A](https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441) | GCT (UK) | 1 | $0.80 | $0.80 |
+| L2 | Buck inductor, 4.7 µH, 2.2 A saturation | CIGW252010EH4R7MNE | Samsung Electro-Mechanics (Korea) | 1 | $0.29 | $0.29 |
+| L1 | Radio supply inductor, 2.0 nH | LQG15HS2N0B02D | Murata (Japan) | 1 | $0.10 | $0.10 |
+| C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34 | 0.1 µF 16 V, 0402 | GRM155R71C104KA88J | Murata (Japan) | 13 | $0.10 | $1.30 |
+| C3, C5, C10, C11, C20 to C23 | 1 µF 10 V, 0402 | CL05A105KP5NNNC | Samsung Electro-Mechanics (Korea) | 8 | $0.10 | $0.80 |
+| C6, C27, C32 | 10 nF 50 V, 0402 | GRM155R71H103KA88D | Murata (Japan) | 3 | $0.10 | $0.30 |
+| C12, C13 | 15 pF 50 V, 0402 | GRM1555C1H150JA01D | Murata (Japan) | 2 | $0.10 | $0.20 |
+| C26 | 2.2 µF 16 V, 0402 | GRM155R61C225KE11J | Murata (Japan) | 1 | $0.22 | $0.22 |
+| C4, C30 | 10 µF 6.3 V, 0603 | GRM188R60J106ME47D | Murata (Japan) | 2 | $0.12 | $0.24 |
+| C18, C19 | 22 µF 10 V, 0805 | GRM21BR61A226ME51L | Murata (Japan) | 2 | $0.19 | $0.38 |
+| C16 | 10 µF 25 V, 1206 | [GRM319R61E106KA12D](https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921) | Murata (Japan) | 1 | $0.47 | $0.47 |
+| R1, R10, R11 | 10 kΩ 1%, 0402 | RC0402FR-0710KL | Yageo (Taiwan) | 3 | $0.10 | $0.30 |
+| R4, R5 | 5.1 kΩ 1%, 0402 | RC0402FR-075K1L | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
+| R6, R8 | 1 kΩ 1%, 0402 | RC0402FR-071KL | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
+| R12, R13 | 4.7 kΩ 1%, 0402 | RC0402FR-134K7L | Yageo (Taiwan) | 2 | $0.11 | $0.22 |
+| R7 | 470 Ω 1%, 0402 | [RC0402FR-07470RL](https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619) | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
+| R9 | 100 kΩ 1%, 0402 | RC0402FR-07100KL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
+| R3 | 0 Ω link, 0402 | RC0402JR-070RL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
+| | **Total, 68 parts** | | | | | **$43.91** |
+
+Not fitted, so not bought: C14 and C15 (antenna tuning) and L3 (27 nH, Murata LQG15HS27NJ02D, $0.10, only for an active GPS antenna).
+
+Passive parts cost a few cents each in tens. Buy at least ten of every resistor and small capacitor; they are easy to lose and the extra cost is under two dollars.
+
+## Stock problems
+
+Checked 2026-10-11.
+
+| Part | Status at DigiKey | What to do |
+|---|---|---|
+| ICM-42688-P gyro | out of stock, restock 2027-08. Also out at Mouser and Avnet | see below |
+| AP63205WU-7 buck regulator | out of stock, restock 2027-01 | check Mouser on the day; listings there disagreed |
+| BMP581 barometer | out of stock, restock 2026-11-04 | wait three weeks, or check Mouser |
+| TPS7A2033PDBVR regulator | out of stock, restock late 2026-11 | wait, or check Mouser |
+| SM04B-GHS-TB connector | out of stock, restock 2026-11-16 | wait, or check Mouser |
+
+**The gyro is the real problem.** No authorised distributor had it. The one place showing stock was LCSC, a Chinese distributor, with 560 pieces at $20.50 each, four times the normal price. The choices:
+
+1. Buy it from LCSC at $20.50. It is the same TDK part, but bought through a Chinese seller.
+2. Check Newark, Arrow and Future on the day of ordering. Their listings were unclear or missing.
+3. Change the board to a gyro that is in stock, such as a Bosch or STMicroelectronics part. That is a schematic and layout change, and a firmware driver change.
+
+Brokers also list this part at very low prices. Parts from brokers are a known source of counterfeits, so avoid them.
+
+## Board changes these parts need
+
+Three things in this list do not drop onto the board as drawn:
+
+- **USB-C socket.** The board's footprint was drawn for a Chinese-made socket. The GCT part has the same pad and leg positions, but its mounting legs need slots 0.4 mm longer than the board has. The footprint must be widened before using it.
+- **Green LED.** The green LED listed needs 3.2 V to light, and the board gives it 3.3 V through 470 Ω, so it would barely glow. Either order a yellow-green type that lights at about 2 V, or change R7. The red and yellow ones are fine.
+- **Crystal temperature range.** The crystal listed is rated −20 to 75 °C. The alternative FA-128 40.0000MF20X-K0 covers −40 to 85 °C at $0.55, with looser frequency stability and only a few hundred in stock.
+
+## Bare board, made outside China
+
+The board is 36 × 39 mm with four layers.
+
+| Fab | Country | Smallest order | Lead time | Notes |
+|---|---|---|---|---|
+| [OSH Park](https://docs.oshpark.com/services/four-layer) | US | about $21.76 for three boards | 9 to 14 days | minimum spacing 0.127 mm |
+| [Aisler](https://community.aisler.net/t/4-layer-1-6mm-enig-design-rules/3733) | Germany | about €19.50 for three boards | not confirmed | minimum spacing 0.125 mm |
+| Eurocircuits | Belgium | quote only | 3 working days | minimum spacing 0.150 mm on the prototype service |
+
+The board was drawn to a 0.12 mm spacing rule, slightly tighter than these fabs allow. Rechecked at OSH Park's 0.127 mm, only six spots fail, each by 0.006 mm or less. Those six need nudging before ordering from OSH Park or Aisler. Their layer stacks also differ from the one the antenna traces were calculated for, so that width should be rechecked for whichever fab is chosen.
+
+## Regulations
+
+The team said it prefers not to source from China because of regulations. Several US rules touch drones and Chinese components, and they differ in what they cover:
+
+- Some apply only to work paid for with federal grant or contract money.
+- Some restrict specific named companies.
+- Some are about where a drone or its critical components were produced, not who sold them.
+- Universities often add their own purchasing policy on top.
+
+Which one applies to this project decides whether buying from US sellers is enough. The university's purchasing office or research-security office can answer that. Ask before the first order.
