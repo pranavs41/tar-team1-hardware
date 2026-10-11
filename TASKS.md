@@ -25,8 +25,13 @@ Networking drone flight controller, rev A:
 - [ ] Confirm the ESC's connector pinout against J4, and whether it outputs current or telemetry
 - [ ] Choose the buck inductor (4.7 µH, saturation current 2 A or more)
 - [ ] Fill in part numbers for the resistors, capacitors, LEDs and diodes
+- [ ] Footprint and pinout audit against the datasheets
+- [ ] Antenna trace width checked for 50 Ω on the fab's layer stack
 - [ ] Export gerbers and order rev A
+- [ ] Write the bring-up test firmware
 - [ ] Assemble and run the [bring-up checklist](docs/bring-up.md)
+
+The full plan, with what each check proves, is in [`docs/pcb-test-plan.md`](docs/pcb-test-plan.md).
 
 Mapping drone PCB:
 
@@ -38,6 +43,12 @@ Mapping drone PCB:
 
 - [ ] Frame CAD
 - [ ] Battery holder CAD
+- [ ] Stress simulation in SolidWorks before printing
+- [ ] Bare-frame tests: arm bending, arm twist, screw holes, battery holder
+- [ ] Drop test at flying weight
+- [ ] Tied-down throttle and vibration tests on the finished drone
+
+How to run each test and what counts as a pass is in [`docs/frame-test-plan.md`](docs/frame-test-plan.md).
 
 What the frame has to fit, all from the flight controller:
 
@@ -87,3 +98,5 @@ That one idea crosses three people's work, so these points need an agreed answer
 
 - Every connector and pin on the flight controller: [`docs/hardware-reference.md`](docs/hardware-reference.md)
 - Whole-drone parts list with weights and prices: [`docs/parts-list.md`](docs/parts-list.md)
+- How the flight controller gets tested: [`docs/pcb-test-plan.md`](docs/pcb-test-plan.md)
+- How the frame gets tested: [`docs/frame-test-plan.md`](docs/frame-test-plan.md)
