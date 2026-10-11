@@ -21,6 +21,8 @@ Networking drone flight controller, rev A:
 - [x] Board placed and routed, design rules check clean
 - [x] Power budget checked
 - [x] Sensor port (J5) and radio port (J6) added
+- [x] Charging port (J7) enlarged to 7 pins and landing sensor port (J8) added
+- [ ] Give one of the two TF-Lunas a new I2C address before both are fitted
 - [x] Pin reference written: [`docs/hardware-reference.md`](docs/hardware-reference.md)
 - [ ] Decide how to get the gyro: it is out of stock at every authorised distributor (options in [`docs/parts-list.md`](docs/parts-list.md))
 - [ ] Ask the purchasing or research-security office which sourcing rule applies to the project
@@ -62,6 +64,10 @@ What the frame has to fit, all from the flight controller:
 - The board is 36 × 39 mm with four M3 holes on a 20 × 20 mm square. A 3D model is in [`cad/network-drone-fc.step`](cad/network-drone-fc.step) and the dimensions are in [`cad/README.md`](cad/README.md).
 - The radio port J6 points straight up from the bottom-right corner and needs clear space above it for a plug and cable.
 - Cables leave on every edge: USB-C on the right, ESC at the bottom, obstacle sensor on the left, charging board at the top right.
+- The landing sensor port J8 is on the right edge just below the charging connector and points straight up, like J6. It also needs clear space above it.
+- A second distance sensor faces down for landing and connects by cable to J8. It needs a mount on the underside with a clear view of the ground.
+- The battery is now a 1000 mAh pack, larger and heavier than the 800 mAh one first planned. Size the battery holder from the real pack.
+- The charging board needs a place on the frame, close to the battery, with its 7-pin cable reaching the top-right corner of the flight controller.
 - The obstacle sensor (TF-Luna) mounts at the front and connects by cable to J5 on the left edge.
 - Two antennas need a place: Wi-Fi from J1 at the lower right, GPS from J3 at the top left.
 
@@ -70,16 +76,24 @@ What the frame has to fit, all from the flight controller:
 - [ ] Charging board schematic
 - [ ] Charging board layout
 
-How it connects to the flight controller, through J7 (4-pin JST-GH):
+- [ ] Check the parts against the BQ25887 datasheet (the open points are listed in the charging board page)
+- [ ] Agree the dock voltage and current with Jadon
+
+The plan, the parts list and the checks still open are in [`docs/charging-board.md`](docs/charging-board.md).
+
+How it connects to the flight controller, through J7 (7-pin JST-SH, part SM07B-SRSS-TB, cable wired straight through):
 
 | J7 pin | Signal | Notes |
 |---|---|---|
-| 1 | GND | |
-| 2 | DOCK_DET | digital. The flight controller pulls it high; pull it to ground when the drone is docked |
-| 3 | AUX_ADC | analog, must stay under 3.1 V |
-| 4 | spare | not connected |
+| 1 | BATT+ | battery positive. Powers the flight controller, 1 A at most. Charge current does not go through this pin |
+| 2 | GND | |
+| 3 | SDA | I2C. The pull-ups are on the flight controller |
+| 4 | SCL | I2C |
+| 5 | /PG | to GPIO9. Low when the charger has input power, so low means docked |
+| 6 | STAT | to GPIO8. Low while charging |
+| 7 | CD | from GPIO7. High stops charging. Must read as low when left floating |
 
-There is no power on J7 in either direction. Charge current goes from the charging board to the battery directly, not through the flight controller. Protection for pins 2 and 3 belongs on the charging board.
+Three things differ from the charging board's first list: there is no VBAT_SENSE pin, because the flight controller already measures the battery and had no pin left for a second reading; the 10 kΩ pull-ups are not needed, because the flight controller supplies them; and /INT is not connected.
 
 ## Jadon: ground station
 
@@ -99,7 +113,7 @@ That one idea crosses three people's work, so these points need an agreed answer
 | What voltage and current the rails supply | Jadon, Rishab |
 | How the wire gets from the guard contacts to the charging board | Daniel, Rishab |
 | What stops the two exposed contacts from shorting on something metal in flight or in the case | Rishab |
-| How the drone knows it is seated, which is what DOCK_DET on J7 is for | Rishab, Pranav |
+| How the drone knows it is seated, which is what the charger's power-good line on J7 pin 5 is for | Rishab, Pranav |
 
 ## Reference
 
