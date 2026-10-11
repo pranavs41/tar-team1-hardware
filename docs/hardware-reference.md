@@ -124,7 +124,7 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 | Bus | Device | Address or note |
 |---|---|---|
 | I2C | BMP581 barometer (on board) | 0x46 |
-| I2C | TF-Luna obstacle sensor (on J5) | 0x10 |
+| I2C | TF-Luna obstacle sensor (on J5) | 0x10. Run the bus at 100 kHz when it is plugged in |
 | SPI | ICM-42688-P gyro and accelerometer | chip select GPIO35, interrupt GPIO48 |
 | UART | u-blox MAX-M10S GPS | TX GPIO36, RX GPIO18 |
 | UART | VoCore2 networking module (on J6) | TX GPIO2, RX GPIO10 |

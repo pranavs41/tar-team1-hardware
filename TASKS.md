@@ -25,8 +25,10 @@ Networking drone flight controller, rev A:
 - [ ] Confirm the ESC's connector pinout against J4, and whether it outputs current or telemetry
 - [ ] Choose the buck inductor (4.7 µH, saturation current 2 A or more)
 - [ ] Fill in part numbers for the resistors, capacitors, LEDs and diodes
-- [ ] Footprint and pinout audit against the datasheets
-- [ ] Antenna trace width checked for 50 Ω on the fab's layer stack
+- [x] Pinout and pad-pitch audit against the datasheets
+- [ ] Pad shapes and pin 1 orientation checked against each datasheet's land pattern drawing
+- [x] Antenna trace width checked for 50 Ω on the fab's layer stack
+- [x] Fab capability check and gerber export dry run
 - [ ] Export gerbers and order rev A
 - [ ] Write the bring-up test firmware
 - [ ] Assemble and run the [bring-up checklist](docs/bring-up.md)

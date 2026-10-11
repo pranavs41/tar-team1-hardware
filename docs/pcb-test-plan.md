@@ -4,7 +4,7 @@ How we find out whether the flight controller works. A board cannot be proven be
 
 ## Stage 1: before ordering
 
-Checks that software can run, all passing as of 2026-10-11:
+Checks KiCad runs by itself, all passing as of 2026-10-11:
 
 | Check | What it proves | State |
 |---|---|---|
@@ -13,14 +13,53 @@ Checks that software can run, all passing as of 2026-10-11:
 | Schematic against board, pin by pin | the board is the circuit that was drawn | done, all 296 pins match |
 | Power budget | regulators, tracks and connectors are sized for the load | done, see [power-budget.md](power-budget.md) |
 
-Checks that software cannot run. These are where first boards usually fail, and none of them is done yet:
+Further checks run on 2026-10-11. The results are in the next section.
 
-- [ ] **Footprint and pinout audit.** Compare every chip's footprint with its datasheet: pin 1 position, pin order, pad size and spacing. A footprint that does not match the real part passes every automatic check and still gives a dead board.
-- [ ] **Antenna trace impedance.** The Wi-Fi and GPS traces are 0.3 mm wide. Calculate the width that gives 50 Ω on the fab's 4-layer stack and adjust if it differs.
+- [x] **Pinout audit.** Every chip's schematic pins compared with the pin functions in its datasheet.
+- [x] **Footprint pitch.** Pad spacing of every chip and connector measured on the board against the package's nominal pitch.
+- [x] **Antenna trace impedance.** Calculated for the fab's 4-layer stack.
+- [x] **Fab capability.** Track widths, via sizes, hole spacing, solder mask strips and silkscreen text against JLCPCB's limits.
+- [x] **Gerber export.** All layers, drill files and the placement file export without errors.
+- [x] **Circuit calculations.** Crystal loading, I2C rise time, battery divider, LED currents, regulator headroom, voltage ratings.
+
+Checks that still need a person and the real parts:
+
+- [ ] **Pad shapes and pin 1 orientation.** The audit above proves the pin numbers and the pitch. It does not prove each pad is the right length and width, or that pin 1 sits on the correct corner. Compare each footprint with the land pattern drawing in its datasheet.
 - [ ] **ESC connector pinout.** Confirm the real ESC's pin order against J4, and whether it drives the current and telemetry pins.
 - [ ] **Paper test.** Print the board at 1:1 and lay the real parts on the pads.
 - [ ] **Second reader.** A teammate checks the schematic against the manufacturers' reference designs.
 - [ ] **Fab check.** Upload the gerbers to the fab's online checker before paying.
+
+## Results of the 2026-10-11 run
+
+| Check | Result |
+|---|---|
+| Electrical rules check | 0 errors, 0 warnings |
+| Design rules check | 0 errors. Three courtyard overlaps remain, all explained in the decision log |
+| KiCad's schematic parity check | 2 items left, both expected: the USB socket's two locating pegs are tied to ground on the board and have no schematic pin |
+| Schematic against board, pin by pin | 296 pins, 0 differences |
+| Pinout audit | 11 parts checked, all correct: ESP32-S3, buck, both regulators, IMU, barometer, GPS, USB protection, crystal, ESC connector, TVS |
+| Footprint pitch | 12 parts checked, all within 0.03 mm of nominal |
+| Narrowest track | 0.15 mm, against a fab minimum of 0.09 mm |
+| Vias | 0.3 mm hole with a 0.15 mm ring, against minimums of 0.3 and 0.13 mm |
+| Closest two holes | 0.26 mm wall to wall, against a minimum of 0.25 mm |
+| Thinnest solder mask strip | 0.20 mm, against a minimum of about 0.1 mm |
+| Gerber export | 11 layers, 2 drill files, placement file with 71 parts |
+| Antenna traces | about 56 Ω by calculation, against a 50 Ω target |
+| Crystal loading | 9.5 to 11.5 pF, against the crystal's 10 pF |
+| Battery divider | 0.55 to 1.53 V on the ADC pin across 2S empty to 4S full, against a 3.1 V limit |
+| LED currents | 1.3 mA each |
+| I2C rise time | 159 ns on the board alone. About 360 ns with the sensor cable attached, which is over the 300 ns limit for 400 kHz |
+
+Three things from this run are worth knowing.
+
+**One problem was found and fixed.** A ground via sat 0.20 mm from the USB socket's mounting slot, under the fab's 0.25 mm. KiCad's own check does not compare vias against slots, so it had passed. The via moved 0.06 mm and now clears by 0.26 mm.
+
+**The antenna traces are close enough.** A 0.3 mm trace on this stack works out near 56 Ω by the standard formula, and a result reported from JLCPCB's own calculator puts 50 Ω at about 0.29 mm, so the true value lies somewhere between 45 and 56 Ω. Each trace is under a fifth of a wavelength long, and at that length a mismatch of this size costs less than 0.1 dB. No change is needed. If the board is ever built on a different stack, recalculate.
+
+**Run the I2C bus at 100 kHz when the obstacle sensor is plugged in.** The cable adds capacitance, and with 4.7 kΩ pull-ups the signal edges become too slow for 400 kHz. At 100 kHz the limit is 1000 ns and there is plenty of margin. The cable capacitance in this calculation is a cautious guess, so measure the real rise time with an oscilloscope at bring-up. If 400 kHz is needed, change the two pull-up resistors R12 and R13 to 2.2 kΩ.
+
+Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
 ## Stage 2: on the bench
 

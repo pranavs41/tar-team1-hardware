@@ -46,4 +46,5 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-08 | J6's TX and RX share GPIO2 and GPIO10 with the ESC current and telemetry pins of J4 | The ESP32 has no escapable pins left (a via fits beside every other pin only, and the two free pins are boxed in by the motor lanes); those two lines already reach that corner and the chosen 8-bit ESC is not expected to drive them |
 | 2026-10-08 | Buck inductor must saturate at 2 A or more | Sensor and radio raise the worst-case 5 V load from 0.38 A to 0.93 A, which puts the inductor peak at 1.09 A on 2S and 1.27 A on 4S |
 | 2026-10-08 | Schematic fix: the battery wire is split where C35 joins it | A junction on an unbroken wire does not connect in KiCad, so since C35 was added the schematic had the buck input on a separate net from VBAT; the board was right throughout, and a pin-by-pin comparison of schematic and board now shows no differences |
-
+| 2026-10-11 | Ground via beside the USB socket moved 0.06 mm | It was 0.20 mm from the socket's mounting slot, under the fab's 0.25 mm hole spacing; found by a pre-order check, since KiCad does not compare vias against slots |
+| 2026-10-11 | I2C runs at 100 kHz when the obstacle sensor is attached | The sensor cable slows the edges past the 400 kHz limit with 4.7 kΩ pull-ups; 2.2 kΩ at R12 and R13 would restore 400 kHz |
