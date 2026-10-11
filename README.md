@@ -2,8 +2,6 @@
 
 Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin).
 
-Flight controller in progress by **Pranav Shivashankar**.
-
 ## Start here
 
 - **Wiring something to the board, or writing firmware for it:** [`docs/hardware-reference.md`](docs/hardware-reference.md) has every connector, pin, voltage and limit on one page.
