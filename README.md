@@ -7,12 +7,15 @@ Hardware for the Team 1 swarm mapping project (Texas Aerial Robotics, UT Austin)
 - **Wiring something to the board, or writing firmware for it:** [`docs/hardware-reference.md`](docs/hardware-reference.md) has every connector, pin, voltage and limit on one page.
 - **Reading the schematic without KiCad:** [`schematics/network-drone-fc-schematic.pdf`](schematics/network-drone-fc-schematic.pdf).
 - **Designing the frame around the board:** [`cad/network-drone-fc.step`](cad/network-drone-fc.step) is the assembled board as a 3D part.
+- **Who is doing what:** [`TASKS.md`](TASKS.md) lists each person's tasks and where their work meets someone else's.
+- **What one drone is made of:** [`docs/parts-list.md`](docs/parts-list.md) has every part with its weight, price and where to buy it.
 
 ![Flight controller, top side](cad/board-top.png)
 
 ## Repository layout
 
 ```
+TASKS.md                who owns what, task checklists, the charging concept
 pcb/
   network-drone-fc/     KiCad 9 project: the board and the schematic source
     lib/                custom symbols, footprints, 3D models
@@ -21,6 +24,7 @@ schematics/             the schematic as a PDF
 cad/                    board 3D model (STEP), board pictures, frame CAD
 docs/
   hardware-reference.md every connector, pin, voltage and limit on one page
+  parts-list.md         whole-drone parts list: weight, price, where to buy
   DESIGN.md             design doc: requirements, block diagram, parts, power, layout
   circuits/             how every circuit works and why it's there, box by box
   pin-map.md            ESP32 pin, net name and destination, for firmware
