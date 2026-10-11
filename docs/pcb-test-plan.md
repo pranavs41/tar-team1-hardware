@@ -10,7 +10,7 @@ Checks KiCad runs by itself, all passing as of 2026-10-11:
 |---|---|---|
 | Electrical rules check | no unconnected or conflicting pins in the schematic | done, 0 errors |
 | Design rules check | nothing shorts, and the spacing is something the fab can build | done, 0 errors |
-| Schematic against board, pin by pin | the board is the circuit that was drawn | done, all 296 pins match |
+| Schematic against board, pin by pin | the board is the circuit that was drawn | done, all 305 pins match |
 | Power budget | regulators, tracks and connectors are sized for the load | done, see [power-budget.md](power-budget.md) |
 
 Further checks run on 2026-10-11. The results are in the next section.
@@ -35,11 +35,11 @@ Checks that still need a person and the real parts:
 | Check | Result |
 |---|---|
 | Electrical rules check | 0 errors, 0 warnings |
-| Design rules check | 0 errors. Three courtyard overlaps remain, all explained in the decision log |
+| Design rules check | 0 errors. Five courtyard overlaps remain, all explained in the decision log |
 | KiCad's schematic parity check | 2 items left, both expected: the USB socket's two locating pegs are tied to ground on the board and have no schematic pin |
-| Schematic against board, pin by pin | 296 pins, 0 differences |
+| Schematic against board, pin by pin | 305 pins, 0 differences |
 | Pinout audit | 11 parts checked, all correct: ESP32-S3, buck, both regulators, IMU, barometer, GPS, USB protection, crystal, ESC connector, TVS |
-| Footprint pitch | 12 parts checked, all within 0.03 mm of nominal |
+| Footprint pitch | 13 parts checked, all within 0.03 mm of nominal |
 | Narrowest track | 0.15 mm, against a fab minimum of 0.09 mm |
 | Vias | 0.3 mm hole with a 0.15 mm ring, against minimums of 0.3 and 0.13 mm |
 | Closest two holes | 0.26 mm wall to wall, against a minimum of 0.25 mm |
@@ -49,7 +49,7 @@ Checks that still need a person and the real parts:
 | Crystal loading | 9.5 to 11.5 pF, against the crystal's 10 pF |
 | Battery divider | 0.55 to 1.53 V on the ADC pin across 2S empty to 4S full, against a 3.1 V limit |
 | LED currents | 1.3 mA each |
-| I2C rise time | 159 ns on the board alone. About 360 ns with the sensor cable attached, which is over the 300 ns limit for 400 kHz |
+| I2C rise time | 93 ns on the board alone with the 2.2 kΩ pull-ups. About 370 ns with both sensors and the charging board attached, which is over the 300 ns limit for 400 kHz and well inside the 1000 ns limit for 100 kHz |
 
 Three things from this run are worth knowing.
 
@@ -57,7 +57,9 @@ Three things from this run are worth knowing.
 
 **The antenna traces are close enough.** A 0.3 mm trace on this stack works out near 56 Ω by the standard formula, and a result reported from JLCPCB's own calculator puts 50 Ω at about 0.29 mm, so the true value lies somewhere between 45 and 56 Ω. Each trace is under a fifth of a wavelength long, and at that length a mismatch of this size costs less than 0.1 dB. No change is needed. If the board is ever built on a different stack, recalculate.
 
-**Run the I2C bus at 100 kHz when the obstacle sensor is plugged in.** The cable adds capacitance, and with 4.7 kΩ pull-ups the signal edges become too slow for 400 kHz. At 100 kHz the limit is 1000 ns and there is plenty of margin. The cable capacitance in this calculation is a cautious guess, so measure the real rise time with an oscilloscope at bring-up. If 400 kHz is needed, change the two pull-up resistors R12 and R13 to 2.2 kΩ.
+**Run the I2C bus at 100 kHz.** Each cable adds capacitance, and with three of them (two sensors and the charging board) the signal edges are too slow for 400 kHz even with the 2.2 kΩ pull-ups now fitted. At 100 kHz the limit is 1000 ns and there is plenty of margin. The cable capacitance in this calculation is a cautious guess, so measure the real rise time with an oscilloscope at bring-up.
+
+The checks were run again the same day after the charging connector grew to seven pins and the landing sensor port was added. The numbers in the table are from that second run.
 
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
@@ -97,7 +99,7 @@ There is no single score for routing. What can be measured:
 | Measure | Value |
 |---|---|
 | Design rule errors | 0 |
-| Vias | 159: about half tie ground together, 14 feed the 3.3 V plane, the rest carry signals |
+| Vias | 165: about half tie ground together, 14 feed the 3.3 V plane, the rest carry signals |
 | Typical track length | 22% longer than a straight line between its pads |
 | Right-angle or sharper corners | 0 |
 | Ground plane | one unbroken layer under the whole board |
