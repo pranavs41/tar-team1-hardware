@@ -37,5 +37,3 @@ Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Pe
 10,RC0402FR-07470RL,Yageo,R7,"470 Ω 1%, 0402",1,0.10
 10,RC0402FR-07100KL,Yageo,R9,"100 kΩ 1%, 0402",1,0.10
 10,RC0402JR-070RL,Yageo,R3,"0 Ω link, 0402",1,0.10
-1,TS391SNL,Chip Quik,assembly,"Solder paste, SAC305 lead-free, no-clean, thermally stable, syringe",0,
-1,SMD291,Chip Quik,assembly,"Tack flux, no-clean, syringe",0,

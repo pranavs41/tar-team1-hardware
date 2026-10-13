@@ -1,6 +1,6 @@
 # Flight controller parts order, rev A
 
-One DigiKey order: every part soldered onto the flight controller, for 3 boards, with spare small parts, plus solder paste and flux. Seller is DigiKey unless the note says otherwise. Prices were read on 2026-10-11; check stock and price on the day.
+One DigiKey order: every part soldered onto the flight controller, for 3 boards, with spare small parts. Seller is DigiKey unless the note says otherwise. Prices were read on 2026-10-11; check stock and price on the day.
 
 The same list as a spreadsheet is [`fc-parts-order.csv`](fc-parts-order.csv), and as a file DigiKey's upload tool reads, [`bom-digikey.csv`](bom-digikey.csv).
 
@@ -44,8 +44,6 @@ The same list as a spreadsheet is [`fc-parts-order.csv`](fc-parts-order.csv), an
 | 10 | [RC0402FR-07470RL](https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619) | 470 Ω 1%, 0402 | Yageo | $0.10 | $1.00 |  |
 | 10 | [RC0402FR-07100KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL) | 100 kΩ 1%, 0402 | Yageo | $0.10 | $1.00 |  |
 | 10 | [RC0402JR-070RL](https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL) | 0 Ω link, 0402 | Yageo | $0.10 | $1.00 |  |
-| 1 | [TS391SNL](https://www.digikey.com/en/products/result?keywords=TS391SNL) | Solder paste, SAC305 lead-free, no-clean, syringe | Chip Quik | check | check | Price not read. Confirm it is SAC305 no-clean paste |
-| 1 | [SMD291](https://www.digikey.com/en/products/result?keywords=SMD291) | Tack flux, no-clean, syringe | Chip Quik | check | check | Price not read |
-| | | **Total before paste, flux, shipping and tax** | | | **$146.47** | |
+| | | **Total before shipping and tax** | | | **$146.47** | |
 
 Links without a product page go to a DigiKey search for the part number. Not in this order: the bare boards, the stencil, and the motors, ESC and other drone parts.
