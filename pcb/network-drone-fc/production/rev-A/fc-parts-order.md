@@ -11,10 +11,10 @@ The same list as a spreadsheet is [`fc-parts-order.csv`](fc-parts-order.csv), an
 | 1 | [ESP32-S3FN8](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446) | ESP32-S3 processor | Espressif | $4.17 | $4.17 |  |
 | 1 | [MAX-M10S-00B](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906) | GPS module | u-blox | $11.42 | $11.42 |  |
 | 1 | [ICM-42688-P](https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524) | Gyro and accelerometer | TDK InvenSense | $4.86 | $4.86 | Buy from Newark, DigiKey has none. Take the price from Newark's page |
-| 1 | [BMP581](https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134) | Barometer | Bosch Sensortec | $3.35 | $3.35 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
-| 1 | [AP63205WU-7](https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432) | 5 V buck regulator | Diodes Incorporated | $0.89 | $0.89 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
+| 1 | [BMP581](https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134) | Barometer | Bosch Sensortec | $3.35 | $3.35 | Out of stock everywhere on 2026-10-13. DigiKey restock due 2026-11-04. Backorder it there or wait |
+| 1 | [AP63205WU-7](https://www.mouser.com/ProductDetail/Diodes-Incorporated/AP63205WU-7) | 5 V buck regulator | Diodes Incorporated | $0.89 | $0.89 | Buy from Mouser, DigiKey has none. Take the price from Mouser's page |
 | 1 | [TLV75733PDRVR](https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260) | 3.3 V regulator, 1 A | Texas Instruments | $0.48 | $0.48 |  |
-| 1 | [TPS7A2033PDBVR](https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866) | 3.3 V low-noise regulator | Texas Instruments | $0.35 | $0.35 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
+| 1 | [TPS7A2033PDBVR](https://www.ti.com/product/TPS7A20/part-details/TPS7A2033PDBVR) | 3.3 V low-noise regulator | Texas Instruments | $0.35 | $0.35 | Buy direct from ti.com. Not the TPS7A0233, which is a different, noisier part |
 | 1 | [USBLC6-2SC6](https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559) | USB protection | STMicroelectronics | $0.54 | $0.54 |  |
 | 1 | [FA-128 40.0000MF10Z-K3](https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630) | 40 MHz crystal, 10 pF, ±10 ppm | Epson | $1.11 | $1.11 |  |
 | 1 | [TCJD107M025R0055](https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375) | 100 µF 25 V polymer capacitor | Kyocera AVX | $3.65 | $3.65 |  |
@@ -24,7 +24,7 @@ The same list as a spreadsheet is [`fc-parts-order.csv`](fc-parts-order.csv), an
 | 3 | [150060VS75000](https://www.digikey.com/en/products/result?keywords=150060VS75000) | LED 0603, yellow-green | Würth Elektronik | $0.15 | $0.45 |  |
 | 3 | [150060YS75000](https://www.digikey.com/en/products/result?keywords=150060YS75000) | LED 0603, yellow | Würth Elektronik | $0.15 | $0.45 |  |
 | 1 | [SM08B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714) | ESC connector, JST-SH 8-pin | JST | $0.85 | $0.85 | DigiKey lists it as SM08B-SRSS-TB(LF)(SN) |
-| 1 | [SM04B-GHS-TB](https://www.digikey.com/en/products/result?keywords=SM04B-GHS-TB) | Obstacle sensor port, JST-GH 4-pin | JST | $0.39 | $0.39 | Out of stock at DigiKey on 2026-10-11. Try Mouser. Listed as SM04B-GHS-TB(LF)(SN) |
+| 1 | [SM04B-GHS-TB](https://www.lcsc.com/product-detail/Wire-To-Board-Connector_JST-SM04B-GHS-TB-LF-SN_C189895.html) | Obstacle sensor port, JST-GH 4-pin | JST | $0.39 | $0.39 | LCSC ships from China. Or wait for DigiKey, restock due 2026-11-16 |
 | 1 | [SM07B-SRSS-TB](https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB) | Charging port, JST-SH 7-pin | JST | $0.80 | $0.80 | DigiKey lists it as SM07B-SRSS-TB(LF)(SN) |
 | 2 | [BM04B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696) | Radio port and landing sensor port, JST-SH 4-pin top entry | JST | $0.53 | $1.06 | DigiKey lists it as BM04B-SRSS-TB(LF)(SN) |
 | 2 | [U.FL-R-SMT-1(10)](https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570) | Antenna sockets, U.FL | Hirose | $1.67 | $3.34 |  |

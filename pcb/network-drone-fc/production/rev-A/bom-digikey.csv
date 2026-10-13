@@ -2,9 +2,7 @@ Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Pe
 1,ESP32-S3FN8,Espressif,U1,ESP32-S3 processor,1,4.17
 1,MAX-M10S-00B,u-blox,U8,GPS module,1,11.42
 1,BMP581,Bosch Sensortec,U7,Barometer,1,3.35
-1,AP63205WU-7,Diodes Incorporated,U3,5 V buck regulator,1,0.89
 1,TLV75733PDRVR,Texas Instruments,U4,"3.3 V regulator, 1 A",1,0.48
-1,TPS7A2033PDBVR,Texas Instruments,U5,3.3 V low-noise regulator,1,0.35
 1,USBLC6-2SC6,STMicroelectronics,U2,USB protection,1,0.54
 1,FA-128 40.0000MF10Z-K3,Epson,X1,"40 MHz crystal, 10 pF, ±10 ppm",1,1.11
 1,TCJD107M025R0055,Kyocera AVX,C35,100 µF 25 V polymer capacitor,1,3.65
@@ -14,7 +12,6 @@ Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Pe
 3,150060VS75000,Würth Elektronik,D3,"LED 0603, yellow-green",1,0.15
 3,150060YS75000,Würth Elektronik,D4,"LED 0603, yellow",1,0.15
 1,SM08B-SRSS-TB,JST,J4,"ESC connector, JST-SH 8-pin",1,0.85
-1,SM04B-GHS-TB,JST,J5,"Obstacle sensor port, JST-GH 4-pin",1,0.39
 1,SM07B-SRSS-TB,JST,J7,"Charging port, JST-SH 7-pin",1,0.80
 2,BM04B-SRSS-TB,JST,"J6, J8","Radio port and landing sensor port, JST-SH 4-pin top entry",2,0.53
 2,U.FL-R-SMT-1(10),Hirose,"J1, J3","Antenna sockets, U.FL",2,1.67

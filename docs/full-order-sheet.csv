@@ -2,10 +2,10 @@
 Flight controller parts (1 board),DigiKey,1,ESP32-S3FN8,ESP32-S3 processor,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17,4.17,
 Flight controller parts (1 board),DigiKey,1,MAX-M10S-00B,GPS module,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42,11.42,
 Flight controller parts (1 board),Newark,1,ICM-42688-P,Gyro and accelerometer,https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524,4.86,4.86,Buy from Newark, DigiKey has none. Take the price from Newark's page
-Flight controller parts (1 board),DigiKey,1,BMP581,Barometer,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35,3.35,Out of stock at DigiKey on 2026-10-11. Try Mouser
-Flight controller parts (1 board),DigiKey,1,AP63205WU-7,5 V buck regulator,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432,0.89,0.89,Out of stock at DigiKey on 2026-10-11. Try Mouser
+Flight controller parts (1 board),DigiKey,1,BMP581,Barometer,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35,3.35,Out of stock everywhere on 2026-10-13. DigiKey restock due 2026-11-04. Backorder it there or wait
+Flight controller parts (1 board),Mouser,1,AP63205WU-7,5 V buck regulator,https://www.mouser.com/ProductDetail/Diodes-Incorporated/AP63205WU-7,0.89,0.89,"Buy from Mouser, DigiKey has none. Take the price from Mouser's page"
 Flight controller parts (1 board),DigiKey,1,TLV75733PDRVR,"3.3 V regulator, 1 A",https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48,0.48,
-Flight controller parts (1 board),DigiKey,1,TPS7A2033PDBVR,3.3 V low-noise regulator,https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866,0.35,0.35,Out of stock at DigiKey on 2026-10-11. Try Mouser
+Flight controller parts (1 board),Texas Instruments,1,TPS7A2033PDBVR,3.3 V low-noise regulator,https://www.ti.com/product/TPS7A20/part-details/TPS7A2033PDBVR,0.35,0.35,"Buy direct from ti.com. Not the TPS7A0233, which is a different, noisier part"
 Flight controller parts (1 board),DigiKey,1,USBLC6-2SC6,USB protection,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54,0.54,
 Flight controller parts (1 board),DigiKey,1,FA-128 40.0000MF10Z-K3,"40 MHz crystal, 10 pF, ±10 ppm",https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11,1.11,
 Flight controller parts (1 board),DigiKey,1,TCJD107M025R0055,100 µF 25 V polymer capacitor,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65,3.65,
@@ -15,7 +15,7 @@ Flight controller parts (1 board),DigiKey,3,150060RS75000,"LED 0603, red",https:
 Flight controller parts (1 board),DigiKey,3,150060VS75000,"LED 0603, yellow-green",https://www.digikey.com/en/products/result?keywords=150060VS75000,0.15,0.45,
 Flight controller parts (1 board),DigiKey,3,150060YS75000,"LED 0603, yellow",https://www.digikey.com/en/products/result?keywords=150060YS75000,0.15,0.45,
 Flight controller parts (1 board),DigiKey,1,SM08B-SRSS-TB,"ESC connector, JST-SH 8-pin",https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714,0.85,0.85,DigiKey lists it as SM08B-SRSS-TB(LF)(SN)
-Flight controller parts (1 board),DigiKey,1,SM04B-GHS-TB,"Obstacle sensor port, JST-GH 4-pin",https://www.digikey.com/en/products/result?keywords=SM04B-GHS-TB,0.39,0.39,Out of stock at DigiKey on 2026-10-11. Try Mouser. Listed as SM04B-GHS-TB(LF)(SN)
+Flight controller parts (1 board),LCSC,1,SM04B-GHS-TB,"Obstacle sensor port, JST-GH 4-pin",https://www.lcsc.com/product-detail/Wire-To-Board-Connector_JST-SM04B-GHS-TB-LF-SN_C189895.html,0.39,0.39,"LCSC ships from China. Or wait for DigiKey, restock due 2026-11-16"
 Flight controller parts (1 board),DigiKey,1,SM07B-SRSS-TB,"Charging port, JST-SH 7-pin",https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80,0.80,DigiKey lists it as SM07B-SRSS-TB(LF)(SN)
 Flight controller parts (1 board),DigiKey,2,BM04B-SRSS-TB,"Radio port and landing sensor port, JST-SH 4-pin top entry",https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696,0.53,1.06,DigiKey lists it as BM04B-SRSS-TB(LF)(SN)
 Flight controller parts (1 board),DigiKey,2,U.FL-R-SMT-1(10),"Antenna sockets, U.FL",https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570,1.67,3.34,

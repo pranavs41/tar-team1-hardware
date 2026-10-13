@@ -56,22 +56,22 @@ Upload `bom-digikey.csv` with DigiKey's BOM or list upload tool. The columns are
 
 | | |
 |---|---|
-| Lines | 37. The gyro is bought from Newark |
+| Lines | 34. Four parts are bought from other sellers, listed below |
 | Quantities | enough for one board, with extra small resistors, capacitors and LEDs because they are easy to lose. Two of the three bare boards stay empty as spares |
 | Cost with the spare small parts | about $59 at the prices read on 2026-10-11 |
 | Cost of parts for one board | $44.83 |
 
 To build a second board, order every line again apart from the resistors and small capacitors, which already come in tens.
 
-Parts that were out of stock at DigiKey when last checked. Look at these first:
+Four parts are bought elsewhere and are not in `bom-digikey.csv`, and one is still out of stock everywhere:
 
-| Part | Number | If DigiKey has none |
+| Part | Number | Where |
 |---|---|---|
-| Gyro | ICM-42688-P | Newark: https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524 . It is not in `bom-digikey.csv`, so order it there separately |
-| 5 V regulator | AP63205WU-7 | Mouser |
-| Barometer | BMP581 | Mouser |
-| 3.3 V sensor regulator | TPS7A2033PDBVR | Mouser |
-| Sensor connector | SM04B-GHS-TB | Mouser |
+| Gyro | ICM-42688-P | Newark: https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524 |
+| 5 V regulator | AP63205WU-7 | Mouser: https://www.mouser.com/ProductDetail/Diodes-Incorporated/AP63205WU-7 |
+| 3.3 V sensor regulator | TPS7A2033PDBVR | Texas Instruments: https://www.ti.com/product/TPS7A20/part-details/TPS7A2033PDBVR . Not the TPS7A0233, which is a different part |
+| Sensor connector | SM04B-GHS-TB | LCSC, which ships from China, or wait for DigiKey's restock due 2026-11-16 |
+| Barometer | BMP581 | in the DigiKey file. Out of stock everywhere on 2026-10-13, DigiKey restock due 2026-11-04 |
 
 DigiKey lists JST connectors with a longer number, for example SM08B-SRSS-TB(LF)(SN). If the upload does not match one, search for the short number and pick the JST part.
 
