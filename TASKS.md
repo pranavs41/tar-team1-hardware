@@ -26,7 +26,8 @@ Networking drone flight controller, rev A:
 - [x] Pin reference written: [`docs/hardware-reference.md`](docs/hardware-reference.md)
 - [ ] Decide how to get the gyro: it is out of stock at every authorised distributor (options in [`docs/parts-list.md`](docs/parts-list.md))
 - [ ] Ask the purchasing or research-security office which sourcing rule applies to the project
-- [ ] Choose the board fab, then recheck the antenna trace width on that fab's layer stack
+- [x] Board fab chosen: OSH Park. Antenna trace rechecked on its layer stack (about 59 Ω, left as is)
+- [x] Parts list checked against every footprint on the board
 - [x] Six tight spots opened up, so the board passes a 0.127 mm spacing rule (OSH Park, Aisler)
 - [x] USB-C footprint's mounting slots lengthened for the GCT socket
 - [x] Green LED changed to a type that lights at about 2 V
@@ -38,7 +39,8 @@ Networking drone flight controller, rev A:
 - [ ] Pad shapes and pin 1 orientation checked against each datasheet's land pattern drawing
 - [x] Antenna trace width checked for 50 Ω on the fab's layer stack
 - [x] Fab capability check and gerber export dry run
-- [ ] Export gerbers and order rev A
+- [x] Order files made: [`pcb/network-drone-fc/production/rev-A/`](pcb/network-drone-fc/production/rev-A/order-notes.md)
+- [ ] Order rev A: boards from OSH Park, stencil from OSH Stencils, parts from DigiKey
 - [ ] Write the bring-up test firmware
 - [ ] Assemble and run the [bring-up checklist](docs/bring-up.md)
 
