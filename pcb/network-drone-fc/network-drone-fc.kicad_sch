@@ -10477,7 +10477,7 @@
 			)
 		)
 	)
-	(global_label "MOTOR2"
+	(global_label "MOTOR4"
 		(shape input)
 		(at 278.13 100.33 180)
 		(fields_autoplaced yes)
@@ -10785,7 +10785,7 @@
 			)
 		)
 	)
-	(global_label "MOTOR1"
+	(global_label "MOTOR3"
 		(shape input)
 		(at 278.13 95.25 180)
 		(fields_autoplaced yes)
@@ -21696,7 +21696,7 @@
 		)
 		(uuid "47a6be84-0b7a-45e7-969c-4cd7b7267e8f")
 	)
-	(global_label "ESC_CUR"
+	(global_label "MOTOR1"
 		(shape input)
 		(at 236.22 196.85 180)
 		(fields_autoplaced yes)
@@ -21728,7 +21728,7 @@
 		)
 		(uuid "286af312-e752-485a-9d93-6520496aa1fa")
 	)
-	(global_label "ESC_TELEM"
+	(global_label "MOTOR2"
 		(shape input)
 		(at 236.22 199.39 180)
 		(fields_autoplaced yes)
@@ -21760,7 +21760,7 @@
 		)
 		(uuid "ff7fd3c2-6f5d-4294-b5ce-3c88c745f3e5")
 	)
-	(global_label "MOTOR1"
+	(global_label "MOTOR3"
 		(shape input)
 		(at 236.22 201.93 180)
 		(fields_autoplaced yes)
@@ -21792,7 +21792,7 @@
 		)
 		(uuid "2c19cfa9-7087-4cf0-81f9-743625b2039c")
 	)
-	(global_label "MOTOR2"
+	(global_label "MOTOR4"
 		(shape input)
 		(at 236.22 204.47 180)
 		(fields_autoplaced yes)
@@ -21824,7 +21824,7 @@
 		)
 		(uuid "2eef089b-0288-43de-a1f8-2cfcae254573")
 	)
-	(global_label "MOTOR3"
+	(global_label "ESC_TELEM"
 		(shape input)
 		(at 236.22 207.01 180)
 		(fields_autoplaced yes)
@@ -21856,7 +21856,7 @@
 		)
 		(uuid "0f6066eb-2539-4177-b39d-86f306c363f6")
 	)
-	(global_label "MOTOR4"
+	(global_label "ESC_CUR"
 		(shape input)
 		(at 236.22 209.55 180)
 		(fields_autoplaced yes)
@@ -25630,7 +25630,7 @@
 			)
 		)
 	)
-	(global_label "MOTOR3"
+	(global_label "MOTOR1"
 		(shape input)
 		(at 278.13 123.19 180)
 		(fields_autoplaced yes)
@@ -25762,7 +25762,7 @@
 			)
 		)
 	)
-	(global_label "MOTOR4"
+	(global_label "MOTOR2"
 		(shape input)
 		(at 280.67 82.55 180)
 		(fields_autoplaced yes)
