@@ -1,42 +1,42 @@
 ﻿Group,Seller,Qty,Part,What it is,Link,Each USD,Line total USD,Note
-Flight controller parts (3 boards),DigiKey,3,ESP32-S3FN8,ESP32-S3 processor,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17,12.51,
-Flight controller parts (3 boards),DigiKey,3,MAX-M10S-00B,GPS module,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42,34.26,
-Flight controller parts (3 boards),DigiKey,3,ICM-42688-P,Gyro and accelerometer,https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934,4.86,14.58,Out of stock at DigiKey on 2026-10-11. Try Newark or Arrow. No brokers
-Flight controller parts (3 boards),DigiKey,3,BMP581,Barometer,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35,10.05,Out of stock at DigiKey on 2026-10-11. Try Mouser
-Flight controller parts (3 boards),DigiKey,3,AP63205WU-7,5 V buck regulator,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432,0.89,2.67,Out of stock at DigiKey on 2026-10-11. Try Mouser
-Flight controller parts (3 boards),DigiKey,3,TLV75733PDRVR,"3.3 V regulator, 1 A",https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48,1.44,
-Flight controller parts (3 boards),DigiKey,3,TPS7A2033PDBVR,3.3 V low-noise regulator,https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866,0.35,1.05,Out of stock at DigiKey on 2026-10-11. Try Mouser
-Flight controller parts (3 boards),DigiKey,3,USBLC6-2SC6,USB protection,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54,1.62,
-Flight controller parts (3 boards),DigiKey,3,FA-128 40.0000MF10Z-K3,"40 MHz crystal, 10 pF, ±10 ppm",https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11,3.33,
-Flight controller parts (3 boards),DigiKey,3,TCJD107M025R0055,100 µF 25 V polymer capacitor,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65,10.95,
-Flight controller parts (3 boards),DigiKey,3,SMAJ18A,Battery surge diode,https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282,0.51,1.53,
-Flight controller parts (3 boards),DigiKey,3,1N5819HW-7-F,"Schottky diode, 1 A 40 V, SOD-123",https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970,0.31,0.93,
-Flight controller parts (3 boards),DigiKey,5,150060RS75000,"LED 0603, red",https://www.digikey.com/en/products/result?keywords=150060RS75000,0.15,0.75,
-Flight controller parts (3 boards),DigiKey,5,150060VS75000,"LED 0603, yellow-green",https://www.digikey.com/en/products/result?keywords=150060VS75000,0.15,0.75,
-Flight controller parts (3 boards),DigiKey,5,150060YS75000,"LED 0603, yellow",https://www.digikey.com/en/products/result?keywords=150060YS75000,0.15,0.75,
-Flight controller parts (3 boards),DigiKey,3,SM08B-SRSS-TB,"ESC connector, JST-SH 8-pin",https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714,0.85,2.55,DigiKey lists it as SM08B-SRSS-TB(LF)(SN)
-Flight controller parts (3 boards),DigiKey,3,SM04B-GHS-TB,"Obstacle sensor port, JST-GH 4-pin",https://www.digikey.com/en/products/result?keywords=SM04B-GHS-TB,0.39,1.17,Out of stock at DigiKey on 2026-10-11. Try Mouser. Listed as SM04B-GHS-TB(LF)(SN)
-Flight controller parts (3 boards),DigiKey,3,SM07B-SRSS-TB,"Charging port, JST-SH 7-pin",https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80,2.40,DigiKey lists it as SM07B-SRSS-TB(LF)(SN)
-Flight controller parts (3 boards),DigiKey,6,BM04B-SRSS-TB,"Radio port and landing sensor port, JST-SH 4-pin top entry",https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696,0.53,3.18,DigiKey lists it as BM04B-SRSS-TB(LF)(SN)
-Flight controller parts (3 boards),DigiKey,6,U.FL-R-SMT-1(10),"Antenna sockets, U.FL",https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570,1.67,10.02,
-Flight controller parts (3 boards),DigiKey,3,USB4105-GF-A,"USB-C socket, 16-pin",https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441,0.80,2.40,
-Flight controller parts (3 boards),DigiKey,3,CIGW252010EH4R7MNE,"Buck inductor, 4.7 µH, 2.2 A saturation",https://www.digikey.com/en/products/result?keywords=CIGW252010EH4R7MNE,0.29,0.87,
-Flight controller parts (3 boards),DigiKey,10,LQG15HS2N0B02D,"Radio supply inductor, 2.0 nH",https://www.digikey.com/en/products/result?keywords=LQG15HS2N0B02D,0.10,1.00,
-Flight controller parts (3 boards),DigiKey,50,GRM155R71C104KA88J,"0.1 µF 16 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM155R71C104KA88J,0.10,5.00,
-Flight controller parts (3 boards),DigiKey,30,CL05A105KP5NNNC,"1 µF 10 V, 0402",https://www.digikey.com/en/products/result?keywords=CL05A105KP5NNNC,0.10,3.00,
-Flight controller parts (3 boards),DigiKey,20,GRM155R71H103KA88D,"10 nF 50 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM155R71H103KA88D,0.10,2.00,
-Flight controller parts (3 boards),DigiKey,10,GRM1555C1H150JA01D,"15 pF 50 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D,0.10,1.00,
-Flight controller parts (3 boards),DigiKey,10,GRM155R61C225KE11J,"2.2 µF 16 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J,0.22,2.20,
-Flight controller parts (3 boards),DigiKey,10,GRM188R60J106ME47D,"10 µF 6.3 V, 0603",https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D,0.12,1.20,
-Flight controller parts (3 boards),DigiKey,10,GRM21BR61A226ME51L,"22 µF 10 V, 0805",https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L,0.19,1.90,
-Flight controller parts (3 boards),DigiKey,3,GRM319R61E106KA12D,"10 µF 25 V, 1206",https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921,0.47,1.41,
-Flight controller parts (3 boards),DigiKey,20,RC0402FR-0710KL,"10 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL,0.10,2.00,
-Flight controller parts (3 boards),DigiKey,10,RC0402FR-075K1L,"5.1 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L,0.10,1.00,
-Flight controller parts (3 boards),DigiKey,10,RC0402FR-071KL,"1 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-071KL,0.10,1.00,
-Flight controller parts (3 boards),DigiKey,10,RC0402FR-072K2L,"2.2 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-072K2L,0.10,1.00,
-Flight controller parts (3 boards),DigiKey,10,RC0402FR-07470RL,"470 Ω 1%, 0402",https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619,0.10,1.00,
-Flight controller parts (3 boards),DigiKey,10,RC0402FR-07100KL,"100 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL,0.10,1.00,
-Flight controller parts (3 boards),DigiKey,10,RC0402JR-070RL,"0 Ω link, 0402",https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL,0.10,1.00,
+Flight controller parts (1 board),DigiKey,1,ESP32-S3FN8,ESP32-S3 processor,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17,4.17,
+Flight controller parts (1 board),DigiKey,1,MAX-M10S-00B,GPS module,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42,11.42,
+Flight controller parts (1 board),DigiKey,1,ICM-42688-P,Gyro and accelerometer,https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934,4.86,4.86,Out of stock at DigiKey on 2026-10-11. Try Newark or Arrow. No brokers
+Flight controller parts (1 board),DigiKey,1,BMP581,Barometer,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35,3.35,Out of stock at DigiKey on 2026-10-11. Try Mouser
+Flight controller parts (1 board),DigiKey,1,AP63205WU-7,5 V buck regulator,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432,0.89,0.89,Out of stock at DigiKey on 2026-10-11. Try Mouser
+Flight controller parts (1 board),DigiKey,1,TLV75733PDRVR,"3.3 V regulator, 1 A",https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48,0.48,
+Flight controller parts (1 board),DigiKey,1,TPS7A2033PDBVR,3.3 V low-noise regulator,https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866,0.35,0.35,Out of stock at DigiKey on 2026-10-11. Try Mouser
+Flight controller parts (1 board),DigiKey,1,USBLC6-2SC6,USB protection,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54,0.54,
+Flight controller parts (1 board),DigiKey,1,FA-128 40.0000MF10Z-K3,"40 MHz crystal, 10 pF, ±10 ppm",https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11,1.11,
+Flight controller parts (1 board),DigiKey,1,TCJD107M025R0055,100 µF 25 V polymer capacitor,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65,3.65,
+Flight controller parts (1 board),DigiKey,1,SMAJ18A,Battery surge diode,https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282,0.51,0.51,
+Flight controller parts (1 board),DigiKey,1,1N5819HW-7-F,"Schottky diode, 1 A 40 V, SOD-123",https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970,0.31,0.31,
+Flight controller parts (1 board),DigiKey,3,150060RS75000,"LED 0603, red",https://www.digikey.com/en/products/result?keywords=150060RS75000,0.15,0.45,
+Flight controller parts (1 board),DigiKey,3,150060VS75000,"LED 0603, yellow-green",https://www.digikey.com/en/products/result?keywords=150060VS75000,0.15,0.45,
+Flight controller parts (1 board),DigiKey,3,150060YS75000,"LED 0603, yellow",https://www.digikey.com/en/products/result?keywords=150060YS75000,0.15,0.45,
+Flight controller parts (1 board),DigiKey,1,SM08B-SRSS-TB,"ESC connector, JST-SH 8-pin",https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714,0.85,0.85,DigiKey lists it as SM08B-SRSS-TB(LF)(SN)
+Flight controller parts (1 board),DigiKey,1,SM04B-GHS-TB,"Obstacle sensor port, JST-GH 4-pin",https://www.digikey.com/en/products/result?keywords=SM04B-GHS-TB,0.39,0.39,Out of stock at DigiKey on 2026-10-11. Try Mouser. Listed as SM04B-GHS-TB(LF)(SN)
+Flight controller parts (1 board),DigiKey,1,SM07B-SRSS-TB,"Charging port, JST-SH 7-pin",https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80,0.80,DigiKey lists it as SM07B-SRSS-TB(LF)(SN)
+Flight controller parts (1 board),DigiKey,2,BM04B-SRSS-TB,"Radio port and landing sensor port, JST-SH 4-pin top entry",https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696,0.53,1.06,DigiKey lists it as BM04B-SRSS-TB(LF)(SN)
+Flight controller parts (1 board),DigiKey,2,U.FL-R-SMT-1(10),"Antenna sockets, U.FL",https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570,1.67,3.34,
+Flight controller parts (1 board),DigiKey,1,USB4105-GF-A,"USB-C socket, 16-pin",https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441,0.80,0.80,
+Flight controller parts (1 board),DigiKey,1,CIGW252010EH4R7MNE,"Buck inductor, 4.7 µH, 2.2 A saturation",https://www.digikey.com/en/products/result?keywords=CIGW252010EH4R7MNE,0.29,0.29,
+Flight controller parts (1 board),DigiKey,10,LQG15HS2N0B02D,"Radio supply inductor, 2.0 nH",https://www.digikey.com/en/products/result?keywords=LQG15HS2N0B02D,0.10,1.00,
+Flight controller parts (1 board),DigiKey,20,GRM155R71C104KA88J,"0.1 µF 16 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM155R71C104KA88J,0.10,2.00,
+Flight controller parts (1 board),DigiKey,10,CL05A105KP5NNNC,"1 µF 10 V, 0402",https://www.digikey.com/en/products/result?keywords=CL05A105KP5NNNC,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,GRM155R71H103KA88D,"10 nF 50 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM155R71H103KA88D,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,GRM1555C1H150JA01D,"15 pF 50 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,GRM155R61C225KE11J,"2.2 µF 16 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J,0.22,2.20,
+Flight controller parts (1 board),DigiKey,10,GRM188R60J106ME47D,"10 µF 6.3 V, 0603",https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D,0.12,1.20,
+Flight controller parts (1 board),DigiKey,10,GRM21BR61A226ME51L,"22 µF 10 V, 0805",https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L,0.19,1.90,
+Flight controller parts (1 board),DigiKey,1,GRM319R61E106KA12D,"10 µF 25 V, 1206",https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921,0.47,0.47,
+Flight controller parts (1 board),DigiKey,10,RC0402FR-0710KL,"10 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,RC0402FR-075K1L,"5.1 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,RC0402FR-071KL,"1 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-071KL,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,RC0402FR-072K2L,"2.2 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-072K2L,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,RC0402FR-07470RL,"470 Ω 1%, 0402",https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,RC0402FR-07100KL,"100 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL,0.10,1.00,
+Flight controller parts (1 board),DigiKey,10,RC0402JR-070RL,"0 Ω link, 0402",https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL,0.10,1.00,
 Drone parts (1 drone),Pyrodrone,4,RCINPower GTS V3 1303 8000KV Plus,Motor,https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange,20.99,83.96,In stock 2026-10-13. A fifth as a spare is worth considering
 Drone parts (1 drone),Amazon,1,AERO SELFIE 30 A 4-in-1 ESC,"ESC, 2 to 4S, 20 mm holes, comes with its 8-pin cable",https://www.amazon.com/dp/B0DQSLQH87,28.90,28.90,
 Drone parts (1 drone),Amazon,2,Benewake TF-Luna,"Distance sensor, one forward and one down",https://www.amazon.com/dp/B0DKCSF8C5,25.99,51.98,
@@ -52,6 +52,6 @@ Drone parts (1 drone),WREKD,1,"M3 nylon standoff, screw and nut kit, 180 pieces"
 On hold,Amazon,1,URGENEX 2S 1000 mAh battery,Battery,https://www.amazon.com/dp/B0FFBB59TM,,,"HOLD: the listing says JST plug, the drone needs XT30. Check the plug before ordering"
 On hold,RaceDayQuads,1,XT30 connector,Battery connector,https://www.racedayquads.com/products/xt30-connector-male-or-female,0.99,0.99,HOLD: order once the battery is settled
 On hold,Amazon,1,Carbon fiber subframe,Frame part,https://www.amazon.com/dp/B08ZNQCHP8,,,HOLD: confirm with Daniel
-,,,,"Flight controller parts, 3 boards with spares",,,146.47,
+,,,,"Flight controller parts, 1 board with spare small parts",,,59.29,
 ,,,,"Drone parts, 1 drone",,,217.21,
-,,,,"Total before holds, shipping and tax",,,363.68,
+,,,,"Total before holds, shipping and tax",,,276.50,
