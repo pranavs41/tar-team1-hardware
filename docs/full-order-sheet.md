@@ -1,0 +1,87 @@
+# Full order sheet: networking drone
+
+Everything to buy except the bare circuit boards and the stencil, which are ordered separately ([rev A order sheet](../pcb/network-drone-fc/production/rev-A/order-notes.md)). Nothing for the charging board is here.
+
+Flight controller parts are for **3 boards** with spare small parts. Drone parts are for **1 drone**; multiply them by the number of drones. Prices were read between 2026-10-11 and 2026-10-13, before shipping and tax. The same sheet as a spreadsheet: [`full-order-sheet.csv`](full-order-sheet.csv).
+
+## Drone parts, for 1 drone
+
+| Seller | Qty | Part | What it is | Each | Line total | Note |
+|---|---|---|---|---|---|---|
+| Pyrodrone | 4 | [RCINPower GTS V3 1303 8000KV Plus](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange) | Motor | $20.99 | $83.96 | In stock 2026-10-13. A fifth as a spare is worth considering |
+| Amazon | 1 | [AERO SELFIE 30 A 4-in-1 ESC](https://www.amazon.com/dp/B0DQSLQH87) | ESC, 2 to 4S, 20 mm holes, comes with its 8-pin cable | $28.90 | $28.90 |  |
+| Amazon | 2 | [Benewake TF-Luna](https://www.amazon.com/dp/B0DKCSF8C5) | Distance sensor, one forward and one down | $25.99 | $51.98 |  |
+| RaceDayQuads | 1 | [Gemfan Hurricane 3018, pack of 8](https://www.racedayquads.com/products/gemfan-hurricane-3018-durable-bi-blade-3-prop-8-pack-1-5mm-choose-your-color) | Propellers, 1.5 mm hole, 4 clockwise and 4 counter-clockwise | $4.99 | $4.99 | Pick a colour that shows in stock |
+| VoCore | 1 | [VoCore2](https://vocore.io/#store) | Wi-Fi networking module | $21.48 | $21.48 | Bought from the store section of the maker's front page. Ships from China. Confirm the price in the cart |
+| DigiKey | 1 | [FXP73.07.0100A](https://www.digikey.com/en/products/detail/taoglas-limited/FXP73-07-0100A/2332703) | 2.4 GHz Wi-Fi antenna, U.FL plug | $5.41 | $5.41 |  |
+| DigiKey | 1 | [2065600100](https://www.digikey.com/en/products/result?keywords=2065600100) | GPS antenna, U.FL plug | $4.16 | $4.16 |  |
+| DigiKey | 1 | [EEU-FR1V471](https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1V471/2433575) | 470 uF 35 V capacitor for the ESC's battery pads | $1.08 | $1.08 | Out of stock 2026-10-11, due 2026-11-09. Any 470 uF 35 V low-ESR radial capacitor works |
+| DigiKey | 1 | [GHR-04V-S](https://www.digikey.com/en/products/detail/jst-sales-america-inc/GHR-04V-S/807816) | Plug housing for the forward sensor cable, JST-GH 4-pin | $0.20 | $0.20 | Price approximate |
+| DigiKey | 2 | [AGHGH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/AGHGH28K152/6009449) | Pre-crimped JST-GH wire, 150 mm | $0.49 | $0.98 | Price approximate. If the link fails, search the part number |
+| Pololu | 2 | [Pololu 5521](https://www.pololu.com/product/5521) | JST-SH 4-pin cable, bare wires on one end, 30 cm | $2.04 | $4.08 | One for the downward sensor, one for the VoCore2 |
+| WREKD | 1 | [M3 nylon standoff, screw and nut kit, 180 pieces](https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black) | Hardware for the flight controller and ESC stack | $9.99 | $9.99 | One kit covers several drones. Price showed as 9.99 and 14.42 on different pages |
+
+Total for one drone: **$217.21**
+
+## On hold, do not order yet
+
+| Seller | Qty | Part | What it is | Each | Line total | Note |
+|---|---|---|---|---|---|---|
+| Amazon | 1 | [URGENEX 2S 1000 mAh battery](https://www.amazon.com/dp/B0FFBB59TM) | Battery | not read |  | HOLD: the listing says JST plug, the drone needs XT30. Check the plug before ordering |
+| RaceDayQuads | 1 | [XT30 connector](https://www.racedayquads.com/products/xt30-connector-male-or-female) | Battery connector | $0.99 | $0.99 | HOLD: order once the battery is settled |
+| Amazon | 1 | [Carbon fiber subframe](https://www.amazon.com/dp/B08ZNQCHP8) | Frame part | not read |  | HOLD: confirm with Daniel |
+
+## Flight controller parts, for 3 boards
+
+| Seller | Qty | Part | What it is | Each | Line total | Note |
+|---|---|---|---|---|---|---|
+| DigiKey | 3 | [ESP32-S3FN8](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446) | ESP32-S3 processor | $4.17 | $12.51 |  |
+| DigiKey | 3 | [MAX-M10S-00B](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906) | GPS module | $11.42 | $34.26 |  |
+| DigiKey | 3 | [ICM-42688-P](https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934) | Gyro and accelerometer | $4.86 | $14.58 | Out of stock at DigiKey on 2026-10-11. Try Newark or Arrow. No brokers |
+| DigiKey | 3 | [BMP581](https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134) | Barometer | $3.35 | $10.05 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
+| DigiKey | 3 | [AP63205WU-7](https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432) | 5 V buck regulator | $0.89 | $2.67 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
+| DigiKey | 3 | [TLV75733PDRVR](https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260) | 3.3 V regulator, 1 A | $0.48 | $1.44 |  |
+| DigiKey | 3 | [TPS7A2033PDBVR](https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866) | 3.3 V low-noise regulator | $0.35 | $1.05 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
+| DigiKey | 3 | [USBLC6-2SC6](https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559) | USB protection | $0.54 | $1.62 |  |
+| DigiKey | 3 | [FA-128 40.0000MF10Z-K3](https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630) | 40 MHz crystal, 10 pF, ±10 ppm | $1.11 | $3.33 |  |
+| DigiKey | 3 | [TCJD107M025R0055](https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375) | 100 µF 25 V polymer capacitor | $3.65 | $10.95 |  |
+| DigiKey | 3 | [SMAJ18A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282) | Battery surge diode | $0.51 | $1.53 |  |
+| DigiKey | 3 | [1N5819HW-7-F](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970) | Schottky diode, 1 A 40 V, SOD-123 | $0.31 | $0.93 |  |
+| DigiKey | 5 | [150060RS75000](https://www.digikey.com/en/products/result?keywords=150060RS75000) | LED 0603, red | $0.15 | $0.75 |  |
+| DigiKey | 5 | [150060VS75000](https://www.digikey.com/en/products/result?keywords=150060VS75000) | LED 0603, yellow-green | $0.15 | $0.75 |  |
+| DigiKey | 5 | [150060YS75000](https://www.digikey.com/en/products/result?keywords=150060YS75000) | LED 0603, yellow | $0.15 | $0.75 |  |
+| DigiKey | 3 | [SM08B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714) | ESC connector, JST-SH 8-pin | $0.85 | $2.55 | DigiKey lists it as SM08B-SRSS-TB(LF)(SN) |
+| DigiKey | 3 | [SM04B-GHS-TB](https://www.digikey.com/en/products/result?keywords=SM04B-GHS-TB) | Obstacle sensor port, JST-GH 4-pin | $0.39 | $1.17 | Out of stock at DigiKey on 2026-10-11. Try Mouser. Listed as SM04B-GHS-TB(LF)(SN) |
+| DigiKey | 3 | [SM07B-SRSS-TB](https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB) | Charging port, JST-SH 7-pin | $0.80 | $2.40 | DigiKey lists it as SM07B-SRSS-TB(LF)(SN) |
+| DigiKey | 6 | [BM04B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696) | Radio port and landing sensor port, JST-SH 4-pin top entry | $0.53 | $3.18 | DigiKey lists it as BM04B-SRSS-TB(LF)(SN) |
+| DigiKey | 6 | [U.FL-R-SMT-1(10)](https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570) | Antenna sockets, U.FL | $1.67 | $10.02 |  |
+| DigiKey | 3 | [USB4105-GF-A](https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441) | USB-C socket, 16-pin | $0.80 | $2.40 |  |
+| DigiKey | 3 | [CIGW252010EH4R7MNE](https://www.digikey.com/en/products/result?keywords=CIGW252010EH4R7MNE) | Buck inductor, 4.7 µH, 2.2 A saturation | $0.29 | $0.87 |  |
+| DigiKey | 10 | [LQG15HS2N0B02D](https://www.digikey.com/en/products/result?keywords=LQG15HS2N0B02D) | Radio supply inductor, 2.0 nH | $0.10 | $1.00 |  |
+| DigiKey | 50 | [GRM155R71C104KA88J](https://www.digikey.com/en/products/result?keywords=GRM155R71C104KA88J) | 0.1 µF 16 V, 0402 | $0.10 | $5.00 |  |
+| DigiKey | 30 | [CL05A105KP5NNNC](https://www.digikey.com/en/products/result?keywords=CL05A105KP5NNNC) | 1 µF 10 V, 0402 | $0.10 | $3.00 |  |
+| DigiKey | 20 | [GRM155R71H103KA88D](https://www.digikey.com/en/products/result?keywords=GRM155R71H103KA88D) | 10 nF 50 V, 0402 | $0.10 | $2.00 |  |
+| DigiKey | 10 | [GRM1555C1H150JA01D](https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D) | 15 pF 50 V, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [GRM155R61C225KE11J](https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J) | 2.2 µF 16 V, 0402 | $0.22 | $2.20 |  |
+| DigiKey | 10 | [GRM188R60J106ME47D](https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D) | 10 µF 6.3 V, 0603 | $0.12 | $1.20 |  |
+| DigiKey | 10 | [GRM21BR61A226ME51L](https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L) | 22 µF 10 V, 0805 | $0.19 | $1.90 |  |
+| DigiKey | 3 | [GRM319R61E106KA12D](https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921) | 10 µF 25 V, 1206 | $0.47 | $1.41 |  |
+| DigiKey | 20 | [RC0402FR-0710KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL) | 10 kΩ 1%, 0402 | $0.10 | $2.00 |  |
+| DigiKey | 10 | [RC0402FR-075K1L](https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L) | 5.1 kΩ 1%, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [RC0402FR-071KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-071KL) | 1 kΩ 1%, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [RC0402FR-072K2L](https://www.digikey.com/en/products/result?keywords=RC0402FR-072K2L) | 2.2 kΩ 1%, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [RC0402FR-07470RL](https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619) | 470 Ω 1%, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [RC0402FR-07100KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL) | 100 kΩ 1%, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [RC0402JR-070RL](https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL) | 0 Ω link, 0402 | $0.10 | $1.00 |  |
+
+Total for three boards: **$146.47**
+
+## Sum
+
+| | |
+|---|---|
+| Drone parts, 1 drone | $217.21 |
+| Flight controller parts, 3 boards | $146.47 |
+| **Total before the held items, shipping and tax** | **$363.68** |
+
+Links without a product page go to a DigiKey search for the part number.
