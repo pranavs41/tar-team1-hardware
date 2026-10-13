@@ -26,9 +26,10 @@ Networking drone flight controller, rev A:
 - [x] Pin reference written: [`docs/hardware-reference.md`](docs/hardware-reference.md)
 - [ ] Decide how to get the gyro: it is out of stock at every authorised distributor (options in [`docs/parts-list.md`](docs/parts-list.md))
 - [ ] Ask the purchasing or research-security office which sourcing rule applies to the project
-- [ ] Choose the board fab. For a US or European fab, six spots need 0.006 mm more spacing and the antenna trace width needs rechecking
-- [ ] Widen the USB-C footprint's mounting slots for the GCT socket
-- [ ] Pick a green LED that lights at about 2 V, or change R7
+- [ ] Choose the board fab, then recheck the antenna trace width on that fab's layer stack
+- [x] Six tight spots opened up, so the board passes a 0.127 mm spacing rule (OSH Park, Aisler)
+- [x] USB-C footprint's mounting slots lengthened for the GCT socket
+- [x] Green LED changed to a type that lights at about 2 V
 - [ ] Confirm the ESC's connector pinout against J4, and whether it outputs current or telemetry
 - [x] Choose the buck inductor (4.7 µH, saturation current 2 A or more)
 - [x] Fill in part numbers for the resistors, capacitors, LEDs and diodes
