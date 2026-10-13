@@ -51,7 +51,7 @@ Which of these matters depends on the rule the team is working under. A rule abo
 |---|---|---|---|---|
 | Flight controller, assembled | see the next section | DigiKey for parts, OSH Park for the board | ~8 g, estimate | $52.08 |
 | RCINPower GTS V3 1303 8000KV Plus motors ×4 | RCINPower (China) | [Pyrodrone](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange) | 5.6 g each, 22.4 g | $83.96 ($20.99 ×4) |
-| 30 A 4-in-1 ESC, 2 to 4S, M3 holes on a 20 mm pattern | AERO SELFIE (maker not confirmed) | Amazon | 5.4 g | $28.90 |
+| 30 A 4-in-1 ESC, 2 to 4S, M3 holes on a 20 mm pattern | AERO SELFIE (maker not confirmed) | [Amazon](https://www.amazon.com/dp/B0DQSLQH87) | 5.4 g | $28.90 |
 | 3-inch propellers, Gemfan Hurricane 3018, pack of 8 | Gemfan (China) | [RaceDayQuads](https://www.racedayquads.com/products/gemfan-hurricane-3018-durable-bi-blade-3-prop-8-pack-1-5mm-choose-your-color) | 0.75 g each, 3 g | $4.99 |
 | 2S LiPo battery, URGENEX 1000 mAh, Daniel's pick | URGENEX (not confirmed) | [Amazon](https://www.amazon.com/dp/B0FFBB59TM) | TBD | TBD |
 | VoCore2 Wi-Fi networking module | VoCore (China) | VoCore store | ~5 g, estimate | $21.48 |
