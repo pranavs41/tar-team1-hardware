@@ -173,7 +173,7 @@ The board is 36 × 39 mm with four layers.
 | [Aisler](https://community.aisler.net/t/4-layer-1-6mm-enig-design-rules/3733) | Germany | about €19.50 for three boards | not confirmed | minimum spacing 0.125 mm |
 | Eurocircuits | Belgium | quote only | 3 working days | minimum spacing 0.150 mm on the prototype service |
 
-The board was drawn to a 0.12 mm spacing rule, slightly tighter than these fabs allow. Six spots were under OSH Park's 0.127 mm, each by 0.006 mm or less. They were opened up on 2026-10-12, and the board now passes the design rules check at 0.127 mm, so OSH Park and Aisler can both build it. Eurocircuits' 0.150 mm was not checked. The fabs' layer stacks differ from the one the antenna traces were calculated for, so that width should be rechecked for whichever fab is chosen.
+The board was drawn to a 0.12 mm spacing rule, slightly tighter than these fabs allow. Six spots were under OSH Park's 0.127 mm, each by 0.006 mm or less. They were opened up on 2026-10-12, and the board now passes the design rules check at 0.127 mm, so OSH Park and Aisler can both build it. Eurocircuits' 0.150 mm was not checked. The team is ordering from OSH Park, and the files and settings for that order are in [the rev A order sheet](../pcb/network-drone-fc/production/rev-A/order-notes.md). On OSH Park's four-layer stack the 0.3 mm antenna traces work out to about 59 Ω against a 50 Ω target. At their length that costs under 0.1 dB, so they were left as they are. An exact 50 Ω trace there would be about 0.38 mm wide.
 
 ## Regulations
 

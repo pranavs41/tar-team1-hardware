@@ -63,6 +63,8 @@ The checks were run again the same day after the charging connector grew to seve
 
 The board checks were run a third time on 2026-10-12, after the USB socket's mounting slots were lengthened by 0.4 mm and six tight spots were opened up. The design rules check still shows 0 errors, at the board's own 0.12 mm spacing and at 0.127 mm. The longer slots came within 0.18 mm of the same ground via, so it moved again and the closest two holes are back at 0.26 mm. The green LED is now a 2.0 to 2.4 V type and draws 2 to 3 mA; the red and yellow stay at 1.3 mA.
 
+On 2026-10-13 the board was checked against OSH Park's published limits for its four-layer service, and three small changes followed. Four connector tab pads were trimmed by up to 0.09 mm so that no copper is closer than 0.38 mm to the board edge. The copper rings around the four USB slots were widened to 0.12 mm. Every part in the parts list was also compared with the footprint on the board, by package and by count, and with the polarity of the diodes, LEDs and the large capacitor: all 69 match, and the three empty footprints (C14, C15, L3) are the only ones without a part. Pad shapes were not compared against each datasheet's drawing; the paper test above covers that.
+
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
 ## Stage 2: on the bench

@@ -62,3 +62,8 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-12 | Green LED D3 changed to Würth 150060VS75000 | The first choice needed 3.2 V and would barely light from 3.3 V. This one lights at 2.0 to 2.4 V. R7 stays 470 Ω |
 | 2026-10-12 | J4 pin order changed to GND, VBAT, MOTOR1 to MOTOR4, ESC_TELEM, ESC_CUR | The team's ESC prints −, +, 1, 2, 3, 4, N, C on its connector. With the old order a straight cable would have put motor signals on the wrong pins |
 | 2026-10-12 | Motor numbers moved between ESP32 pins: motor 1 GPIO16, motor 2 GPIO6, motor 3 GPIO11, motor 4 GPIO13 | Any of these pins can send DShot, so renumbering them meant only two motor tracks had to move on the board |
+| 2026-10-13 | Board fab is OSH Park, four-layer prototype service | A US fab, as the team prefers, and the smallest order is three boards |
+| 2026-10-13 | Tab pads on J4 and J7 trimmed by 0.03 to 0.09 mm on the side facing the board edge | OSH Park asks for 0.38 mm between copper and the edge. The pads were at 0.31 to 0.375 mm |
+| 2026-10-13 | Copper rings around the USB-C slots widened from 0.10 to 0.12 mm | OSH Park's minimum ring is 0.1016 mm, and the old rings measured just under it |
+| 2026-10-13 | Antenna traces left at 0.3 mm on OSH Park's stack | About 59 Ω by calculation. The traces are short, so the mismatch costs under 0.1 dB |
+| 2026-10-13 | Assembly by stencil and hot plate, top side in one pass | All reflowed parts are on the top. C35 on the bottom and the USB socket's legs are soldered by hand |
