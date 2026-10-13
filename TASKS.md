@@ -30,7 +30,8 @@ Networking drone flight controller, rev A:
 - [x] Six tight spots opened up, so the board passes a 0.127 mm spacing rule (OSH Park, Aisler)
 - [x] USB-C footprint's mounting slots lengthened for the GCT socket
 - [x] Green LED changed to a type that lights at about 2 V
-- [ ] Confirm the ESC's connector pinout against J4, and whether it outputs current or telemetry
+- [x] ESC pinout checked against the seller's picture; J4 changed to the ESC's order (−, +, 1, 2, 3, 4, N, C)
+- [ ] With the real ESC and cable: confirm with a multimeter which end is pin 1, and pull the C and N wires
 - [x] Choose the buck inductor (4.7 µH, saturation current 2 A or more)
 - [x] Fill in part numbers for the resistors, capacitors, LEDs and diodes
 - [x] Pinout and pad-pitch audit against the datasheets

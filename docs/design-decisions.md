@@ -60,3 +60,5 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-12 | USB-C locating peg holes changed from 0.7 mm to 0.65 mm | Leaves room between the hole's copper ring and the VBUS pads at a 0.127 mm spacing rule. The pegs are 0.5 mm |
 | 2026-10-12 | Six tight spots opened up by 0.015 to 0.03 mm | The board now passes at 0.127 mm spacing, which OSH Park and Aisler need |
 | 2026-10-12 | Green LED D3 changed to Würth 150060VS75000 | The first choice needed 3.2 V and would barely light from 3.3 V. This one lights at 2.0 to 2.4 V. R7 stays 470 Ω |
+| 2026-10-12 | J4 pin order changed to GND, VBAT, MOTOR1 to MOTOR4, ESC_TELEM, ESC_CUR | The team's ESC prints −, +, 1, 2, 3, 4, N, C on its connector. With the old order a straight cable would have put motor signals on the wrong pins |
+| 2026-10-12 | Motor numbers moved between ESP32 pins: motor 1 GPIO16, motor 2 GPIO6, motor 3 GPIO11, motor 4 GPIO13 | Any of these pins can send DShot, so renumbering them meant only two motor tracks had to move on the board |

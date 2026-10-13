@@ -25,7 +25,7 @@ Further checks run on 2026-10-11. The results are in the next section.
 Checks that still need a person and the real parts:
 
 - [ ] **Pad shapes and pin 1 orientation.** The audit above proves the pin numbers and the pitch. It does not prove each pad is the right length and width, or that pin 1 sits on the correct corner. Compare each footprint with the land pattern drawing in its datasheet.
-- [ ] **ESC connector pinout.** Confirm the real ESC's pin order against J4, and whether it drives the current and telemetry pins.
+- [x] **ESC connector pinout.** Checked against the seller's picture on 2026-10-12. The ESC's order is −, +, 1, 2, 3, 4, N, C, which did not match, so J4 was changed to it. Still to do with the real part: confirm with a multimeter which end of the cable is pin 1.
 - [ ] **Paper test.** Print the board at 1:1 and lay the real parts on the pads.
 - [ ] **Second reader.** A teammate checks the schematic against the manufacturers' reference designs.
 - [ ] **Fab check.** Upload the gerbers to the fab's online checker before paying.
@@ -101,7 +101,7 @@ There is no single score for routing. What can be measured:
 | Measure | Value |
 |---|---|
 | Design rule errors | 0 |
-| Vias | 165: about half tie ground together, 14 feed the 3.3 V plane, the rest carry signals |
+| Vias | 164: about half tie ground together, 14 feed the 3.3 V plane, the rest carry signals |
 | Typical track length | 22% longer than a straight line between its pads |
 | Right-angle or sharper corners | 0 |
 | Ground plane | one unbroken layer under the whole board |
