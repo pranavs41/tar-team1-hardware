@@ -31,7 +31,7 @@ Networking drone flight controller, rev A:
 - [x] USB-C footprint's mounting slots lengthened for the GCT socket
 - [x] Green LED changed to a type that lights at about 2 V
 - [x] ESC pinout checked against the seller's picture; J4 changed to the ESC's order (−, +, 1, 2, 3, 4, N, C)
-- [ ] With the real ESC and cable: confirm with a multimeter which end is pin 1, and pull the C and N wires
+- [ ] With the real ESC and cable: confirm with a multimeter which end is pin 1, and pull the C wire
 - [x] Choose the buck inductor (4.7 µH, saturation current 2 A or more)
 - [x] Fill in part numbers for the resistors, capacitors, LEDs and diodes
 - [x] Pinout and pad-pitch audit against the datasheets

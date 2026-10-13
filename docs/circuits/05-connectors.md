@@ -16,7 +16,7 @@ The flight controller stacks on a bought 20 × 20 mm 4-in-1 ESC, and this one ca
 
 This is the order printed on the team's ESC: −, +, 1, 2, 3, 4, N, C. The board first used the order most Betaflight-style ESCs use (GND, VBAT, current, telemetry, M1 to M4). There is no standard that forces either one, which is why the pinout was checked against the real ESC before ordering boards, and the board was changed to match.
 
-With the networking module fitted, pull the C and N wires out of the ESC cable. Pin 8 is the line the ESP32 transmits on to the module, and the ESC's current output would fight it. Before the first power-up, check with a multimeter that the cable brings the ESC's − to pin 1 and + to pin 2.
+With the networking module fitted, pull the C wire out of the ESC cable. The N pad is labelled "No Output" by the seller, so its wire does nothing and can stay. Pin 8 is the line the ESP32 transmits on to the module, and the ESC's current output would fight it. Before the first power-up, check with a multimeter that the cable brings the ESC's − to pin 1 and + to pin 2.
 
 The board has no battery connector of its own. VBAT arrives here from the ESC's battery pads, which is why the TVS and the buck's input capacitor sit close to this connector on the PCB.
 

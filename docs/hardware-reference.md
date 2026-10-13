@@ -40,15 +40,15 @@ Pin 1 is marked on the silkscreen of every connector.
 | 4 | MOTOR2 | out | DShot, GPIO6. ESC pad "2" |
 | 5 | MOTOR3 | out | DShot, GPIO11. ESC pad "3" |
 | 6 | MOTOR4 | out | DShot, GPIO13. ESC pad "4" |
-| 7 | ESC_TELEM | in | GPIO10. ESC pad "N". Shared with J6 pin 3 |
+| 7 | ESC_TELEM | in | GPIO10. ESC pad "N", which the seller's diagram labels "No Output". Shared with J6 pin 3 |
 | 8 | ESC_CUR | in | analog current sense, GPIO2. ESC pad "C". Shared with J6 pin 2 |
 
 This is the order printed on the team's ESC (the AERO SELFIE 30 A 4-in-1): −, +, 1, 2, 3, 4, N, C. It is not the usual Betaflight order, so a different ESC may need its cable rewired.
 
 Two things to do on the cable:
 
-- **Check which end is pin 1.** The ESC's picture shows the order but not which end of its socket a given cable calls pin 1. With the cable plugged into the ESC only, use a multimeter to confirm that the wire reaching J4 pin 1 is the ESC's − and the wire reaching pin 2 is +. A reversed cable puts battery voltage on the wrong pins.
-- **Pull the C and N wires out of the cable when the networking module is fitted.** J4 pin 8 is the same line the ESP32 uses to talk to the module on J6. The ESC drives its C pad with a current reading, and the two outputs would fight. N is not needed either.
+- **Check which end is pin 1.** The ESC's picture shows the order but not which end of its socket a given cable calls pin 1. With the cable plugged into the ESC only, use a multimeter to confirm that the wire reaching J4 pin 1 is the ESC's − and the wire reaching pin 2 is +. On the cable in the seller's diagram the − wire is black and sits at one end. A reversed cable puts battery voltage on the wrong pins.
+- **Pull the C wire out of the cable when the networking module is fitted.** J4 pin 8 is the same line the ESP32 uses to talk to the module on J6. The ESC drives its C pad with a current reading, and the two outputs would fight. The N pad has no output, so its wire can stay.
 
 ### J5, obstacle sensor
 
