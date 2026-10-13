@@ -67,3 +67,4 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-13 | Copper rings around the USB-C slots widened from 0.10 to 0.12 mm | OSH Park's minimum ring is 0.1016 mm, and the old rings measured just under it |
 | 2026-10-13 | Antenna traces left at 0.3 mm on OSH Park's stack | About 59 Ω by calculation. The traces are short, so the mismatch costs under 0.1 dB |
 | 2026-10-13 | Assembly by stencil and hot plate, top side in one pass | All reflowed parts are on the top. C35 on the bottom and the USB socket's legs are soldered by hand |
+| 2026-10-13 | Battery changed to the OVONIC 2S 1100 mAh high-voltage pack with an XT30 plug | The 1000 mAh pack first picked has a small JST plug built for a few amps, and this drone draws over 20 A at full throttle. The new pack is full at 8.7 V, which the board accepts. Charging it to 8.4 V is safe and gives a little less than its full capacity |

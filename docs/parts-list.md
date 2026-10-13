@@ -55,7 +55,7 @@ Which of these matters depends on the rule the team is working under. A rule abo
 | RCINPower GTS V3 1303 8000KV Plus motors ×4 | RCINPower (China) | [Pyrodrone](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange) | 5.6 g each, 22.4 g | $83.96 ($20.99 ×4) |
 | 30 A 4-in-1 ESC, 2 to 4S, M3 holes on a 20 mm pattern | AERO SELFIE (maker not confirmed) | [Amazon](https://www.amazon.com/dp/B0DQSLQH87) | 5.4 g | $28.90 |
 | 3-inch propellers, Gemfan Hurricane 3018, pack of 8 | Gemfan (China) | [RaceDayQuads](https://www.racedayquads.com/products/gemfan-hurricane-3018-durable-bi-blade-3-prop-8-pack-1-5mm-choose-your-color) | 0.75 g each, 3 g | $4.99 |
-| 2S LiPo battery, URGENEX 1000 mAh, Daniel's pick | URGENEX (not confirmed) | [Amazon](https://www.amazon.com/dp/B0FFBB59TM) | TBD | TBD |
+| 2S battery, OVONIC 1100 mAh 7.6 V high-voltage, 60C, XT30 plug, pack of 2 | OVONIC (not confirmed) | [Amazon](https://www.amazon.com/dp/B0D318NL5W) | TBD | TBD |
 | VoCore2 Wi-Fi networking module | VoCore (China) | [VoCore](https://vocore.io/#store) | ~5 g, estimate | $21.48 |
 | Benewake TF-Luna distance sensor ×2: one facing forward for obstacles, one facing down for landing | Benewake (China) | [Amazon](https://www.amazon.com/dp/B0DKCSF8C5) | <5 g each | $51.98 ($25.99 ×2) |
 | Charging board, assembled | see [charging-board.md](charging-board.md) | DigiKey for parts | TBD | about $16 |
