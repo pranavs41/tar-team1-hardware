@@ -116,3 +116,30 @@ Two things they do that we did not have written down:
 ## Verdict
 
 The board holds up. No rail, track, via or connector is near its limit, the regulators ride out motor-induced sag, and the radio bursts are covered by the capacitors. The one part that works hard is the `+3V3` LDO, which will run warm; measure it with a thermocouple at bring-up with Wi-Fi streaming. If it is over about 80 °C in the frame even in the WSON package, plan the 3.3 V buck for rev B.
+
+## Whole-drone simulation, 2026-10-13
+
+The script [`tools/drone_power_sim.py`](../tools/drone_power_sim.py) checks the flight controller with everything plugged in (both distance sensors, the VoCore2 and the compass), then models the motors and battery and steps through a flight one second at a time. Run it with `python tools/drone_power_sim.py`. It makes 25 checks: 19 pass, 3 are close to a limit, and 3 are over one.
+
+The motor and flight figures rest on estimates: the propeller's thrust and power coefficients, the battery's internal resistance, and a 50 g frame. None of those has been measured. Treat the flight numbers as a first guess until a motor has been run on a scale with a current meter.
+
+| Result | Figure |
+|---|---|
+| 5 V rail, average and worst peak | 0.52 A and 1.09 A, against the buck's 2 A |
+| Battery current for the electronics | 0.39 A average at 7.4 V |
+| Estimated flying weight | 186 g |
+| Hover current | about 4.7 A |
+| Hover time down to 20% charge | about 11 minutes. About 7.5 minutes if the frame is 30 g heavier and the propellers are 25% less efficient than assumed |
+| Full throttle on a full pack | about 43 A in total, 10 A per motor, thrust about 4.5 times the weight |
+| Sample 8 minute flight with a 5 minute hover | uses 580 mAh, lowest battery voltage 7.3 V |
+
+Over a limit:
+
+- **Full throttle through the XT30.** About 43 A, against the connector's 30 A short-burst rating and 15 A continuous rating. Hover is under a third of the continuous rating. The fix is in firmware: cap the throttle so the pack never supplies more than about 25 A, which still gives roughly three times hover thrust.
+- **USB power with everything attached.** The peak is 1.09 A through D1, a 1 A diode, and the average of 0.52 A is more than a plain 500 mA USB port supplies. On the bench, unplug the VoCore2 while working from USB, or power the board from a battery or a bench supply. The board alone peaks at 0.39 A and is fine on any port.
+
+Close to a limit, and acceptable:
+
+- **J4's battery pin and the narrowest battery track** carry 0.92 A for an instant when every load peaks together on a nearly empty pack, against 1 A. The average is 0.44 A. When the charging board is fitted, J7 shares this current.
+- **The buck regulator** would reach about 105 °C if every peak were held continuously. The peaks last milliseconds, and at the flight average it sits near 74 °C.
+

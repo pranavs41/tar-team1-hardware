@@ -23,6 +23,8 @@ Networking drone flight controller, rev A:
 - [x] Sensor port (J5) and radio port (J6) added
 - [x] Charging port (J7) enlarged to 7 pins and landing sensor port (J8) added
 - [ ] Give one of the two TF-Lunas a new I2C address before both are fitted
+- [ ] Firmware: cap the throttle so the battery current stays under about 25 A (the XT30's burst rating is 30 A)
+- [ ] Measure one motor's thrust and current on a scale, then put the real numbers into `tools/drone_power_sim.py`
 - [ ] Compass: wire the LIS3MDL breakout into the J5 or J8 cable, mount it away from the battery leads, calibrate on the finished drone
 - [x] Pin reference written: [`docs/hardware-reference.md`](docs/hardware-reference.md)
 - [ ] Decide how to get the gyro: it is out of stock at every authorised distributor (options in [`docs/parts-list.md`](docs/parts-list.md))
