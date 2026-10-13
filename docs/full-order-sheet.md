@@ -20,15 +20,14 @@ Flight controller parts are for 1 board, with spare small resistors, capacitors 
 | DigiKey | 2 | [AGHGH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/AGHGH28K152/6009449) | Pre-crimped JST-GH wire, 150 mm | $0.49 | $0.98 | Price approximate. If the link fails, search the part number |
 | Pololu | 2 | [Pololu 5521](https://www.pololu.com/product/5521) | JST-SH 4-pin cable, bare wires on one end, 30 cm | $2.04 | $4.08 | One for the downward sensor, one for the VoCore2 |
 | WREKD | 1 | [M3 nylon standoff, screw and nut kit, 180 pieces](https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black) | Hardware for the flight controller and ESC stack | $9.99 | $9.99 | One kit covers several drones. Price showed as 9.99 and 14.42 on different pages |
+| RaceDayQuads | 2 | [XT30 connector](https://www.racedayquads.com/products/xt30-connector-male-or-female) | Battery connector, one male and one female | $0.99 | $1.98 | One male for the ESC's battery lead, one female to replace the battery's JST plug. The team already has the battery (2S 1000 mAh, JST plug) |
 
-Total: **$217.21**
+Total: **$219.19**
 
 ## On hold, do not order yet
 
 | Seller | Qty | Part | What it is | Each | Line total | Note |
 |---|---|---|---|---|---|---|
-| Amazon | 1 | [URGENEX 2S 1000 mAh battery](https://www.amazon.com/dp/B0FFBB59TM) | Battery | not read |  | HOLD: the listing says JST plug, the drone needs XT30. Check the plug before ordering |
-| RaceDayQuads | 1 | [XT30 connector](https://www.racedayquads.com/products/xt30-connector-male-or-female) | Battery connector | $0.99 | $0.99 | HOLD: order once the battery is settled |
 | Amazon | 1 | [Carbon fiber subframe](https://www.amazon.com/dp/B08ZNQCHP8) | Frame part | not read |  | HOLD: confirm with Daniel |
 
 ## Flight controller parts, for 1 board
@@ -80,8 +79,8 @@ Total: **$59.29**
 
 | | |
 |---|---|
-| Drone parts | $217.21 |
+| Drone parts | $219.19 |
 | Flight controller parts | $59.29 |
-| **Total before the held items, shipping and tax** | **$276.50** |
+| **Total before the held items, shipping and tax** | **$278.48** |
 
 Links without a product page go to a DigiKey search for the part number.
