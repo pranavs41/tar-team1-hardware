@@ -87,6 +87,7 @@ The team already has these, so they are not in any order.
 
 ## Assembly notes for the hot plate
 
+- The board has almost no part labels printed on it, because there is no room. Place parts from `assembly-top.png`, which shows every reference and marks pin 1 in red.
 - Everything on the top side goes on in one pass with the stencil and the hot plate.
 - **C35**, the large 100 µF capacitor, is on the bottom side. Solder it by hand with an iron after the hot plate pass. The stripe on the part marks its positive end. Match it to the marked end of the footprint, which is the pad joined to the battery line.
 - **The USB-C socket (J2)** has four legs that pass through slots. Its small pads reflow on the hot plate. Solder the four legs by hand afterwards.
@@ -109,3 +110,4 @@ Motors, ESC, propellers, battery, the networking module, the two distance sensor
 | `stencil-outline.gm1` | board outline, for the stencil |
 | `bom-digikey.csv` | parts and quantities, for DigiKey |
 | `schematic.pdf` | the schematic these boards were made from |
+| `assembly-top.png`, `assembly-bottom.png` | where every part goes, with its reference label. Pin 1 pads are red |
