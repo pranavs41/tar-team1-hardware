@@ -27,7 +27,7 @@ Networking drone flight controller, rev A:
 - [ ] Measure one motor's thrust and current on a scale, then put the real numbers into `tools/drone_power_sim.py`
 - [ ] Compass: wire the LIS3MDL breakout into the J5 or J8 cable, mount it away from the battery leads, calibrate on the finished drone
 - [x] Pin reference written: [`docs/hardware-reference.md`](docs/hardware-reference.md)
-- [ ] Decide how to get the gyro: it is out of stock at every authorised distributor (options in [`docs/parts-list.md`](docs/parts-list.md))
+- [x] Gyro source found: Newark, an authorised distributor
 - [ ] Ask the purchasing or research-security office which sourcing rule applies to the project
 - [x] Board fab chosen: OSH Park. Antenna trace rechecked on its layer stack (about 59 Ω, left as is)
 - [x] Parts list checked against every footprint on the board

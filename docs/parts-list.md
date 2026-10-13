@@ -153,6 +153,8 @@ Checked 2026-10-11.
 2. Check Newark, Arrow and Future on the day of ordering. Their listings were unclear or missing.
 3. Change the board to a gyro that is in stock, such as a Bosch or STMicroelectronics part. That is a schematic and layout change, and a firmware driver change.
 
+On 2026-10-13 the team found it listed at Newark, and that is where it is being bought: https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524 .
+
 A second look on 2026-10-12 did not settle it. Search results showed Newark and Arrow each with about 1,300 pieces near $4.50, but a stock aggregator the same day showed Newark at zero. Open both sellers' own pages before choosing between the three options.
 
 Brokers also list this part at very low prices. Parts from brokers are a known source of counterfeits, so avoid them.

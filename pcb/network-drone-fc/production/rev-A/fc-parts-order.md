@@ -10,7 +10,7 @@ The same list as a spreadsheet is [`fc-parts-order.csv`](fc-parts-order.csv), an
 |---|---|---|---|---|---|---|
 | 1 | [ESP32-S3FN8](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446) | ESP32-S3 processor | Espressif | $4.17 | $4.17 |  |
 | 1 | [MAX-M10S-00B](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906) | GPS module | u-blox | $11.42 | $11.42 |  |
-| 1 | [ICM-42688-P](https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934) | Gyro and accelerometer | TDK InvenSense | $4.86 | $4.86 | Out of stock at DigiKey on 2026-10-11. Try Newark or Arrow. No brokers |
+| 1 | [ICM-42688-P](https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524) | Gyro and accelerometer | TDK InvenSense | $4.86 | $4.86 | Buy from Newark, DigiKey has none. Take the price from Newark's page |
 | 1 | [BMP581](https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134) | Barometer | Bosch Sensortec | $3.35 | $3.35 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
 | 1 | [AP63205WU-7](https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432) | 5 V buck regulator | Diodes Incorporated | $0.89 | $0.89 | Out of stock at DigiKey on 2026-10-11. Try Mouser |
 | 1 | [TLV75733PDRVR](https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260) | 3.3 V regulator, 1 A | Texas Instruments | $0.48 | $0.48 |  |

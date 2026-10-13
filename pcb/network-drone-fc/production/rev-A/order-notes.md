@@ -56,7 +56,7 @@ Upload `bom-digikey.csv` with DigiKey's BOM or list upload tool. The columns are
 
 | | |
 |---|---|
-| Lines | 38 |
+| Lines | 37. The gyro is bought from Newark |
 | Quantities | enough for one board, with extra small resistors, capacitors and LEDs because they are easy to lose. Two of the three bare boards stay empty as spares |
 | Cost with the spare small parts | about $59 at the prices read on 2026-10-11 |
 | Cost of parts for one board | $44.83 |
@@ -67,7 +67,7 @@ Parts that were out of stock at DigiKey when last checked. Look at these first:
 
 | Part | Number | If DigiKey has none |
 |---|---|---|
-| Gyro | ICM-42688-P | Newark or Arrow. Do not buy from a broker |
+| Gyro | ICM-42688-P | Newark: https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524 . It is not in `bom-digikey.csv`, so order it there separately |
 | 5 V regulator | AP63205WU-7 | Mouser |
 | Barometer | BMP581 | Mouser |
 | 3.3 V sensor regulator | TPS7A2033PDBVR | Mouser |

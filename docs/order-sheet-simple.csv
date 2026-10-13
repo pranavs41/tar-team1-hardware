@@ -16,7 +16,7 @@ XT30 connector,1,https://www.racedayquads.com/products/xt30-connector-male-or-fe
 "OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2",1,https://www.amazon.com/dp/B0D318NL5W,
 ESP32-S3FN8 (ESP32-S3 processor),1,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17
 MAX-M10S-00B (GPS module),1,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42
-ICM-42688-P (Gyro and accelerometer),1,https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934,4.86
+ICM-42688-P (Gyro and accelerometer, from Newark),1,https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524,4.86
 BMP581 (Barometer),1,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35
 AP63205WU-7 (5 V buck regulator),1,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432,0.89
 "TLV75733PDRVR (3.3 V regulator, 1 A)",1,https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48

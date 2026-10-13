@@ -1,7 +1,7 @@
 ﻿Group,Seller,Qty,Part,What it is,Link,Each USD,Line total USD,Note
 Flight controller parts (1 board),DigiKey,1,ESP32-S3FN8,ESP32-S3 processor,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17,4.17,
 Flight controller parts (1 board),DigiKey,1,MAX-M10S-00B,GPS module,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42,11.42,
-Flight controller parts (1 board),DigiKey,1,ICM-42688-P,Gyro and accelerometer,https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934,4.86,4.86,Out of stock at DigiKey on 2026-10-11. Try Newark or Arrow. No brokers
+Flight controller parts (1 board),Newark,1,ICM-42688-P,Gyro and accelerometer,https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524,4.86,4.86,Buy from Newark, DigiKey has none. Take the price from Newark's page
 Flight controller parts (1 board),DigiKey,1,BMP581,Barometer,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35,3.35,Out of stock at DigiKey on 2026-10-11. Try Mouser
 Flight controller parts (1 board),DigiKey,1,AP63205WU-7,5 V buck regulator,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432,0.89,0.89,Out of stock at DigiKey on 2026-10-11. Try Mouser
 Flight controller parts (1 board),DigiKey,1,TLV75733PDRVR,"3.3 V regulator, 1 A",https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48,0.48,
