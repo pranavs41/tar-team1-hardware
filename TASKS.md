@@ -41,6 +41,8 @@ Networking drone flight controller, rev A:
 - [x] Fab capability check and gerber export dry run
 - [x] Order files made: [`pcb/network-drone-fc/production/rev-A/`](pcb/network-drone-fc/production/rev-A/order-notes.md)
 - [ ] Order rev A: boards from OSH Park, stencil from OSH Stencils, parts from DigiKey
+- [x] Order sheet for the rest of the drone written: [`docs/drone-order-sheet.md`](docs/drone-order-sheet.md)
+- [ ] Settle the battery plug (the listing says JST, the drone needs XT30), then order the drone components
 - [ ] Write the bring-up test firmware
 - [ ] Assemble and run the [bring-up checklist](docs/bring-up.md)
 
