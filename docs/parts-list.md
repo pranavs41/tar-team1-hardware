@@ -2,6 +2,8 @@
 
 Everything that goes into one networking drone: what it is, who makes it, where to buy it, and what it costs. The team prefers not to source from China, so each part is listed with the country its maker is based in, and the sellers chosen are in the US or Europe.
 
+To place the orders, use the two order sheets: [drone components](drone-order-sheet.md) and [the flight controller board and its parts](../pcb/network-drone-fc/production/rev-A/order-notes.md).
+
 Prices were read from the sellers' pages on 2026-10-11, for a quantity of one, before shipping, tax and tariffs. Stock changes daily, so check again on the day of ordering.
 
 ## Cost of one drone
@@ -54,7 +56,7 @@ Which of these matters depends on the rule the team is working under. A rule abo
 | 30 A 4-in-1 ESC, 2 to 4S, M3 holes on a 20 mm pattern | AERO SELFIE (maker not confirmed) | [Amazon](https://www.amazon.com/dp/B0DQSLQH87) | 5.4 g | $28.90 |
 | 3-inch propellers, Gemfan Hurricane 3018, pack of 8 | Gemfan (China) | [RaceDayQuads](https://www.racedayquads.com/products/gemfan-hurricane-3018-durable-bi-blade-3-prop-8-pack-1-5mm-choose-your-color) | 0.75 g each, 3 g | $4.99 |
 | 2S LiPo battery, URGENEX 1000 mAh, Daniel's pick | URGENEX (not confirmed) | [Amazon](https://www.amazon.com/dp/B0FFBB59TM) | TBD | TBD |
-| VoCore2 Wi-Fi networking module | VoCore (China) | VoCore store | ~5 g, estimate | $21.48 |
+| VoCore2 Wi-Fi networking module | VoCore (China) | [VoCore](https://vocore.io/v2.html) | ~5 g, estimate | $21.48 |
 | Benewake TF-Luna distance sensor ×2: one facing forward for obstacles, one facing down for landing | Benewake (China) | [Amazon](https://www.amazon.com/dp/B0DKCSF8C5) | <5 g each | $51.98 ($25.99 ×2) |
 | Charging board, assembled | see [charging-board.md](charging-board.md) | DigiKey for parts | TBD | about $16 |
 | 2.4 GHz Wi-Fi antenna, flexible, U.FL plug, Taoglas FXP73.07.0100A | Taoglas (Ireland) | [DigiKey](https://www.digikey.com/en/products/detail/taoglas-limited/FXP73-07-0100A/2332703) | about 1 g | $5.41 |
@@ -66,7 +68,7 @@ Which of these matters depends on the rule the team is working under. A rule abo
 Notes on this table:
 
 - The propellers must fit the motor's 1.5 mm shaft. Confirm the motor's prop mount before ordering.
-- The battery is now the 1000 mAh pack Daniel linked, in place of the 800 mAh first planned. Its price and weight were not readable from the listing, so fill them in from the order. Check its discharge rating (45C or more), that it has an XT30 plug, and that its balance plug has three wires, because the charging board needs the middle one. A similar 1000 mAh 2S pack weighs about 55 to 65 g.
+- The battery is now the 1000 mAh pack Daniel linked, in place of the 800 mAh first planned. Its price and weight were not readable from the listing, so fill them in from the order. The listing's title says "35C" and "JST Plug", so it may not have an XT30 and may need a different pack or a new plug; see the hold note in the [drone order sheet](drone-order-sheet.md). Check its discharge rating, that it has an XT30 plug, and that its balance plug has three wires, because the charging board needs the middle one. A similar 1000 mAh 2S pack weighs about 55 to 65 g.
 - The landing sensor is assumed to be a second TF-Luna. If the team picks a different one for facing down, change this row. Two TF-Lunas share one I2C bus, so one of them must be given a new address before both are fitted.
 - Other batteries in stock at Pyrodrone, both with XT30: [Tattu 850 mAh 2S 95C](https://pyrodrone.com/collections/2s-batteries/products/tattu-850mah-2s-7-6v-hv-95c-lipo-battery-long-pack-with-xt30-plug), 40 g, $10.99, and [GNB 930 mAh 2S 120C](https://pyrodrone.com/collections/2s-batteries/products/gaoneng-gnb-930mah-7-4v-2s-120c-lipo-battery-xt30), 54 g, $12.99. The Tattu is a high-voltage pack that charges to 8.7 V, which the board accepts.
 - The GPS antenna listed is flat and has no amplifier listed. An active ceramic patch receives better: [Taoglas AP.12F.07.0045A](https://www.digikey.com/en/products/result?keywords=AP.12F.07.0045A), $18.02, and it needs inductor L3 fitted on the board.
