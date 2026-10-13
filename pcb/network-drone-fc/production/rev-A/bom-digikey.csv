@@ -1,36 +1,36 @@
 Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Per board,Unit price USD (2026-10-11)
-3,ESP32-S3FN8,Espressif,U1,ESP32-S3 processor,1,4.17
-3,MAX-M10S-00B,u-blox,U8,GPS module,1,11.42
-3,ICM-42688-P,TDK InvenSense,U6,Gyro and accelerometer,1,4.86
-3,BMP581,Bosch Sensortec,U7,Barometer,1,3.35
-3,AP63205WU-7,Diodes Incorporated,U3,5 V buck regulator,1,0.89
-3,TLV75733PDRVR,Texas Instruments,U4,"3.3 V regulator, 1 A",1,0.48
-3,TPS7A2033PDBVR,Texas Instruments,U5,3.3 V low-noise regulator,1,0.35
-3,USBLC6-2SC6,STMicroelectronics,U2,USB protection,1,0.54
-3,FA-128 40.0000MF10Z-K3,Epson,X1,"40 MHz crystal, 10 pF, ±10 ppm",1,1.11
-3,TCJD107M025R0055,Kyocera AVX,C35,100 µF 25 V polymer capacitor,1,3.65
-3,SMAJ18A,Littelfuse,D5,Battery surge diode,1,0.51
-3,1N5819HW-7-F,Diodes Incorporated,D1,"Schottky diode, 1 A 40 V, SOD-123",1,0.31
-5,150060RS75000,Würth Elektronik,D2,"LEDs, 0603 red",1,0.15
-5,150060VS75000,Würth Elektronik,D3,"LEDs, 0603 yellow-green",1,0.15
-5,150060YS75000,Würth Elektronik,D4,"LEDs, 0603 yellow",1,0.15
-3,SM08B-SRSS-TB,JST,J4,"ESC connector, JST-SH 8-pin",1,0.85
-3,SM04B-GHS-TB,JST,J5,"Obstacle sensor port, JST-GH 4-pin",1,0.39
-3,SM07B-SRSS-TB,JST,J7,"Charging port, JST-SH 7-pin",1,0.80
-6,BM04B-SRSS-TB,JST,"J6, J8","Radio port and landing sensor port, JST-SH 4-pin top entry",2,0.53
-6,U.FL-R-SMT-1(10),Hirose,"J1, J3","Antenna sockets, U.FL",2,1.67
-3,USB4105-GF-A,GCT,J2,"USB-C socket, 16-pin",1,0.80
-3,CIGW252010EH4R7MNE,Samsung Electro-Mechanics,L2,"Buck inductor, 4.7 µH, 2.2 A saturation",1,0.29
+1,ESP32-S3FN8,Espressif,U1,ESP32-S3 processor,1,4.17
+1,MAX-M10S-00B,u-blox,U8,GPS module,1,11.42
+1,ICM-42688-P,TDK InvenSense,U6,Gyro and accelerometer,1,4.86
+1,BMP581,Bosch Sensortec,U7,Barometer,1,3.35
+1,AP63205WU-7,Diodes Incorporated,U3,5 V buck regulator,1,0.89
+1,TLV75733PDRVR,Texas Instruments,U4,"3.3 V regulator, 1 A",1,0.48
+1,TPS7A2033PDBVR,Texas Instruments,U5,3.3 V low-noise regulator,1,0.35
+1,USBLC6-2SC6,STMicroelectronics,U2,USB protection,1,0.54
+1,FA-128 40.0000MF10Z-K3,Epson,X1,"40 MHz crystal, 10 pF, ±10 ppm",1,1.11
+1,TCJD107M025R0055,Kyocera AVX,C35,100 µF 25 V polymer capacitor,1,3.65
+1,SMAJ18A,Littelfuse,D5,Battery surge diode,1,0.51
+1,1N5819HW-7-F,Diodes Incorporated,D1,"Schottky diode, 1 A 40 V, SOD-123",1,0.31
+3,150060RS75000,Würth Elektronik,D2,"LED 0603, red",1,0.15
+3,150060VS75000,Würth Elektronik,D3,"LED 0603, yellow-green",1,0.15
+3,150060YS75000,Würth Elektronik,D4,"LED 0603, yellow",1,0.15
+1,SM08B-SRSS-TB,JST,J4,"ESC connector, JST-SH 8-pin",1,0.85
+1,SM04B-GHS-TB,JST,J5,"Obstacle sensor port, JST-GH 4-pin",1,0.39
+1,SM07B-SRSS-TB,JST,J7,"Charging port, JST-SH 7-pin",1,0.80
+2,BM04B-SRSS-TB,JST,"J6, J8","Radio port and landing sensor port, JST-SH 4-pin top entry",2,0.53
+2,U.FL-R-SMT-1(10),Hirose,"J1, J3","Antenna sockets, U.FL",2,1.67
+1,USB4105-GF-A,GCT,J2,"USB-C socket, 16-pin",1,0.80
+1,CIGW252010EH4R7MNE,Samsung Electro-Mechanics,L2,"Buck inductor, 4.7 µH, 2.2 A saturation",1,0.29
 10,LQG15HS2N0B02D,Murata,L1,"Radio supply inductor, 2.0 nH",1,0.10
-50,GRM155R71C104KA88J,Murata,"C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34","0.1 µF 16 V, 0402",13,0.10
-30,CL05A105KP5NNNC,Samsung Electro-Mechanics,"C3, C5, C10, C11, C20 to C23","1 µF 10 V, 0402",8,0.10
-20,GRM155R71H103KA88D,Murata,"C6, C27, C32","10 nF 50 V, 0402",3,0.10
+20,GRM155R71C104KA88J,Murata,"C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34","0.1 µF 16 V, 0402",13,0.10
+10,CL05A105KP5NNNC,Samsung Electro-Mechanics,"C3, C5, C10, C11, C20 to C23","1 µF 10 V, 0402",8,0.10
+10,GRM155R71H103KA88D,Murata,"C6, C27, C32","10 nF 50 V, 0402",3,0.10
 10,GRM1555C1H150JA01D,Murata,"C12, C13","15 pF 50 V, 0402",2,0.10
 10,GRM155R61C225KE11J,Murata,C26,"2.2 µF 16 V, 0402",1,0.22
 10,GRM188R60J106ME47D,Murata,"C4, C30","10 µF 6.3 V, 0603",2,0.12
 10,GRM21BR61A226ME51L,Murata,"C18, C19","22 µF 10 V, 0805",2,0.19
-3,GRM319R61E106KA12D,Murata,C16,"10 µF 25 V, 1206",1,0.47
-20,RC0402FR-0710KL,Yageo,"R1, R10, R11","10 kΩ 1%, 0402",3,0.10
+1,GRM319R61E106KA12D,Murata,C16,"10 µF 25 V, 1206",1,0.47
+10,RC0402FR-0710KL,Yageo,"R1, R10, R11","10 kΩ 1%, 0402",3,0.10
 10,RC0402FR-075K1L,Yageo,"R4, R5","5.1 kΩ 1%, 0402",2,0.10
 10,RC0402FR-071KL,Yageo,"R6, R8","1 kΩ 1%, 0402",2,0.10
 10,RC0402FR-072K2L,Yageo,"R12, R13","2.2 kΩ 1%, 0402",2,0.10

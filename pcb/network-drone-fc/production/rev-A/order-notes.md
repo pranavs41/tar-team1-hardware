@@ -57,11 +57,11 @@ Upload `bom-digikey.csv` with DigiKey's BOM or list upload tool. The columns are
 | | |
 |---|---|
 | Lines | 38 |
-| Quantities | enough for all three boards, with extra small resistors, capacitors and LEDs because they are easy to lose |
-| Cost for three boards with spares | about $146 at the prices read on 2026-10-11 |
+| Quantities | enough for one board, with extra small resistors, capacitors and LEDs because they are easy to lose. Two of the three bare boards stay empty as spares |
+| Cost with the spare small parts | about $59 at the prices read on 2026-10-11 |
 | Cost of parts for one board | $44.83 |
 
-To build fewer boards, divide the first column by three for every line that is not a resistor or small capacitor.
+To build a second board, order every line again apart from the resistors and small capacitors, which already come in tens.
 
 Parts that were out of stock at DigiKey when last checked. Look at these first:
 

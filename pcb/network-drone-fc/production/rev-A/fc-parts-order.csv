@@ -1,40 +1,40 @@
 ﻿Qty to order,Part number,Description,Maker,Used at,Link,Each USD,Line total USD,Note
-3,ESP32-S3FN8,ESP32-S3 processor,Espressif,U1,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17,12.51,
-3,MAX-M10S-00B,GPS module,u-blox,U8,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42,34.26,
-3,ICM-42688-P,Gyro and accelerometer,TDK InvenSense,U6,https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934,4.86,14.58,Out of stock at DigiKey on 2026-10-11. Try Newark or Arrow. No brokers
-3,BMP581,Barometer,Bosch Sensortec,U7,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35,10.05,Out of stock at DigiKey on 2026-10-11. Try Mouser
-3,AP63205WU-7,5 V buck regulator,Diodes Incorporated,U3,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432,0.89,2.67,Out of stock at DigiKey on 2026-10-11. Try Mouser
-3,TLV75733PDRVR,"3.3 V regulator, 1 A",Texas Instruments,U4,https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48,1.44,
-3,TPS7A2033PDBVR,3.3 V low-noise regulator,Texas Instruments,U5,https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866,0.35,1.05,Out of stock at DigiKey on 2026-10-11. Try Mouser
-3,USBLC6-2SC6,USB protection,STMicroelectronics,U2,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54,1.62,
-3,FA-128 40.0000MF10Z-K3,"40 MHz crystal, 10 pF, ±10 ppm",Epson,X1,https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11,3.33,
-3,TCJD107M025R0055,100 µF 25 V polymer capacitor,Kyocera AVX,C35,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65,10.95,
-3,SMAJ18A,Battery surge diode,Littelfuse,D5,https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282,0.51,1.53,
-3,1N5819HW-7-F,"Schottky diode, 1 A 40 V, SOD-123",Diodes Incorporated,D1,https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970,0.31,0.93,
-5,150060RS75000,"LED 0603, red",Würth Elektronik,D2,https://www.digikey.com/en/products/result?keywords=150060RS75000,0.15,0.75,
-5,150060VS75000,"LED 0603, yellow-green",Würth Elektronik,D3,https://www.digikey.com/en/products/result?keywords=150060VS75000,0.15,0.75,
-5,150060YS75000,"LED 0603, yellow",Würth Elektronik,D4,https://www.digikey.com/en/products/result?keywords=150060YS75000,0.15,0.75,
-3,SM08B-SRSS-TB,"ESC connector, JST-SH 8-pin",JST,J4,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714,0.85,2.55,DigiKey lists it as SM08B-SRSS-TB(LF)(SN)
-3,SM04B-GHS-TB,"Obstacle sensor port, JST-GH 4-pin",JST,J5,https://www.digikey.com/en/products/result?keywords=SM04B-GHS-TB,0.39,1.17,Out of stock at DigiKey on 2026-10-11. Try Mouser. Listed as SM04B-GHS-TB(LF)(SN)
-3,SM07B-SRSS-TB,"Charging port, JST-SH 7-pin",JST,J7,https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80,2.40,DigiKey lists it as SM07B-SRSS-TB(LF)(SN)
-6,BM04B-SRSS-TB,"Radio port and landing sensor port, JST-SH 4-pin top entry",JST,"J6, J8",https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696,0.53,3.18,DigiKey lists it as BM04B-SRSS-TB(LF)(SN)
-6,U.FL-R-SMT-1(10),"Antenna sockets, U.FL",Hirose,"J1, J3",https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570,1.67,10.02,
-3,USB4105-GF-A,"USB-C socket, 16-pin",GCT,J2,https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441,0.80,2.40,
-3,CIGW252010EH4R7MNE,"Buck inductor, 4.7 µH, 2.2 A saturation",Samsung Electro-Mechanics,L2,https://www.digikey.com/en/products/result?keywords=CIGW252010EH4R7MNE,0.29,0.87,
+1,ESP32-S3FN8,ESP32-S3 processor,Espressif,U1,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17,4.17,
+1,MAX-M10S-00B,GPS module,u-blox,U8,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42,11.42,
+1,ICM-42688-P,Gyro and accelerometer,TDK InvenSense,U6,https://www.digikey.com/en/products/detail/tdk-invensense/ICM-42688-P/10824934,4.86,4.86,Out of stock at DigiKey on 2026-10-11. Try Newark or Arrow. No brokers
+1,BMP581,Barometer,Bosch Sensortec,U7,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35,3.35,Out of stock at DigiKey on 2026-10-11. Try Mouser
+1,AP63205WU-7,5 V buck regulator,Diodes Incorporated,U3,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63205WU-7/9858432,0.89,0.89,Out of stock at DigiKey on 2026-10-11. Try Mouser
+1,TLV75733PDRVR,"3.3 V regulator, 1 A",Texas Instruments,U4,https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48,0.48,
+1,TPS7A2033PDBVR,3.3 V low-noise regulator,Texas Instruments,U5,https://www.digikey.com/en/products/detail/texas-instruments/TPS7A2033PDBVR/13566866,0.35,0.35,Out of stock at DigiKey on 2026-10-11. Try Mouser
+1,USBLC6-2SC6,USB protection,STMicroelectronics,U2,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54,0.54,
+1,FA-128 40.0000MF10Z-K3,"40 MHz crystal, 10 pF, ±10 ppm",Epson,X1,https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11,1.11,
+1,TCJD107M025R0055,100 µF 25 V polymer capacitor,Kyocera AVX,C35,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65,3.65,
+1,SMAJ18A,Battery surge diode,Littelfuse,D5,https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282,0.51,0.51,
+1,1N5819HW-7-F,"Schottky diode, 1 A 40 V, SOD-123",Diodes Incorporated,D1,https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970,0.31,0.31,
+3,150060RS75000,"LED 0603, red",Würth Elektronik,D2,https://www.digikey.com/en/products/result?keywords=150060RS75000,0.15,0.45,
+3,150060VS75000,"LED 0603, yellow-green",Würth Elektronik,D3,https://www.digikey.com/en/products/result?keywords=150060VS75000,0.15,0.45,
+3,150060YS75000,"LED 0603, yellow",Würth Elektronik,D4,https://www.digikey.com/en/products/result?keywords=150060YS75000,0.15,0.45,
+1,SM08B-SRSS-TB,"ESC connector, JST-SH 8-pin",JST,J4,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714,0.85,0.85,DigiKey lists it as SM08B-SRSS-TB(LF)(SN)
+1,SM04B-GHS-TB,"Obstacle sensor port, JST-GH 4-pin",JST,J5,https://www.digikey.com/en/products/result?keywords=SM04B-GHS-TB,0.39,0.39,Out of stock at DigiKey on 2026-10-11. Try Mouser. Listed as SM04B-GHS-TB(LF)(SN)
+1,SM07B-SRSS-TB,"Charging port, JST-SH 7-pin",JST,J7,https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80,0.80,DigiKey lists it as SM07B-SRSS-TB(LF)(SN)
+2,BM04B-SRSS-TB,"Radio port and landing sensor port, JST-SH 4-pin top entry",JST,"J6, J8",https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696,0.53,1.06,DigiKey lists it as BM04B-SRSS-TB(LF)(SN)
+2,U.FL-R-SMT-1(10),"Antenna sockets, U.FL",Hirose,"J1, J3",https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570,1.67,3.34,
+1,USB4105-GF-A,"USB-C socket, 16-pin",GCT,J2,https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441,0.80,0.80,
+1,CIGW252010EH4R7MNE,"Buck inductor, 4.7 µH, 2.2 A saturation",Samsung Electro-Mechanics,L2,https://www.digikey.com/en/products/result?keywords=CIGW252010EH4R7MNE,0.29,0.29,
 10,LQG15HS2N0B02D,"Radio supply inductor, 2.0 nH",Murata,L1,https://www.digikey.com/en/products/result?keywords=LQG15HS2N0B02D,0.10,1.00,
-50,GRM155R71C104KA88J,"0.1 µF 16 V, 0402",Murata,"C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34",https://www.digikey.com/en/products/result?keywords=GRM155R71C104KA88J,0.10,5.00,
-30,CL05A105KP5NNNC,"1 µF 10 V, 0402",Samsung Electro-Mechanics,"C3, C5, C10, C11, C20 to C23",https://www.digikey.com/en/products/result?keywords=CL05A105KP5NNNC,0.10,3.00,
-20,GRM155R71H103KA88D,"10 nF 50 V, 0402",Murata,"C6, C27, C32",https://www.digikey.com/en/products/result?keywords=GRM155R71H103KA88D,0.10,2.00,
+20,GRM155R71C104KA88J,"0.1 µF 16 V, 0402",Murata,"C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34",https://www.digikey.com/en/products/result?keywords=GRM155R71C104KA88J,0.10,2.00,
+10,CL05A105KP5NNNC,"1 µF 10 V, 0402",Samsung Electro-Mechanics,"C3, C5, C10, C11, C20 to C23",https://www.digikey.com/en/products/result?keywords=CL05A105KP5NNNC,0.10,1.00,
+10,GRM155R71H103KA88D,"10 nF 50 V, 0402",Murata,"C6, C27, C32",https://www.digikey.com/en/products/result?keywords=GRM155R71H103KA88D,0.10,1.00,
 10,GRM1555C1H150JA01D,"15 pF 50 V, 0402",Murata,"C12, C13",https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D,0.10,1.00,
 10,GRM155R61C225KE11J,"2.2 µF 16 V, 0402",Murata,C26,https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J,0.22,2.20,
 10,GRM188R60J106ME47D,"10 µF 6.3 V, 0603",Murata,"C4, C30",https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D,0.12,1.20,
 10,GRM21BR61A226ME51L,"22 µF 10 V, 0805",Murata,"C18, C19",https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L,0.19,1.90,
-3,GRM319R61E106KA12D,"10 µF 25 V, 1206",Murata,C16,https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921,0.47,1.41,
-20,RC0402FR-0710KL,"10 kΩ 1%, 0402",Yageo,"R1, R10, R11",https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL,0.10,2.00,
+1,GRM319R61E106KA12D,"10 µF 25 V, 1206",Murata,C16,https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921,0.47,0.47,
+10,RC0402FR-0710KL,"10 kΩ 1%, 0402",Yageo,"R1, R10, R11",https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL,0.10,1.00,
 10,RC0402FR-075K1L,"5.1 kΩ 1%, 0402",Yageo,"R4, R5",https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L,0.10,1.00,
 10,RC0402FR-071KL,"1 kΩ 1%, 0402",Yageo,"R6, R8",https://www.digikey.com/en/products/result?keywords=RC0402FR-071KL,0.10,1.00,
 10,RC0402FR-072K2L,"2.2 kΩ 1%, 0402",Yageo,"R12, R13",https://www.digikey.com/en/products/result?keywords=RC0402FR-072K2L,0.10,1.00,
 10,RC0402FR-07470RL,"470 Ω 1%, 0402",Yageo,R7,https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619,0.10,1.00,
 10,RC0402FR-07100KL,"100 kΩ 1%, 0402",Yageo,R9,https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL,0.10,1.00,
 10,RC0402JR-070RL,"0 Ω link, 0402",Yageo,R3,https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL,0.10,1.00,
-,,"Total for 3 boards with spares, before shipping and tax",,,,,146.47,
+,,"Total for 1 board with spare small parts, before shipping and tax",,,,,59.29,
