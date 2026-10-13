@@ -23,6 +23,7 @@ Networking drone flight controller, rev A:
 - [x] Sensor port (J5) and radio port (J6) added
 - [x] Charging port (J7) enlarged to 7 pins and landing sensor port (J8) added
 - [ ] Give one of the two TF-Lunas a new I2C address before both are fitted
+- [ ] Compass: wire the LIS3MDL breakout into the J5 or J8 cable, mount it away from the battery leads, calibrate on the finished drone
 - [x] Pin reference written: [`docs/hardware-reference.md`](docs/hardware-reference.md)
 - [ ] Decide how to get the gyro: it is out of stock at every authorised distributor (options in [`docs/parts-list.md`](docs/parts-list.md))
 - [ ] Ask the purchasing or research-security office which sourcing rule applies to the project

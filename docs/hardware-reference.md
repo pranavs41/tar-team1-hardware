@@ -101,6 +101,21 @@ Pin 1 is at the right-hand end of the connector, nearest the board corner.
 
 The same four signals in the same order as J5, for the downward-facing distance sensor used for landing. The connector is a JST-SH that points straight up, like J6, because a side-entry JST-GH would not fit between the charging connector, the mounting hole and the USB socket. Pin 1 is the end nearest the USB socket.
 
+### Compass, on the J5 or J8 cable
+
+The board has no compass of its own. An outdoor autonomous drone needs one to know which way it points while hovering, so a small magnetometer board is added on a cable. It has no connector of its own on the flight controller. I2C is a shared bus, so the compass joins the same four wires as one of the distance sensors.
+
+| Compass board pad | Joins this wire of the J5 or J8 cable |
+|---|---|
+| VIN | pin 1, 5 V |
+| SCL | pin 2, SCL |
+| SDA | pin 3, SDA |
+| GND | pin 4, GND |
+
+The board chosen is Adafruit's LIS3MDL breakout. It has its own regulator and level shifting, so the 5 V on pin 1 is fine. A board without a regulator (most Qwiic boards) would be damaged by 5 V. Its two small sockets are wired in Qwiic order, which is not J5's or J8's order, so use its solder pads and wire by name.
+
+Where it goes matters more than how it is wired. The wires carrying motor current make a magnetic field that changes with throttle, and it swamps the Earth's field at close range. Mount the compass as far from the battery leads, the ESC and the motor wires as the frame allows, on top and towards the front or on a short mast. Twist the two battery leads together. Calibrate the compass on the finished drone, and check the heading with the motors running before trusting it in flight.
+
 J6 and J8 are the same connector type. Swapping their plugs by mistake damages nothing, since both have 5 V on pin 1 and ground on pin 4, but neither device will work until they are swapped back.
 
 ### J2, USB-C
@@ -153,6 +168,7 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 | I2C | BMP581 barometer (on board) | 0x46 |
 | I2C | TF-Luna obstacle sensor (on J5) | 0x10. Run the bus at 100 kHz when anything is plugged into J5, J7 or J8 |
 | I2C | landing sensor (on J8) | a second TF-Luna also starts at 0x10, so one of the two must be given a new address once, for example 0x11 |
+| I2C | LIS3MDL compass (on the J5 or J8 cable) | 0x1C, or 0x1E with its address pad bridged. Neither clashes |
 | I2C | BQ25887 charger (on J7) | 0x6A or 0x6B, check the charger's datasheet. Neither clashes |
 | SPI | ICM-42688-P gyro and accelerometer | chip select GPIO35, interrupt GPIO48 |
 | UART | u-blox MAX-M10S GPS | TX GPIO36, RX GPIO18 |
