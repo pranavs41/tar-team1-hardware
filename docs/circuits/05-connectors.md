@@ -10,11 +10,13 @@ The flight controller stacks on a bought 20 × 20 mm 4-in-1 ESC, and this one ca
 |---|---|---|
 | 1 | GND | |
 | 2 | VBAT | battery voltage, the board's only power input |
-| 3 | ESC_CUR | current sense, an analog voltage from the ESC (shared with the radio port, see J6) |
-| 4 | ESC_TELEM | ESC telemetry, a UART signal into the ESP32 (shared with the radio port, see J6) |
-| 5 to 8 | MOTOR1 to MOTOR4 | DShot signals out to the four motors |
+| 3 to 6 | MOTOR1 to MOTOR4 | DShot signals out to the four motors |
+| 7 | ESC_TELEM | the ESC's "N" pad (shared with the radio port, see J6) |
+| 8 | ESC_CUR | current sense, an analog voltage from the ESC's "C" pad (shared with the radio port, see J6) |
 
-This is the pin order most Betaflight-style 4-in-1 ESCs use (GND, VBAT, current, telemetry, M1 to M4), but there is no standard that forces it. Check the pinout printed on the ESC you buy before ordering boards; if it differs, the labels on J4's pins in the schematic are the only thing to change.
+This is the order printed on the team's ESC: −, +, 1, 2, 3, 4, N, C. The board first used the order most Betaflight-style ESCs use (GND, VBAT, current, telemetry, M1 to M4). There is no standard that forces either one, which is why the pinout was checked against the real ESC before ordering boards, and the board was changed to match.
+
+With the networking module fitted, pull the C and N wires out of the ESC cable. Pin 8 is the line the ESP32 transmits on to the module, and the ESC's current output would fight it. Before the first power-up, check with a multimeter that the cable brings the ESC's − to pin 1 and + to pin 2.
 
 The board has no battery connector of its own. VBAT arrives here from the ESC's battery pads, which is why the TVS and the buck's input capacitor sit close to this connector on the PCB.
 
@@ -54,7 +56,7 @@ Pins: 5 V, TX, RX, GND. This is the port for the networking module, a VoCore2, w
 
 The connector points straight up from the board, in the bottom-right corner. Every edge of the board already has a side-entry connector on it, and a top-entry part is the only kind that fits in the corner that was left. Its outline comes within 2.8 mm of the H3 hole centre, 0.2 mm inside the 3 mm keep-out, but its body and pads are more than 3.3 mm away, so a 6 mm grommet or nut still clears it.
 
-The two data lines are shared with the ESC connector. J6 pin 2 is the same net as J4 pin 3 (ESC_CUR), and J6 pin 3 is the same net as J4 pin 4 (ESC_TELEM). The reason is the ESP32 package: a via only fits beside every other pin, every usable escape was already taken, and the two free pins that remained are boxed in by the motor signals. These two lines already ran to that corner of the board, and small 8-bit ESCs like the one the team chose have no current-sense or telemetry output, so on this build they would have gone unused.
+The two data lines are shared with the ESC connector. J6 pin 2 is the same net as J4 pin 8 (ESC_CUR), and J6 pin 3 is the same net as J4 pin 7 (ESC_TELEM). The reason is the ESP32 package: a via only fits beside every other pin, every usable escape was already taken, and the two free pins that remained are boxed in by the motor signals. These two lines already ran to that corner of the board, and the networking drone has no use for the ESC's current reading. The team's ESC does have a current pad ("C"), which is why its wire comes out of the cable on a drone that carries the networking module.
 
 That makes it one or the other per drone:
 

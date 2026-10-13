@@ -84,7 +84,7 @@ LCSC part numbers are in the [repo README](../README.md).
 | J3 | U.FL | GPS antenna |
 | J4 | JST-SH 8-pin | ESC: VBAT, GND, current, telemetry, 4 motor signals |
 | J5 | JST-GH 4-pin | sensor port: 5 V, SCL, SDA, GND (TF-Luna obstacle sensor) |
-| J6 | JST-SH 4-pin, top entry | radio port: 5 V, TX, RX, GND (VoCore2 networking module); data lines shared with J4 pins 3 and 4 |
+| J6 | JST-SH 4-pin, top entry | radio port: 5 V, TX, RX, GND (VoCore2 networking module); data lines shared with J4 pins 7 and 8 |
 | J7 | JST-SH 7-pin | charging board port: BATT+, GND, SDA, SCL, /PG, STAT, CD |
 | J8 | JST-SH 4-pin, top entry | landing sensor port: 5 V, SCL, SDA, GND |
 | JP1, JP2 | pad pairs on the bottom | RESET, BOOT (short to GND with tweezers) |
@@ -115,7 +115,7 @@ Full pin table: [pin-map.md](pin-map.md).
 | GPIO in | charger power good (`CHG_PG`), low when docked | GPIO9 |
 | GPIO in | charge status (`CHG_STAT`) | GPIO8 |
 | GPIO out | charge disable (`CHG_CD`), high stops charging | GPIO7 |
-| DShot | 4 motors | GPIO11, 13, 16, 6 |
+| DShot | 4 motors | GPIO16, 6, 11, 13 (motors 1 to 4) |
 | ADC1 | battery voltage; ESC current when the radio port is not used | GPIO4, 2 |
 | USB | USB-C | GPIO19, 20 |
 
@@ -171,6 +171,6 @@ The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stacku
 | Schematic: connectors | done |
 | Footprints assigned, final ERC | done, 0 errors, 0 warnings |
 | PCB placement | done, DRC clean apart from silkscreen warnings |
-| PCB routing | done, 165 vias, DRC 0 errors (silkscreen and five courtyard warnings only) |
+| PCB routing | done, 164 vias, DRC 0 errors (silkscreen and five courtyard warnings only) |
 | Order rev A | to do |
 | Bring-up | to do ([checklist](bring-up.md)) |

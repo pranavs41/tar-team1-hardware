@@ -8,16 +8,16 @@ The pins were reassigned on 2026-10-02 to make the board routable: the chip's ri
 |---|---|---|---|
 | 4 | CHIP_PU | none | RESET pad pair JP1 |
 | 5 | GPIO0 | none | BOOT pad pair JP2 (strapping pin) |
-| 7 | GPIO2 | `ESC_CUR` | Radio port J6 pin 2, UART TX to the VoCore2. Same net as J4 pin 3 (ESC current sense, ADC1): use one or the other |
+| 7 | GPIO2 | `ESC_CUR` | Radio port J6 pin 2, UART TX to the VoCore2. Same net as J4 pin 8 (ESC current sense, ADC1): use one or the other |
 | 9 | GPIO4 | `VBAT_SENSE` | Battery divider (ADC1) |
-| 11 | GPIO6 | `MOTOR4` | ESC motor 4 (DShot) |
+| 11 | GPIO6 | `MOTOR2` | ESC motor 2 (DShot) |
 | 12 | GPIO7 | `CHG_CD` | Charging board port, output: high stops charging |
 | 13 | GPIO8 | `CHG_STAT` | Charging board port, charge status input |
 | 14 | GPIO9 | `CHG_PG` | Charging board port, power good input (low when docked) |
-| 15 | GPIO10 | `ESC_TELEM` | Radio port J6 pin 3, UART RX from the VoCore2. Same net as J4 pin 4 (ESC telemetry): use one or the other |
-| 16 | GPIO11 | `MOTOR1` | ESC motor 1 (DShot) |
-| 18 | GPIO13 | `MOTOR2` | ESC motor 2 (DShot) |
-| 22 | GPIO16 | `MOTOR3` | ESC motor 3 (DShot) |
+| 15 | GPIO10 | `ESC_TELEM` | Radio port J6 pin 3, UART RX from the VoCore2. Same net as J4 pin 7 (ESC telemetry): use one or the other |
+| 16 | GPIO11 | `MOTOR3` | ESC motor 3 (DShot) |
+| 18 | GPIO13 | `MOTOR4` | ESC motor 4 (DShot) |
+| 22 | GPIO16 | `MOTOR1` | ESC motor 1 (DShot) |
 | 24 | GPIO18 | `GPS_RX` | GPS TXD |
 | 25 | GPIO19 | `USB_DN` | USB D− |
 | 26 | GPIO20 | `USB_DP` | USB D+ |

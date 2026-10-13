@@ -36,14 +36,19 @@ Pin 1 is marked on the silkscreen of every connector.
 |---|---|---|---|
 | 1 | GND | | |
 | 2 | VBAT | in | the board's only flight power input, up to 0.7 A |
-| 3 | ESC_CUR | in | analog current sense, GPIO2. Shared with J6 pin 2 |
-| 4 | ESC_TELEM | in | ESC telemetry UART, GPIO10. Shared with J6 pin 3 |
-| 5 | MOTOR1 | out | DShot, GPIO11 |
-| 6 | MOTOR2 | out | DShot, GPIO13 |
-| 7 | MOTOR3 | out | DShot, GPIO16 |
-| 8 | MOTOR4 | out | DShot, GPIO6 |
+| 3 | MOTOR1 | out | DShot, GPIO16. ESC pad "1" |
+| 4 | MOTOR2 | out | DShot, GPIO6. ESC pad "2" |
+| 5 | MOTOR3 | out | DShot, GPIO11. ESC pad "3" |
+| 6 | MOTOR4 | out | DShot, GPIO13. ESC pad "4" |
+| 7 | ESC_TELEM | in | GPIO10. ESC pad "N". Shared with J6 pin 3 |
+| 8 | ESC_CUR | in | analog current sense, GPIO2. ESC pad "C". Shared with J6 pin 2 |
 
-This is the usual Betaflight order. Check it against the ESC's own pinout before plugging in, because nothing forces ESC makers to follow it.
+This is the order printed on the team's ESC (the AERO SELFIE 30 A 4-in-1): −, +, 1, 2, 3, 4, N, C. It is not the usual Betaflight order, so a different ESC may need its cable rewired.
+
+Two things to do on the cable:
+
+- **Check which end is pin 1.** The ESC's picture shows the order but not which end of its socket a given cable calls pin 1. With the cable plugged into the ESC only, use a multimeter to confirm that the wire reaching J4 pin 1 is the ESC's − and the wire reaching pin 2 is +. A reversed cable puts battery voltage on the wrong pins.
+- **Pull the C and N wires out of the cable when the networking module is fitted.** J4 pin 8 is the same line the ESP32 uses to talk to the module on J6. The ESC drives its C pad with a current reading, and the two outputs would fight. N is not needed either.
 
 ### J5, obstacle sensor
 
@@ -65,7 +70,7 @@ The cable ties the sensor's pin 5 to ground, which puts it in I2C mode. Its pin 
 | 3 | RX, module to flight controller | GPIO10 | a UART TX pin |
 | 4 | GND | | ground |
 
-Signal levels are 3.3 V on both sides. The two data pins are the same wires as J4 pins 3 and 4, so a drone uses either the ESC's current and telemetry outputs or the networking module, not both. The ESC the team chose is not expected to have those outputs. Capacitor C33 is left off the board when J6 is used.
+Signal levels are 3.3 V on both sides. The two data pins are the same wires as J4 pins 7 and 8, so a drone uses either the ESC's current and telemetry outputs or the networking module, not both. The team's ESC has a current output on its C pad, so that wire must come out of the ESC cable when the module is fitted. Capacitor C33 is left off the board when J6 is used.
 
 ### J7, charging board
 
@@ -113,14 +118,14 @@ Both are U.FL sockets (also sold as IPEX or MHF1). J1 takes any 2.4 GHz antenna.
 | 0 | 5 | BOOT | pad pair JP2 on the bottom; short to enter download mode |
 | 2 | 7 | ESC_CUR | UART TX to the networking module (J6), or ESC current on ADC1 |
 | 4 | 9 | VBAT_SENSE | battery voltage divided by 11, on ADC1 |
-| 6 | 11 | MOTOR4 | DShot |
+| 6 | 11 | MOTOR2 | DShot |
 | 7 | 12 | CHG_CD | output to the charger: high stops charging |
 | 8 | 13 | CHG_STAT | input from the charger: charge status |
 | 9 | 14 | CHG_PG | input from the charger: power good, which also means docked |
 | 10 | 15 | ESC_TELEM | UART RX from the networking module (J6), or ESC telemetry |
-| 11 | 16 | MOTOR1 | DShot |
-| 13 | 18 | MOTOR2 | DShot |
-| 16 | 22 | MOTOR3 | DShot |
+| 11 | 16 | MOTOR3 | DShot |
+| 13 | 18 | MOTOR4 | DShot |
+| 16 | 22 | MOTOR1 | DShot |
 | 18 | 24 | GPS_RX | UART RX, data from the GPS |
 | 19 | 25 | USB D− | |
 | 20 | 26 | USB D+ | |
