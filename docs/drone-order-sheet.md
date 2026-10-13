@@ -42,13 +42,13 @@ These can go in the same cart as the flight controller parts.
 | 1 | GPS antenna, flat adhesive, U.FL plug | [2065600100](https://www.digikey.com/en/products/result?keywords=2065600100) | $4.16 | $4.16 |
 | 1 | 470 µF 35 V capacitor, soldered across the ESC's battery pads | [EEU-FR1V471](https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1V471/2433575) | $1.08 | $1.08 |
 | 1 | Plug housing for the forward sensor cable (J5), JST-GH 4-pin | [GHR-04V-S](https://www.digikey.com/en/products/detail/jst-sales-america-inc/GHR-04V-S/807816) | about $0.20 | $0.20 |
-| 2 | Pre-crimped JST-GH wire, 150 mm, a socket on each end | AGHGH28K152 | about $0.49 | $0.98 |
-| 2 | Plug housing for the charging board cable (J7), JST-SH 7-pin | SHR-07V-S-B | about $0.15 | $0.30 |
-| 7 | Pre-crimped JST-SH wire, 150 mm, a socket on each end | ASSHSSH28K152 | about $0.49 | $3.43 |
+| 2 | Pre-crimped JST-GH wire, 150 mm, a socket on each end | [AGHGH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/AGHGH28K152/6009449) | about $0.49 | $0.98 |
+| 2 | Plug housing for the charging board cable (J7), JST-SH 7-pin | [SHR-07V-S-B](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871) | about $0.15 | $0.30 |
+| 7 | Pre-crimped JST-SH wire, 150 mm, a socket on each end | [ASSHSSH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452) | $0.46 | $3.22 |
 
 The capacitor was out of stock on 2026-10-11, due back 2026-11-09. Any 470 µF, 35 V, low-ESR radial capacitor from Panasonic, Nichicon or Rubycon does the same job.
 
-The four cable lines have no product link because their DigiKey pages were not opened. Search DigiKey for the part number. Their prices come from a price aggregator and are approximate.
+The cable parts' prices are approximate, apart from the JST-SH wire, which was read from DigiKey on 2026-10-13 with about 23,000 in stock. If a link does not open, search DigiKey for the part number.
 
 How the cable parts are used:
 
@@ -69,18 +69,24 @@ These plugs look like Qwiic or STEMMA QT cables, and the wire colours follow tha
 
 | Qty | Item | Link | Each | Total |
 |---|---|---|---|---|
-| 1 | VoCore2 Wi-Fi module | [vocore.io](https://vocore.io/v2.html) | $21.48 | $21.48 |
+| 1 | VoCore2 Wi-Fi module | [vocore.io store](https://vocore.io/#store) | $21.48 | $21.48 |
 
-The linked page is the maker's product page and shows no price or buy button. The purchaser has to find the store from there. This is the one item that ships from China.
+The maker sells it from the store section of its own front page, with a cart and checkout there. There is no separate product page to link to. The price is the one recorded on 2026-10-11, so confirm it in the cart. This is the one item that ships from China: one to two weeks by air mail, or three to five days by DHL at a higher cost.
 
-## Hardware with no part chosen yet
+## WREKD
 
-| Item | Why it is not chosen |
+| Qty | Item | Link | Each | Total |
+|---|---|---|---|---|
+| 1 | M3 nylon standoff, screw and nut kit, black, 180 pieces | [product page](https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black) | about $9.99 | $9.99 |
+
+The flight controller and the ESC both have M3 holes on the same 20 mm square, so the same screws go through both. One kit has enough for several drones, so order one for the whole build and not one per drone. Its price showed as $9.99 on one page and $14.42 on another.
+
+## Small items with no part chosen
+
+| Item | Note |
 |---|---|
-| M3 screws, nuts and spacers for the flight controller and ESC stack | lengths depend on Daniel's frame |
 | Motor mounting screws and propeller screws | check what comes in the motor's box first. The listing does not say |
 | Heat-shrink tubing, thin | for the cable joins. Any 1.5 to 2 mm tube |
-| Conductive material for the propeller guards, and wire to the charging board | Daniel and Rishab have not specified it |
 
 ## Total for one drone
 
@@ -89,12 +95,13 @@ The linked page is the maker's product page and shows no price or buy button. Th
 | Pyrodrone | $83.96 |
 | RaceDayQuads | $5.98 |
 | Amazon, without the battery and subframe | $80.88 |
-| DigiKey | $15.56 |
+| DigiKey | $15.35 |
 | Pololu | $4.08 |
 | VoCore | $21.48 |
-| **Sum** | **about $212** |
+| WREKD, one kit for the whole build | $9.99 |
+| **Sum** | **about $222** |
 
-Add the battery, the subframe, the hardware above, shipping and tax.
+Add the battery, the subframe, shipping and tax.
 
 ## The three holds
 
