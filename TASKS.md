@@ -42,7 +42,8 @@ Networking drone flight controller, rev A:
 - [x] Order files made: [`pcb/network-drone-fc/production/rev-A/`](pcb/network-drone-fc/production/rev-A/order-notes.md)
 - [ ] Order rev A: boards from OSH Park, stencil from OSH Stencils, parts from DigiKey
 - [x] Order sheet for the rest of the drone written: [`docs/drone-order-sheet.md`](docs/drone-order-sheet.md)
-- [ ] Settle the battery plug (the listing says JST, the drone needs XT30), then order the drone components
+- [x] Battery settled: OVONIC 2S 1100 mAh with an XT30 plug
+- [ ] Order the drone components from [`docs/full-order-sheet.md`](docs/full-order-sheet.md)
 - [ ] Write the bring-up test firmware
 - [ ] Assemble and run the [bring-up checklist](docs/bring-up.md)
 
@@ -72,7 +73,7 @@ What the frame has to fit, all from the flight controller:
 - Cables leave on every edge: USB-C on the right, ESC at the bottom, obstacle sensor on the left, charging board at the top right.
 - The landing sensor port J8 is on the right edge just below the charging connector and points straight up, like J6. It also needs clear space above it.
 - A second distance sensor faces down for landing and connects by cable to J8. It needs a mount on the underside with a clear view of the ground.
-- The battery is now a 1000 mAh pack, larger and heavier than the 800 mAh one first planned. Size the battery holder from the real pack.
+- The battery is now the OVONIC 2S 1100 mAh pack, larger and heavier than the 800 mAh one first planned. Size the battery holder from the real pack.
 - The charging board needs a place on the frame, close to the battery, with its 7-pin cable reaching the top-right corner of the flight controller.
 - The obstacle sensor (TF-Luna) mounts at the front and connects by cable to J5 on the left edge.
 - Two antennas need a place: Wi-Fi from J1 at the lower right, GPS from J3 at the top left.

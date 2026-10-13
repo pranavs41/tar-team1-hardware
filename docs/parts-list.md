@@ -15,7 +15,7 @@ Prices were read from the sellers' pages on 2026-10-11, for a quantity of one, b
 | Motors, ESC, propellers | $117.85 |
 | Networking module and two distance sensors (forward and downward) | $73.46 |
 | Antennas, ESC capacitor, battery connector | $11.64 |
-| Battery, 1000 mAh, priced from a similar pack | $12.99 |
+| Battery, 1100 mAh, priced from a similar pack | $12.99 |
 | Charging board, rough figure | $16 |
 | **Total for one drone** | **about $284** |
 
@@ -23,7 +23,7 @@ Three things move this number:
 
 - The bare board's smallest order is three boards for $21.76, so the first drone carries the cost of all three.
 - The gyro is out of stock at every authorised distributor. Buying it where it is in stock raises the total by about $16. See "Stock problems" below.
-- The battery in the table further down is the 1000 mAh pack Daniel picked. Its price is not filled in yet, so the total uses a similar pack's price.
+- The battery is the OVONIC 1100 mAh pack with an XT30 plug. Its price is not filled in yet, so the total uses a similar pack's price.
 - The charging board's figure is a budget estimate. Its parts are in [charging-board.md](charging-board.md).
 
 ## What is and is not made outside China
@@ -68,7 +68,7 @@ Which of these matters depends on the rule the team is working under. A rule abo
 Notes on this table:
 
 - The propellers must fit the motor's 1.5 mm shaft. Confirm the motor's prop mount before ordering.
-- The battery is now the 1000 mAh pack Daniel linked, in place of the 800 mAh first planned. Its price and weight were not readable from the listing, so fill them in from the order. The listing's title says "35C" and "JST Plug", so it may not have an XT30 and may need a different pack or a new plug; see the hold note in the [drone order sheet](drone-order-sheet.md). Check its discharge rating, that it has an XT30 plug, and that its balance plug has three wires, because the charging board needs the middle one. A similar 1000 mAh 2S pack weighs about 55 to 65 g.
+- The battery is the OVONIC 2S 1100 mAh high-voltage pack, chosen on 2026-10-13 because it comes with an XT30 plug. The 1000 mAh pack picked before it has a small JST plug that cannot carry this drone's current. Fill in the price and weight from the order, and check that its balance plug has three wires, because the charging board needs the middle one. It is full at 8.7 V, which the board accepts.
 - The landing sensor is assumed to be a second TF-Luna. If the team picks a different one for facing down, change this row. Two TF-Lunas share one I2C bus, so one of them must be given a new address before both are fitted.
 - Other batteries in stock at Pyrodrone, both with XT30: [Tattu 850 mAh 2S 95C](https://pyrodrone.com/collections/2s-batteries/products/tattu-850mah-2s-7-6v-hv-95c-lipo-battery-long-pack-with-xt30-plug), 40 g, $10.99, and [GNB 930 mAh 2S 120C](https://pyrodrone.com/collections/2s-batteries/products/gaoneng-gnb-930mah-7-4v-2s-120c-lipo-battery-xt30), 54 g, $12.99. The Tattu is a high-voltage pack that charges to 8.7 V, which the board accepts.
 - The GPS antenna listed is flat and has no amplifier listed. An active ceramic patch receives better: [Taoglas AP.12F.07.0045A](https://www.digikey.com/en/products/result?keywords=AP.12F.07.0045A), $18.02, and it needs inductor L3 fitted on the board.

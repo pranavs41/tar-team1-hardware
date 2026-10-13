@@ -2,9 +2,11 @@
 
 Everything one networking drone needs apart from the flight controller board and the parts soldered onto it. Those have their own sheet: [rev A order sheet](../pcb/network-drone-fc/production/rev-A/order-notes.md).
 
+The current list to order from, with the flight controller parts included, is [the full order sheet](full-order-sheet.md). This page keeps the detail on how the cable parts are used.
+
 Quantities are for **one drone**. Multiply every line by the number of drones being built. Prices were read on 2026-10-11 to 2026-10-13, before shipping and tax. Check stock on the day of ordering.
 
-Three lines need a decision before they are ordered. They are marked **HOLD** and explained at the bottom.
+Two lines need a decision before they are ordered. They are marked **HOLD** and explained at the bottom.
 
 ## Pyrodrone
 
@@ -29,7 +31,7 @@ The propeller's 1.5 mm hole matches the motor's 1.5 mm shaft. Pick a colour that
 |---|---|---|---|---|
 | 1 | AERO SELFIE 30 A 4-in-1 ESC, 2 to 4S, 20 mm hole pattern, with its 8-pin cable | [product page](https://www.amazon.com/dp/B0DQSLQH87) | $28.90 | $28.90 |
 | 2 | Benewake TF-Luna distance sensor (one faces forward, one faces down) | [product page](https://www.amazon.com/dp/B0DKCSF8C5) | $25.99 | $51.98 |
-| 1 | URGENEX 2S 1000 mAh battery. **HOLD**, see the battery note | [product page](https://www.amazon.com/dp/B0FFBB59TM) | not read | |
+| 1 | OVONIC 2S 1100 mAh 7.6 V 60C battery with XT30 plug, pack of 2 | [product page](https://www.amazon.com/dp/B0D318NL5W) | not read | |
 | 1 | Carbon fiber subframe, Daniel's pick. **HOLD** until Daniel confirms it | [product page](https://www.amazon.com/dp/B08ZNQCHP8) | not read | |
 
 ## DigiKey
@@ -103,14 +105,9 @@ The flight controller and the ESC both have M3 holes on the same 20 mm square, s
 
 Add the battery, the subframe, shipping and tax.
 
-## The three holds
+## The holds
 
-**Battery.** The URGENEX listing's title says the pack has a "JST Plug". It does not say XT30. This drone can pull over 20 A at full throttle, and the small red JST plug found on packs like this is built for a few amps. It would overheat. Before ordering it, read the listing for the plug type and for a three-wire balance plug, which the charging board needs.
-
-If it is the small JST plug, there are two ways forward:
-
-- Order a pack that comes with an XT30. The [GNB 930 mAh 2S 120C](https://pyrodrone.com/collections/2s-batteries/products/gaoneng-gnb-930mah-7-4v-2s-120c-lipo-battery-xt30) at Pyrodrone is $12.99, weighs 54 g, and was in stock on 2026-10-11.
-- Keep the URGENEX pack and solder an XT30 onto its leads. That means cutting the leads of a charged lithium pack, one wire at a time, and should only be done by someone who has done it before.
+**Battery.** Settled on 2026-10-13: the OVONIC 2S 1100 mAh pack in the Amazon table, which comes with an XT30 plug. The URGENEX pack first picked has a small JST plug built for a few amps, and this drone draws over 20 A at full throttle.
 
 **XT30 connector.** Which half to buy depends on what is already on the ESC's battery lead and on the battery. Order it once both are known.
 
