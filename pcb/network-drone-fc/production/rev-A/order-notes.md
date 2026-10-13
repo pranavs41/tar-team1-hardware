@@ -56,7 +56,7 @@ Upload `bom-digikey.csv` with DigiKey's BOM or list upload tool. The columns are
 
 | | |
 |---|---|
-| Lines | 40: 38 board parts, plus solder paste and flux |
+| Lines | 38 |
 | Quantities | enough for all three boards, with extra small resistors, capacitors and LEDs because they are easy to lose |
 | Cost for three boards with spares | about $146 at the prices read on 2026-10-11 |
 | Cost of parts for one board | $44.83 |
@@ -79,7 +79,7 @@ Three footprints on the board are left empty on purpose and have no line in the 
 
 ## Also needed for assembly
 
-The solder paste and flux are the last two lines of `bom-digikey.csv` (Chip Quik TS391SNL and SMD291). Their prices were not read, so check them in the cart.
+The team already has these, so they are not in any order.
 
 - Solder paste, lead-free SAC305, no-clean, in a syringe. Standard SAC305 is preferred over low-temperature paste here, because low-temperature joints are brittle and this board lives on a vibrating frame.
 - Flux pen or gel flux, and solder wick, for clearing bridges on the processor.
