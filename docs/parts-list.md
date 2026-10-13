@@ -101,7 +101,7 @@ All from DigiKey. Quantity is per board.
 | C35 | 100 µF 25 V polymer capacitor | [TCJD107M025R0055](https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375) | Kyocera AVX (US, Japan) | 1 | $3.65 | $3.65 |
 | D5 | Battery surge diode | [SMAJ18A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282) | Littelfuse (US) | 1 | $0.51 | $0.51 |
 | D1 | Schottky diode, 1 A 40 V, SOD-123 | [1N5819HW-7-F](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970) | Diodes Incorporated (US) | 1 | $0.31 | $0.31 |
-| D2, D3, D4 | LEDs, 0603: red, green, yellow | 150060RS75000, 150060GS75000, 150060YS75000 | Würth Elektronik (Germany) | 3 | $0.15 | $0.45 |
+| D2, D3, D4 | LEDs, 0603: red, yellow-green, yellow | 150060RS75000, 150060VS75000, 150060YS75000 | Würth Elektronik (Germany) | 3 | $0.15 | $0.45 |
 | J4 | ESC connector, JST-SH 8-pin | [SM08B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714) | JST (Japan) | 1 | $0.85 | $0.85 |
 | J5 | Obstacle sensor port, JST-GH 4-pin | SM04B-GHS-TB | JST (Japan) | 1 | $0.39 | $0.39 |
 | J7 | Charging port, JST-SH 7-pin | SM07B-SRSS-TB | JST (Japan) | 1 | $0.80 | $0.80 |
@@ -151,14 +151,16 @@ Checked 2026-10-11.
 2. Check Newark, Arrow and Future on the day of ordering. Their listings were unclear or missing.
 3. Change the board to a gyro that is in stock, such as a Bosch or STMicroelectronics part. That is a schematic and layout change, and a firmware driver change.
 
+A second look on 2026-10-12 did not settle it. Search results showed Newark and Arrow each with about 1,300 pieces near $4.50, but a stock aggregator the same day showed Newark at zero. Open both sellers' own pages before choosing between the three options.
+
 Brokers also list this part at very low prices. Parts from brokers are a known source of counterfeits, so avoid them.
 
-## Board changes these parts need
+## Board changes these parts needed
 
-Three things in this list do not drop onto the board as drawn:
+Two were made on 2026-10-12, and one is a choice at ordering time:
 
-- **USB-C socket.** The board's footprint was drawn for a Chinese-made socket. The GCT part has the same pad and leg positions, but its mounting legs need slots 0.4 mm longer than the board has. The footprint must be widened before using it.
-- **Green LED.** The green LED listed needs 3.2 V to light, and the board gives it 3.3 V through 470 Ω, so it would barely glow. Either order a yellow-green type that lights at about 2 V, or change R7. The red and yellow ones are fine.
+- **USB-C socket, done.** The board's footprint was drawn for a Chinese-made socket. The GCT part has the same pad and leg positions, but its mounting legs are wider. The four slots are now 0.4 mm longer (1.7 mm at the back, 1.4 mm at the front), which is the size GCT's drawing asks for. The original socket still fits the longer slots.
+- **Green LED, done.** The first green LED listed needed 3.2 V to light and would have barely glowed on 3.3 V. The list now has a yellow-green type that lights at 2.0 to 2.4 V and draws about 2 to 3 mA through R7. No board change.
 - **Crystal temperature range.** The crystal listed is rated −20 to 75 °C. The alternative FA-128 40.0000MF20X-K0 covers −40 to 85 °C at $0.55, with looser frequency stability and only a few hundred in stock.
 
 ## Bare board, made outside China
@@ -171,7 +173,7 @@ The board is 36 × 39 mm with four layers.
 | [Aisler](https://community.aisler.net/t/4-layer-1-6mm-enig-design-rules/3733) | Germany | about €19.50 for three boards | not confirmed | minimum spacing 0.125 mm |
 | Eurocircuits | Belgium | quote only | 3 working days | minimum spacing 0.150 mm on the prototype service |
 
-The board was drawn to a 0.12 mm spacing rule, slightly tighter than these fabs allow. Rechecked at OSH Park's 0.127 mm, only six spots fail, each by 0.006 mm or less. Those six need nudging before ordering from OSH Park or Aisler. Their layer stacks also differ from the one the antenna traces were calculated for, so that width should be rechecked for whichever fab is chosen.
+The board was drawn to a 0.12 mm spacing rule, slightly tighter than these fabs allow. Six spots were under OSH Park's 0.127 mm, each by 0.006 mm or less. They were opened up on 2026-10-12, and the board now passes the design rules check at 0.127 mm, so OSH Park and Aisler can both build it. Eurocircuits' 0.150 mm was not checked. The fabs' layer stacks differ from the one the antenna traces were calculated for, so that width should be rechecked for whichever fab is chosen.
 
 ## Regulations
 
