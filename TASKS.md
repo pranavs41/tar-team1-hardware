@@ -44,6 +44,7 @@ Networking drone flight controller, rev A:
 - [ ] Order rev A: boards from OSH Park, stencil from OSH Stencils, parts from DigiKey
 - [x] Order sheet for the rest of the drone written: [`docs/drone-order-sheet.md`](docs/drone-order-sheet.md)
 - [x] Battery settled: OVONIC 2S 1100 mAh with an XT30 plug
+- [ ] Later: decide on and order the carbon fiber subframe (left off the order sheet on 2026-10-13)
 - [ ] Order the drone components from [`docs/full-order-sheet.md`](docs/full-order-sheet.md)
 - [ ] Write the bring-up test firmware
 - [ ] Assemble and run the [bring-up checklist](docs/bring-up.md)

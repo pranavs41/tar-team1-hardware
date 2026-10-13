@@ -47,12 +47,11 @@ Drone parts (1 drone),DigiKey,1,2065600100,"GPS antenna, U.FL plug",https://www.
 Drone parts (1 drone),DigiKey,1,EEU-FR1V471,470 uF 35 V capacitor for the ESC's battery pads,https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1V471/2433575,1.08,1.08,"Out of stock 2026-10-11, due 2026-11-09. Any 470 uF 35 V low-ESR radial capacitor works"
 Drone parts (1 drone),DigiKey,1,GHR-04V-S,"Plug housing for the forward sensor cable, JST-GH 4-pin",https://www.digikey.com/en/products/detail/jst-sales-america-inc/GHR-04V-S/807816,0.20,0.20,Price approximate
 Drone parts (1 drone),DigiKey,2,AGHGH28K152,"Pre-crimped JST-GH wire, 150 mm",https://www.digikey.com/en/products/detail/jst-sales-america-inc/AGHGH28K152/6009449,0.49,0.98,"Price approximate. If the link fails, search the part number"
-Drone parts (1 drone),Adafruit,1,Adafruit LIS3MDL magnetometer breakout (product 4479),"Compass, 1.5 g",https://www.adafruit.com/product/4479,9.95,9.95,"Shares the I2C wires of the J5 or J8 cable. Runs from that cable's 5 V. Mount it away from the battery leads and ESC"
+Drone parts (1 drone),Adafruit,1,Adafruit LIS3MDL magnetometer breakout (product 4479),"Compass, 1.5 g",https://www.adafruit.com/product/4479,9.95,9.95,Shares the I2C wires of the J5 or J8 cable. Runs from that cable's 5 V. Mount it away from the battery leads and ESC
 Drone parts (1 drone),Pololu,2,Pololu 5521,"JST-SH 4-pin cable, bare wires on one end, 30 cm",https://www.pololu.com/product/5521,2.04,4.08,"One for the downward sensor, one for the VoCore2"
 Drone parts (1 drone),WREKD,1,"M3 nylon standoff, screw and nut kit, 180 pieces",Hardware for the flight controller and ESC stack,https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black,9.99,9.99,One kit covers several drones. Price showed as 9.99 and 14.42 on different pages
 Drone parts (1 drone),RaceDayQuads,1,XT30 connector,"Battery connector, male",https://www.racedayquads.com/products/xt30-connector-male-or-female,0.99,0.99,"Male, for the ESC's battery lead. The battery comes with its own XT30"
 Drone parts (1 drone),Amazon,1,"OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2",Battery,https://www.amazon.com/dp/B0D318NL5W,,,"Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total"
-On hold,Amazon,1,Carbon fiber subframe,Frame part,https://www.amazon.com/dp/B08ZNQCHP8,,,HOLD: confirm with Daniel
 ,,,,"Flight controller parts, 1 board with spare small parts",,,59.29,
 ,,,,"Drone parts, 1 drone",,,228.15,
 ,,,,"Total before holds, shipping and tax",,,287.44,

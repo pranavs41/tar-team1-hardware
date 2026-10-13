@@ -2,7 +2,9 @@
 
 Everything to buy for **one drone**, except the bare circuit boards and the stencil, which are ordered separately ([rev A order sheet](../pcb/network-drone-fc/production/rev-A/order-notes.md)). Nothing for the charging board is here.
 
-Flight controller parts are for 1 board, with spare small resistors, capacitors and LEDs. Three bare boards are being ordered, so two will stay empty as spares. Prices were read between 2026-10-11 and 2026-10-13, before shipping and tax. The same sheet as a spreadsheet: [`full-order-sheet.csv`](full-order-sheet.csv).
+Flight controller parts are for 1 board, with spare small resistors, capacitors and LEDs. Three bare boards are being ordered, so two will stay empty as spares. Prices were read between 2026-10-11 and 2026-10-13, before shipping and tax. The same sheet as a spreadsheet: [`full-order-sheet.csv`](full-order-sheet.csv). A short version with only item, quantity, link and cost is [`order-sheet-simple.csv`](order-sheet-simple.csv).
+
+Left for later: the carbon fiber subframe Daniel linked (https://www.amazon.com/dp/B08ZNQCHP8).
 
 ## Drone parts
 
@@ -25,12 +27,6 @@ Flight controller parts are for 1 board, with spare small resistors, capacitors 
 | Amazon | 1 | [OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2](https://www.amazon.com/dp/B0D318NL5W) | Battery | not read | | Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total |
 
 Total: **$228.15**, plus the battery
-
-## On hold, do not order yet
-
-| Seller | Qty | Part | What it is | Each | Line total | Note |
-|---|---|---|---|---|---|---|
-| Amazon | 1 | [Carbon fiber subframe](https://www.amazon.com/dp/B08ZNQCHP8) | Frame part | not read |  | HOLD: confirm with Daniel |
 
 ## Flight controller parts, for 1 board
 
@@ -83,6 +79,6 @@ Total: **$59.29**
 |---|---|
 | Drone parts, without the battery | $228.15 |
 | Flight controller parts | $59.29 |
-| **Total before the held items, shipping and tax** | **$287.44** |
+| **Total before the battery, shipping and tax** | **$287.44** |
 
 Links without a product page go to a DigiKey search for the part number.
