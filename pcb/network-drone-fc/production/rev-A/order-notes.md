@@ -2,7 +2,7 @@
 
 Status: ready to order, not ordered yet. Files made on 2026-10-13 from the board as it is in this repository.
 
-This page is written for whoever places the order. There are three orders: the bare boards, a solder paste stencil, and the parts. Every file named below is in this folder.
+This page is written for whoever places the order. There are three orders: the bare boards, a solder paste stencil, and the parts. They do not have to go in together. The parts can be ordered first, and the boards and stencil later. Every file named below is in this folder.
 
 ## Order 1: bare boards, OSH Park
 
@@ -56,7 +56,7 @@ Upload `bom-digikey.csv` with DigiKey's BOM or list upload tool. The columns are
 
 | | |
 |---|---|
-| Lines | 38 |
+| Lines | 40: 38 board parts, plus solder paste and flux |
 | Quantities | enough for all three boards, with extra small resistors, capacitors and LEDs because they are easy to lose |
 | Cost for three boards with spares | about $146 at the prices read on 2026-10-11 |
 | Cost of parts for one board | $44.83 |
@@ -79,7 +79,7 @@ Three footprints on the board are left empty on purpose and have no line in the 
 
 ## Also needed for assembly
 
-Not in the files above. Add them to whichever order is convenient.
+The solder paste and flux are the last two lines of `bom-digikey.csv` (Chip Quik TS391SNL and SMD291). Their prices were not read, so check them in the cart.
 
 - Solder paste, lead-free SAC305, no-clean, in a syringe. Standard SAC305 is preferred over low-temperature paste here, because low-temperature joints are brittle and this board lives on a vibrating frame.
 - Flux pen or gel flux, and solder wick, for clearing bridges on the processor.
