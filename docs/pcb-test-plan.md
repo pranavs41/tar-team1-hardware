@@ -61,6 +61,8 @@ Three things from this run are worth knowing.
 
 The checks were run again the same day after the charging connector grew to seven pins and the landing sensor port was added. The numbers in the table are from that second run.
 
+The board checks were run a third time on 2026-10-12, after the USB socket's mounting slots were lengthened by 0.4 mm and six tight spots were opened up. The design rules check still shows 0 errors, at the board's own 0.12 mm spacing and at 0.127 mm. The longer slots came within 0.18 mm of the same ground via, so it moved again and the closest two holes are back at 0.26 mm. The green LED is now a 2.0 to 2.4 V type and draws 2 to 3 mA; the red and yellow stay at 1.3 mA.
+
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
 ## Stage 2: on the bench

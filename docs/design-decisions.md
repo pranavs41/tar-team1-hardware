@@ -56,3 +56,7 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-11 | I2C pull-ups R12 and R13 change from 4.7 kΩ to 2.2 kΩ | The bus now leaves the board on three cables |
 | 2026-10-11 | Two more courtyard overlaps accepted: J8 with H2 and J8 with U2 | The outlines overlap, the parts do not. J8's body and pads are more than 3.2 mm from the hole centre |
 | 2026-10-11 | New tracks use horizontal, vertical and 45 degree runs only | Easier to read and to edit by hand than the any-angle tracks elsewhere on the board |
+| 2026-10-12 | USB-C mounting slots lengthened 0.4 mm, to 1.7 mm and 1.4 mm | The GCT USB4105's legs are wider than the socket the footprint was drawn for. The longer slots take either part. Four tracks and three vias moved by 0.1 to 0.15 mm to stay clear |
+| 2026-10-12 | USB-C locating peg holes changed from 0.7 mm to 0.65 mm | Leaves room between the hole's copper ring and the VBUS pads at a 0.127 mm spacing rule. The pegs are 0.5 mm |
+| 2026-10-12 | Six tight spots opened up by 0.015 to 0.03 mm | The board now passes at 0.127 mm spacing, which OSH Park and Aisler need |
+| 2026-10-12 | Green LED D3 changed to Würth 150060VS75000 | The first choice needed 3.2 V and would barely light from 3.3 V. This one lights at 2.0 to 2.4 V. R7 stays 470 Ω |

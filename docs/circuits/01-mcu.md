@@ -81,7 +81,7 @@ Each LED is wired as source, resistor, LED, then GND. The resistor comes from R 
 | D3, green | pin 45 (GPIO40) | 470 Ω | running, or armed when solid |
 | D4, yellow | pin 44 (GPIO39) | 1 kΩ | warnings or radio activity |
 
-Green has a higher forward voltage (around 2.7 V) than red or yellow (around 2.0 V), so it gets a smaller resistor to reach the same current. An ESP32 pin can supply about 20 mA, which is far more than these need, so the pins drive the LEDs directly.
+The green LED was first given a smaller resistor because true-green LEDs need more voltage than red or yellow ones. The type now listed is a yellow-green that lights at 2.0 to 2.4 V, close to the other two, so with 470 Ω it runs a little brighter than they do, at 2 to 3 mA. An ESP32 pin can supply about 20 mA, which is far more than these need, so the pins drive the LEDs directly.
 
 ## UART test pads
 
