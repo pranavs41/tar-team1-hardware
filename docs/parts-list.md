@@ -61,7 +61,7 @@ Which of these matters depends on the rule the team is working under. A rule abo
 | GPS antenna, flat adhesive, U.FL plug, Molex 2065600100 | Molex (US) | [DigiKey](https://www.digikey.com/en/products/result?keywords=2065600100) | not listed | $4.16 |
 | 470 µF 35 V low-ESR capacitor for the ESC, Panasonic EEU-FR1V471 | Panasonic (Japan) | [DigiKey](https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1V471/2433575) | about 2 g | $1.08 |
 | XT30 battery connector | Amass (China) | [RaceDayQuads](https://www.racedayquads.com/products/xt30-connector-male-or-female) | about 1 g | $0.99 |
-| 3D-printed frame | printed by the team | files in [`cad/`](../cad/README.md) | TBD from CAD | ~$0 |
+| 3D-printed frame | printed by the team | files in [`cad/`](../cad/README.md) carbon fiber subframe https://www.amazon.com/Reinforced-Wheelbase-Carbon-Bottom-Quadcopter/dp/B08ZNQCHP8/ref=sr_1_1?crid=KFAKM5OMIWOK&dib=eyJ2IjoiMSJ9.nMJVtNsZQ_oGNWYmb8FzK_iFtN6wpS8Of1s_-ch9ROgJz7AxUfqlAeHzT8ppG-NPkk945n_YYTfsP1Ph_1kuDbjXE8BreueyT0bLxlX1KlepADgfhQZpNXiFr9qUcNRonJSNUwbq5fQYZ6XfjIgehdisM2wMxcenIicp57UTJYXCy5Q7s0flgPlP5ZVhKLbomsyGyQ8RLKROFUzAZV_eVthboUUE78WVHKYl37UF91LYOPsuPmjtpqemGI0dJ_ClCvi6tlf8oLSse70oSha9y_OERjE-oJ1sBj2_TRiCNjI.1AG53KmlGvJZcqg-mlnL5PVq3noEYU4YC4apGX4xgWw&dib_tag=se&keywords=3+inch+toothpick+frame+fpv&qid=1791853636&sprefix=3+inch+toothpick+frame+fp%2Caps%2C159&sr=8-| TBD from CAD | ~$0 |
 
 Notes on this table:
 
