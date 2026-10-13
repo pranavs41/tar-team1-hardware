@@ -18,12 +18,13 @@ Flight controller parts are for 1 board, with spare small resistors, capacitors 
 | DigiKey | 1 | [EEU-FR1V471](https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1V471/2433575) | 470 uF 35 V capacitor for the ESC's battery pads | $1.08 | $1.08 | Out of stock 2026-10-11, due 2026-11-09. Any 470 uF 35 V low-ESR radial capacitor works |
 | DigiKey | 1 | [GHR-04V-S](https://www.digikey.com/en/products/detail/jst-sales-america-inc/GHR-04V-S/807816) | Plug housing for the forward sensor cable, JST-GH 4-pin | $0.20 | $0.20 | Price approximate |
 | DigiKey | 2 | [AGHGH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/AGHGH28K152/6009449) | Pre-crimped JST-GH wire, 150 mm | $0.49 | $0.98 | Price approximate. If the link fails, search the part number |
+| Adafruit | 1 | [Adafruit LIS3MDL magnetometer breakout (product 4479)](https://www.adafruit.com/product/4479) | Compass, 1.5 g | $9.95 | $9.95 | Shares the I2C wires of the J5 or J8 cable. Runs from that cable's 5 V. Mount it away from the battery leads and ESC |
 | Pololu | 2 | [Pololu 5521](https://www.pololu.com/product/5521) | JST-SH 4-pin cable, bare wires on one end, 30 cm | $2.04 | $4.08 | One for the downward sensor, one for the VoCore2 |
 | WREKD | 1 | [M3 nylon standoff, screw and nut kit, 180 pieces](https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black) | Hardware for the flight controller and ESC stack | $9.99 | $9.99 | One kit covers several drones. Price showed as 9.99 and 14.42 on different pages |
 | RaceDayQuads | 1 | [XT30 connector](https://www.racedayquads.com/products/xt30-connector-male-or-female) | Battery connector, male | $0.99 | $0.99 | Male, for the ESC's battery lead. The battery comes with its own XT30 |
 | Amazon | 1 | [OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2](https://www.amazon.com/dp/B0D318NL5W) | Battery | not read | | Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total |
 
-Total: **$218.20**, plus the battery
+Total: **$228.15**, plus the battery
 
 ## On hold, do not order yet
 
@@ -80,8 +81,8 @@ Total: **$59.29**
 
 | | |
 |---|---|
-| Drone parts, without the battery | $218.20 |
+| Drone parts, without the battery | $228.15 |
 | Flight controller parts | $59.29 |
-| **Total before the held items, shipping and tax** | **$277.49** |
+| **Total before the held items, shipping and tax** | **$287.44** |
 
 Links without a product page go to a DigiKey search for the part number.
