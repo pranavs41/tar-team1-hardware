@@ -13,7 +13,8 @@ resettable fuse (about 1 A)
    |
 TVS diode to ground
    |
-LM66100 ideal diode (blocks reverse polarity and stops the battery feeding the contacts)
+LM73100 ideal diode (blocks a reversed dock, stops the battery feeding the contacts,
+   and cuts the charger off if the dock voltage goes above about 6 V)
    |
 BQ25887 charger: boosts 5 V up to the 2S battery voltage and balances the two cells
    |
@@ -70,7 +71,8 @@ Prices are rough single-quantity figures, good for budgeting and not checked aga
 | Part | Value or number | Maker (home country) | Qty | Each | Total |
 |---|---|---|---|---|---|
 | 2S boost charger with balancing | BQ25887RGER, 24-pin 4 × 4 mm QFN | Texas Instruments (US) | 1 | $5.80 | $5.80 |
-| Ideal diode | LM66100DCKR | Texas Instruments (US) | 1 | $0.45 | $0.45 |
+| Ideal diode with overvoltage cut-off | LM73100RPWR, 10-pin 2 × 2 mm QFN | Texas Instruments (US) | 1 | about $1.60 | $1.60 |
+| Overvoltage cut-off divider | 40.2 kΩ and 10 kΩ 1%, 0603 | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
 | Power inductor, 1 µH, shielded | DFE252012F-1R0M | Murata (Japan) | 1 | $0.31 | $0.31 |
 | Resettable fuse, about 1 A hold, 6 V or more, 1206 | 1206L110TH or similar | Littelfuse (US) | 1 | $0.50 | $0.50 |
 | TVS diode, 5 V | SMBJ5.0A | Littelfuse or Diodes Incorporated (US) | 1 | $0.40 | $0.40 |
@@ -97,9 +99,24 @@ Test points wanted on the board: 5V_DOCK, VBUS, BATT+, MID, GND, SDA, SCL, /PG, 
 ## Things to check before layout
 
 - [x] **Inductor current rating.** The DFE252012F-1R0M is the inductor TI's own datasheet uses. Peak current here is about 1.6 A: the 0.925 A input limit plus half of a 1.35 A ripple (5 V in, 8.4 V out, 1.5 MHz, 1 µH). Check the exact saturation figure on Murata's page when ordering.
-- [ ] **Input surge.** The LM66100's absolute maximum is 6 V and the BQ25887's VBUS is rated much higher. A 5 V TVS diode does not start clamping hard until about 9 V, so it protects the charger but not the LM66100 in front of it. Decide whether the dock contacts can see a surge, and pick a protection part that holds the line under 6 V if they can.
+- [x] **Input surge.** The first plan used an LM66100 ideal diode, which is rated only to 6 V, while the 5 V surge diode in front of it clamps near 9 V. It is replaced by the TI LM73100, rated to 28 V. It also survives -15 V, so a drone that lands the wrong way round on the rails is protected, and it cuts its output off within about 1.2 µs if its input rises above a set voltage. That protects the charger, whose input works only up to 6.2 V.
+
+  How to wire the LM73100 (from its datasheet, SNOSDC0A):
+
+  | Pin | Name | Connect to |
+  |---|---|---|
+  | 1 | EN/UVLO | IN, so it is always enabled |
+  | 2 | OVLO | the middle of 40.2 kΩ (to IN) and 10 kΩ (to GND). Cut-off = 1.2 V × (40.2 + 10) / 10 = about 6.0 V, between 5.94 and 6.14 V with part tolerances |
+  | 3 | PG | leave unconnected |
+  | 4 | PGTH | GND |
+  | 5 | IN | dock 5 V, after the fuse and the surge diode |
+  | 6 | OUT | the charger's VBUS |
+  | 7 | dVdt | leave open for the fastest start, or add a small capacitor to soften the inrush when the contacts touch |
+  | 8 | GND | ground |
+  | 9 | IMON | GND |
+  | 10 | DNC | nothing |
 - [x] **Balancing resistor.** 41.2 Ω sets about 100 mA of balancing current (4.2 V divided by 41.2 Ω), a quarter of the chip's 400 mA maximum. It dissipates about 0.43 W, inside the 1 W rating of a 2512 resistor, but it will get warm. Give it copper and keep it away from the battery.
 - [ ] **Thermistor.** It only helps if it touches the battery. Decide where it sits and how its wires reach the board.
 - [ ] **Charge voltage.** The battery picked is a standard LiPo, 4.2 V per cell, 8.4 V full. Set the charger to that and not to the high-voltage 4.35 V setting.
-- [ ] **Exposed contacts.** The dock strips on the propeller guard are bare metal. The LM66100 stops the battery from appearing on them. Confirm that with a meter on the first board.
+- [ ] **Exposed contacts.** The dock strips on the propeller guard are bare metal. The LM73100 stops the battery from appearing on them. Confirm that with a meter on the first board.
 - [ ] **Which strip is positive**, and what keeps the drone from docking the wrong way round. See the charging concept in [TASKS.md](../TASKS.md).

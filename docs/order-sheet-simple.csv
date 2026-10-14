@@ -53,7 +53,9 @@ SMAJ18A (Battery surge diode),1,https://www.digikey.com/en/products/detail/litte
 "RC0402FR-07100KL (100 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL,1.00
 "RC0402JR-070RL (0 Ω link, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL,1.00
 "BQ25887RGER (2S boost charger with cell balancing, 4 x 4 mm QFN) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=BQ25887RGER,5.80
-"LM66100DCKR (Ideal diode, keeps battery voltage off the dock contacts) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=LM66100DCKR,0.45
+"LM73100RPWR (Ideal diode with overvoltage cut-off, 2.7 to 23 V, 2 x 2 mm QFN) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=LM73100RPWR,1.60
+"RC0603FR-0740K2L (40.2 kohm 1% resistor, 0603 (overvoltage cut-off, top)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-0740K2L,1.00
+"RC0603FR-0710KL (10 kohm 1% resistor, 0603 (overvoltage cut-off, bottom)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-0710KL,1.00
 "DFE252012F-1R0M (Power inductor 1 uH, shielded) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M,0.31
 "SMBJ5.0A-13-F (5 V surge diode on the dock input) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F,0.40
 "1206L110THYR (Resettable fuse, about 1 A hold, 1206) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=1206L110THYR,0.50
@@ -72,4 +74,4 @@ SMAJ18A (Battery surge diode),1,https://www.digikey.com/en/products/detail/litte
 "B3B-XH-A (3-pin JST-XH header for the battery's balance plug) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=B3B-XH-A,0.15
 "SHR-07V-S-B (7-pin JST-SH plug housing, both ends of the cable to the flight controller) [charging board, provisional]",2,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871,0.30
 "ASSHSSH28K152 (Pre-crimped JST-SH wire, 150 mm, one per cable pin) [charging board, provisional]",7,https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452,3.22
-TOTAL,,,=SUM(D2:D74)
+TOTAL,,,=SUM(D2:D76)

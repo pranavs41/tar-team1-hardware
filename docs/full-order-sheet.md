@@ -80,9 +80,11 @@ Total: **$59.29**
 | Seller | Qty | Part | What it is | Each | Line total | Note |
 |---|---|---|---|---|---|---|
 | DigiKey | 1 | [BQ25887RGER](https://www.digikey.com/en/products/result?keywords=BQ25887RGER) | 2S boost charger with cell balancing, 4 x 4 mm QFN | $5.80 | $5.80 | Provisional until Rishab's schematic is final. Texas Instruments. Stock was very low on 2026-10-11; ti.com sells direct |
-| DigiKey | 1 | [LM66100DCKR](https://www.digikey.com/en/products/result?keywords=LM66100DCKR) | Ideal diode, keeps battery voltage off the dock contacts | $0.45 | $0.45 | Provisional until Rishab's schematic is final. Texas Instruments |
+| DigiKey | 1 | [LM73100RPWR](https://www.digikey.com/en/products/result?keywords=LM73100RPWR) | Ideal diode with overvoltage cut-off, 2.7 to 23 V, 2 x 2 mm QFN | $1.60 | $1.60 | Provisional until Rishab's schematic is final. Texas Instruments. Replaces the LM66100, which was rated only to 6 V. Rated to 28 V, survives -15 V (a reversed dock), cuts off above the voltage set by its two resistors. Price approximate |
+| DigiKey | 10 | [RC0603FR-0740K2L](https://www.digikey.com/en/products/result?keywords=RC0603FR-0740K2L) | 40.2 kohm 1% resistor, 0603 (overvoltage cut-off, top) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. With 10 kohm below it, cuts the charger off above about 6.0 V |
+| DigiKey | 10 | [RC0603FR-0710KL](https://www.digikey.com/en/products/result?keywords=RC0603FR-0710KL) | 10 kohm 1% resistor, 0603 (overvoltage cut-off, bottom) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo |
 | DigiKey | 1 | [DFE252012F-1R0M](https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M) | Power inductor 1 uH, shielded | $0.31 | $0.31 | Provisional until Rishab's schematic is final. Murata. The inductor TI's datasheet uses. Peak current here is about 1.6 A (0.925 A input plus half of a 1.35 A ripple) |
-| DigiKey | 1 | [SMBJ5.0A-13-F](https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F) | 5 V surge diode on the dock input | $0.40 | $0.40 | Provisional until Rishab's schematic is final. Diodes Incorporated. It clamps near 9 V, above the LM66100's 6 V limit; see the charging board page |
+| DigiKey | 1 | [SMBJ5.0A-13-F](https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F) | 5 V surge diode on the dock input | $0.40 | $0.40 | Provisional until Rishab's schematic is final. Diodes Incorporated. Clamps near 9 V, which the LM73100 (28 V) and the charger's input (20 V) both survive |
 | DigiKey | 1 | [1206L110THYR](https://www.digikey.com/en/products/result?keywords=1206L110THYR) | Resettable fuse, about 1 A hold, 1206 | $0.50 | $0.50 | Provisional until Rishab's schematic is final. Littelfuse. Part number from memory, confirm it is a 1206 fuse of about 1 A hold and 6 V or more |
 | DigiKey | 10 | [RC0603FR-071K2L](https://www.digikey.com/en/products/result?keywords=RC0603FR-071K2L) | 1.2 kohm 1% resistor, 0603 (input current limit) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. Input limit = 1110 / 1200 ohm = 0.925 A typical (datasheet K_ILIM 1110) |
 | DigiKey | 10 | [RC0603FR-07300RL](https://www.digikey.com/en/products/result?keywords=RC0603FR-07300RL) | 300 ohm 1% resistor, 0603 (cell balancing midpoint) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. 0603 assumed |
@@ -100,7 +102,7 @@ Total: **$59.29**
 | DigiKey | 2 | [SHR-07V-S-B](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871) | 7-pin JST-SH plug housing, both ends of the cable to the flight controller | $0.15 | $0.30 | Provisional until Rishab's schematic is final. JST |
 | DigiKey | 7 | [ASSHSSH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452) | Pre-crimped JST-SH wire, 150 mm, one per cable pin | $0.46 | $3.22 | Provisional until Rishab's schematic is final. JST. Push one end of each wire into each housing, pin 1 to pin 1 |
 
-Total: **$26.03**
+Total: **$29.18**
 
 ## Sum
 
@@ -108,7 +110,7 @@ Total: **$26.03**
 |---|---|
 | Drone parts | $228.15 |
 | Flight controller parts | $59.29 |
-| Charging board parts | $26.03 |
-| **Total before the battery, shipping and tax** | **$313.47** |
+| Charging board parts | $29.18 |
+| **Total before the battery, shipping and tax** | **$316.62** |
 
 Links without a product page go to a DigiKey search for the part number.
