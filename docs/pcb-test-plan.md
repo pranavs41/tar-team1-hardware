@@ -65,6 +65,10 @@ The board checks were run a third time on 2026-10-12, after the USB socket's mou
 
 On 2026-10-13 the board was checked against OSH Park's published limits for its four-layer service, and three small changes followed. Four connector tab pads were trimmed by up to 0.09 mm so that no copper is closer than 0.38 mm to the board edge. The copper rings around the four USB slots were widened to 0.12 mm. Every part in the parts list was also compared with the footprint on the board, by package and by count, and with the polarity of the diodes, LEDs and the large capacitor: all 69 match, and the three empty footprints (C14, C15, L3) are the only ones without a part. Pad shapes were not compared against each datasheet's drawing; the paper test above covers that.
 
+On 2026-10-13 every track on the board was redrawn as horizontal, vertical and 45 degree runs. 206 of the 552 segments had run at other angles. Each was split into straight and 45 degree pieces between the same two ends, with the design rules check choosing which way each bend went; the last twelve were rerouted. The board still passes the design rules check with 0 errors at 0.12 mm and at 0.127 mm, with nothing unconnected, and the schematic and board still match pin for pin. Two 90 degree corners remain, on short stubs beside the processor where a 45 degree corner would come too close to the next pin.
+
+The same day a per-branch current check was added, [`tools/current_check.py`](../tools/current_check.py). It traces each power path through the real copper, from the regulator or connector to each load, and checks every track and via against the current of the branches it carries. All 179 pieces on those paths are inside their rating at the average current. The highest is the USB input at 59%, which only matters on the bench. The largest voltage drops at peak current are 96 mV on the USB input, 23 mV to the networking module and 11 mV from the battery to the 5 V regulator.
+
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
 ## Stage 2: on the bench
@@ -103,7 +107,7 @@ There is no single score for routing. What can be measured:
 | Measure | Value |
 |---|---|
 | Design rule errors | 0 |
-| Vias | 164: about half tie ground together, 14 feed the 3.3 V plane, the rest carry signals |
+| Vias | 163: about half tie ground together, 14 feed the 3.3 V plane, the rest carry signals |
 | Typical track length | 22% longer than a straight line between its pads |
 | Right-angle or sharper corners | 0 |
 | Ground plane | one unbroken layer under the whole board |

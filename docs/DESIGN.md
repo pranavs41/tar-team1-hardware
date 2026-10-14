@@ -171,6 +171,6 @@ The 50 Ω RF trace width comes from JLCPCB's impedance calculator for the stacku
 | Schematic: connectors | done |
 | Footprints assigned, final ERC | done, 0 errors, 0 warnings |
 | PCB placement | done, DRC clean apart from silkscreen warnings |
-| PCB routing | done, 164 vias, DRC 0 errors (silkscreen and five courtyard warnings only) |
+| PCB routing | done, 163 vias, every track horizontal, vertical or 45 degrees, DRC 0 errors (silkscreen and five courtyard warnings only) |
 | Order rev A | to do |
 | Bring-up | to do ([checklist](bring-up.md)) |
