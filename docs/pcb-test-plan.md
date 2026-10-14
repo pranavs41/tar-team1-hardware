@@ -69,6 +69,8 @@ On 2026-10-13 every track on the board was redrawn as horizontal, vertical and 4
 
 The same day a per-branch current check was added, [`tools/current_check.py`](../tools/current_check.py). It traces each power path through the real copper, from the regulator or connector to each load, and checks every track and via against the current of the branches it carries. All 179 pieces on those paths are inside their rating at the average current. The highest is the USB input at 59%, which only matters on the bench. The largest voltage drops at peak current are 96 mV on the USB input, 23 mV to the networking module and 11 mV from the battery to the 5 V regulator.
 
+On 2026-10-14 the long diagonal runs were straightened. About 30% of the track length on each layer had run at 45 degrees across the board. Each diagonal run longer than 0.6 mm became a horizontal and a vertical leg with a small 45 degree chamfer at the corner, and the longest few were given L or Z shapes where a simple corner would not fit. Diagonal track is now 16% of the length on the top layer and 10% on the bottom, almost all of it short corner chamfers. The remaining runs over 1 mm add up to 21 mm, mostly where a track follows the board's rounded corners. At the same time the board's own spacing rule was raised from 0.12 mm to OSH Park's 0.127 mm, so every check now enforces the fab's limit directly. The design rules check shows 0 errors, nothing is unconnected, the schematic and board match, and the current check passes on all 275 pieces of copper on the power paths.
+
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
 ## Stage 2: on the bench
