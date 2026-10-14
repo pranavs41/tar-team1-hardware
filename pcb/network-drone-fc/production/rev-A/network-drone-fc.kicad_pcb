@@ -182,7 +182,7 @@
 		(tags "mountinghole M3")
 		(property "Reference" "H1"
 			(at 0 -4.15 0)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "2725d3bc-27c7-439c-aee2-7f8b95bfd8d1")
 			(effects
 				(font
@@ -277,7 +277,7 @@
 		(tags "mountinghole M3")
 		(property "Reference" "H4"
 			(at 0 -4.15 0)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "ae7ac2d3-e98e-440d-8025-138ac9f05490")
 			(effects
 				(font
@@ -6913,7 +6913,7 @@
 		(tags "mountinghole M3")
 		(property "Reference" "H3"
 			(at 0 -4.15 0)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "a0d5e376-a46a-4262-bb81-9b173c4aa633")
 			(effects
 				(font
@@ -11059,7 +11059,7 @@
 		(tags "mountinghole M3")
 		(property "Reference" "H2"
 			(at 0 -4.15 0)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "a9a9f132-0cbc-4d58-8f24-89289ee4d9dc")
 			(effects
 				(font
