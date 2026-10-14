@@ -88,6 +88,7 @@ What the frame has to fit, all from the flight controller:
 - [ ] Charging board layout
 
 - [ ] Check the parts against the BQ25887 datasheet (the open points are listed in the charging board page)
+- [ ] The charging board parts are on the team order sheet as provisional ([`docs/full-order-sheet.md`](docs/full-order-sheet.md)). Check every part number and size against your schematic before the order goes in. The battery is now a high-voltage 2S pack (full at 8.7 V); charging it to 8.4 V is safe
 - [ ] Agree the dock voltage and current with Jadon
 
 The plan, the parts list and the checks still open are in [`docs/charging-board.md`](docs/charging-board.md).
