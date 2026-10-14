@@ -76,4 +76,9 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-14 | Charging board ideal diode changed from LM66100 to LM73100 | The LM66100 is rated to 6 V and the surge diode clamps near 9 V. The LM73100 is rated to 28 V, survives a reversed dock, and cuts the charger off above about 6 V |
 | 2026-10-14 | Board is 2S only; surge diode D5 changed from SMAJ18A to SMAJ12A | The SMAJ18A clamps anywhere from 20 to 29 V, above the 25 V capacitors and the 20 V inductor on the battery line. With a 2S pack (8.7 V full) the 12 V part never conducts in normal use and clamps under 20 V |
 | 2026-10-14 | Buck output capacitors C18 and C19 changed from 10 V to 16 V parts | A 22 µF 10 V 0805 loses much of its capacitance at 5 V; the regulator wants two 22 µF |
+| 2026-10-14 | C36, 100 nF on VBUS at the USB protection chip | ST's datasheet asks for it; the VBUS line had no capacitor at all. On the bottom side, the only room left |
+| 2026-10-14 | R16, 10 kΩ pull-up on the boot pin GPIO0 (net now named BOOT) | Espressif recommends it; the pin runs 15 mm to the boot jumper with only a weak internal pull-up. On the bottom side |
+| 2026-10-14 | Ground vias moved out from under the J1 and J3 antenna sockets | Hirose marks the area between the socket's ground pads as no copper |
+| 2026-10-14 | USB-C mounting tab pads enlarged to 0.9 mm wide, 2.0 mm (rear) | Closer to GCT's recommended size, for a stronger hold when a cable is pulled. The front pads stay 1.64 mm long, as far as the 5 V track beside them allows |
+| 2026-10-14 | Battery cut-off on the 5 V regulator's enable pin not added in rev A | It needs the regulator's enable pin separated from the battery feed, and every route out is blocked by the green LED track and two motor tracks. Left for a re-layout of that corner |
 
