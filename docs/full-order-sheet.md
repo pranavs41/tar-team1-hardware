@@ -81,24 +81,26 @@ Total: **$59.29**
 |---|---|---|---|---|---|---|
 | DigiKey | 1 | [BQ25887RGER](https://www.digikey.com/en/products/result?keywords=BQ25887RGER) | 2S boost charger with cell balancing, 4 x 4 mm QFN | $5.80 | $5.80 | Provisional until Rishab's schematic is final. Texas Instruments. Stock was very low on 2026-10-11; ti.com sells direct |
 | DigiKey | 1 | [LM66100DCKR](https://www.digikey.com/en/products/result?keywords=LM66100DCKR) | Ideal diode, keeps battery voltage off the dock contacts | $0.45 | $0.45 | Provisional until Rishab's schematic is final. Texas Instruments |
-| DigiKey | 1 | [DFE252012F-1R0M](https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M) | Power inductor 1 uH, shielded | $0.31 | $0.31 | Provisional until Rishab's schematic is final. Murata. Check its saturation current against the charger's peak before layout |
+| DigiKey | 1 | [DFE252012F-1R0M](https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M) | Power inductor 1 uH, shielded | $0.31 | $0.31 | Provisional until Rishab's schematic is final. Murata. The inductor TI's datasheet uses. Peak current here is about 1.6 A (0.925 A input plus half of a 1.35 A ripple) |
 | DigiKey | 1 | [SMBJ5.0A-13-F](https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F) | 5 V surge diode on the dock input | $0.40 | $0.40 | Provisional until Rishab's schematic is final. Diodes Incorporated. It clamps near 9 V, above the LM66100's 6 V limit; see the charging board page |
 | DigiKey | 1 | [1206L110THYR](https://www.digikey.com/en/products/result?keywords=1206L110THYR) | Resettable fuse, about 1 A hold, 1206 | $0.50 | $0.50 | Provisional until Rishab's schematic is final. Littelfuse. Part number from memory, confirm it is a 1206 fuse of about 1 A hold and 6 V or more |
-| DigiKey | 10 | [RC0603FR-071K2L](https://www.digikey.com/en/products/result?keywords=RC0603FR-071K2L) | 1.2 kohm 1% resistor, 0603 (input current limit) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. 0603 assumed |
+| DigiKey | 10 | [RC0603FR-071K2L](https://www.digikey.com/en/products/result?keywords=RC0603FR-071K2L) | 1.2 kohm 1% resistor, 0603 (input current limit) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. Input limit = 1110 / 1200 ohm = 0.925 A typical (datasheet K_ILIM 1110) |
 | DigiKey | 10 | [RC0603FR-07300RL](https://www.digikey.com/en/products/result?keywords=RC0603FR-07300RL) | 300 ohm 1% resistor, 0603 (cell balancing midpoint) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. 0603 assumed |
-| DigiKey | 2 | [RC2512FK-0741R2L](https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L) | 41.2 ohm 1% resistor, 1 W, 2512 (balancing current set) | $0.40 | $0.80 | Provisional until Rishab's schematic is final. Yageo. Confirm the value and power against the datasheet |
+| DigiKey | 10 | [RC0603FR-075K23L](https://www.digikey.com/en/products/result?keywords=RC0603FR-075K23L) | 5.23 kohm 1% resistor, 0603 (thermistor bias, top) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. Datasheet value for a 103AT thermistor is 5.24 kohm; 5.23 kohm is the nearest 1% value |
+| DigiKey | 10 | [RC0603FR-0730K1L](https://www.digikey.com/en/products/result?keywords=RC0603FR-0730K1L) | 30.1 kohm 1% resistor, 0603 (thermistor bias, bottom) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. Datasheet value is 30.31 kohm; 30.1 kohm is the nearest 1% value |
+| DigiKey | 2 | [RC2512FK-0741R2L](https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L) | 41.2 ohm 1% resistor, 1 W, 2512 (balancing current set) | $0.40 | $0.80 | Provisional until Rishab's schematic is final. Yageo. Sets about 100 mA of balancing current (4.2 V / 41.2 ohm) and dissipates about 0.43 W, inside the 1 W rating |
 | DigiKey | 1 | [103AT-2](https://www.digikey.com/en/products/result?keywords=103AT-2) | 10 kohm battery thermistor | $1.50 | $1.50 | Provisional until Rishab's schematic is final. Semitec. Must touch the battery |
-| DigiKey | 10 | [GRM188R71C105KA12D](https://www.digikey.com/en/products/result?keywords=GRM188R71C105KA12D) | 1 uF 16 V capacitor, 0603 (VBUS) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
-| DigiKey | 10 | [GRM188R61C106MA73D](https://www.digikey.com/en/products/result?keywords=GRM188R61C106MA73D) | 10 uF 16 V capacitor, 0603 (PMID and BAT) | $0.20 | $2.00 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
+| DigiKey | 10 | [GRM188R71E105KA12D](https://www.digikey.com/en/products/result?keywords=GRM188R71E105KA12D) | 1 uF 25 V capacitor, 0603 (VBUS) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Murata. Datasheet: at least 1 uF at VBUS, 25 V rating preferred for a 5 V input |
+| DigiKey | 10 | [GRM21BR61E106KA73L](https://www.digikey.com/en/products/result?keywords=GRM21BR61E106KA73L) | 10 uF 25 V capacitor, 0805 (PMID and BAT) | $0.25 | $2.50 | Provisional until Rishab's schematic is final. Murata. Datasheet: 10 uF at PMID with a 25 V rating; the same part works at BAT |
 | DigiKey | 10 | [GRM188R71H473KA61D](https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D) | 47 nF 50 V capacitor, 0603 (bootstrap) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
 | DigiKey | 10 | [GRM188R61C475KAAJD](https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD) | 4.7 uF 16 V capacitor, 0603 (REGN) | $0.15 | $1.50 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
-| DigiKey | 4 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 uF 16 V capacitor, 0805 (output) | $0.45 | $1.80 | Provisional until Rishab's schematic is final. Murata. 0805 assumed |
+| DigiKey | 4 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 uF 16 V capacitor, 0805 (output) | $0.45 | $1.80 | Provisional until Rishab's schematic is final. Murata. Datasheet: at least 44 uF at SNS, 16 V or more, so two per board |
 | DigiKey | 1 | [SM07B-SRSS-TB](https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB) | 7-pin JST-SH connector to the flight controller | $0.80 | $0.80 | Provisional until Rishab's schematic is final. JST. Same part as J7 on the flight controller |
 | DigiKey | 1 | [B3B-XH-A](https://www.digikey.com/en/products/result?keywords=B3B-XH-A) | 3-pin JST-XH header for the battery's balance plug | $0.15 | $0.15 | Provisional until Rishab's schematic is final. JST |
 | DigiKey | 2 | [SHR-07V-S-B](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871) | 7-pin JST-SH plug housing, both ends of the cable to the flight controller | $0.15 | $0.30 | Provisional until Rishab's schematic is final. JST |
 | DigiKey | 7 | [ASSHSSH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452) | Pre-crimped JST-SH wire, 150 mm, one per cable pin | $0.46 | $3.22 | Provisional until Rishab's schematic is final. JST. Push one end of each wire into each housing, pin 1 to pin 1 |
 
-Total: **$23.53**
+Total: **$26.03**
 
 ## Sum
 
@@ -106,7 +108,7 @@ Total: **$23.53**
 |---|---|
 | Drone parts | $228.15 |
 | Flight controller parts | $59.29 |
-| Charging board parts | $23.53 |
-| **Total before the battery, shipping and tax** | **$310.97** |
+| Charging board parts | $26.03 |
+| **Total before the battery, shipping and tax** | **$313.47** |
 
 Links without a product page go to a DigiKey search for the part number.
