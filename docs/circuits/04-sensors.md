@@ -24,14 +24,14 @@ My first version had C26 sitting between the rail and VDD instead of from VDD to
 
 | IMU pin | Name | Label | ESP32 pin |
 |---|---|---|---|
-| 12 | AP_CS | `ICM_CS` | 15 (GPIO10) |
-| 13 | AP_SCLK | `SPI_SCK` | 17 (GPIO12) |
-| 14 | AP_SDI | `SPI_MOSI` | 16 (GPIO11) |
-| 1 | AP_SDO | `SPI_MISO` | 18 (GPIO13) |
+| 12 | AP_CS | `ICM_CS` | 40 (GPIO35) |
+| 13 | AP_SCLK | `SPI_SCK` | 39 (GPIO34) |
+| 14 | AP_SDI | `SPI_MOSI` | 38 (GPIO33) |
+| 1 | AP_SDO | `SPI_MISO` | 37 (GPIO47) |
 
 The IMU names its data pins from its own side: SDI is data coming in and SDO is data going out. So SDI goes to the ESP32's MOSI (master out, slave in) and SDO goes to MISO. Getting these backwards is the usual SPI mistake, and the symptom is a chip that never responds.
 
-R11 is a 10 kΩ pull-up from `ICM_CS` to `+3V3_SENS`. The ICM-42688-P starts up in I2C mode and only switches to SPI after it sees CS go low. While the ESP32 is booting its pins float for a moment, and a floating CS can catch noise and confuse the IMU. The pull-up holds CS high (deselected) until the firmware takes over.
+R11 is a 10 kΩ pull-up from `ICM_CS` to `+3V3_SENS`. The ICM-42688-P powers up ready for SPI (datasheet section 12.3). While the ESP32 is booting its pins float for a moment, and a floating CS can catch noise and start a false transfer. The pull-up holds CS high (deselected) until the firmware takes over.
 
 ### Interrupts
 
@@ -55,8 +55,8 @@ VDD (pin 10) and VDDIO (pin 1) both go to `+3V3_SENS`, each with a 100 nF capaci
 
 | Pin | Name | Connects to |
 |---|---|---|
-| 2 | SCK | `I2C_SCL`, ESP32 pin 39 (GPIO34) |
-| 4 | SDI | `I2C_SDA`, ESP32 pin 38 (GPIO33) |
+| 2 | SCK | `I2C_SCL`, ESP32 pin 43 (GPIO38) |
+| 4 | SDI | `I2C_SDA`, ESP32 pin 42 (GPIO37) |
 | 6 | CSB | `+3V3_SENS` |
 | 5 | SDO | GND |
 | 7 | INT | no-connect |
@@ -81,7 +81,7 @@ VCC (pin 8) and V_IO (pin 7) are tied together to `+3V3_SENS`, with C30 (10 µF)
 
 ### UART
 
-TXD (pin 2) goes to `GPS_RX` on ESP32 pin 41 and RXD (pin 3) to `GPS_TX` on pin 40. The names are from the ESP32's side: the GPS transmits into the ESP32's receive pin.
+TXD (pin 2) goes to `GPS_RX` on ESP32 pin 24 (GPIO18) and RXD (pin 3) to `GPS_TX` on pin 41 (GPIO36). The names are from the ESP32's side: the GPS transmits into the ESP32's receive pin.
 
 ### Antenna
 

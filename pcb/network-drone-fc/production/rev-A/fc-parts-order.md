@@ -18,7 +18,7 @@ The same list as a spreadsheet is [`fc-parts-order.csv`](fc-parts-order.csv), an
 | 1 | [USBLC6-2SC6](https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559) | USB protection | STMicroelectronics | $0.54 | $0.54 |  |
 | 1 | [FA-128 40.0000MF10Z-K3](https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630) | 40 MHz crystal, 10 pF, ±10 ppm | Epson | $1.11 | $1.11 |  |
 | 1 | [TCJD107M025R0055](https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375) | 100 µF 25 V polymer capacitor | Kyocera AVX | $3.65 | $3.65 |  |
-| 1 | [SMAJ18A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282) | Battery surge diode | Littelfuse | $0.51 | $0.51 |  |
+| 1 | [SMAJ12A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ12A/762282) | Battery surge diode | Littelfuse | $0.51 | $0.51 |  |
 | 1 | [1N5819HW-7-F](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970) | Schottky diode, 1 A 40 V, SOD-123 | Diodes Incorporated | $0.31 | $0.31 |  |
 | 3 | [150060RS75000](https://www.digikey.com/en/products/result?keywords=150060RS75000) | LED 0603, red | Würth Elektronik | $0.15 | $0.45 |  |
 | 3 | [150060VS75000](https://www.digikey.com/en/products/result?keywords=150060VS75000) | LED 0603, yellow-green | Würth Elektronik | $0.15 | $0.45 |  |
@@ -37,7 +37,7 @@ The same list as a spreadsheet is [`fc-parts-order.csv`](fc-parts-order.csv), an
 | 10 | [GRM1555C1H150JA01D](https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D) | 15 pF 50 V, 0402 | Murata | $0.10 | $1.00 |  |
 | 10 | [GRM155R61C225KE11J](https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J) | 2.2 µF 16 V, 0402 | Murata | $0.22 | $2.20 |  |
 | 10 | [GRM188R60J106ME47D](https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D) | 10 µF 6.3 V, 0603 | Murata | $0.12 | $1.20 |  |
-| 10 | [GRM21BR61A226ME51L](https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L) | 22 µF 10 V, 0805 | Murata | $0.19 | $1.90 |  |
+| 10 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 µF 16 V, 0805 | Murata | $0.19 | $1.90 |  |
 | 1 | [GRM319R61E106KA12D](https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921) | 10 µF 25 V, 1206 | Murata | $0.47 | $0.47 |  |
 | 10 | [RC0402FR-0710KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL) | 10 kΩ 1%, 0402 | Yageo | $0.10 | $1.00 |  |
 | 10 | [RC0402FR-075K1L](https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L) | 5.1 kΩ 1%, 0402 | Yageo | $0.10 | $1.00 |  |

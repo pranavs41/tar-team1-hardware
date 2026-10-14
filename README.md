@@ -50,7 +50,7 @@ KiCad 9 project in [`pcb/network-drone-fc/`](pcb/network-drone-fc/). Open `netwo
 - 4-layer board, 36 × 39 mm, four 3.2 mm M3 holes on a 20 × 20 mm pattern so it stacks on a bought 20 × 20 4-in-1 ESC
 - Two cable ports for off-board parts: J5 carries 5 V and I2C to the TF-Luna obstacle sensor at the front of the drone, J6 carries 5 V and a UART to the VoCore2 networking module
 - All parts on the top side except C35, the bulk capacitor on the bottom, so the top can be reflowed on a hot plate and C35 soldered after with an iron; test points (bare pads) are on the bottom
-- Designed for a 2S battery; input stage tolerates up to 4S
+- Designed for a 2S battery only
 
 Where to buy every part, with prices and each maker's country, is in [`docs/parts-list.md`](docs/parts-list.md). The LCSC numbers in the table below are where the KiCad symbols and footprints were imported from; LCSC is a Chinese distributor, and the parts list gives a DigiKey source for each one.
 
@@ -70,7 +70,7 @@ Symbols, footprints and 3D models (STEP) pulled from LCSC/EasyEDA. The project's
 | 5 V buck (3.8 to 32 V in) | AP63205WU-7 | C2071056 |
 | 3.3 V LDO, digital (WSON-6 with thermal pad) | TLV75733PDRVR | C2868428 |
 | 3.3 V LDO, sensors (low noise) | TPS7A2033PDBVR | C2862740 |
-| Battery TVS (18 V standoff, safe up to 4S) | SMAJ18A | C908771 |
+| Battery TVS (12 V standoff, 2S only) | SMAJ12A | |
 | GPS bias-T inductor, 27 nH (fit only for an active antenna) | Murata LQG15HS27NJ02D (0402) | C12669 |
 | USB 5 V OR-ing diode | B5819W | C8598 |
 | USB ESD | USBLC6-2SC6 | C7519 |

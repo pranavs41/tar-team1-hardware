@@ -101,7 +101,7 @@ All from DigiKey. Quantity is per board.
 | U2 | USB protection | [USBLC6-2SC6](https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559) | STMicroelectronics (Switzerland) | 1 | $0.54 | $0.54 |
 | X1 | 40 MHz crystal, 10 pF, ±10 ppm | [FA-128 40.0000MF10Z-K3](https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630) | Epson (Japan) | 1 | $1.11 | $1.11 |
 | C35 | 100 µF 25 V polymer capacitor | [TCJD107M025R0055](https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375) | Kyocera AVX (US, Japan) | 1 | $3.65 | $3.65 |
-| D5 | Battery surge diode | [SMAJ18A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282) | Littelfuse (US) | 1 | $0.51 | $0.51 |
+| D5 | Battery surge diode, 12 V standoff | [SMAJ12A](https://www.digikey.com/en/products/result?keywords=SMAJ12A) | Littelfuse (US) | 1 | $0.51 | $0.51 |
 | D1 | Schottky diode, 1 A 40 V, SOD-123 | [1N5819HW-7-F](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970) | Diodes Incorporated (US) | 1 | $0.31 | $0.31 |
 | D2, D3, D4 | LEDs, 0603: red, yellow-green, yellow | 150060RS75000, 150060VS75000, 150060YS75000 | Würth Elektronik (Germany) | 3 | $0.15 | $0.45 |
 | J4 | ESC connector, JST-SH 8-pin | [SM08B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714) | JST (Japan) | 1 | $0.85 | $0.85 |
@@ -110,7 +110,7 @@ All from DigiKey. Quantity is per board.
 | J6, J8 | Radio port and landing sensor port, JST-SH 4-pin top entry | [BM04B-SRSS-TB](https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696) | JST (Japan) | 2 | $0.53 | $1.06 |
 | J1, J3 | Antenna sockets, U.FL | [U.FL-R-SMT-1(10)](https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570) | Hirose (Japan) | 2 | $1.67 | $3.34 |
 | J2 | USB-C socket, 16-pin | [USB4105-GF-A](https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441) | GCT (UK) | 1 | $0.80 | $0.80 |
-| L2 | Buck inductor, 4.7 µH, 2.2 A saturation | CIGW252010EH4R7MNE | Samsung Electro-Mechanics (Korea) | 1 | $0.29 | $0.29 |
+| L2 | Buck inductor, 4.7 µH, 1.9 A rated saturation (2.2 A typical) | CIGW252010EH4R7MNE | Samsung Electro-Mechanics (Korea) | 1 | $0.29 | $0.29 |
 | L1 | Radio supply inductor, 2.0 nH | LQG15HS2N0B02D | Murata (Japan) | 1 | $0.10 | $0.10 |
 | C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34 | 0.1 µF 16 V, 0402 | GRM155R71C104KA88J | Murata (Japan) | 13 | $0.10 | $1.30 |
 | C3, C5, C10, C11, C20 to C23 | 1 µF 10 V, 0402 | CL05A105KP5NNNC | Samsung Electro-Mechanics (Korea) | 8 | $0.10 | $0.80 |
@@ -118,7 +118,7 @@ All from DigiKey. Quantity is per board.
 | C12, C13 | 15 pF 50 V, 0402 | GRM1555C1H150JA01D | Murata (Japan) | 2 | $0.10 | $0.20 |
 | C26 | 2.2 µF 16 V, 0402 | GRM155R61C225KE11J | Murata (Japan) | 1 | $0.22 | $0.22 |
 | C4, C30 | 10 µF 6.3 V, 0603 | GRM188R60J106ME47D | Murata (Japan) | 2 | $0.12 | $0.24 |
-| C18, C19 | 22 µF 10 V, 0805 | GRM21BR61A226ME51L | Murata (Japan) | 2 | $0.19 | $0.38 |
+| C18, C19 | 22 µF 16 V, 0805 | GRM21BR61C226ME44L | Murata (Japan) | 2 | $0.45 | $0.90 |
 | C16 | 10 µF 25 V, 1206 | [GRM319R61E106KA12D](https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921) | Murata (Japan) | 1 | $0.47 | $0.47 |
 | R1, R10, R11 | 10 kΩ 1%, 0402 | RC0402FR-0710KL | Yageo (Taiwan) | 3 | $0.10 | $0.30 |
 | R4, R5 | 5.1 kΩ 1%, 0402 | RC0402FR-075K1L | Yageo (Taiwan) | 2 | $0.10 | $0.20 |

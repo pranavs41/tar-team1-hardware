@@ -12,7 +12,7 @@ One page with every connector, pin, voltage and limit on the board. If you are w
 | Layers | 4: top signals and parts, solid ground, solid 3.3 V, bottom signals |
 | Weight | about 8 g assembled (estimate, not weighed yet) |
 | Processor | ESP32-S3FN8, bare chip, Wi-Fi and Bluetooth LE, 8 MB flash |
-| Battery | 2S (6.0 to 8.4 V). The input parts tolerate up to 4S (16.8 V). Never 6S |
+| Battery | 2S only (6.0 V empty to 8.7 V full on the high-voltage pack). Never 3S or more: the surge diode starts conducting above about 13 V |
 | Stacks on | a 20 × 20 mm 4-in-1 ESC, through one 8-pin cable |
 
 ## Connectors
@@ -114,6 +114,8 @@ The board has no compass of its own. An outdoor autonomous drone needs one to kn
 
 The board chosen is Adafruit's LIS3MDL breakout. It has its own regulator and level shifting, so the 5 V on pin 1 is fine. A board without a regulator (most Qwiic boards) would be damaged by 5 V. Its two small sockets are wired in Qwiic order, which is not J5's or J8's order, so use its solder pads and wire by name.
 
+**Remove the breakout's two I2C pull-up resistors before fitting it.** On the Adafruit board they pull SDA and SCL up to its VIN, which is 5 V here. Together with the flight controller's 2.2 kΩ pull-ups to 3.3 V, the bus would idle at about 3.6 V, at the limit of the barometer and the ESP32. The board's own pull-ups are enough, and the breakout's level shifter still works without them.
+
 Where it goes matters more than how it is wired. The wires carrying motor current make a magnetic field that changes with throttle, and it swamps the Earth's field at close range. Mount the compass as far from the battery leads, the ESC and the motor wires as the frame allows, on top and towards the front or on a short mast. Twist the two battery leads together. Calibrate the compass on the finished drone, and check the heading with the motors running before trusting it in flight.
 
 J6 and J8 are the same connector type. Swapping their plugs by mistake damages nothing, since both have 5 V on pin 1 and ground on pin 4, but neither device will work until they are swapped back.
@@ -169,7 +171,7 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 | I2C | TF-Luna obstacle sensor (on J5) | 0x10. Run the bus at 100 kHz when anything is plugged into J5, J7 or J8 |
 | I2C | landing sensor (on J8) | a second TF-Luna also starts at 0x10, so one of the two must be given a new address once, for example 0x11 |
 | I2C | LIS3MDL compass (on the J5 or J8 cable) | 0x1C, or 0x1E with its address pad bridged. Neither clashes |
-| I2C | BQ25887 charger (on J7) | 0x6B. No clash |
+| I2C | BQ25887 charger (on J7) | 0x6B. The datasheet says 0x6A in one paragraph and 0x6B everywhere else, so scan the bus at bring-up. Neither clashes |
 | SPI | ICM-42688-P gyro and accelerometer | chip select GPIO35, interrupt GPIO48 |
 | UART | u-blox MAX-M10S GPS | TX GPIO36, RX GPIO18 |
 | UART | VoCore2 networking module (on J6) | TX GPIO2, RX GPIO10 |
@@ -178,7 +180,7 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 
 | Rail | Made by | Feeds | Limit |
 |---|---|---|---|
-| VBAT | battery, through J4 pin 2 or J7 pin 1 | buck regulator, voltage divider | 6 to 16.8 V in; each of those pins is rated 1 A |
+| VBAT | battery, through J4 pin 2 or J7 pin 1 | buck regulator, voltage divider | 6 to 8.7 V in; each of those pins is rated 1 A |
 | +5V | AP63205 buck, or USB | both 3.3 V regulators, J5 pin 1, J6 pin 1, J8 pin 1 | 2 A regulator; plan for 1.1 A total |
 | +3V3 | TLV75733 | ESP32, LEDs | 1 A regulator, 0.36 A peak used |
 | +3V3_SENS | TPS7A2033, low noise | IMU, barometer, GPS | 0.3 A regulator, 25 mA used |
@@ -208,9 +210,9 @@ From a 2S battery that is 0.38 A on average and 0.81 A at the worst moment. The 
 
 ## Rules that prevent damage
 
-1. Battery is 2S. Up to 4S is tolerated. 6S destroys the input protection.
+1. Battery is 2S only. A 3S or larger pack makes the surge diode D5 conduct and can destroy it.
 2. J5 and J8 supply 5 V. No 3.3 V-only devices on them. J8 looks like a Qwiic or STEMMA QT socket but is not wired like one, so never plug one of those cables into it.
-3. J7 pin 1 is the battery, up to 8.4 V, and it is rated 1 A. It is there to power the flight controller. Charge current must reach the battery on its own wires, never through this pin.
+3. J7 pin 1 is the battery, up to 8.7 V, and it is rated 1 A. It is there to power the flight controller. Charge current must reach the battery on its own wires, never through this pin.
 4. Do not run Wi-Fi with no antenna on J1.
 5. Use the ESC's current and telemetry pins or the networking module, not both. Leave C33 off when the module is used.
 6. A 470 µF 35 V low-ESR capacitor goes on the ESC's battery pads before the motors ever spin.

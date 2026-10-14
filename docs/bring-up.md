@@ -18,3 +18,24 @@ Do these in order on every new board. Stop at the first failure.
 14. **ESC:** with props off, spin each motor with DShot.
 
 Log results for each board serial in `production/<rev>/bringup-log.md`.
+
+## Settings and checks from the datasheet audit (2026-10-14)
+
+Each chip was checked against its datasheet. These are the points the firmware and the first bench test must handle.
+
+**Measure before plugging things in**
+
+- On USB power alone, with no battery, measure the battery line at TP3. The 5 V regulator lets USB power leak backwards into the battery line at about 4 to 4.6 V, so an ESC or charging board plugged in will see it. Expect it and do not run motors on USB.
+- Measure the TF-Luna's SDA and SCL with it powered and unplugged from the board. They must not sit above 3.6 V.
+- Measure the ESC's current output (its C pad) before ever connecting it. It must stay below 3.6 V.
+
+**Firmware settings**
+
+- Gyro (ICM-42688-P): SPI clock 24 MHz or less. Its interrupt pin starts as open-drain with nothing pulling it up, so either set INT1 to push-pull or turn on GPIO48's internal pull-up. Clear INT_ASYNC_RESET. Write FSYNC_UI_SEL = 0, otherwise a sync flag lands in the lowest bit of the temperature reading.
+- Barometer (BMP581): its INT pin is not connected. Set it to push-pull and leave it unused, or leave the interrupt off.
+- I2C bus: 100 kHz. Two TF-Lunas share the bus, so give one the address 0x11 once (register 0x22, save with 0x20 = 0x01, then reboot), and run both in trigger mode (register 0x23 = 0x01).
+- Charger: the BQ25887 should answer at 0x6B. Its datasheet says 0x6A in one place, so scan the bus once.
+- Charger lines: turn on the internal pull-ups on GPIO8 (STAT) and GPIO9 (/PG).
+- Crystal: tune the 40 MHz load capacitors with Espressif's RF test tool. If the frequency is high, raise C12 and C13 (keep 12 pF and 18 pF spares).
+- Burn the EFUSE_DIS_USB_OTG_DOWNLOAD_MODE fuse once the board is working, so the I2C clock line is not driven low in a USB download mode.
+

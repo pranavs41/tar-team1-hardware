@@ -54,8 +54,8 @@ The `+3V3` LDO (U4, TLV75733) drops 5 V to 3.3 V linearly, so it dissipates 1.7 
 
 | Condition | Junction rise, JEDEC figure | Junction rise, EVM figure |
 |---|---|---|
-| flight average, 0.22 W | +51 °C | +22 °C |
-| transmit burst held continuously, 0.61 W | +141 °C | +61 °C |
+| flight average, 0.22 W | +22 °C | +22 °C |
+| transmit burst held continuously, 0.61 W | +61 °C | +61 °C |
 
 Bursts are too short to heat the package, so the average is what counts. At 45 °C inside the frame on a hot day the junction sits between 67 and 96 °C. The limit is 125 °C and thermal shutdown is near 160 °C, so it holds, but U4 will be the warmest part on the board and the first thing to touch at bring-up. Two ways to buy margin if it ever runs hot: pour the top GND copper right up to U4's tab side (the layout already does), or in a later revision feed the ESP32 straight from a 3.3 V buck (AP63203) and keep the LDO for the sensors only. That would also cut the FC's power by about a quarter, since 28 % of what it draws today becomes heat in U4.
 

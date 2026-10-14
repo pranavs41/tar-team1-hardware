@@ -24,7 +24,7 @@ TPS7A2033PDBVR (3.3 V low-noise regulator),1,https://www.ti.com/product/TPS7A20/
 USBLC6-2SC6 (USB protection),1,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54
 "FA-128 40.0000MF10Z-K3 (40 MHz crystal, 10 pF, ±10 ppm)",1,https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11
 TCJD107M025R0055 (100 µF 25 V polymer capacitor),1,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65
-SMAJ18A (Battery surge diode),1,https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282,0.51
+"SMAJ12A (Battery surge diode, 12 V standoff)",1,https://www.digikey.com/en/products/result?keywords=SMAJ12A,0.51
 "1N5819HW-7-F (Schottky diode, 1 A 40 V, SOD-123)",1,https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970,0.31
 "150060RS75000 (LED 0603, red)",3,https://www.digikey.com/en/products/result?keywords=150060RS75000,0.45
 "150060VS75000 (LED 0603, yellow-green)",3,https://www.digikey.com/en/products/result?keywords=150060VS75000,0.45
@@ -43,7 +43,7 @@ SMAJ18A (Battery surge diode),1,https://www.digikey.com/en/products/detail/litte
 "GRM1555C1H150JA01D (15 pF 50 V, 0402)",10,https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D,1.00
 "GRM155R61C225KE11J (2.2 µF 16 V, 0402)",10,https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J,2.20
 "GRM188R60J106ME47D (10 µF 6.3 V, 0603)",10,https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D,1.20
-"GRM21BR61A226ME51L (22 µF 10 V, 0805)",10,https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L,1.90
+"GRM21BR61C226ME44L (22 uF 16 V, 0805)",10,https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L,4.50
 "GRM319R61E106KA12D (10 µF 25 V, 1206)",1,https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921,0.47
 "RC0402FR-0710KL (10 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL,1.00
 "RC0402FR-075K1L (5.1 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L,1.00

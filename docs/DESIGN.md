@@ -20,7 +20,7 @@ Charging is handled by a separate board, described in [charging-board.md](chargi
 | Requirement | Value |
 |---|---|
 | Components | bare chips only, no modules or breakout boards |
-| Battery | 2S LiPo/Li-ion (6.0 to 8.4 V); input survives up to 4S (16.8 V) |
+| Battery | 2S LiPo, high-voltage pack (6.0 to 8.7 V); 2S only |
 | Board size | 36 wide × 39 tall mm, 2 mm corner radius |
 | Mounting | four 3.2 mm (M3) holes on a 20 × 20 mm pattern, matching the bought ESC |
 | Assembly | hot plate only, so all parts on the top side; bottom has test pads only |

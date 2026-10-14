@@ -44,7 +44,7 @@ Total: **$228.15**, plus the battery
 | DigiKey | 1 | [USBLC6-2SC6](https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559) | USB protection | $0.54 | $0.54 |  |
 | DigiKey | 1 | [FA-128 40.0000MF10Z-K3](https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630) | 40 MHz crystal, 10 pF, ±10 ppm | $1.11 | $1.11 |  |
 | DigiKey | 1 | [TCJD107M025R0055](https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375) | 100 µF 25 V polymer capacitor | $3.65 | $3.65 |  |
-| DigiKey | 1 | [SMAJ18A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282) | Battery surge diode | $0.51 | $0.51 |  |
+| DigiKey | 1 | [SMAJ12A](https://www.digikey.com/en/products/result?keywords=SMAJ12A) | Battery surge diode, 12 V standoff | $0.51 | $0.51 | Was SMAJ18A: its surge clamp (up to 29 V) exceeded the 25 V capacitors and 20 V inductor on the battery line. The board is 2S only |
 | DigiKey | 1 | [1N5819HW-7-F](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970) | Schottky diode, 1 A 40 V, SOD-123 | $0.31 | $0.31 |  |
 | DigiKey | 3 | [150060RS75000](https://www.digikey.com/en/products/result?keywords=150060RS75000) | LED 0603, red | $0.15 | $0.45 |  |
 | DigiKey | 3 | [150060VS75000](https://www.digikey.com/en/products/result?keywords=150060VS75000) | LED 0603, yellow-green | $0.15 | $0.45 |  |
@@ -63,7 +63,7 @@ Total: **$228.15**, plus the battery
 | DigiKey | 10 | [GRM1555C1H150JA01D](https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D) | 15 pF 50 V, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [GRM155R61C225KE11J](https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J) | 2.2 µF 16 V, 0402 | $0.22 | $2.20 |  |
 | DigiKey | 10 | [GRM188R60J106ME47D](https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D) | 10 µF 6.3 V, 0603 | $0.12 | $1.20 |  |
-| DigiKey | 10 | [GRM21BR61A226ME51L](https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L) | 22 µF 10 V, 0805 | $0.19 | $1.90 |  |
+| DigiKey | 10 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 uF 16 V, 0805 | $0.45 | $4.50 | 16 V part keeps more of its capacitance at 5 V than the 10 V one did |
 | DigiKey | 1 | [GRM319R61E106KA12D](https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921) | 10 µF 25 V, 1206 | $0.47 | $0.47 |  |
 | DigiKey | 10 | [RC0402FR-0710KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL) | 10 kΩ 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402FR-075K1L](https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L) | 5.1 kΩ 1%, 0402 | $0.10 | $1.00 |  |
@@ -73,7 +73,7 @@ Total: **$228.15**, plus the battery
 | DigiKey | 10 | [RC0402FR-07100KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL) | 100 kΩ 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402JR-070RL](https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL) | 0 Ω link, 0402 | $0.10 | $1.00 |  |
 
-Total: **$59.29**
+Total: **$61.89**
 
 ## Charging board parts, for 1 board (provisional)
 
@@ -109,8 +109,8 @@ Total: **$29.18**
 | | |
 |---|---|
 | Drone parts | $228.15 |
-| Flight controller parts | $59.29 |
+| Flight controller parts | $61.89 |
 | Charging board parts | $29.18 |
-| **Total before the battery, shipping and tax** | **$316.62** |
+| **Total before the battery, shipping and tax** | **$319.22** |
 
 Links without a product page go to a DigiKey search for the part number.

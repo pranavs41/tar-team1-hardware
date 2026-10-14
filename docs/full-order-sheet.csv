@@ -9,7 +9,7 @@ Flight controller parts (1 board),Texas Instruments,1,TPS7A2033PDBVR,3.3 V low-n
 Flight controller parts (1 board),DigiKey,1,USBLC6-2SC6,USB protection,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54,0.54,
 Flight controller parts (1 board),DigiKey,1,FA-128 40.0000MF10Z-K3,"40 MHz crystal, 10 pF, ±10 ppm",https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11,1.11,
 Flight controller parts (1 board),DigiKey,1,TCJD107M025R0055,100 µF 25 V polymer capacitor,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65,3.65,
-Flight controller parts (1 board),DigiKey,1,SMAJ18A,Battery surge diode,https://www.digikey.com/en/products/detail/littelfuse-inc/SMAJ18A/762282,0.51,0.51,
+Flight controller parts (1 board),DigiKey,1,SMAJ12A,"Battery surge diode, 12 V standoff",https://www.digikey.com/en/products/result?keywords=SMAJ12A,0.51,0.51,Was SMAJ18A: its surge clamp (up to 29 V) exceeded the 25 V capacitors and 20 V inductor on the battery line. The board is 2S only
 Flight controller parts (1 board),DigiKey,1,1N5819HW-7-F,"Schottky diode, 1 A 40 V, SOD-123",https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970,0.31,0.31,
 Flight controller parts (1 board),DigiKey,3,150060RS75000,"LED 0603, red",https://www.digikey.com/en/products/result?keywords=150060RS75000,0.15,0.45,
 Flight controller parts (1 board),DigiKey,3,150060VS75000,"LED 0603, yellow-green",https://www.digikey.com/en/products/result?keywords=150060VS75000,0.15,0.45,
@@ -28,7 +28,7 @@ Flight controller parts (1 board),DigiKey,10,GRM155R71H103KA88D,"10 nF 50 V, 040
 Flight controller parts (1 board),DigiKey,10,GRM1555C1H150JA01D,"15 pF 50 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM1555C1H150JA01D,0.10,1.00,
 Flight controller parts (1 board),DigiKey,10,GRM155R61C225KE11J,"2.2 µF 16 V, 0402",https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J,0.22,2.20,
 Flight controller parts (1 board),DigiKey,10,GRM188R60J106ME47D,"10 µF 6.3 V, 0603",https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D,0.12,1.20,
-Flight controller parts (1 board),DigiKey,10,GRM21BR61A226ME51L,"22 µF 10 V, 0805",https://www.digikey.com/en/products/result?keywords=GRM21BR61A226ME51L,0.19,1.90,
+Flight controller parts (1 board),DigiKey,10,GRM21BR61C226ME44L,"22 uF 16 V, 0805",https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L,0.45,4.50,16 V part keeps more of its capacitance at 5 V than the 10 V one did
 Flight controller parts (1 board),DigiKey,1,GRM319R61E106KA12D,"10 µF 25 V, 1206",https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921,0.47,0.47,
 Flight controller parts (1 board),DigiKey,10,RC0402FR-0710KL,"10 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL,0.10,1.00,
 Flight controller parts (1 board),DigiKey,10,RC0402FR-075K1L,"5.1 kΩ 1%, 0402",https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L,0.10,1.00,
@@ -75,6 +75,6 @@ Drone parts (1 drone),Amazon,1,"OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2"
 "Charging board parts (1 board, provisional)",DigiKey,2,SHR-07V-S-B,"7-pin JST-SH plug housing, both ends of the cable to the flight controller",https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871,0.15,0.30,Provisional until Rishab's schematic is final. JST
 "Charging board parts (1 board, provisional)",DigiKey,7,ASSHSSH28K152,"Pre-crimped JST-SH wire, 150 mm, one per cable pin",https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452,0.46,3.22,"Provisional until Rishab's schematic is final. JST. Push one end of each wire into each housing, pin 1 to pin 1"
 ,,,,Drone parts,,,228.15,
-,,,,Flight controller parts,,,59.29,
+,,,,Flight controller parts,,,61.89,
 ,,,,Charging board parts,,,29.18,
-,,,,"Total before the battery, shipping and tax",,,316.62,
+,,,,"Total before the battery, shipping and tax",,,319.22,

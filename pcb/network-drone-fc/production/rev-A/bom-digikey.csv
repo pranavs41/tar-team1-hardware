@@ -6,7 +6,7 @@ Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Pe
 1,USBLC6-2SC6,STMicroelectronics,U2,USB protection,1,0.54
 1,FA-128 40.0000MF10Z-K3,Epson,X1,"40 MHz crystal, 10 pF, ±10 ppm",1,1.11
 1,TCJD107M025R0055,Kyocera AVX,C35,100 µF 25 V polymer capacitor,1,3.65
-1,SMAJ18A,Littelfuse,D5,Battery surge diode,1,0.51
+1,SMAJ12A,Littelfuse,D5,Battery surge diode,1,0.51
 1,1N5819HW-7-F,Diodes Incorporated,D1,"Schottky diode, 1 A 40 V, SOD-123",1,0.31
 3,150060RS75000,Würth Elektronik,D2,"LED 0603, red",1,0.15
 3,150060VS75000,Würth Elektronik,D3,"LED 0603, yellow-green",1,0.15
@@ -24,7 +24,7 @@ Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Pe
 10,GRM1555C1H150JA01D,Murata,"C12, C13","15 pF 50 V, 0402",2,0.10
 10,GRM155R61C225KE11J,Murata,C26,"2.2 µF 16 V, 0402",1,0.22
 10,GRM188R60J106ME47D,Murata,"C4, C30","10 µF 6.3 V, 0603",2,0.12
-10,GRM21BR61A226ME51L,Murata,"C18, C19","22 µF 10 V, 0805",2,0.19
+10,GRM21BR61C226ME44L,Murata,"C18, C19","22 µF 10 V, 0805",2,0.19
 1,GRM319R61E106KA12D,Murata,C16,"10 µF 25 V, 1206",1,0.47
 10,RC0402FR-0710KL,Yageo,"R1, R10, R11","10 kΩ 1%, 0402",3,0.10
 10,RC0402FR-075K1L,Yageo,"R4, R5","5.1 kΩ 1%, 0402",2,0.10
