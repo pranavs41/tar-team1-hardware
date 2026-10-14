@@ -53,8 +53,8 @@ This is the order in the charging board's own list, with three differences to kn
 - Pin 1 carries battery voltage, up to 8.4 V. Every other pin is a 3.3 V signal. A wrong-way cable or a solder bridge from pin 1 to pin 2 or pin 3 will do damage, so check the cable with a multimeter before the first power-up.
 - Pin 1 is for running the flight controller, which draws 0.8 A at its worst. Charge current, up to 2 A, must go from the charger to the battery on its own wires. If the charger's only path to the battery ran through this cable and the flight controller, the 1 A pins would overheat.
 - The battery connects to the ESC through the XT30 plug and to the charging board through its own leads. That makes two paths from battery to flight controller: one through the ESC cable and one through this cable. A small share of the motor current, in the range of a few percent, will take the thinner path. Keep the charging board's battery leads short and thick so that share stays small.
-- CD floats when the ESP32 is in reset or has no power. The charger must treat a floating CD as "charging allowed", so a flight controller that is off does not block charging. Check the BQ25887 datasheet for an internal pull-down on CD. If there is none, add 100 kΩ from CD to ground on the charging board.
-- The charger's I2C address is 0x6A or 0x6B depending on the exact chip. Read it from the datasheet. Neither clashes with the barometer (0x46) or the distance sensors (0x10 and 0x11).
+- CD floats when the ESP32 is in reset or has no power. The BQ25887 datasheet says CD is pulled low inside the chip through 900 kΩ, so a floating CD reads as "charging allowed" and no extra resistor is needed.
+- The charger's I2C address is 0x6B (BQ25887 datasheet). It does not clash with the barometer (0x46), the distance sensors (0x10 and 0x11) or the compass (0x1C).
 
 ## Other connections
 
@@ -78,9 +78,9 @@ Prices are rough single-quantity figures, good for budgeting and not checked aga
 | MID series resistor | 300 Ω 1%, 0603 | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
 | CBSET resistor, sets the balancing current | 41.2 Ω 1%, 1 W, 2512 | Yageo or Vishay | 1 | $0.40 | $0.40 |
 | Battery thermistor, 10 kΩ NTC | 103AT-2 | Semitec (Japan) | 1 | $1.50 | $1.50 |
-| Thermistor bias resistors | values from the datasheet, 0603 | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
-| VBUS capacitor | 1 µF 16 V X7R | Murata or Samsung | 1 | $0.10 | $0.10 |
-| PMID and BAT capacitors | 10 µF 16 V | Murata or Samsung | 2 | $0.20 | $0.40 |
+| Thermistor bias resistors | 5.23 kΩ and 30.1 kΩ 1%, 0603 (datasheet: 5.24 kΩ and 30.31 kΩ for a 103AT) | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
+| VBUS capacitor | 1 µF 25 V X7R, 0603 | Murata | 1 | $0.10 | $0.10 |
+| PMID and BAT capacitors | 10 µF 25 V, 0805 (the datasheet asks for a 25 V rating at PMID) | Murata | 2 | $0.25 | $0.50 |
 | Bootstrap capacitor | 47 nF 16 V X7R | Murata or Samsung | 1 | $0.10 | $0.10 |
 | REGN capacitor | 4.7 µF 16 V | Murata or Samsung | 1 | $0.15 | $0.15 |
 | Output capacitors | 22 µF 16 V | Murata or Samsung | 2 | $0.45 | $0.90 |
@@ -96,9 +96,9 @@ Test points wanted on the board: 5V_DOCK, VBUS, BATT+, MID, GND, SDA, SCL, /PG, 
 
 ## Things to check before layout
 
-- [ ] **Inductor current rating.** The inductor must not saturate at the charger's peak current. Confirm the DFE252012F-1R0M's saturation current against the peak the datasheet's design section calculates for a 0.925 A input limit.
+- [x] **Inductor current rating.** The DFE252012F-1R0M is the inductor TI's own datasheet uses. Peak current here is about 1.6 A: the 0.925 A input limit plus half of a 1.35 A ripple (5 V in, 8.4 V out, 1.5 MHz, 1 µH). Check the exact saturation figure on Murata's page when ordering.
 - [ ] **Input surge.** The LM66100's absolute maximum is 6 V and the BQ25887's VBUS is rated much higher. A 5 V TVS diode does not start clamping hard until about 9 V, so it protects the charger but not the LM66100 in front of it. Decide whether the dock contacts can see a surge, and pick a protection part that holds the line under 6 V if they can.
-- [ ] **Balancing resistor.** Confirm the CBSET value and the power it must handle from the datasheet. 1 W of heat on a small board near a battery needs a place to go.
+- [x] **Balancing resistor.** 41.2 Ω sets about 100 mA of balancing current (4.2 V divided by 41.2 Ω), a quarter of the chip's 400 mA maximum. It dissipates about 0.43 W, inside the 1 W rating of a 2512 resistor, but it will get warm. Give it copper and keep it away from the battery.
 - [ ] **Thermistor.** It only helps if it touches the battery. Decide where it sits and how its wires reach the board.
 - [ ] **Charge voltage.** The battery picked is a standard LiPo, 4.2 V per cell, 8.4 V full. Set the charger to that and not to the high-voltage 4.35 V setting.
 - [ ] **Exposed contacts.** The dock strips on the propeller guard are bare metal. The LM66100 stops the battery from appearing on them. Confirm that with a meter on the first board.

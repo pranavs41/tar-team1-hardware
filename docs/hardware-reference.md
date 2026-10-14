@@ -169,7 +169,7 @@ Any GPIO can carry any UART, SPI or I2C signal on this chip, so firmware only ne
 | I2C | TF-Luna obstacle sensor (on J5) | 0x10. Run the bus at 100 kHz when anything is plugged into J5, J7 or J8 |
 | I2C | landing sensor (on J8) | a second TF-Luna also starts at 0x10, so one of the two must be given a new address once, for example 0x11 |
 | I2C | LIS3MDL compass (on the J5 or J8 cable) | 0x1C, or 0x1E with its address pad bridged. Neither clashes |
-| I2C | BQ25887 charger (on J7) | 0x6A or 0x6B, check the charger's datasheet. Neither clashes |
+| I2C | BQ25887 charger (on J7) | 0x6B. No clash |
 | SPI | ICM-42688-P gyro and accelerometer | chip select GPIO35, interrupt GPIO48 |
 | UART | u-blox MAX-M10S GPS | TX GPIO36, RX GPIO18 |
 | UART | VoCore2 networking module (on J6) | TX GPIO2, RX GPIO10 |
