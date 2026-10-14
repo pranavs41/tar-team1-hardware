@@ -72,3 +72,4 @@ Why the network drone flight controller is built the way it is. Add a row when a
 | 2026-10-13 | Every track redrawn as horizontal, vertical and 45 degree runs | Odd-angle tracks were hard to read and to edit by hand. The two ends of every track stayed where they were, so no connection changed |
 | 2026-10-14 | Long diagonal tracks straightened into horizontal and vertical runs | A third of the copper ran diagonally across the board and read as autorouted. Corners keep a small 45 degree chamfer |
 | 2026-10-14 | Board spacing rule raised from 0.12 mm to 0.127 mm | The board is made at OSH Park, whose limit is 0.127 mm. Setting it as the board's own rule means every check enforces it |
+| 2026-10-14 | Stack hardware is M2 nylon, not M3 | J8, J6 and D5 sit 2.5 to 2.8 mm from the hole centres on top. An M3 nut reaches 3.2 mm and would not sit flat; an M2 nut reaches 2.3 mm. M2 passes through the M3 holes, and Daniel will size the frame for M2 |

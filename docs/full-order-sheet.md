@@ -2,7 +2,7 @@
 
 Everything to buy for **one drone**, except the bare circuit boards and the stencil, which are ordered separately ([rev A order sheet](../pcb/network-drone-fc/production/rev-A/order-notes.md)).
 
-Flight controller parts are for 1 board, with spare small resistors, capacitors and LEDs. Three bare boards are being ordered, so two will stay empty as spares. Prices were read between 2026-10-11 and 2026-10-13, before shipping and tax. The same sheet as a spreadsheet: [`full-order-sheet.csv`](full-order-sheet.csv). A short version with only item, quantity, link and cost is [`order-sheet-simple.csv`](order-sheet-simple.csv).
+Flight controller parts are for 1 board, with spare small resistors, capacitors and LEDs. Three bare boards are being ordered, so two will stay empty as spares. Prices were read between 2026-10-11 and 2026-10-14, before shipping and tax. The same sheet as a spreadsheet: [`full-order-sheet.csv`](full-order-sheet.csv). A short version with only item, quantity, link and cost is [`order-sheet-simple.csv`](order-sheet-simple.csv).
 
 The charging board parts are **provisional**. Rishab's schematic is not final, the small parts' sizes (0603, 0805) are assumed, their prices are rough, and several part numbers have not been checked against a live listing. The charging board's own bare board is not on this sheet. Details: [charging-board.md](charging-board.md).
 
@@ -24,7 +24,7 @@ Left for later: the carbon fiber subframe Daniel linked (https://www.amazon.com/
 | DigiKey | 2 | [AGHGH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/AGHGH28K152/6009449) | Pre-crimped JST-GH wire, 150 mm | $0.49 | $0.98 | Price approximate. If the link fails, search the part number |
 | Adafruit | 1 | [Adafruit LIS3MDL magnetometer breakout (product 4479)](https://www.adafruit.com/product/4479) | Compass, 1.5 g | $9.95 | $9.95 | Shares the I2C wires of the J5 or J8 cable. Runs from that cable's 5 V. Mount it away from the battery leads and ESC |
 | Pololu | 2 | [Pololu 5521](https://www.pololu.com/product/5521) | JST-SH 4-pin cable, bare wires on one end, 30 cm | $2.04 | $4.08 | One for the downward sensor, one for the VoCore2 |
-| WREKD | 1 | [M3 nylon standoff, screw and nut kit, 180 pieces](https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black) | Hardware for the flight controller and ESC stack | $9.99 | $9.99 | One kit covers several drones. Price showed as 9.99 and 14.42 on different pages |
+| Amazon | 1 | [M2 nylon standoff, screw and nut kit, 180 pieces (HVAZI or similar)](https://www.amazon.com/s?k=HVAZI+M2+nylon+standoff+screw+nut+kit+180) | Hardware for the flight controller and ESC stack | $9.99 | $9.99 | M2, not M3: an M3 nut would not sit flat on top of the board at three holes. M2 passes through the M3 holes. Link is a search; pick a black M2 nylon kit with standoffs, screws and nuts. One kit covers several drones |
 | RaceDayQuads | 1 | [XT30 connector](https://www.racedayquads.com/products/xt30-connector-male-or-female) | Battery connector, male | $0.99 | $0.99 | Male, for the ESC's battery lead. The battery comes with its own XT30 |
 | Amazon | 1 | [OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2](https://www.amazon.com/dp/B0D318NL5W) | Battery | not read |  | Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total |
 

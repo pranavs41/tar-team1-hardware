@@ -75,13 +75,9 @@ These plugs look like Qwiic or STEMMA QT cables, and the wire colours follow tha
 
 The maker sells it from the store section of its own front page, with a cart and checkout there. There is no separate product page to link to. The price is the one recorded on 2026-10-11, so confirm it in the cart. This is the one item that ships from China: one to two weeks by air mail, or three to five days by DHL at a higher cost.
 
-## WREKD
+## Stack hardware
 
-| Qty | Item | Link | Each | Total |
-|---|---|---|---|---|
-| 1 | M3 nylon standoff, screw and nut kit, black, 180 pieces | [product page](https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black) | about $9.99 | $9.99 |
-
-The flight controller and the ESC both have M3 holes on the same 20 mm square, so the same screws go through both. One kit has enough for several drones, so order one for the whole build and not one per drone. Its price showed as $9.99 on one page and $14.42 on another.
+M2 nylon standoffs, screws and nuts, one kit for the whole build. M3 hardware does not fit: on the top of the board an M3 nut would sit on J8, J6 and D5. See [the full order sheet](full-order-sheet.md) for the link.
 
 ## Small items with no part chosen
 
