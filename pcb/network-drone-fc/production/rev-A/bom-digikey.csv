@@ -18,7 +18,7 @@ Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Pe
 1,USB4105-GF-A,GCT,J2,"USB-C socket, 16-pin",1,0.80
 1,CIGW252010EH4R7MNE,Samsung Electro-Mechanics,L2,"Buck inductor, 4.7 µH, 2.2 A saturation",1,0.29
 10,LQG15HS2N0B02D,Murata,L1,"Radio supply inductor, 2.0 nH",1,0.10
-20,GRM155R71C104KA88J,Murata,"C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34","0.1 µF 16 V, 0402",13,0.10
+20,GRM155R71C104KA88J,Murata,"C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34, C36","0.1 µF 16 V, 0402",13,0.10
 10,CL05A105KP5NNNC,Samsung Electro-Mechanics,"C3, C5, C10, C11, C20 to C23","1 µF 10 V, 0402",8,0.10
 10,GRM155R71H103KA88D,Murata,"C6, C27, C32","10 nF 50 V, 0402",3,0.10
 10,GRM1555C1H150JA01D,Murata,"C12, C13","15 pF 50 V, 0402",2,0.10
@@ -26,7 +26,7 @@ Quantity,Manufacturer Part Number,Manufacturer,Customer Reference,Description,Pe
 10,GRM188R60J106ME47D,Murata,"C4, C30","10 µF 6.3 V, 0603",2,0.12
 10,GRM21BR61C226ME44L,Murata,"C18, C19","22 µF 10 V, 0805",2,0.19
 1,GRM319R61E106KA12D,Murata,C16,"10 µF 25 V, 1206",1,0.47
-10,RC0402FR-0710KL,Yageo,"R1, R10, R11","10 kΩ 1%, 0402",3,0.10
+10,RC0402FR-0710KL,Yageo,"R1, R10, R11, R16","10 kΩ 1%, 0402",3,0.10
 10,RC0402FR-075K1L,Yageo,"R4, R5","5.1 kΩ 1%, 0402",2,0.10
 10,RC0402FR-071KL,Yageo,"R6, R8","1 kΩ 1%, 0402",2,0.10
 10,RC0402FR-072K2L,Yageo,"R12, R13","2.2 kΩ 1%, 0402",2,0.10
