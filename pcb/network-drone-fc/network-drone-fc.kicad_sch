@@ -12913,7 +12913,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "B5819W"
+		(property "Value" "1N5819HW"
 			(at 257.81 107.6324 90)
 			(effects
 				(font
@@ -16066,7 +16066,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF 10V"
+		(property "Value" "22uF 16V"
 			(at 200.66 50.7999 0)
 			(effects
 				(font
@@ -16136,7 +16136,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SMAJ18A"
+		(property "Value" "SMAJ12A"
 			(at 132.08 48.2599 90)
 			(effects
 				(font
@@ -16445,7 +16445,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF 10V"
+		(property "Value" "22uF 16V"
 			(at 190.5 50.7999 0)
 			(effects
 				(font
@@ -17484,7 +17484,7 @@
 				)
 			)
 		)
-		(property "Value" "Q22FA12800101"
+		(property "Value" "FA-128 40MHz 10pF"
 			(at 370.84 21.59 0)
 			(effects
 				(font

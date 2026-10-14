@@ -516,7 +516,7 @@
 				)
 			)
 		)
-		(property "Value" "SMAJ18A"
+		(property "Value" "SMAJ12A"
 			(at 0 4 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3180,7 +3180,7 @@
 				)
 			)
 		)
-		(property "Value" "22uF 10V"
+		(property "Value" "22uF 16V"
 			(at 0 1.68 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -3317,7 +3317,7 @@
 				)
 			)
 		)
-		(property "Value" "22uF 10V"
+		(property "Value" "22uF 16V"
 			(at 0 1.68 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6234,7 +6234,7 @@
 				)
 			)
 		)
-		(property "Value" "B5819W"
+		(property "Value" "1N5819HW"
 			(at 0 2.1 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -11161,7 +11161,7 @@
 				)
 			)
 		)
-		(property "Value" "Q22FA12800101"
+		(property "Value" "FA-128 40MHz 10pF"
 			(at 0 4.55 90)
 			(layer "F.Fab")
 			(hide yes)
