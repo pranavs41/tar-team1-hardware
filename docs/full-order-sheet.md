@@ -1,8 +1,10 @@
 # Full order sheet: networking drone
 
-Everything to buy for **one drone**, except the bare circuit boards and the stencil, which are ordered separately ([rev A order sheet](../pcb/network-drone-fc/production/rev-A/order-notes.md)). Nothing for the charging board is here.
+Everything to buy for **one drone**, except the bare circuit boards and the stencil, which are ordered separately ([rev A order sheet](../pcb/network-drone-fc/production/rev-A/order-notes.md)).
 
 Flight controller parts are for 1 board, with spare small resistors, capacitors and LEDs. Three bare boards are being ordered, so two will stay empty as spares. Prices were read between 2026-10-11 and 2026-10-13, before shipping and tax. The same sheet as a spreadsheet: [`full-order-sheet.csv`](full-order-sheet.csv). A short version with only item, quantity, link and cost is [`order-sheet-simple.csv`](order-sheet-simple.csv).
+
+The charging board parts are **provisional**. Rishab's schematic is not final, the small parts' sizes (0603, 0805) are assumed, their prices are rough, and several part numbers have not been checked against a live listing. The charging board's own bare board is not on this sheet. Details: [charging-board.md](charging-board.md).
 
 Left for later: the carbon fiber subframe Daniel linked (https://www.amazon.com/dp/B08ZNQCHP8).
 
@@ -24,7 +26,7 @@ Left for later: the carbon fiber subframe Daniel linked (https://www.amazon.com/
 | Pololu | 2 | [Pololu 5521](https://www.pololu.com/product/5521) | JST-SH 4-pin cable, bare wires on one end, 30 cm | $2.04 | $4.08 | One for the downward sensor, one for the VoCore2 |
 | WREKD | 1 | [M3 nylon standoff, screw and nut kit, 180 pieces](https://wrekd.com/products/m3-nylon-hex-male-female-spacer-standoffs-screw-nut-assortment-kit-black) | Hardware for the flight controller and ESC stack | $9.99 | $9.99 | One kit covers several drones. Price showed as 9.99 and 14.42 on different pages |
 | RaceDayQuads | 1 | [XT30 connector](https://www.racedayquads.com/products/xt30-connector-male-or-female) | Battery connector, male | $0.99 | $0.99 | Male, for the ESC's battery lead. The battery comes with its own XT30 |
-| Amazon | 1 | [OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2](https://www.amazon.com/dp/B0D318NL5W) | Battery | not read | | Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total |
+| Amazon | 1 | [OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2](https://www.amazon.com/dp/B0D318NL5W) | Battery | not read |  | Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total |
 
 Total: **$228.15**, plus the battery
 
@@ -34,7 +36,7 @@ Total: **$228.15**, plus the battery
 |---|---|---|---|---|---|---|
 | DigiKey | 1 | [ESP32-S3FN8](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446) | ESP32-S3 processor | $4.17 | $4.17 |  |
 | DigiKey | 1 | [MAX-M10S-00B](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906) | GPS module | $11.42 | $11.42 |  |
-| Newark | 1 | [ICM-42688-P](https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524) | Gyro and accelerometer | $4.86 | $4.86 | Buy from Newark, DigiKey has none. Take the price from Newark's page |
+| Newark | 1 | [ICM-42688-P](https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524) | Gyro and accelerometer | $4.86 | $4.86 | Buy from Newark |
 | DigiKey | 1 | [BMP581](https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134) | Barometer | $3.35 | $3.35 | Out of stock everywhere on 2026-10-13. DigiKey restock due 2026-11-04. Backorder it there or wait |
 | Mouser | 1 | [AP63205WU-7](https://www.mouser.com/ProductDetail/Diodes-Incorporated/AP63205WU-7) | 5 V buck regulator | $0.89 | $0.89 | Buy from Mouser, DigiKey has none. Take the price from Mouser's page |
 | DigiKey | 1 | [TLV75733PDRVR](https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260) | 3.3 V regulator, 1 A | $0.48 | $0.48 |  |
@@ -73,12 +75,38 @@ Total: **$228.15**, plus the battery
 
 Total: **$59.29**
 
+## Charging board parts, for 1 board (provisional)
+
+| Seller | Qty | Part | What it is | Each | Line total | Note |
+|---|---|---|---|---|---|---|
+| DigiKey | 1 | [BQ25887RGER](https://www.digikey.com/en/products/result?keywords=BQ25887RGER) | 2S boost charger with cell balancing, 4 x 4 mm QFN | $5.80 | $5.80 | Provisional until Rishab's schematic is final. Texas Instruments. Stock was very low on 2026-10-11; ti.com sells direct |
+| DigiKey | 1 | [LM66100DCKR](https://www.digikey.com/en/products/result?keywords=LM66100DCKR) | Ideal diode, keeps battery voltage off the dock contacts | $0.45 | $0.45 | Provisional until Rishab's schematic is final. Texas Instruments |
+| DigiKey | 1 | [DFE252012F-1R0M](https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M) | Power inductor 1 uH, shielded | $0.31 | $0.31 | Provisional until Rishab's schematic is final. Murata. Check its saturation current against the charger's peak before layout |
+| DigiKey | 1 | [SMBJ5.0A-13-F](https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F) | 5 V surge diode on the dock input | $0.40 | $0.40 | Provisional until Rishab's schematic is final. Diodes Incorporated. It clamps near 9 V, above the LM66100's 6 V limit; see the charging board page |
+| DigiKey | 1 | [1206L110THYR](https://www.digikey.com/en/products/result?keywords=1206L110THYR) | Resettable fuse, about 1 A hold, 1206 | $0.50 | $0.50 | Provisional until Rishab's schematic is final. Littelfuse. Part number from memory, confirm it is a 1206 fuse of about 1 A hold and 6 V or more |
+| DigiKey | 10 | [RC0603FR-071K2L](https://www.digikey.com/en/products/result?keywords=RC0603FR-071K2L) | 1.2 kohm 1% resistor, 0603 (input current limit) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. 0603 assumed |
+| DigiKey | 10 | [RC0603FR-07300RL](https://www.digikey.com/en/products/result?keywords=RC0603FR-07300RL) | 300 ohm 1% resistor, 0603 (cell balancing midpoint) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Yageo. 0603 assumed |
+| DigiKey | 2 | [RC2512FK-0741R2L](https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L) | 41.2 ohm 1% resistor, 1 W, 2512 (balancing current set) | $0.40 | $0.80 | Provisional until Rishab's schematic is final. Yageo. Confirm the value and power against the datasheet |
+| DigiKey | 1 | [103AT-2](https://www.digikey.com/en/products/result?keywords=103AT-2) | 10 kohm battery thermistor | $1.50 | $1.50 | Provisional until Rishab's schematic is final. Semitec. Must touch the battery |
+| DigiKey | 10 | [GRM188R71C105KA12D](https://www.digikey.com/en/products/result?keywords=GRM188R71C105KA12D) | 1 uF 16 V capacitor, 0603 (VBUS) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
+| DigiKey | 10 | [GRM188R61C106MA73D](https://www.digikey.com/en/products/result?keywords=GRM188R61C106MA73D) | 10 uF 16 V capacitor, 0603 (PMID and BAT) | $0.20 | $2.00 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
+| DigiKey | 10 | [GRM188R71H473KA61D](https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D) | 47 nF 50 V capacitor, 0603 (bootstrap) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
+| DigiKey | 10 | [GRM188R61C475KAAJD](https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD) | 4.7 uF 16 V capacitor, 0603 (REGN) | $0.15 | $1.50 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
+| DigiKey | 4 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 uF 16 V capacitor, 0805 (output) | $0.45 | $1.80 | Provisional until Rishab's schematic is final. Murata. 0805 assumed |
+| DigiKey | 1 | [SM07B-SRSS-TB](https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB) | 7-pin JST-SH connector to the flight controller | $0.80 | $0.80 | Provisional until Rishab's schematic is final. JST. Same part as J7 on the flight controller |
+| DigiKey | 1 | [B3B-XH-A](https://www.digikey.com/en/products/result?keywords=B3B-XH-A) | 3-pin JST-XH header for the battery's balance plug | $0.15 | $0.15 | Provisional until Rishab's schematic is final. JST |
+| DigiKey | 2 | [SHR-07V-S-B](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871) | 7-pin JST-SH plug housing, both ends of the cable to the flight controller | $0.15 | $0.30 | Provisional until Rishab's schematic is final. JST |
+| DigiKey | 7 | [ASSHSSH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452) | Pre-crimped JST-SH wire, 150 mm, one per cable pin | $0.46 | $3.22 | Provisional until Rishab's schematic is final. JST. Push one end of each wire into each housing, pin 1 to pin 1 |
+
+Total: **$23.53**
+
 ## Sum
 
 | | |
 |---|---|
-| Drone parts, without the battery | $228.15 |
+| Drone parts | $228.15 |
 | Flight controller parts | $59.29 |
-| **Total before the battery, shipping and tax** | **$287.44** |
+| Charging board parts | $23.53 |
+| **Total before the battery, shipping and tax** | **$310.97** |
 
 Links without a product page go to a DigiKey search for the part number.

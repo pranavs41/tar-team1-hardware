@@ -16,11 +16,11 @@ XT30 connector,1,https://www.racedayquads.com/products/xt30-connector-male-or-fe
 "OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2",1,https://www.amazon.com/dp/B0D318NL5W,
 ESP32-S3FN8 (ESP32-S3 processor),1,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446,4.17
 MAX-M10S-00B (GPS module),1,https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906,11.42
-ICM-42688-P (Gyro and accelerometer, from Newark),1,https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524,4.86
+ICM-42688-P (Gyro and accelerometer),1,https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524,4.86
 BMP581 (Barometer),1,https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134,3.35
-"AP63205WU-7 (5 V buck regulator, from Mouser)",1,https://www.mouser.com/ProductDetail/Diodes-Incorporated/AP63205WU-7,0.89
+AP63205WU-7 (5 V buck regulator),1,https://www.mouser.com/ProductDetail/Diodes-Incorporated/AP63205WU-7,0.89
 "TLV75733PDRVR (3.3 V regulator, 1 A)",1,https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260,0.48
-"TPS7A2033PDBVR (3.3 V low-noise regulator, from Texas Instruments)",1,https://www.ti.com/product/TPS7A20/part-details/TPS7A2033PDBVR,0.35
+TPS7A2033PDBVR (3.3 V low-noise regulator),1,https://www.ti.com/product/TPS7A20/part-details/TPS7A2033PDBVR,0.35
 USBLC6-2SC6 (USB protection),1,https://www.digikey.com/en/products/detail/stmicroelectronics/USBLC6-2SC6/1040559,0.54
 "FA-128 40.0000MF10Z-K3 (40 MHz crystal, 10 pF, ±10 ppm)",1,https://www.digikey.com/en/products/detail/epson/FA-128-40-0000MF10Z-K3/2514630,1.11
 TCJD107M025R0055 (100 µF 25 V polymer capacitor),1,https://www.digikey.com/en/products/detail/avx-corporation/TCJD107M025R0055/4990375,3.65
@@ -30,7 +30,7 @@ SMAJ18A (Battery surge diode),1,https://www.digikey.com/en/products/detail/litte
 "150060VS75000 (LED 0603, yellow-green)",3,https://www.digikey.com/en/products/result?keywords=150060VS75000,0.45
 "150060YS75000 (LED 0603, yellow)",3,https://www.digikey.com/en/products/result?keywords=150060YS75000,0.45
 "SM08B-SRSS-TB (ESC connector, JST-SH 8-pin)",1,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM08B-SRSS-TB-LF-SN/926714,0.85
-"SM04B-GHS-TB (Obstacle sensor port, JST-GH 4-pin, from LCSC)",1,https://www.lcsc.com/product-detail/Wire-To-Board-Connector_JST-SM04B-GHS-TB-LF-SN_C189895.html,0.39
+"SM04B-GHS-TB (Obstacle sensor port, JST-GH 4-pin)",1,https://www.lcsc.com/product-detail/Wire-To-Board-Connector_JST-SM04B-GHS-TB-LF-SN_C189895.html,0.39
 "SM07B-SRSS-TB (Charging port, JST-SH 7-pin)",1,https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80
 "BM04B-SRSS-TB (Radio port and landing sensor port, JST-SH 4-pin top entry)",2,https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696,1.06
 "U.FL-R-SMT-1(10) (Antenna sockets, U.FL)",2,https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570,3.34
@@ -52,4 +52,22 @@ SMAJ18A (Battery surge diode),1,https://www.digikey.com/en/products/detail/litte
 "RC0402FR-07470RL (470 Ω 1%, 0402)",10,https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619,1.00
 "RC0402FR-07100KL (100 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL,1.00
 "RC0402JR-070RL (0 Ω link, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL,1.00
-TOTAL,,,=SUM(D2:D54)
+"BQ25887RGER (2S boost charger with cell balancing, 4 x 4 mm QFN) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=BQ25887RGER,5.80
+"LM66100DCKR (Ideal diode, keeps battery voltage off the dock contacts) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=LM66100DCKR,0.45
+"DFE252012F-1R0M (Power inductor 1 uH, shielded) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M,0.31
+"SMBJ5.0A-13-F (5 V surge diode on the dock input) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F,0.40
+"1206L110THYR (Resettable fuse, about 1 A hold, 1206) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=1206L110THYR,0.50
+"RC0603FR-071K2L (1.2 kohm 1% resistor, 0603 (input current limit)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-071K2L,1.00
+"RC0603FR-07300RL (300 ohm 1% resistor, 0603 (cell balancing midpoint)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-07300RL,1.00
+"RC2512FK-0741R2L (41.2 ohm 1% resistor, 1 W, 2512 (balancing current set)) [charging board, provisional]",2,https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L,0.80
+"103AT-2 (10 kohm battery thermistor) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=103AT-2,1.50
+"GRM188R71C105KA12D (1 uF 16 V capacitor, 0603 (VBUS)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM188R71C105KA12D,1.00
+"GRM188R61C106MA73D (10 uF 16 V capacitor, 0603 (PMID and BAT)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM188R61C106MA73D,2.00
+"GRM188R71H473KA61D (47 nF 50 V capacitor, 0603 (bootstrap)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D,1.00
+"GRM188R61C475KAAJD (4.7 uF 16 V capacitor, 0603 (REGN)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD,1.50
+"GRM21BR61C226ME44L (22 uF 16 V capacitor, 0805 (output)) [charging board, provisional]",4,https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L,1.80
+"SM07B-SRSS-TB (7-pin JST-SH connector to the flight controller) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80
+"B3B-XH-A (3-pin JST-XH header for the battery's balance plug) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=B3B-XH-A,0.15
+"SHR-07V-S-B (7-pin JST-SH plug housing, both ends of the cable to the flight controller) [charging board, provisional]",2,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871,0.30
+"ASSHSSH28K152 (Pre-crimped JST-SH wire, 150 mm, one per cable pin) [charging board, provisional]",7,https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452,3.22
+TOTAL,,,=SUM(D2:D72)
