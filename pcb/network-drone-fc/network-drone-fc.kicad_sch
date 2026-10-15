@@ -6785,12 +6785,6 @@
 		(uuid "3235d098-5573-4351-861d-2fb8077dd91c")
 	)
 	(junction
-		(at 140.97 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "36528e32-ec1a-4cbd-a419-2469a1d49f1e")
-	)
-	(junction
 		(at 128.27 78.74)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9972,16 +9966,6 @@
 			(type default)
 		)
 		(uuid "f8db7f3d-6cf0-4621-9643-a22031d86327")
-	)
-	(wire
-		(pts
-			(xy 140.97 36.83) (xy 140.97 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb42f7c5-1f37-45d3-9f2c-5178f712043b")
 	)
 	(wire
 		(pts
@@ -14855,7 +14839,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 138.1252 50.8 0)
 			(effects
 				(font
@@ -18915,6 +18899,300 @@
 		(uuid "e5115159-0c83-4299-bbac-dc0022303c73")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 280.67 59.4262 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 375.92 248.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3cf4028a-10db-487a-a314-76466dc5d376")
+		(property "Reference" "R14"
+			(at 378.46 247.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "143k"
+			(at 378.46 250.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 374.142 248.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 375.92 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 375.92 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "34c820a6-8b8f-4735-bfa2-28c4c0775750")
+		)
+		(pin "1"
+			(uuid "00592f03-7840-4cbe-9525-186c74f374f7")
+		)
+		(instances
+			(project ""
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "VBAT"
+		(shape input)
+		(at 375.92 245.11 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "51d7803c-a935-431b-a82c-50bfbbef6083")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 375.92 237.2262 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BUCK_EN"
+		(shape input)
+		(at 375.92 252.73 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "13332a71-4540-45dd-8f8d-8207cb2ec9c7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 375.92 244.8462 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 388.62 248.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e277e3a-6157-40fc-8f84-aced7488d9d5")
+		(property "Reference" "R15"
+			(at 391.16 247.6499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "34k"
+			(at 391.16 250.1899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 386.842 248.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 388.62 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 388.62 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b8bebb20-a91f-469b-a2a6-39890701bb58")
+		)
+		(pin "1"
+			(uuid "62c4dd6b-6585-405e-b5e3-dbed2ec42e3d")
+		)
+		(instances
+			(project ""
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "BUCK_EN"
+		(shape input)
+		(at 388.62 245.11 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7606094a-af31-4655-a374-50e0609c7104")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 388.62 237.2262 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 388.62 252.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e757fe1d-7e23-475e-be75-641cab7de7e1")
+		(property "Reference" "#PWR0211"
+			(at 388.62 252.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 388.62 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 388.62 252.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 388.62 252.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 388.62 252.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0482121e-7b07-46d6-948b-880c95cfcf27")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "#PWR0211")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "BUCK_EN"
+		(shape input)
+		(at 140.97 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "17128e8e-43f0-45a5-a233-2b1761934f77")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 140.97 28.9462 90)
 			(effects
 				(font
 					(size 1.27 1.27)
