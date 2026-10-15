@@ -36,7 +36,7 @@ Total: **$228.15**, plus the battery
 |---|---|---|---|---|---|---|
 | DigiKey | 1 | [ESP32-S3FN8](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3FN8/15822446) | ESP32-S3 processor | $4.17 | $4.17 |  |
 | DigiKey | 1 | [MAX-M10S-00B](https://www.digikey.com/en/products/detail/u-blox/MAX-M10S-00B/15712906) | GPS module | $11.42 | $11.42 |  |
-| Newark | 1 | [ICM-42688-P](https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524) | Gyro and accelerometer | $4.86 | $4.86 | Buy from Newark |
+| Newark | 1 | [ICM-42688-P](https://www.newark.com/invensense/icm-42688-p/mems-module-x-y-z-1-71v/dp/77AH4524) | Gyro and accelerometer | $4.86 | $4.86 | Buy from Newark. DigiKey has none. Take the price from Newark's page |
 | DigiKey | 1 | [BMP581](https://www.digikey.com/en/products/detail/bosch-sensortec/BMP581/16036134) | Barometer | $3.35 | $3.35 | Out of stock everywhere on 2026-10-13. DigiKey restock due 2026-11-04. Backorder it there or wait |
 | Mouser | 1 | [AP63205WU-7](https://www.mouser.com/ProductDetail/Diodes-Incorporated/AP63205WU-7) | 5 V buck regulator | $0.89 | $0.89 | Buy from Mouser, DigiKey has none. Take the price from Mouser's page |
 | DigiKey | 1 | [TLV75733PDRVR](https://www.digikey.com/en/products/detail/texas-instruments/TLV75733PDRVR/8038260) | 3.3 V regulator, 1 A | $0.48 | $0.48 |  |
@@ -82,30 +82,32 @@ Total: **$64.96**
 
 | Seller | Qty | Part | What it is | Each | Line total | Note |
 |---|---|---|---|---|---|---|
-| DigiKey | 1 | [BQ25887RGER](https://www.digikey.com/en/products/result?keywords=BQ25887RGER) | 2S boost charger with cell balancing, 4 x 4 mm QFN | $5.80 | $5.80 | Texas Instruments. Stock was very low on 2026-10-11; ti.com sells direct |
-| DigiKey | 1 | [LM73100RPWR](https://www.digikey.com/en/products/result?keywords=LM73100RPWR) | Ideal diode with overvoltage cut-off, 2.7 to 23 V, 2 x 2 mm QFN | $1.60 | $1.60 | Texas Instruments. Replaces the LM66100, which was rated only to 6 V. Rated to 28 V, survives -15 V (a reversed dock), cuts off above the voltage set by its two resistors. Price approximate |
-| DigiKey | 10 | [RC0603FR-0740K2L](https://www.digikey.com/en/products/result?keywords=RC0603FR-0740K2L) | 40.2 kohm 1% resistor, 0603 (overvoltage cut-off, top) | $0.10 | $1.00 | Yageo. With 10 kohm below it, cuts the charger off above about 6.0 V |
-| DigiKey | 10 | [RC0603FR-0710KL](https://www.digikey.com/en/products/result?keywords=RC0603FR-0710KL) | 10 kohm 1% resistor, 0603 (overvoltage cut-off, bottom) | $0.10 | $1.00 | Yageo |
-| DigiKey | 1 | [DFE252012F-1R0M](https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M) | Power inductor 1 uH, shielded | $0.31 | $0.31 | Murata. The inductor TI's datasheet uses. Peak current here is about 1.6 A (0.925 A input plus half of a 1.35 A ripple) |
-| DigiKey | 1 | [SMBJ5.0A-13-F](https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F) | 5 V surge diode on the dock input | $0.40 | $0.40 | Diodes Incorporated. Clamps near 9 V, which the LM73100 (28 V) and the charger's input (20 V) both survive |
-| DigiKey | 1 | [1206L110THYR](https://www.digikey.com/en/products/result?keywords=1206L110THYR) | Resettable fuse, about 1 A hold, 1206 | $0.50 | $0.50 | Littelfuse. Part number from memory, confirm it is a 1206 fuse of about 1 A hold and 6 V or more |
+| DigiKey | 1 | [BQ25887RGER](https://www.digikey.com/en/products/result?keywords=BQ25887RGER) | 2S boost charger with cell balancing, 4 x 4 mm QFN | $5.61 | $5.61 | Texas Instruments. DigiKey had about 11 thousand on 2026-10-15; TI's own store was out |
+| DigiKey | 1 | [TPS259474LRPWR](https://www.digikey.com/en/products/result?keywords=TPS259474LRPWR) | eFuse with overvoltage cut-off and reverse blocking, 2.7 to 23 V, 2 x 2 mm QFN | $1.95 | $1.95 | Texas Instruments. Replaces the LM73100, out of stock until December. Same footprint and same pins 1 to 8. Rated to 28 V, survives -15 V (a reversed dock), blocks the battery from the dock contacts, cuts off above the voltage set by its two resistors. Pin 9 needs a current limit resistor |
+| DigiKey | 10 | [RC0603FR-07470KL](https://www.digikey.com/en/products/result?keywords=RC0603FR-07470KL) | 470 kohm 1% resistor, 0603 (enable pull-up) | $0.03 | $0.30 | Yageo. From IN to EN/UVLO. The datasheet asks for at least 350 kohm above 5 V or where the input can be reversed |
+| DigiKey | 10 | [RC0603FR-07402KL](https://www.digikey.com/en/products/result?keywords=RC0603FR-07402KL) | 402 kohm 1% resistor, 0603 (overvoltage cut-off, top) | $0.03 | $0.30 | Yageo. With 100 kohm below it, cuts the charger off above about 6.0 V. Ten times the old 40.2 kohm so a reversed dock pulls little current out of the pin |
+| DigiKey | 10 | [RMCF0603FT100K](https://www.digikey.com/en/products/result?keywords=RMCF0603FT100K) | 100 kohm 1% resistor, 0603 (overvoltage cut-off, bottom) | $0.02 | $0.20 | Stackpole. The Yageo and Panasonic 100 kohm are out of stock |
+| DigiKey | 1 | [DFE252012F-1R0M=P2](https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M%3DP2) | Power inductor 1 uH, shielded | $0.25 | $0.25 | Murata. Saturation 4.7 A. The inductor TI's datasheet uses. Peak current here is about 1.6 A (0.925 A input plus half of a 1.35 A ripple) |
+| DigiKey | 1 | [SMBJ5.0A](https://www.digikey.com/en/products/detail/littelfuse-inc/SMBJ5-0A/285950) | 5 V surge diode on the dock input | $0.50 | $0.50 | Littelfuse. The Diodes Incorporated SMBJ5.0A-13-F is out of stock until January; same ratings. Clamps near 9 V, which the eFuse (28 V) and the charger's input (20 V) both survive |
+| DigiKey | 1 | [1206L110THYR](https://www.digikey.com/en/products/result?keywords=1206L110THYR) | Resettable fuse, about 1 A hold, 1206 | $0.65 | $0.65 | Littelfuse. Checked 2026-10-15: 1.1 A hold, 2.2 A trip, 8 V max |
 | DigiKey | 10 | [RC0603FR-071K2L](https://www.digikey.com/en/products/result?keywords=RC0603FR-071K2L) | 1.2 kohm 1% resistor, 0603 (input current limit) | $0.10 | $1.00 | Yageo. Input limit = 1110 / 1200 ohm = 0.925 A typical (datasheet K_ILIM 1110) |
+| DigiKey | 10 | [ERJ-3EKF2211V](https://www.digikey.com/en/products/result?keywords=ERJ-3EKF2211V) | 2.21 kohm 1% resistor, 0603 (eFuse current limit) | $0.04 | $0.40 | Panasonic. From the eFuse's ILM pin (9) to GND. Trips at 3334 / 2210 = about 1.5 A, above the charger's 0.925 A input limit. Must not be left open or shorted to GND |
 | DigiKey | 10 | [RC0603FR-07300RL](https://www.digikey.com/en/products/result?keywords=RC0603FR-07300RL) | 300 ohm 1% resistor, 0603 (cell balancing midpoint) | $0.10 | $1.00 | Yageo. 0603 assumed |
 | DigiKey | 10 | [RC0603FR-075K23L](https://www.digikey.com/en/products/result?keywords=RC0603FR-075K23L) | 5.23 kohm 1% resistor, 0603 (thermistor bias, top) | $0.10 | $1.00 | Yageo. Datasheet value for a 103AT thermistor is 5.24 kohm; 5.23 kohm is the nearest 1% value |
 | DigiKey | 10 | [RC0603FR-0730K1L](https://www.digikey.com/en/products/result?keywords=RC0603FR-0730K1L) | 30.1 kohm 1% resistor, 0603 (thermistor bias, bottom) | $0.10 | $1.00 | Yageo. Datasheet value is 30.31 kohm; 30.1 kohm is the nearest 1% value |
-| DigiKey | 2 | [RC2512FK-0741R2L](https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L) | 41.2 ohm 1% resistor, 1 W, 2512 (balancing current set) | $0.40 | $0.80 | Yageo. Sets about 100 mA of balancing current (4.2 V / 41.2 ohm) and dissipates about 0.43 W, inside the 1 W rating |
-| DigiKey | 1 | [103AT-2](https://www.digikey.com/en/products/result?keywords=103AT-2) | 10 kohm battery thermistor | $1.50 | $1.50 | Semitec. Must touch the battery |
-| DigiKey | 10 | [GRM188R71E105KA12D](https://www.digikey.com/en/products/result?keywords=GRM188R71E105KA12D) | 1 uF 25 V capacitor, 0603 (VBUS) | $0.10 | $1.00 | Murata. Datasheet: at least 1 uF at VBUS, 25 V rating preferred for a 5 V input |
+| DigiKey | 2 | [RC2512FK-0740R2L](https://www.digikey.com/en/products/result?keywords=RC2512FK-0740R2L) | 40.2 ohm 1% resistor, 1 W, 2512 (balancing current set) | $0.32 | $0.64 | Yageo. Every 41.2 ohm 1 W 2512 is out of stock. Sets about 104 mA of balancing current (4.2 V / 40.2 ohm) and dissipates about 0.44 W, inside the 1 W rating |
+| DigiKey | 1 | [103AT-2](https://www.digikey.com/en/products/result?keywords=103AT-2) | 10 kohm battery thermistor | $0.68 | $0.68 | Semitec. Must touch the battery |
+| DigiKey | 10 | [C1608X7R1E105K080AB](https://www.digikey.com/en/products/result?keywords=C1608X7R1E105K080AB) | 1 uF 25 V X7R capacitor, 0603 (VBUS) | $0.11 | $1.10 | TDK. The Murata GRM188R71E105KA12D is obsolete. Datasheet: at least 1 uF at VBUS, 25 V rating preferred for a 5 V input |
 | DigiKey | 10 | [C2012X5R1E106K125AB](https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB) | 10 uF 25 V capacitor, 0805 (PMID and BAT) | $0.34 | $3.40 | TDK, X5R. Was the Murata GRM21BR61E106KA73L, out of stock until November; this is the same part as the flight controller's C16. Datasheet: 10 uF at PMID with a 25 V rating; the same part works at BAT |
-| DigiKey | 10 | [GRM188R71H473KA61D](https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D) | 47 nF 50 V capacitor, 0603 (bootstrap) | $0.10 | $1.00 | Murata. 0603 assumed |
-| DigiKey | 10 | [GRM188R61C475KAAJD](https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD) | 4.7 uF 16 V capacitor, 0603 (REGN) | $0.15 | $1.50 | Murata. 0603 assumed |
-| DigiKey | 4 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 uF 16 V capacitor, 0805 (output) | $0.45 | $1.80 | Murata. Datasheet: at least 44 uF at SNS, 16 V or more, so two per board |
+| DigiKey | 10 | [C0603C473K5RACTU](https://www.digikey.com/en/products/result?keywords=C0603C473K5RACTU) | 47 nF 50 V X7R capacitor, 0603 (bootstrap) | $0.07 | $0.70 | KEMET. The Murata GRM188R71H473KA61D is obsolete |
+| DigiKey | 10 | [C1608X5R1C475K080AC](https://www.digikey.com/en/products/result?keywords=C1608X5R1C475K080AC) | 4.7 uF 16 V X5R capacitor, 0603 (REGN) | $0.15 | $1.50 | TDK. DigiKey does not stock the Murata GRM188R61C475KAAJD |
+| DigiKey | 4 | [C2012X5R1C226M085AC](https://www.digikey.com/en/products/result?keywords=C2012X5R1C226M085AC) | 22 uF 16 V X5R capacitor, 0805 (output) | $0.63 | $2.52 | TDK, 0.85 mm thick. The Murata GRM21BR61C226ME44L is out of stock until February. Datasheet: at least 44 uF at SNS, 16 V or more, so two per board; check the derated value at 8.4 V |
 | DigiKey | 1 | [SM07B-SRSS-TB](https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB) | 7-pin JST-SH connector to the flight controller | $0.80 | $0.80 | JST. Same part as J7 on the flight controller |
 | DigiKey | 1 | [B3B-XH-A](https://www.digikey.com/en/products/result?keywords=B3B-XH-A) | 3-pin JST-XH header for the battery's balance plug | $0.15 | $0.15 | JST |
 | DigiKey | 2 | [SHR-07V-S-B](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871) | 7-pin JST-SH plug housing, both ends of the cable to the flight controller | $0.15 | $0.30 | JST |
 | DigiKey | 7 | [ASSHSSH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452) | Pre-crimped JST-SH wire, 150 mm, one per cable pin | $0.46 | $3.22 | JST. Push one end of each wire into each housing, pin 1 to pin 1 |
 
-Total: **$30.08**
+Total: **$29.17**
 
 ## Sum
 
@@ -113,7 +115,7 @@ Total: **$30.08**
 |---|---|
 | Drone parts | $228.15 |
 | Flight controller parts | $64.96 |
-| Charging board parts | $30.08 |
-| **Total before the battery, shipping and tax** | **$323.19** |
+| Charging board parts | $29.17 |
+| **Total before the battery, shipping and tax** | **$322.28** |
 
 Links without a product page go to a DigiKey search for the part number.

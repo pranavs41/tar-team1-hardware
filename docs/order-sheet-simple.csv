@@ -55,26 +55,28 @@ TCJD107M025R0055 (100 µF 25 V polymer capacitor),1,https://www.digikey.com/en/p
 "RC0402FR-07143KL (143 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-07143KL,1.00
 "RC0402FR-0734KL (34 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-0734KL,1.00
 "RC0402JR-070RL (0 Ω link, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL,1.00
-"BQ25887RGER (2S boost charger with cell balancing, 4 x 4 mm QFN) [charging board]",1,https://www.digikey.com/en/products/result?keywords=BQ25887RGER,5.80
-"LM73100RPWR (Ideal diode with overvoltage cut-off, 2.7 to 23 V, 2 x 2 mm QFN) [charging board]",1,https://www.digikey.com/en/products/result?keywords=LM73100RPWR,1.60
-"RC0603FR-0740K2L (40.2 kohm 1% resistor, 0603 (overvoltage cut-off, top)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-0740K2L,1.00
-"RC0603FR-0710KL (10 kohm 1% resistor, 0603 (overvoltage cut-off, bottom)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-0710KL,1.00
-"DFE252012F-1R0M (Power inductor 1 uH, shielded) [charging board]",1,https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M,0.31
-SMBJ5.0A-13-F (5 V surge diode on the dock input) [charging board],1,https://www.digikey.com/en/products/result?keywords=SMBJ5.0A-13-F,0.40
-"1206L110THYR (Resettable fuse, about 1 A hold, 1206) [charging board]",1,https://www.digikey.com/en/products/result?keywords=1206L110THYR,0.50
+"BQ25887RGER (2S boost charger with cell balancing, 4 x 4 mm QFN) [charging board]",1,https://www.digikey.com/en/products/result?keywords=BQ25887RGER,5.61
+"TPS259474LRPWR (eFuse with overvoltage cut-off and reverse blocking, 2.7 to 23 V, 2 x 2 mm QFN) [charging board]",1,https://www.digikey.com/en/products/result?keywords=TPS259474LRPWR,1.95
+"RC0603FR-07470KL (470 kohm 1% resistor, 0603 (enable pull-up)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-07470KL,0.30
+"RC0603FR-07402KL (402 kohm 1% resistor, 0603 (overvoltage cut-off, top)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-07402KL,0.30
+"RMCF0603FT100K (100 kohm 1% resistor, 0603 (overvoltage cut-off, bottom)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RMCF0603FT100K,0.20
+"DFE252012F-1R0M=P2 (Power inductor 1 uH, shielded) [charging board]",1,https://www.digikey.com/en/products/result?keywords=DFE252012F-1R0M%3DP2,0.25
+SMBJ5.0A (5 V surge diode on the dock input) [charging board],1,https://www.digikey.com/en/products/detail/littelfuse-inc/SMBJ5-0A/285950,0.50
+"1206L110THYR (Resettable fuse, about 1 A hold, 1206) [charging board]",1,https://www.digikey.com/en/products/result?keywords=1206L110THYR,0.65
 "RC0603FR-071K2L (1.2 kohm 1% resistor, 0603 (input current limit)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-071K2L,1.00
+"ERJ-3EKF2211V (2.21 kohm 1% resistor, 0603 (eFuse current limit)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=ERJ-3EKF2211V,0.40
 "RC0603FR-07300RL (300 ohm 1% resistor, 0603 (cell balancing midpoint)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-07300RL,1.00
 "RC0603FR-075K23L (5.23 kohm 1% resistor, 0603 (thermistor bias, top)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-075K23L,1.00
 "RC0603FR-0730K1L (30.1 kohm 1% resistor, 0603 (thermistor bias, bottom)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=RC0603FR-0730K1L,1.00
-"RC2512FK-0741R2L (41.2 ohm 1% resistor, 1 W, 2512 (balancing current set)) [charging board]",2,https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L,0.80
-103AT-2 (10 kohm battery thermistor) [charging board],1,https://www.digikey.com/en/products/result?keywords=103AT-2,1.50
-"GRM188R71E105KA12D (1 uF 25 V capacitor, 0603 (VBUS)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=GRM188R71E105KA12D,1.00
+"RC2512FK-0740R2L (40.2 ohm 1% resistor, 1 W, 2512 (balancing current set)) [charging board]",2,https://www.digikey.com/en/products/result?keywords=RC2512FK-0740R2L,0.64
+103AT-2 (10 kohm battery thermistor) [charging board],1,https://www.digikey.com/en/products/result?keywords=103AT-2,0.68
+"C1608X7R1E105K080AB (1 uF 25 V X7R capacitor, 0603 (VBUS)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=C1608X7R1E105K080AB,1.10
 "C2012X5R1E106K125AB (10 uF 25 V capacitor, 0805 (PMID and BAT)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB,3.40
-"GRM188R71H473KA61D (47 nF 50 V capacitor, 0603 (bootstrap)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D,1.00
-"GRM188R61C475KAAJD (4.7 uF 16 V capacitor, 0603 (REGN)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD,1.50
-"GRM21BR61C226ME44L (22 uF 16 V capacitor, 0805 (output)) [charging board]",4,https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L,1.80
+"C0603C473K5RACTU (47 nF 50 V X7R capacitor, 0603 (bootstrap)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=C0603C473K5RACTU,0.70
+"C1608X5R1C475K080AC (4.7 uF 16 V X5R capacitor, 0603 (REGN)) [charging board]",10,https://www.digikey.com/en/products/result?keywords=C1608X5R1C475K080AC,1.50
+"C2012X5R1C226M085AC (22 uF 16 V X5R capacitor, 0805 (output)) [charging board]",4,https://www.digikey.com/en/products/result?keywords=C2012X5R1C226M085AC,2.52
 SM07B-SRSS-TB (7-pin JST-SH connector to the flight controller) [charging board],1,https://www.digikey.com/en/products/result?keywords=SM07B-SRSS-TB,0.80
 B3B-XH-A (3-pin JST-XH header for the battery's balance plug) [charging board],1,https://www.digikey.com/en/products/result?keywords=B3B-XH-A,0.15
 "SHR-07V-S-B (7-pin JST-SH plug housing, both ends of the cable to the flight controller) [charging board]",2,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871,0.30
 "ASSHSSH28K152 (Pre-crimped JST-SH wire, 150 mm, one per cable pin) [charging board]",7,https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452,3.22
-TOTAL,,,=SUM(D2:D79)
+TOTAL,,,=SUM(D2:D81)
