@@ -26,6 +26,7 @@ Each chip was checked against its datasheet. These are the points the firmware a
 **Measure before plugging things in**
 
 - On USB power alone, with no battery, measure the battery line at TP3. The 5 V regulator lets USB power leak backwards into the battery line at about 4 to 4.6 V, so an ESC or charging board plugged in will see it. Expect it and do not run motors on USB.
+- Battery cut-off: on the bench supply, raise the voltage slowly from 4 V. The 5 V rail should come up at about 5.9 V. Lower it again and the rail should drop at about 4.9 V. If it never turns on, check R14 and R15 are not swapped.
 - Measure the TF-Luna's SDA and SCL with it powered and unplugged from the board. They must not sit above 3.6 V.
 - Measure the ESC's current output (its C pad) before ever connecting it. It must stay below 3.6 V.
 

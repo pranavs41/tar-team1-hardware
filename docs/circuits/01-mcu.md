@@ -13,9 +13,9 @@ The chip has several supply pins because different parts of the silicon want the
 | Pin | Name | What it powers | Capacitors to GND |
 |---|---|---|---|
 | 2, 3 | VDD3P3 | the radio's power amplifier | 0.1 µF, then L1 (2.0 nH), then 10 µF, 1 µF and 0.1 µF |
-| 55, 56 | VDDA | analog circuits | 1 µF and 10 nF |
-| 46 | VDD3P3_CPU | the processor | 0.1 µF |
-| 20 | VDD3P3_RTC | the low power domain | 0.1 µF |
+| 55, 56 | VDDA | analog circuits | 1 µF and 10 nF on the rail, plus C37 (1 µF) at the pins |
+| 46 | VDD3P3_CPU | the processor | 0.1 µF on the rail, plus C38 (0.1 µF) at the pin |
+| 20 | VDD3P3_RTC | the low power domain | 0.1 µF on the rail, plus C39 (0.1 µF) at the pin |
 | 29 | VDD_SPI | this one is an output that powers the internal flash | 0.1 µF and 1 µF, with no connection to +3V3 |
 | 57 | exposed pad | ground and heat | none |
 
@@ -24,6 +24,8 @@ KiCad draws pins 3 and 56 hidden underneath pins 2 and 55, so one wire to each s
 The inductor L1 is there because of the radio. An inductor's impedance goes up with frequency (X = 2π·f·L). At the 2.4 GHz radio frequency, 2 nH works out to about 30 Ω, while at DC it's close to zero. Power passes through without trouble, and radio frequency energy from the amplifier gets blocked from leaking back onto `+3V3`, where it would add noise to everything else. With the capacitors on both sides it makes an LC low pass filter. The whole transmit current flows through it, so it needs to be rated for at least 500 mA. We use a Murata LQG15HS2N0B02D, which is 900 mA and ±0.1 nH.
 
 The 10 µF on VDD3P3 exists for the moment the radio starts transmitting. Current jumps by a few hundred milliamps in microseconds, and that capacitor supplies the burst so the rail doesn't sag.
+
+A decoupling capacitor only helps if it is close to the pin, because every millimetre of track between them adds inductance that slows the capacitor down. The rail capacitors above ended up 4 to 7 mm from pins 20, 46, 55 and 56. On a 4-layer board each of those pins drops through a via to the 3.3 V plane, so C37, C38 and C39 sit on the bottom side right under those vias. The path from pin to capacitor is now a short track and the board's thickness.
 
 ## Reset (CHIP_PU, pin 4)
 
@@ -47,7 +49,7 @@ CL = C/2 + C_stray, which gives 10 = C/2 + 3, so C = 14 pF. The nearest standard
 
 Too much capacitance makes the crystal run slow and too little makes it run fast, so these may need adjusting once we can measure a real board.
 
-Espressif's reference design leaves a 0 Ω jumper footprint in series with XTAL_P so a 24 nH inductor can go in if the crystal's harmonics interfere with the radio. We dropped it: their own module ships with 0 Ω, and on our board the crystal sits so close to the chip that the extra footprint only lengthened the trace.
+L4, a 24 nH inductor, sits in series with XTAL_P between the chip and the crystal. Espressif's hardware design guide asks for it. The crystal's 40 MHz signal is close to a square wave, so it carries harmonics, multiples of 40 MHz, and the 60th lands at 2.4 GHz in the middle of the Wi-Fi band. The inductor lets 40 MHz through but impedes those high harmonics (at 2.4 GHz, 24 nH is about 360 Ω). The guide calls 24 nH a starting value to adjust after testing. The first version of this board left the part out to keep the crystal trace short; it went back in on 2026-10-14. The chip's side of the line is the net `XTAL_P_CHIP`.
 
 On the PCB, the crystal goes right next to pins 53 and 54, with short traces and nothing else routed nearby.
 
@@ -56,6 +58,8 @@ On the PCB, the crystal goes right next to pins 53 and 54, with short traces and
 The radio pin goes through R3 (0 Ω), with C14 and C15 as empty footprints from each side to GND, and then to J1, the U.FL connector. The U.FL's shield pins go to GND.
 
 Those three footprints form a π matching network. The chip's radio pin isn't exactly 50 Ω, while the cable and antenna are, and a mismatch reflects some of the power back into the chip. Finding the right values means measuring the finished board with a vector network analyzer, which is why Espressif marks them TBD. We start with 0 Ω straight through and both capacitors left empty, which usually works well enough. If the range turns out poor, we can solder in tuning parts without a new board.
+
+Espressif's guide wants this network right next to the chip. Ours sits at the far end of the 11 mm antenna trace, beside J1, because the crystal, its capacitors and the USB-C parts fill the space around pin 1. Tuning still works from there, since a match can be set at any point along a 50 Ω line; the values just come out different. What is lost is some filtering of the radio's harmonics along the trace. Moving the network next to the chip is a job for a board revision that moves the crystal.
 
 The trace from pin 1 to the U.FL has to be a 50 Ω controlled impedance trace. Keep it short and straight, with solid ground on the layer below and ground vias along both sides.
 

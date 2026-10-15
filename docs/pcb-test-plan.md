@@ -71,6 +71,8 @@ The same day a per-branch current check was added, [`tools/current_check.py`](..
 
 On 2026-10-14 the long diagonal runs were straightened. About 30% of the track length on each layer had run at 45 degrees across the board. Each diagonal run longer than 0.6 mm became a horizontal and a vertical leg with a small 45 degree chamfer at the corner, and the longest few were given L or Z shapes where a simple corner would not fit. Diagonal track is now 16% of the length on the top layer and 10% on the bottom, almost all of it short corner chamfers. The remaining runs over 1 mm add up to 21 mm, mostly where a track follows the board's rounded corners. At the same time the board's own spacing rule was raised from 0.12 mm to OSH Park's 0.127 mm, so every check now enforces the fab's limit directly. The design rules check shows 0 errors, nothing is unconnected, the schematic and board match, and the current check passes on all 275 pieces of copper on the power paths.
 
+Later on 2026-10-14, after the datasheet audit, four changes went in: the battery cut-off (R14, R15, and C16 down to 0805), three supply capacitors under the processor (C37 to C39), and the 24 nH crystal inductor L4. The checks were run again. The electrical rules check shows 0 errors. The design rules check shows 0 errors at 0.127 mm, with nothing unconnected and the same seven accepted courtyard overlaps. The schematic and board match, apart from the USB socket's two pegs as before. The current check passes on all 273 pieces of copper on the power paths.
+
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
 ## Stage 2: on the bench
