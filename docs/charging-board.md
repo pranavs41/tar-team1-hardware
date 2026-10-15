@@ -82,7 +82,7 @@ Prices are rough single-quantity figures, good for budgeting and not checked aga
 | Battery thermistor, 10 kΩ NTC | 103AT-2 | Semitec (Japan) | 1 | $1.50 | $1.50 |
 | Thermistor bias resistors | 5.23 kΩ and 30.1 kΩ 1%, 0603 (datasheet: 5.24 kΩ and 30.31 kΩ for a 103AT) | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
 | VBUS capacitor | 1 µF 25 V X7R, 0603 | Murata | 1 | $0.10 | $0.10 |
-| PMID and BAT capacitors | 10 µF 25 V, 0805 (the datasheet asks for a 25 V rating at PMID) | Murata | 2 | $0.25 | $0.50 |
+| PMID and BAT capacitors | 10 µF 25 V X5R, 0805 (the datasheet asks for a 25 V rating at PMID), TDK C2012X5R1E106K125AB, the same part as the flight controller's C16 | TDK (Japan) | 2 | $0.34 | $0.68 |
 | Bootstrap capacitor | 47 nF 16 V X7R | Murata or Samsung | 1 | $0.10 | $0.10 |
 | REGN capacitor | 4.7 µF 16 V | Murata or Samsung | 1 | $0.15 | $0.15 |
 | Output capacitors | 22 µF 16 V | Murata or Samsung | 2 | $0.45 | $0.90 |

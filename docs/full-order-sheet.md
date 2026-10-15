@@ -96,7 +96,7 @@ Total: **$64.96**
 | DigiKey | 2 | [RC2512FK-0741R2L](https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L) | 41.2 ohm 1% resistor, 1 W, 2512 (balancing current set) | $0.40 | $0.80 | Provisional until Rishab's schematic is final. Yageo. Sets about 100 mA of balancing current (4.2 V / 41.2 ohm) and dissipates about 0.43 W, inside the 1 W rating |
 | DigiKey | 1 | [103AT-2](https://www.digikey.com/en/products/result?keywords=103AT-2) | 10 kohm battery thermistor | $1.50 | $1.50 | Provisional until Rishab's schematic is final. Semitec. Must touch the battery |
 | DigiKey | 10 | [GRM188R71E105KA12D](https://www.digikey.com/en/products/result?keywords=GRM188R71E105KA12D) | 1 uF 25 V capacitor, 0603 (VBUS) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Murata. Datasheet: at least 1 uF at VBUS, 25 V rating preferred for a 5 V input |
-| DigiKey | 10 | [GRM21BR61E106KA73L](https://www.digikey.com/en/products/result?keywords=GRM21BR61E106KA73L) | 10 uF 25 V capacitor, 0805 (PMID and BAT) | $0.25 | $2.50 | Provisional until Rishab's schematic is final. Murata. Datasheet: 10 uF at PMID with a 25 V rating; the same part works at BAT |
+| DigiKey | 10 | [C2012X5R1E106K125AB](https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB) | 10 uF 25 V capacitor, 0805 (PMID and BAT) | $0.34 | $3.40 | Provisional until Rishab's schematic is final. TDK, X5R. Was the Murata GRM21BR61E106KA73L, out of stock until November; this is the same part as the flight controller's C16. Datasheet: 10 uF at PMID with a 25 V rating; the same part works at BAT |
 | DigiKey | 10 | [GRM188R71H473KA61D](https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D) | 47 nF 50 V capacitor, 0603 (bootstrap) | $0.10 | $1.00 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
 | DigiKey | 10 | [GRM188R61C475KAAJD](https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD) | 4.7 uF 16 V capacitor, 0603 (REGN) | $0.15 | $1.50 | Provisional until Rishab's schematic is final. Murata. 0603 assumed |
 | DigiKey | 4 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 uF 16 V capacitor, 0805 (output) | $0.45 | $1.80 | Provisional until Rishab's schematic is final. Murata. Datasheet: at least 44 uF at SNS, 16 V or more, so two per board |
@@ -105,7 +105,7 @@ Total: **$64.96**
 | DigiKey | 2 | [SHR-07V-S-B](https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871) | 7-pin JST-SH plug housing, both ends of the cable to the flight controller | $0.15 | $0.30 | Provisional until Rishab's schematic is final. JST |
 | DigiKey | 7 | [ASSHSSH28K152](https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452) | Pre-crimped JST-SH wire, 150 mm, one per cable pin | $0.46 | $3.22 | Provisional until Rishab's schematic is final. JST. Push one end of each wire into each housing, pin 1 to pin 1 |
 
-Total: **$29.18**
+Total: **$30.08**
 
 ## Sum
 
@@ -113,7 +113,7 @@ Total: **$29.18**
 |---|---|
 | Drone parts | $228.15 |
 | Flight controller parts | $64.96 |
-| Charging board parts | $29.18 |
-| **Total before the battery, shipping and tax** | **$322.29** |
+| Charging board parts | $30.08 |
+| **Total before the battery, shipping and tax** | **$323.19** |
 
 Links without a product page go to a DigiKey search for the part number.

@@ -69,7 +69,7 @@ TCJD107M025R0055 (100 µF 25 V polymer capacitor),1,https://www.digikey.com/en/p
 "RC2512FK-0741R2L (41.2 ohm 1% resistor, 1 W, 2512 (balancing current set)) [charging board, provisional]",2,https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L,0.80
 "103AT-2 (10 kohm battery thermistor) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=103AT-2,1.50
 "GRM188R71E105KA12D (1 uF 25 V capacitor, 0603 (VBUS)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM188R71E105KA12D,1.00
-"GRM21BR61E106KA73L (10 uF 25 V capacitor, 0805 (PMID and BAT)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM21BR61E106KA73L,2.50
+"C2012X5R1E106K125AB (10 uF 25 V capacitor, 0805 (PMID and BAT)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB,3.40
 "GRM188R71H473KA61D (47 nF 50 V capacitor, 0603 (bootstrap)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D,1.00
 "GRM188R61C475KAAJD (4.7 uF 16 V capacitor, 0603 (REGN)) [charging board, provisional]",10,https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD,1.50
 "GRM21BR61C226ME44L (22 uF 16 V capacitor, 0805 (output)) [charging board, provisional]",4,https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L,1.80

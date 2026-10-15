@@ -69,7 +69,7 @@ Drone parts (1 drone),Amazon,1,"OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2"
 "Charging board parts (1 board, provisional)",DigiKey,2,RC2512FK-0741R2L,"41.2 ohm 1% resistor, 1 W, 2512 (balancing current set)",https://www.digikey.com/en/products/result?keywords=RC2512FK-0741R2L,0.40,0.80,"Provisional until Rishab's schematic is final. Yageo. Sets about 100 mA of balancing current (4.2 V / 41.2 ohm) and dissipates about 0.43 W, inside the 1 W rating"
 "Charging board parts (1 board, provisional)",DigiKey,1,103AT-2,10 kohm battery thermistor,https://www.digikey.com/en/products/result?keywords=103AT-2,1.50,1.50,Provisional until Rishab's schematic is final. Semitec. Must touch the battery
 "Charging board parts (1 board, provisional)",DigiKey,10,GRM188R71E105KA12D,"1 uF 25 V capacitor, 0603 (VBUS)",https://www.digikey.com/en/products/result?keywords=GRM188R71E105KA12D,0.10,1.00,"Provisional until Rishab's schematic is final. Murata. Datasheet: at least 1 uF at VBUS, 25 V rating preferred for a 5 V input"
-"Charging board parts (1 board, provisional)",DigiKey,10,GRM21BR61E106KA73L,"10 uF 25 V capacitor, 0805 (PMID and BAT)",https://www.digikey.com/en/products/result?keywords=GRM21BR61E106KA73L,0.25,2.50,Provisional until Rishab's schematic is final. Murata. Datasheet: 10 uF at PMID with a 25 V rating; the same part works at BAT
+"Charging board parts (1 board, provisional)",DigiKey,10,C2012X5R1E106K125AB,"10 uF 25 V capacitor, 0805 (PMID and BAT)",https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB,0.34,3.40,"Provisional until Rishab's schematic is final. TDK, X5R. Was the Murata GRM21BR61E106KA73L, out of stock until November; this is the same part as the flight controller's C16. Datasheet: 10 uF at PMID with a 25 V rating; the same part works at BAT"
 "Charging board parts (1 board, provisional)",DigiKey,10,GRM188R71H473KA61D,"47 nF 50 V capacitor, 0603 (bootstrap)",https://www.digikey.com/en/products/result?keywords=GRM188R71H473KA61D,0.10,1.00,Provisional until Rishab's schematic is final. Murata. 0603 assumed
 "Charging board parts (1 board, provisional)",DigiKey,10,GRM188R61C475KAAJD,"4.7 uF 16 V capacitor, 0603 (REGN)",https://www.digikey.com/en/products/result?keywords=GRM188R61C475KAAJD,0.15,1.50,Provisional until Rishab's schematic is final. Murata. 0603 assumed
 "Charging board parts (1 board, provisional)",DigiKey,4,GRM21BR61C226ME44L,"22 uF 16 V capacitor, 0805 (output)",https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L,0.45,1.80,"Provisional until Rishab's schematic is final. Murata. Datasheet: at least 44 uF at SNS, 16 V or more, so two per board"
@@ -79,5 +79,5 @@ Drone parts (1 drone),Amazon,1,"OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2"
 "Charging board parts (1 board, provisional)",DigiKey,7,ASSHSSH28K152,"Pre-crimped JST-SH wire, 150 mm, one per cable pin",https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452,0.46,3.22,"Provisional until Rishab's schematic is final. JST. Push one end of each wire into each housing, pin 1 to pin 1"
 ,,,,Drone parts,,,228.15,
 ,,,,Flight controller parts,,,64.96,
-,,,,Charging board parts,,,29.18,
-,,,,"Total before the battery, shipping and tax",,,322.29,
+,,,,Charging board parts,,,30.08,
+,,,,"Total before the battery, shipping and tax",,,323.19,
