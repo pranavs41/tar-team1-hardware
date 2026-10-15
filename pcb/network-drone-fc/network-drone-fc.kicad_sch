@@ -10813,7 +10813,7 @@
 			)
 		)
 	)
-	(global_label "XTAL_P"
+	(global_label "XTAL_P_CHIP"
 		(shape input)
 		(at 278.13 125.73 180)
 		(fields_autoplaced yes)
@@ -18910,16 +18910,16 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 375.92 248.92 0)
+		(at 60.96 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "3cf4028a-10db-487a-a314-76466dc5d376")
+		(uuid "5d994f93-dc09-4282-99a8-e0842c0fca72")
 		(property "Reference" "R14"
-			(at 378.46 247.6499 0)
+			(at 63.5 49.5299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18928,7 +18928,7 @@
 			)
 		)
 		(property "Value" "143k"
-			(at 378.46 250.1899 0)
+			(at 63.5 52.0699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18937,7 +18937,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 374.142 248.92 90)
+			(at 59.182 50.8 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18946,7 +18946,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 375.92 248.92 0)
+			(at 60.96 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18955,7 +18955,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 375.92 248.92 0)
+			(at 60.96 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18964,10 +18964,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "34c820a6-8b8f-4735-bfa2-28c4c0775750")
+			(uuid "d80f1732-49d9-4332-a93c-0ab13d8d3ac8")
 		)
 		(pin "1"
-			(uuid "00592f03-7840-4cbe-9525-186c74f374f7")
+			(uuid "7d66561f-1804-4f12-9912-2cf740a6e539")
 		)
 		(instances
 			(project ""
@@ -18980,7 +18980,7 @@
 	)
 	(global_label "VBAT"
 		(shape input)
-		(at 375.92 245.11 90)
+		(at 60.96 46.99 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -18988,9 +18988,9 @@
 			)
 			(justify left)
 		)
-		(uuid "51d7803c-a935-431b-a82c-50bfbbef6083")
+		(uuid "ae62350c-03e2-43a3-8977-f904494dda00")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 375.92 237.2262 90)
+			(at 60.96 39.1062 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19002,38 +19002,38 @@
 	)
 	(global_label "BUCK_EN"
 		(shape input)
-		(at 375.92 252.73 270)
+		(at 60.96 54.61 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "13332a71-4540-45dd-8f8d-8207cb2ec9c7")
+		(uuid "24750b76-c512-453d-abdc-789afcc824d8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 375.92 244.8462 90)
+			(at 60.96 46.7262 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 388.62 248.92 0)
+		(at 73.66 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "3e277e3a-6157-40fc-8f84-aced7488d9d5")
+		(uuid "f739b2b7-3838-4021-b3cc-2083155a4c4b")
 		(property "Reference" "R15"
-			(at 391.16 247.6499 0)
+			(at 76.2 49.5299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19042,7 +19042,7 @@
 			)
 		)
 		(property "Value" "34k"
-			(at 391.16 250.1899 0)
+			(at 76.2 52.0699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19051,7 +19051,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 386.842 248.92 90)
+			(at 71.882 50.8 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19060,7 +19060,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 388.62 248.92 0)
+			(at 73.66 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19069,7 +19069,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 388.62 248.92 0)
+			(at 73.66 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19078,10 +19078,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "b8bebb20-a91f-469b-a2a6-39890701bb58")
+			(uuid "c49ca178-892e-4ee8-be89-aac7fbf982fd")
 		)
 		(pin "1"
-			(uuid "62c4dd6b-6585-405e-b5e3-dbed2ec42e3d")
+			(uuid "1abe76d1-bfea-4efc-8877-71bfee81cda0")
 		)
 		(instances
 			(project ""
@@ -19094,7 +19094,7 @@
 	)
 	(global_label "BUCK_EN"
 		(shape input)
-		(at 388.62 245.11 90)
+		(at 73.66 46.99 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -19102,9 +19102,9 @@
 			)
 			(justify left)
 		)
-		(uuid "7606094a-af31-4655-a374-50e0609c7104")
+		(uuid "04f9a7fb-713d-49a5-b0e7-a0072a5d2d53")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 388.62 237.2262 90)
+			(at 73.66 39.1062 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19116,16 +19116,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 388.62 252.73 0)
+		(at 73.66 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "e757fe1d-7e23-475e-be75-641cab7de7e1")
+		(uuid "ea59014a-588e-4b92-a57b-f948bfee56f5")
 		(property "Reference" "#PWR0211"
-			(at 388.62 252.73 0)
+			(at 73.66 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19134,7 +19134,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 388.62 257.81 0)
+			(at 73.66 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19142,7 +19142,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 388.62 252.73 0)
+			(at 73.66 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19151,7 +19151,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 388.62 252.73 0)
+			(at 73.66 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19160,7 +19160,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 388.62 252.73 0)
+			(at 73.66 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19169,7 +19169,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "0482121e-7b07-46d6-948b-880c95cfcf27")
+			(uuid "be0bf7e2-1bd3-4717-85ce-6db6907d1a2d")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19180,40 +19180,18 @@
 			)
 		)
 	)
-	(global_label "BUCK_EN"
-		(shape input)
-		(at 140.97 36.83 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "17128e8e-43f0-45a5-a233-2b1761934f77")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 140.97 28.9462 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(symbol
 		(lib_id "Device:C")
-		(at 375.92 271.78 0)
+		(at 218.44 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "67b27358-d85e-4657-a54d-7cc17b183b16")
+		(uuid "1ba081e7-c8fa-4e1f-a34a-ab51705dcc21")
 		(property "Reference" "C37"
-			(at 371.01 271.78 0)
+			(at 213.53 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19222,7 +19200,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 373.01 278.41 0)
+			(at 215.53 39.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19231,7 +19209,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 375.92 271.78 0)
+			(at 218.44 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19241,7 +19219,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 375.92 271.78 0)
+			(at 218.44 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19251,7 +19229,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 375.92 271.78 0)
+			(at 218.44 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19261,10 +19239,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "842c5018-816f-45cc-a4d4-84bdc358e795")
+			(uuid "bf0aa4a5-fb72-473f-8945-ac46e3ddf452")
 		)
 		(pin "2"
-			(uuid "f84455e5-f6a3-475b-b500-4f5fc0b53a12")
+			(uuid "89b4a1dd-0912-4866-86e0-f2d1142b8f4e")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19277,16 +19255,16 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 375.92 267.97 270)
+		(at 218.44 29.21 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8e435238-e975-4078-9a41-aa534ea46105")
+		(uuid "7c8df4d5-ed99-417e-84a3-0d2772de60a3")
 		(property "Reference" "#PWR0212"
-			(at 372.11 267.97 0)
+			(at 214.63 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19295,7 +19273,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 379.73 267.9699 90)
+			(at 222.25 29.2099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19304,7 +19282,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 375.92 267.97 0)
+			(at 218.44 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19313,7 +19291,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 375.92 267.97 0)
+			(at 218.44 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19322,7 +19300,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 375.92 267.97 0)
+			(at 218.44 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19331,7 +19309,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6abe4816-5ade-4555-92f7-8a759557f210")
+			(uuid "be619c28-b1a9-478b-ba6b-d6dc4a568542")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19344,16 +19322,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 375.92 275.59 0)
+		(at 218.44 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "3e73970f-9d0a-459c-9a88-b71acd385c4d")
+		(uuid "a6e4d4f4-617b-496a-ba0f-801bbce49681")
 		(property "Reference" "#PWR0213"
-			(at 375.92 275.59 0)
+			(at 218.44 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19362,7 +19340,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 375.92 280.67 0)
+			(at 218.44 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19370,7 +19348,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 375.92 275.59 0)
+			(at 218.44 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19379,7 +19357,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 375.92 275.59 0)
+			(at 218.44 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19388,7 +19366,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 375.92 275.59 0)
+			(at 218.44 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19397,7 +19375,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f52480ee-b9a6-4b6b-b480-afbdb8f0b45f")
+			(uuid "eeec3639-cc0c-42ee-8ae2-e782d9ab7ed2")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19410,16 +19388,16 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 388.62 271.78 0)
+		(at 228.6 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "17e158d3-3598-4570-92aa-97ed90dfdaa4")
+		(uuid "f1ace434-f38c-4648-a5e5-cb43253c42d5")
 		(property "Reference" "C38"
-			(at 383.71 271.78 0)
+			(at 223.69 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19428,7 +19406,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 385.71 278.41 0)
+			(at 225.69 39.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19437,7 +19415,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 388.62 271.78 0)
+			(at 228.6 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19447,7 +19425,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 388.62 271.78 0)
+			(at 228.6 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19457,7 +19435,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 388.62 271.78 0)
+			(at 228.6 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19467,10 +19445,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f35c72b-ad94-4099-a933-513db4df671e")
+			(uuid "3d750d2e-2e25-4d71-b2fe-04a7a1e74677")
 		)
 		(pin "2"
-			(uuid "052b96bc-fab4-4a8d-bdb2-3bb0bd4b883a")
+			(uuid "1c5974b6-f1c2-481b-85d9-c9c22c235b04")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19483,16 +19461,16 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 388.62 267.97 270)
+		(at 228.6 29.21 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "3af22962-5459-4c26-9caa-49200573266a")
+		(uuid "8e09cd12-9952-4f7f-93b7-6bf8f8d94d95")
 		(property "Reference" "#PWR0214"
-			(at 384.81 267.97 0)
+			(at 224.79 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19501,7 +19479,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 392.43 267.9699 90)
+			(at 232.41 29.2099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19510,7 +19488,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 388.62 267.97 0)
+			(at 228.6 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19519,7 +19497,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 388.62 267.97 0)
+			(at 228.6 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19528,7 +19506,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 388.62 267.97 0)
+			(at 228.6 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19537,7 +19515,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "63a83506-1a8e-4168-bbb5-7aa5e4a414f3")
+			(uuid "856483c3-cfca-434d-a1c2-cdd4233ec57a")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19550,16 +19528,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 388.62 275.59 0)
+		(at 228.6 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "14c359da-c7c9-4983-81fa-5cc203105ccd")
+		(uuid "ccc98628-c944-45c7-95d3-9a8b176e52f7")
 		(property "Reference" "#PWR0215"
-			(at 388.62 275.59 0)
+			(at 228.6 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19568,7 +19546,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 388.62 280.67 0)
+			(at 228.6 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19576,7 +19554,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 388.62 275.59 0)
+			(at 228.6 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19585,7 +19563,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 388.62 275.59 0)
+			(at 228.6 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19594,7 +19572,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 388.62 275.59 0)
+			(at 228.6 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19603,7 +19581,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d993c19e-5664-49f2-81ce-9b112dc9f8ae")
+			(uuid "35c72946-fa9d-4169-84c0-b8308446a92f")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19616,16 +19594,16 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 401.32 271.78 0)
+		(at 238.76 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ad99926f-d8d3-444c-9756-9a687c4d6308")
+		(uuid "60b4d4e6-e048-4a7a-988e-a8453c51b4e3")
 		(property "Reference" "C39"
-			(at 396.41 271.78 0)
+			(at 233.85 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19634,7 +19612,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 398.41 278.41 0)
+			(at 235.85 39.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19643,7 +19621,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 401.32 271.78 0)
+			(at 238.76 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19653,7 +19631,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 401.32 271.78 0)
+			(at 238.76 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19663,7 +19641,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 401.32 271.78 0)
+			(at 238.76 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19673,10 +19651,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "72818e5e-187e-44fc-b537-834d8f63d68e")
+			(uuid "070b9f35-89d1-4cc3-a4b7-fe8ff21fc7c8")
 		)
 		(pin "2"
-			(uuid "f17d7c62-f7b0-4632-8df3-637ce2a83395")
+			(uuid "bda4702e-507a-4f18-b967-5cad048781be")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19689,16 +19667,16 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 401.32 267.97 270)
+		(at 238.76 29.21 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "63689858-8b83-4917-9d77-9f86648cb048")
+		(uuid "3553ea33-f9a4-4a47-b727-c0b0ee680bcb")
 		(property "Reference" "#PWR0216"
-			(at 397.51 267.97 0)
+			(at 234.95 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19707,7 +19685,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 405.13 267.9699 90)
+			(at 242.57 29.2099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19716,7 +19694,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 401.32 267.97 0)
+			(at 238.76 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19725,7 +19703,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 401.32 267.97 0)
+			(at 238.76 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19734,7 +19712,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 401.32 267.97 0)
+			(at 238.76 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19743,7 +19721,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "047d1cec-854f-458e-91e7-0dd375c0d1e5")
+			(uuid "1ebeec54-4095-4d41-8858-ab037e0c561a")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19756,16 +19734,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 401.32 275.59 0)
+		(at 238.76 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "a2b968f4-9291-4b98-887c-408dbdf7daf8")
+		(uuid "06c3a6f3-a3bd-4524-b12b-818c9221cd41")
 		(property "Reference" "#PWR0217"
-			(at 401.32 275.59 0)
+			(at 238.76 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19774,7 +19752,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 401.32 280.67 0)
+			(at 238.76 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19782,7 +19760,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 401.32 275.59 0)
+			(at 238.76 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19791,7 +19769,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 401.32 275.59 0)
+			(at 238.76 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19800,7 +19778,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 401.32 275.59 0)
+			(at 238.76 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19809,7 +19787,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f7225fdd-a981-440b-bb53-21c8bdfed68e")
+			(uuid "751c984a-a345-46e3-ae0f-aa403b1bf7b3")
 		)
 		(instances
 			(project "network-drone-fc"
@@ -19817,6 +19795,145 @@
 					(reference "#PWR0217")
 					(unit 1)
 				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 228.6 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c7623c69-97de-480b-b0e1-e456207a57aa")
+		(property "Reference" "L4"
+			(at 231.14 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "24nH"
+			(at 231.14 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+			(at 228.6 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 228.6 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d5b5290b-62a0-41b5-87de-ecda4c6c3ceb")
+		)
+		(pin "2"
+			(uuid "b9541ccc-180a-4880-93c3-8c84b189d9fd")
+		)
+		(instances
+			(project "network-drone-fc"
+				(path "/f9d16c76-ade1-4aab-9e3b-738e650d90d6"
+					(reference "L4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(global_label "XTAL_P_CHIP"
+		(shape input)
+		(at 228.6 59.69 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2b19d1f2-d5a6-4cf2-90f3-466a181ba24b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 228.6 51.8062 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "XTAL_P"
+		(shape input)
+		(at 228.6 67.31 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d75c3dfa-23f1-469a-97c0-21f723b371e6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 228.6 59.4262 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BUCK_EN"
+		(shape input)
+		(at 140.97 36.83 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "da1ff76a-a076-486d-985a-496487bda9cb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 140.97 28.9462 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
 			)
 		)
 	)
