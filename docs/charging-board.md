@@ -13,7 +13,7 @@ resettable fuse (about 1 A)
    |
 TVS diode to ground
    |
-LM73100 ideal diode (blocks a reversed dock, stops the battery feeding the contacts,
+TPS259474L eFuse (blocks a reversed dock, stops the battery feeding the contacts,
    and cuts the charger off if the dock voltage goes above about 6 V)
    |
 BQ25887 charger: boosts 5 V up to the 2S battery voltage and balances the two cells
@@ -71,21 +71,23 @@ Prices are rough single-quantity figures, good for budgeting and not checked aga
 | Part | Value or number | Maker (home country) | Qty | Each | Total |
 |---|---|---|---|---|---|
 | 2S boost charger with balancing | BQ25887RGER, 24-pin 4 × 4 mm QFN | Texas Instruments (US) | 1 | $5.80 | $5.80 |
-| Ideal diode with overvoltage cut-off | LM73100RPWR, 10-pin 2 × 2 mm QFN | Texas Instruments (US) | 1 | about $1.60 | $1.60 |
-| Overvoltage cut-off divider | 40.2 kΩ and 10 kΩ 1%, 0603 | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
-| Power inductor, 1 µH, shielded | DFE252012F-1R0M | Murata (Japan) | 1 | $0.31 | $0.31 |
-| Resettable fuse, about 1 A hold, 6 V or more, 1206 | 1206L110TH or similar | Littelfuse (US) | 1 | $0.50 | $0.50 |
-| TVS diode, 5 V | SMBJ5.0A | Littelfuse or Diodes Incorporated (US) | 1 | $0.40 | $0.40 |
+| eFuse with overvoltage cut-off and reverse blocking | TPS259474LRPWR, 10-pin 2 × 2 mm QFN | Texas Instruments (US) | 1 | $1.95 | $1.95 |
+| eFuse enable pull-up | 470 kΩ 1%, 0603 | Yageo (Taiwan) | 1 | $0.03 | $0.03 |
+| Overvoltage cut-off divider | 402 kΩ (Yageo) and 100 kΩ (Stackpole) 1%, 0603 | Yageo (Taiwan), Stackpole (US) | 2 | $0.03 | $0.06 |
+| eFuse current limit | 2.21 kΩ 1%, 0603, ERJ-3EKF2211V | Panasonic (Japan) | 1 | $0.04 | $0.04 |
+| Power inductor, 1 µH, shielded | DFE252012F-1R0M=P2 | Murata (Japan) | 1 | $0.31 | $0.31 |
+| Resettable fuse, 1.1 A hold, 8 V, 1206 | 1206L110THYR | Littelfuse (US) | 1 | $0.65 | $0.65 |
+| TVS diode, 5 V | SMBJ5.0A | Littelfuse (US) | 1 | $0.50 | $0.50 |
 | ILIM resistor | 1.2 kΩ 1%, 0603 | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
 | MID series resistor | 300 Ω 1%, 0603 | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
-| CBSET resistor, sets the balancing current | 41.2 Ω 1%, 1 W, 2512 | Yageo or Vishay | 1 | $0.40 | $0.40 |
-| Battery thermistor, 10 kΩ NTC | 103AT-2 | Semitec (Japan) | 1 | $1.50 | $1.50 |
+| CBSET resistor, sets the balancing current | 40.2 Ω 1%, 1 W, 2512, RC2512FK-0740R2L | Yageo (Taiwan) | 1 | $0.32 | $0.32 |
+| Battery thermistor, 10 kΩ NTC | 103AT-2 | Semitec (Japan) | 1 | $0.68 | $0.68 |
 | Thermistor bias resistors | 5.23 kΩ and 30.1 kΩ 1%, 0603 (datasheet: 5.24 kΩ and 30.31 kΩ for a 103AT) | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
-| VBUS capacitor | 1 µF 25 V X7R, 0603 | Murata | 1 | $0.10 | $0.10 |
+| VBUS capacitor | 1 µF 25 V X7R, 0603, C1608X7R1E105K080AB | TDK (Japan) | 1 | $0.11 | $0.11 |
 | PMID and BAT capacitors | 10 µF 25 V X5R, 0805 (the datasheet asks for a 25 V rating at PMID), TDK C2012X5R1E106K125AB, the same part as the flight controller's C16 | TDK (Japan) | 2 | $0.34 | $0.68 |
-| Bootstrap capacitor | 47 nF 16 V X7R | Murata or Samsung | 1 | $0.10 | $0.10 |
-| REGN capacitor | 4.7 µF 16 V | Murata or Samsung | 1 | $0.15 | $0.15 |
-| Output capacitors | 22 µF 16 V | Murata or Samsung | 2 | $0.45 | $0.90 |
+| Bootstrap capacitor | 47 nF 50 V X7R, 0603, C0603C473K5RACTU | KEMET (US) | 1 | $0.07 | $0.07 |
+| REGN capacitor | 4.7 µF 16 V X5R, 0603, C1608X5R1C475K080AC | TDK (Japan) | 1 | $0.15 | $0.15 |
+| Output capacitors | 22 µF 16 V X5R, 0805, C2012X5R1C226M085AC | TDK (Japan) | 2 | $0.63 | $1.26 |
 | Flight controller connector, JST-SH 7-pin | SM07B-SRSS-TB | JST (Japan) | 1 | $0.80 | $0.80 |
 | Battery connector, 3-pin, to match the pack's balance plug | JST-XH B3B-XH-A | JST (Japan) | 1 | $0.15 | $0.15 |
 | Cable to the flight controller, 7-pin JST-SH both ends | | | 1 | $2.00 | $2.00 |
@@ -98,25 +100,25 @@ Test points wanted on the board: 5V_DOCK, VBUS, BATT+, MID, GND, SDA, SCL, /PG, 
 
 ## Things to check before layout
 
-- [x] **Inductor current rating.** The DFE252012F-1R0M is the inductor TI's own datasheet uses. Peak current here is about 1.6 A: the 0.925 A input limit plus half of a 1.35 A ripple (5 V in, 8.4 V out, 1.5 MHz, 1 µH). Check the exact saturation figure on Murata's page when ordering.
-- [x] **Input surge.** The first plan used an LM66100 ideal diode, which is rated only to 6 V, while the 5 V surge diode in front of it clamps near 9 V. It is replaced by the TI LM73100, rated to 28 V. It also survives -15 V, so a drone that lands the wrong way round on the rails is protected, and it cuts its output off within about 1.2 µs if its input rises above a set voltage. That protects the charger, whose input works only up to 6.2 V.
+- [x] **Inductor current rating.** The DFE252012F-1R0M is the inductor TI's own datasheet uses. Peak current here is about 1.6 A: the 0.925 A input limit plus half of a 1.35 A ripple (5 V in, 8.4 V out, 1.5 MHz, 1 µH). Murata rates it at 4.7 A saturation and 3.3 A continuous, well clear.
+- [x] **Input surge.** The first plan used an LM66100 ideal diode, which is rated only to 6 V, while the 5 V surge diode in front of it clamps near 9 V. It was replaced by the TI LM73100, and on 2026-10-15, with the LM73100 out of stock until December, by the TI TPS259474L eFuse. It is rated to 28 V and survives -15 V, so a drone that lands the wrong way round on the rails is protected, and it cuts its output off if its input rises above a set voltage. That protects the charger, whose input works only up to 6.2 V. It also blocks current flowing backwards, so the battery cannot reach the dock contacts. The "L" version latches off after an overcurrent or overheating fault until its input is removed, which happens every time the drone leaves the dock.
 
-  How to wire the LM73100 (from its datasheet, SNOSDC0A):
+  How to wire the TPS259474L (from its datasheet, SLVSFC9). Its footprint and pins 1 to 8 are the same as the LM73100's:
 
   | Pin | Name | Connect to |
   |---|---|---|
-  | 1 | EN/UVLO | IN, so it is always enabled |
-  | 2 | OVLO | the middle of 40.2 kΩ (to IN) and 10 kΩ (to GND). Cut-off = 1.2 V × (40.2 + 10) / 10 = about 6.0 V, between 5.94 and 6.14 V with part tolerances |
+  | 1 | EN/UVLO | IN through 470 kΩ, so it is always enabled. The pin is rated only to 6.5 V, and the datasheet asks for at least 350 kΩ when the input can go above 5 V or be reversed |
+  | 2 | OVLO | the middle of 402 kΩ (to IN) and 100 kΩ (to GND). Cut-off = 1.2 V × (402 + 100) / 100 = about 6.0 V. The large values follow the same 350 kΩ advice |
   | 3 | PG | leave unconnected |
   | 4 | PGTH | GND |
   | 5 | IN | dock 5 V, after the fuse and the surge diode |
   | 6 | OUT | the charger's VBUS |
   | 7 | dVdt | leave open for the fastest start, or add a small capacitor to soften the inrush when the contacts touch |
   | 8 | GND | ground |
-  | 9 | IMON | GND |
-  | 10 | DNC | nothing |
-- [x] **Balancing resistor.** 41.2 Ω sets about 100 mA of balancing current (4.2 V divided by 41.2 Ω), a quarter of the chip's 400 mA maximum. It dissipates about 0.43 W, inside the 1 W rating of a 2512 resistor, but it will get warm. Give it copper and keep it away from the battery.
+  | 9 | ILM | 2.21 kΩ to GND. This sets the trip current: 3334 / 2210 = about 1.5 A, above the charger's 0.925 A input limit. Never leave it open (the limit drops to nearly zero) or tie it to GND (read as a fault) |
+  | 10 | ITIMER | leave open, so it trips with the shortest delay |
+- [x] **Balancing resistor.** 40.2 Ω sets about 104 mA of balancing current (4.2 V divided by 40.2 Ω), a quarter of the chip's 400 mA maximum. Every 41.2 Ω 1 W part was out of stock on 2026-10-15. It dissipates about 0.44 W, inside the 1 W rating of a 2512 resistor, but it will get warm. Give it copper and keep it away from the battery.
 - [ ] **Thermistor.** It only helps if it touches the battery. Decide where it sits and how its wires reach the board.
 - [ ] **Charge voltage.** The battery picked is a standard LiPo, 4.2 V per cell, 8.4 V full. Set the charger to that and not to the high-voltage 4.35 V setting.
-- [ ] **Exposed contacts.** The dock strips on the propeller guard are bare metal. The LM73100 stops the battery from appearing on them. Confirm that with a meter on the first board.
+- [ ] **Exposed contacts.** The dock strips on the propeller guard are bare metal. The eFuse stops the battery from appearing on them. Confirm that with a meter on the first board.
 - [ ] **Which strip is positive**, and what keeps the drone from docking the wrong way round. See the charging concept in [TASKS.md](../TASKS.md).
