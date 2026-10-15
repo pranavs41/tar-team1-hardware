@@ -37,6 +37,7 @@ TCJD107M025R0055 (100 µF 25 V polymer capacitor),1,https://www.digikey.com/en/p
 "USB4105-GF-A (USB-C socket, 16-pin)",1,https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441,0.80
 "CIGW252010EH4R7MNE (Buck inductor, 4.7 µH, 2.2 A saturation)",1,https://www.digikey.com/en/products/result?keywords=CIGW252010EH4R7MNE,0.29
 "LQG15HS2N0B02D (Radio supply inductor, 2.0 nH)",10,https://www.digikey.com/en/products/result?keywords=LQG15HS2N0B02D,1.00
+"LQW15AN24NG00D (Crystal line inductor, 24 nH)",10,https://www.digikey.com/en/products/result?keywords=LQW15AN24NG00D,1.20
 "GRM155R71C104KA88J (0.1 µF 16 V, 0402)",20,https://www.digikey.com/en/products/result?keywords=GRM155R71C104KA88J,2.00
 "CL05A105KP5NNNC (1 µF 10 V, 0402)",10,https://www.digikey.com/en/products/result?keywords=CL05A105KP5NNNC,1.00
 "GRM155R71H103KA88D (10 nF 50 V, 0402)",10,https://www.digikey.com/en/products/result?keywords=GRM155R71H103KA88D,1.00
@@ -44,13 +45,15 @@ TCJD107M025R0055 (100 µF 25 V polymer capacitor),1,https://www.digikey.com/en/p
 "GRM155R61C225KE11J (2.2 µF 16 V, 0402)",10,https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J,2.20
 "GRM188R60J106ME47D (10 µF 6.3 V, 0603)",10,https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D,1.20
 "GRM21BR61C226ME44L (22 uF 16 V, 0805)",10,https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L,4.50
-"GRM319R61E106KA12D (10 µF 25 V, 1206)",1,https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921,0.47
+"C2012X5R1E106K125AB (10 µF 25 V, 0805)",1,https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB,0.34
 "RC0402FR-0710KL (10 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL,1.00
 "RC0402FR-075K1L (5.1 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L,1.00
 "RC0402FR-071KL (1 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-071KL,1.00
 "RC0402FR-072K2L (2.2 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-072K2L,1.00
 "RC0402FR-07470RL (470 Ω 1%, 0402)",10,https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619,1.00
 "RC0402FR-07100KL (100 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL,1.00
+"RC0402FR-07143KL (143 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-07143KL,1.00
+"RC0402FR-0734KL (34 kΩ 1%, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402FR-0734KL,1.00
 "RC0402JR-070RL (0 Ω link, 0402)",10,https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL,1.00
 "BQ25887RGER (2S boost charger with cell balancing, 4 x 4 mm QFN) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=BQ25887RGER,5.80
 "LM73100RPWR (Ideal diode with overvoltage cut-off, 2.7 to 23 V, 2 x 2 mm QFN) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=LM73100RPWR,1.60
@@ -74,4 +77,4 @@ TCJD107M025R0055 (100 µF 25 V polymer capacitor),1,https://www.digikey.com/en/p
 "B3B-XH-A (3-pin JST-XH header for the battery's balance plug) [charging board, provisional]",1,https://www.digikey.com/en/products/result?keywords=B3B-XH-A,0.15
 "SHR-07V-S-B (7-pin JST-SH plug housing, both ends of the cable to the flight controller) [charging board, provisional]",2,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871,0.30
 "ASSHSSH28K152 (Pre-crimped JST-SH wire, 150 mm, one per cable pin) [charging board, provisional]",7,https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452,3.22
-TOTAL,,,=SUM(D2:D76)
+TOTAL,,,=SUM(D2:D79)

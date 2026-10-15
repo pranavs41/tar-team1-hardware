@@ -57,6 +57,7 @@ Total: **$228.15**, plus the battery
 | DigiKey | 1 | [USB4105-GF-A](https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441) | USB-C socket, 16-pin | $0.80 | $0.80 |  |
 | DigiKey | 1 | [CIGW252010EH4R7MNE](https://www.digikey.com/en/products/result?keywords=CIGW252010EH4R7MNE) | Buck inductor, 4.7 µH, 2.2 A saturation | $0.29 | $0.29 |  |
 | DigiKey | 10 | [LQG15HS2N0B02D](https://www.digikey.com/en/products/result?keywords=LQG15HS2N0B02D) | Radio supply inductor, 2.0 nH | $0.10 | $1.00 |  |
+| DigiKey | 10 | [LQW15AN24NG00D](https://www.digikey.com/en/products/result?keywords=LQW15AN24NG00D) | Crystal line inductor, 24 nH | $0.12 | $1.20 |  |
 | DigiKey | 20 | [GRM155R71C104KA88J](https://www.digikey.com/en/products/result?keywords=GRM155R71C104KA88J) | 0.1 µF 16 V, 0402 | $0.10 | $2.00 |  |
 | DigiKey | 10 | [CL05A105KP5NNNC](https://www.digikey.com/en/products/result?keywords=CL05A105KP5NNNC) | 1 µF 10 V, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [GRM155R71H103KA88D](https://www.digikey.com/en/products/result?keywords=GRM155R71H103KA88D) | 10 nF 50 V, 0402 | $0.10 | $1.00 |  |
@@ -64,16 +65,18 @@ Total: **$228.15**, plus the battery
 | DigiKey | 10 | [GRM155R61C225KE11J](https://www.digikey.com/en/products/result?keywords=GRM155R61C225KE11J) | 2.2 µF 16 V, 0402 | $0.22 | $2.20 |  |
 | DigiKey | 10 | [GRM188R60J106ME47D](https://www.digikey.com/en/products/result?keywords=GRM188R60J106ME47D) | 10 µF 6.3 V, 0603 | $0.12 | $1.20 |  |
 | DigiKey | 10 | [GRM21BR61C226ME44L](https://www.digikey.com/en/products/result?keywords=GRM21BR61C226ME44L) | 22 uF 16 V, 0805 | $0.45 | $4.50 | 16 V part keeps more of its capacitance at 5 V than the 10 V one did |
-| DigiKey | 1 | [GRM319R61E106KA12D](https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921) | 10 µF 25 V, 1206 | $0.47 | $0.47 |  |
+| DigiKey | 1 | [C2012X5R1E106K125AB](https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB) | 10 µF 25 V, 0805 | $0.34 | $0.34 | Was the 1206 GRM319R61E106KA12D. The smaller size leaves room for the battery to reach the regulator beside it |
 | DigiKey | 10 | [RC0402FR-0710KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-0710KL) | 10 kΩ 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402FR-075K1L](https://www.digikey.com/en/products/result?keywords=RC0402FR-075K1L) | 5.1 kΩ 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402FR-071KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-071KL) | 1 kΩ 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402FR-072K2L](https://www.digikey.com/en/products/result?keywords=RC0402FR-072K2L) | 2.2 kΩ 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402FR-07470RL](https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619) | 470 Ω 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402FR-07100KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-07100KL) | 100 kΩ 1%, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [RC0402FR-07143KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-07143KL) | 143 kΩ 1%, 0402 | $0.10 | $1.00 |  |
+| DigiKey | 10 | [RC0402FR-0734KL](https://www.digikey.com/en/products/result?keywords=RC0402FR-0734KL) | 34 kΩ 1%, 0402 | $0.10 | $1.00 |  |
 | DigiKey | 10 | [RC0402JR-070RL](https://www.digikey.com/en/products/result?keywords=RC0402JR-070RL) | 0 Ω link, 0402 | $0.10 | $1.00 |  |
 
-Total: **$61.89**
+Total: **$64.96**
 
 ## Charging board parts, for 1 board (provisional)
 
@@ -109,8 +112,8 @@ Total: **$29.18**
 | | |
 |---|---|
 | Drone parts | $228.15 |
-| Flight controller parts | $61.89 |
+| Flight controller parts | $64.96 |
 | Charging board parts | $29.18 |
-| **Total before the battery, shipping and tax** | **$319.22** |
+| **Total before the battery, shipping and tax** | **$322.29** |
 
 Links without a product page go to a DigiKey search for the part number.

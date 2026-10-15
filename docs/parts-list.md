@@ -10,14 +10,14 @@ Prices were read from the sellers' pages on 2026-10-11, for a quantity of one, b
 
 | Group | Cost |
 |---|---|
-| Flight controller parts, 71 placed components | $45.03 |
+| Flight controller parts, 77 placed components | $45.52 |
 | Flight controller bare board, one of three from OSH Park | $7.25 |
 | Motors, ESC, propellers | $117.85 |
 | Networking module and two distance sensors (forward and downward) | $73.46 |
 | Antennas, ESC capacitor, battery connector | $11.64 |
 | Battery, 1100 mAh, priced from a similar pack | $12.99 |
 | Charging board, rough figure | $16 |
-| **Total for one drone** | **about $284** |
+| **Total for one drone** | **about $285** |
 
 Three things move this number:
 
@@ -112,22 +112,25 @@ All from DigiKey. Quantity is per board.
 | J2 | USB-C socket, 16-pin | [USB4105-GF-A](https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441) | GCT (UK) | 1 | $0.80 | $0.80 |
 | L2 | Buck inductor, 4.7 µH, 1.9 A rated saturation (2.2 A typical) | CIGW252010EH4R7MNE | Samsung Electro-Mechanics (Korea) | 1 | $0.29 | $0.29 |
 | L1 | Radio supply inductor, 2.0 nH | LQG15HS2N0B02D | Murata (Japan) | 1 | $0.10 | $0.10 |
-| C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34, C36 | 0.1 µF 16 V, 0402 | GRM155R71C104KA88J | Murata (Japan) | 14 | $0.10 | $1.40 |
-| C3, C5, C10, C11, C20 to C23 | 1 µF 10 V, 0402 | CL05A105KP5NNNC | Samsung Electro-Mechanics (Korea) | 8 | $0.10 | $0.80 |
+| L4 | Crystal line inductor, 24 nH | LQW15AN24NG00D | Murata (Japan) | 1 | $0.12 | $0.12 |
+| C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34, C36, C38, C39 | 0.1 µF 16 V, 0402 | GRM155R71C104KA88J | Murata (Japan) | 16 | $0.10 | $1.60 |
+| C3, C5, C10, C11, C20 to C23, C37 | 1 µF 10 V, 0402 | CL05A105KP5NNNC | Samsung Electro-Mechanics (Korea) | 9 | $0.10 | $0.90 |
 | C6, C27, C32 | 10 nF 50 V, 0402 | GRM155R71H103KA88D | Murata (Japan) | 3 | $0.10 | $0.30 |
 | C12, C13 | 15 pF 50 V, 0402 | GRM1555C1H150JA01D | Murata (Japan) | 2 | $0.10 | $0.20 |
 | C26 | 2.2 µF 16 V, 0402 | GRM155R61C225KE11J | Murata (Japan) | 1 | $0.22 | $0.22 |
 | C4, C30 | 10 µF 6.3 V, 0603 | GRM188R60J106ME47D | Murata (Japan) | 2 | $0.12 | $0.24 |
 | C18, C19 | 22 µF 16 V, 0805 | GRM21BR61C226ME44L | Murata (Japan) | 2 | $0.45 | $0.90 |
-| C16 | 10 µF 25 V, 1206 | [GRM319R61E106KA12D](https://www.digikey.com/en/products/detail/murata-electronics/GRM319R61E106KA12D/2334921) | Murata (Japan) | 1 | $0.47 | $0.47 |
+| C16 | 10 µF 25 V, 0805 | [C2012X5R1E106K125AB](https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB) | TDK (Japan) | 1 | $0.34 | $0.34 |
 | R1, R10, R11, R16 | 10 kΩ 1%, 0402 | RC0402FR-0710KL | Yageo (Taiwan) | 4 | $0.10 | $0.40 |
 | R4, R5 | 5.1 kΩ 1%, 0402 | RC0402FR-075K1L | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
 | R6, R8 | 1 kΩ 1%, 0402 | RC0402FR-071KL | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
 | R12, R13 | 2.2 kΩ 1%, 0402 | RC0402FR-072K2L | Yageo (Taiwan) | 2 | $0.10 | $0.20 |
 | R7 | 470 Ω 1%, 0402 | [RC0402FR-07470RL](https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619) | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
 | R9 | 100 kΩ 1%, 0402 | RC0402FR-07100KL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
+| R14 | 143 kΩ 1%, 0402 | RC0402FR-07143KL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
+| R15 | 34 kΩ 1%, 0402 | RC0402FR-0734KL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
 | R3 | 0 Ω link, 0402 | RC0402JR-070RL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
-| | **Total, 71 parts** | | | | | **$45.03** |
+| | **Total, 77 parts** | | | | | **$45.52** |
 
 The J7 price is an estimate from the neighbouring sizes of the same connector; the others were read from DigiKey. Each sensor also needs a cable: a JST-GH 4-pin lead for J5 and a JST-SH 4-pin lead for J8, each joined to the TF-Luna's own cable.
 
