@@ -23248,7 +23248,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "64107cda-1061-4e36-85b5-a6c2a5393d99")
 		(property "Reference" "C33"
