@@ -73,6 +73,27 @@ On 2026-10-14 the long diagonal runs were straightened. About 30% of the track l
 
 Later on 2026-10-14, after the datasheet audit, four changes went in: the battery cut-off (R14, R15, and C16 down to 0805), three supply capacitors under the processor (C37 to C39), and the 24 nH crystal inductor L4. The checks were run again. The electrical rules check shows 0 errors. The design rules check shows 0 errors at 0.127 mm, with nothing unconnected and the same seven accepted courtyard overlaps. The schematic and board match, apart from the USB socket's two pegs as before. The current check passes on all 273 pieces of copper on the power paths.
 
+### Pre-order review, 2026-10-16
+
+Six separate reviews went over the board before ordering: the processor and its radio, crystal and USB; power and current; the sensors and GPS; every connector against the device on the other end; every footprint against the land pattern of the part number being bought; and the fab rules and order files. None found anything that would stop the board working. They found these, which were fixed:
+
+- Copper had been poured 0.30 mm from the board edge, under OSH Park's 0.381 mm. It now stops at 0.45 mm.
+- C33 would have stopped the radio's UART. It is now not fitted.
+- The stencil had paste openings on the four empty footprints. They are gone.
+- The radio supply had no 10 µF near the processor. C40 adds one.
+- A via inside one of the gyro's pads would have drained its solder. It moved off the pad.
+- D5's battery pad sat 0.19 mm from a motor pin of J4. It is now 0.54 mm.
+- Silkscreen is now clipped at pad openings, and the plot settings no longer add drill marks.
+
+After the fixes the electrical rules check shows 0 errors. The design rules check shows 0 errors at 0.127 mm, with nothing unconnected and the same seven accepted courtyard overlaps. The schematic and board match, and the current check passes on all 273 pieces of copper on the power paths.
+
+What was left for rev B is listed in the decision log. Also from the review, for the build rather than the board:
+
+- Wire the charging board's battery leads to the ESC's battery pads.
+- Pull the C and N wires from the ESC cable on the networking drone.
+- Remove the compass breakout's pull-up resistors.
+- Wire the Pololu cables by pin number, not colour.
+
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
 ## Stage 2: on the bench
