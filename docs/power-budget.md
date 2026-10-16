@@ -57,7 +57,7 @@ The `+3V3` LDO (U4, TLV75733) drops 5 V to 3.3 V linearly, so it dissipates 1.7 
 | flight average, 0.22 W | +22 °C | +22 °C |
 | transmit burst held continuously, 0.61 W | +61 °C | +61 °C |
 
-Bursts are too short to heat the package, so the average is what counts. At 45 °C inside the frame on a hot day the junction sits between 67 and 96 °C. The limit is 125 °C and thermal shutdown is near 160 °C, so it holds, but U4 will be the warmest part on the board and the first thing to touch at bring-up. Two ways to buy margin if it ever runs hot: pour the top GND copper right up to U4's tab side (the layout already does), or in a later revision feed the ESP32 straight from a 3.3 V buck (AP63203) and keep the LDO for the sensors only. That would also cut the FC's power by about a quarter, since 28 % of what it draws today becomes heat in U4.
+Bursts are too short to heat the package, so the average is what counts. At 45 °C inside the frame on a hot day the junction sits between 67 and 96 °C. The limit is 125 °C and thermal shutdown is near 160 °C, so it holds, but U4 will be the warmest part on the board and the first thing to touch at bring-up. Two ways to buy margin if it ever runs hot: add top-side GND copper around U4 (the top layer has none today), or in a later revision feed the ESP32 straight from a 3.3 V buck (AP63203) and keep the LDO for the sensors only. That would also cut the FC's power by about a quarter, since 28 % of what it draws today becomes heat in U4.
 
 The buck itself loses 0.05 to 0.2 W and the sensor LDO under 0.05 W. Neither warms noticeably.
 
@@ -111,7 +111,7 @@ Checked against the boards people actually fly: Betaflight-class racing controll
 Two things they do that we did not have written down:
 
 1. **A low-ESR bulk capacitor on the battery input.** Every FPV build guide and most ESC manuals call for a 470 µF 35 V electrolytic on the ESC's battery pads. It absorbs the motors' current ripple and the spikes from braking, which otherwise appear as noise on the gyro and as yaw twitch. A 10 mm can does not fit on a 36 mm board, so the board got the biggest low-ESR part that lies flat: C35, a 100 µF 25 V polymer tantalum in a D case (7.3 × 4.3 × 3.1 mm, 55 mΩ) on the bottom side at the lower-left corner, 3.5 mm from the VBAT entry. The 470 µF on the ESC pads is still the recommended first line for the motor noise, and is in the ESC notes and the bring-up checklist.
-2. **Input capacitance that survives the battery voltage.** Ceramics lose capacitance under DC bias: an 0805 10 µF 25 V is worth about 5 µF at 8.4 V and 2.5 µF at 16.8 V. C16 is now a 1206 of the same rating, which holds roughly 7 µF at 8.4 V and 4 µF at 16.8 V, and C35 sits behind it. The crystal moved up 0.6 mm to make the room.
+2. **Input capacitance that survives the battery voltage.** Ceramics lose capacitance under DC bias: an 0805 10 µF 25 V is worth about 5 µF at 8.4 V and 2.5 µF at 16.8 V. C16 was a 1206 for a while and went back to an 0805 on 2026-10-14 to make room for the battery cut-off; C35 sits behind it.
 
 ## Verdict
 

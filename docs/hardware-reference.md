@@ -7,8 +7,8 @@ One page with every connector, pin, voltage and limit on the board. If you are w
 | | |
 |---|---|
 | Size | 36 mm wide × 39 mm tall, 1.6 mm thick, 2 mm corner radius |
-| Mounting | four 3.2 mm holes for M3, on a 20 × 20 mm square, 8 mm in from the left, right and bottom edges and 11 mm from the top |
-| Clear zone | nothing on the top side within 3 mm of a hole centre, so a 6 mm grommet, nut or standoff fits |
+| Mounting | four 3.2 mm holes on a 20 × 20 mm square, 8 mm in from the left, right and bottom edges and 11 mm from the top. Used with the M2 nylon kit |
+| Clear zone | tracks and vias come within about 1.9 mm of each hole centre on both sides, and D5 within 2.5 mm. Use M2 nylon nuts and standoffs only: no metal nuts, and none of the ESC's 6 mm grommets on top of this board |
 | Layers | 4: top signals and parts, solid ground, solid 3.3 V, bottom signals |
 | Weight | about 8 g assembled (estimate, not weighed yet) |
 | Processor | ESP32-S3FN8, bare chip, Wi-Fi and Bluetooth LE, 8 MB flash |
@@ -70,7 +70,9 @@ The cable ties the sensor's pin 5 to ground, which puts it in I2C mode. Its pin 
 | 3 | RX, module to flight controller | GPIO10 | a UART TX pin |
 | 4 | GND | | ground |
 
-Signal levels are 3.3 V on both sides. The two data pins are the same wires as J4 pins 7 and 8, so a drone uses either the ESC's current and telemetry outputs or the networking module, not both. The team's ESC has a current output on its C pad, so that wire must come out of the ESC cable when the module is fitted. Capacitor C33 is left off the board when J6 is used.
+Signal levels are 3.3 V on both sides. The two data pins are the same wires as J4 pins 7 and 8, so a drone uses either the ESC's current and telemetry outputs or the networking module, not both. The team's ESC has a current output on its C pad, so that wire must come out of the ESC cable when the module is fitted. Pull the N wire too: the seller calls it "no output", but it lands on GPIO10, the module's receive line. Capacitor C33 is not fitted on this drone; it would slow the transmit line too much for the UART.
+
+The Pololu 5521 cables follow the Qwiic colour order, black, red, blue, yellow from pin 1, which does not match the signals here. On J6: black is 5 V, red is TX, blue is RX, yellow is GND. On J8: black is 5 V, red is SCL, blue is SDA, yellow is GND. Check the colours against pin numbers on the real cable before soldering the bare ends.
 
 ### J7, charging board
 
@@ -89,6 +91,8 @@ This is the charging board's own pin order, minus its pin 8. Pin 8 was VBAT_SENS
 /PG and STAT are open-drain outputs on the charger: they can pull low but not drive high. Firmware turns on the ESP32's internal pull-ups for GPIO8 and GPIO9. The I2C pull-ups are already on this board (R12 and R13). So the four 10 kΩ pull-up resistors in the charging board's parts list are not needed, and there is no 3.3 V pin on J7 for them to connect to.
 
 Pin 1 is at the right-hand end of the connector, nearest the board corner.
+
+**Wire the charging board's battery leads to the ESC's battery pads, not to the battery or its XT30 plug.** The flight controller already joins the battery through J4 and through J7. If the charging board took its battery from a different point, part of the motor current, tens of amps at full throttle, would have a second path through the J7 cable and the flight controller. JST-SH contacts are rated 1 A. With both ends on the ESC pads, no motor current flows through this cable.
 
 ### J8, landing sensor
 

@@ -4,7 +4,7 @@ This box turns the battery into the supply rails that every chip on the board ru
 
 ```
 Battery (through the ESC connector)
-  VBAT: 6 to 8.4 V on 2S, up to 16.8 V on 4S
+  VBAT: 6 to 8.4 V on 2S (8.7 V for a high-voltage pack). The board is 2S only
    |
    +-- D5 SMAJ18A TVS          surge protection
    +-- C35 100 uF polymer      bulk capacitor, soaks up ESC noise
@@ -45,7 +45,7 @@ The chip switches its SW pin between VBAT and GND about a million times a second
 | R14, R15 on EN, pin 2 | 143 kΩ from VBAT, 34 kΩ to GND | Battery cut-off. EN turns the regulator on above 1.18 V and off below 1.10 V. The chip also feeds the pin 1.5 µA while off and 5.5 µA while on, which widens the gap. Together that turns the board on when the battery rises past about 5.9 V and off when it falls below about 4.9 V. 4.9 V is about 2.5 V per cell, lower than a lithium cell likes, but it stops a pack left plugged in from being drained towards zero. It is set that low so a hard climb on a tired pack, which can briefly pull the voltage well down, does not cut power in the air. The firmware should still land well before it, at about 3.3 V per cell. Equations 1 and 2 of the datasheet give the values. |
 | C17, between BST and SW | 100 nF | Bootstrap capacitor. The chip's high side switch needs a gate voltage above VIN to turn fully on, and this capacitor holds that voltage. The buck won't run without it. |
 | L2 | 4.7 µH | Stores energy between switching cycles. This is the value the datasheet gives for 5 V out. |
-| C18, C19 | 22 µF, 10 V each | Output capacitors. Smooth the ripple and cover sudden load changes. |
+| C18, C19 | 22 µF, 16 V each | Output capacitors. Smooth the ripple and cover sudden load changes. |
 | FB, pin 1 | tied to +5V | Feedback. The "05" in AP63205 means it's the fixed 5 V version, so FB connects straight to the output with no resistor divider. |
 
 All of these values come from Table 3 and Figure 1 of the AP63205 datasheet.
@@ -70,10 +70,10 @@ There are two of them because the ESP32's radio draws current in bursts of 300 m
 ```
 VBAT --- 100k ---+--- 10k --- GND
                  +--- 100nF --- GND
-                 +--- VBAT_SENSE  to ESP32 pin 6 (GPIO1, on ADC1)
+                 +--- VBAT_SENSE  to ESP32 pin 9 (GPIO4, on ADC1)
 ```
 
-The divider outputs VBAT × 10k / (100k + 10k), which is VBAT divided by 11. A full 2S pack at 8.4 V reads as 0.76 V and a full 4S pack at 16.8 V reads as 1.53 V, both comfortably inside the ADC's range. Firmware multiplies the reading by 11 to get the battery voltage.
+The divider outputs VBAT × 10k / (100k + 10k), which is VBAT divided by 11. A full 2S pack at 8.4 V reads as 0.76 V, and even the surge diode's 19.9 V clamp reads as 1.81 V, both comfortably inside the ADC's range. Firmware multiplies the reading by 11 to get the battery voltage.
 
 The resistors are large on purpose. The divider pulls current from the battery all the time, even with the drone switched off: 8.4 V across 110 kΩ is 76 µA. With 10k and 1k it would be 760 µA, enough to noticeably drain a battery that sits plugged in inside the case for a week.
 

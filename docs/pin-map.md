@@ -34,7 +34,7 @@ The pins were reassigned on 2026-10-02 to make the board routable: the chip's ri
 | 49 | U0TXD | none | Test pad TP1 (boot log / fallback console) |
 | 50 | U0RXD | none | Test pad TP2 |
 
-Not connected: pins 6, 8, 10, 12, 17, 19, 21, 23, 27, 28, 47, 48, 51, 52. Pins 6, 10, 12, 17, 19, 21, 23, 27, 28, 47 and 48 (GPIO1, 5, 7, 12, 14, 15, 17, 21, 26, 41, 42) are free for later use. Pins 30 to 35 are the in-package flash and must stay unconnected.
+Not connected: pins 6, 8, 10, 17, 19, 21, 23, 27, 28, 47, 48, 51, 52. Pins 6, 10, 17, 19, 21, 23, 27, 28, 47 and 48 (GPIO1, 5, 12, 14, 15, 17, 21, 26, 41, 42) are free for later use. Pins 30 to 35 are the in-package flash and must stay unconnected.
 
 Keep GPIO3, GPIO45 and GPIO46 floating: they are strapping pins, and GPIO45 selects the flash voltage (must be low for our 3.3 V flash).
 

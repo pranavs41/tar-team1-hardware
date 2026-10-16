@@ -12,7 +12,7 @@ The chip has several supply pins because different parts of the silicon want the
 
 | Pin | Name | What it powers | Capacitors to GND |
 |---|---|---|---|
-| 2, 3 | VDD3P3 | the radio's power amplifier | 0.1 µF, then L1 (2.0 nH), then 10 µF, 1 µF and 0.1 µF |
+| 2, 3 | VDD3P3 | the radio's power amplifier | C1 0.1 µF at the pins, then L1 (2.0 nH) to +3V3, with C40 (10 µF) on the +3V3 side |
 | 55, 56 | VDDA | analog circuits | 1 µF and 10 nF on the rail, plus C37 (1 µF) at the pins |
 | 46 | VDD3P3_CPU | the processor | 0.1 µF on the rail, plus C38 (0.1 µF) at the pin |
 | 20 | VDD3P3_RTC | the low power domain | 0.1 µF on the rail, plus C39 (0.1 µF) at the pin |
@@ -23,7 +23,7 @@ KiCad draws pins 3 and 56 hidden underneath pins 2 and 55, so one wire to each s
 
 The inductor L1 is there because of the radio. An inductor's impedance goes up with frequency (X = 2π·f·L). At the 2.4 GHz radio frequency, 2 nH works out to about 30 Ω, while at DC it's close to zero. Power passes through without trouble, and radio frequency energy from the amplifier gets blocked from leaking back onto `+3V3`, where it would add noise to everything else. With the capacitors on both sides it makes an LC low pass filter. The whole transmit current flows through it, so it needs to be rated for at least 500 mA. We use a Murata LQG15HS2N0B02D, which is 900 mA and ±0.1 nH.
 
-The 10 µF on VDD3P3 exists for the moment the radio starts transmitting. Current jumps by a few hundred milliamps in microseconds, and that capacitor supplies the burst so the rail doesn't sag.
+C40, the 10 µF for VDD3P3, exists for the moment the radio starts transmitting. It sits on the bottom side under R1, on a +3V3 plane via about 6 mm from pins 2 and 3; the review on 2026-10-16 found the nearest 10 µF had been the regulator's own output capacitor, 20 mm away. Current jumps by a few hundred milliamps in microseconds, and that capacitor supplies the burst so the rail doesn't sag.
 
 A decoupling capacitor only helps if it is close to the pin, because every millimetre of track between them adds inductance that slows the capacitor down. The rail capacitors above ended up 4 to 7 mm from pins 20, 46, 55 and 56. On a 4-layer board each of those pins drops through a via to the 3.3 V plane, so C37, C38 and C39 sit on the bottom side right under those vias. The path from pin to capacitor is now a short track and the board's thickness.
 
@@ -35,7 +35,7 @@ R1 (10 kΩ to +3V3) keeps the pin high so the chip runs. C11 (1 µF to GND) dela
 
 ## Boot pads (GPIO0, pin 5)
 
-JP2 is a second pad pair, GPIO0 to GND. There's no resistor because GPIO0 has a pull-up inside the chip. If GPIO0 is low when the chip comes out of reset, it starts in download mode for flashing. The flashing tool normally handles this over USB by itself. The pads are for when bad firmware has crashed the USB peripheral: short BOOT, short and release RESET, release BOOT, and it will take new firmware. Pad pairs replaced the two pushbuttons on 2026-09-30 because the buttons took up edge space the connectors needed.
+JP2 is a second pad pair, GPIO0 to GND. R16, 10 kΩ to +3V3, holds the pin high (net `BOOT`); the chip's own pull-up is weak, and the pin runs 15 mm to the pads. If GPIO0 is low when the chip comes out of reset, it starts in download mode for flashing. The flashing tool normally handles this over USB by itself. The pads are for when bad firmware has crashed the USB peripheral: short BOOT, short and release RESET, release BOOT, and it will take new firmware. Pad pairs replaced the two pushbuttons on 2026-09-30 because the buttons took up edge space the connectors needed.
 
 Keep the wires from these two pad pairs away from the row of chip pins. My first version ran the BOOT wires across the GPIO1 and motor lines, and the junction dots where they crossed shorted GPIO0 to GPIO1 and two motor outputs to ground.
 

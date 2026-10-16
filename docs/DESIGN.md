@@ -22,7 +22,7 @@ Charging is handled by a separate board, described in [charging-board.md](chargi
 | Components | bare chips only, no modules or breakout boards |
 | Battery | 2S LiPo, high-voltage pack (6.0 to 8.7 V); 2S only |
 | Board size | 36 wide × 39 tall mm, 2 mm corner radius |
-| Mounting | four 3.2 mm (M3) holes on a 20 × 20 mm pattern, matching the bought ESC |
+| Mounting | four 3.2 mm holes on a 20 × 20 mm pattern, matching the bought ESC, used with M2 nylon hardware |
 | Assembly | hot plate only, so all parts on the top side; bottom has test pads only |
 | Layers | 4 |
 | Programming | USB-C (native ESP32-S3 USB); UART test pads as fallback |
@@ -121,7 +121,7 @@ Full pin table: [pin-map.md](pin-map.md).
 
 ## 7. Board layout
 
-Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from the left, right and bottom edges and 11 mm from the top. Nothing on the top side comes within 3 mm of a hole centre, so a 6 mm grommet, nut or standoff fits at every hole, and the bottom side has nothing near the holes at all. The extra 3 mm strip along the top exists for one reason: it is the only place the charging port fits without crowding the H2 hole. The ESC is underneath. All parts are on the top side except C35, the bulk capacitor, which sits on the bottom at the lower-left corner outside the ESC's outline; the test pads and the RESET/BOOT pad pairs are on the bottom too. Routing is complete: the critical nets by hand, the rest with a grid router, then straightened and checked (see docs/power-budget.md and the decisions log).
+Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm holes (plain, no copper) sit on the 20 × 20 pattern, 8 mm in from the left, right and bottom edges and 11 mm from the top. Tracks and vias come within about 1.9 mm of each hole centre on both sides, so the board takes M2 nylon nuts and standoffs, not metal ones or 6 mm grommets. The extra 3 mm strip along the top exists for one reason: it is the only place the charging port fits without crowding the H2 hole. The ESC is underneath. All parts are on the top side except C35, the bulk capacitor, which sits on the bottom at the lower-left corner outside the ESC's outline; the test pads and the RESET/BOOT pad pairs are on the bottom too. Routing is complete: the critical nets by hand, the rest with a grid router, then straightened and checked (see docs/power-budget.md and the decisions log).
 
 ```
  ┌────────────────────────────────────────────┐
@@ -148,7 +148,7 @@ Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm M3 holes (plai
 | Bottom-right corner | J6 radio port, top entry | The only free spot; no edge has room for another side-entry connector |
 | Bottom side | C35 bulk capacitor at the lower-left corner, seven test pads on vias, the RESET/BOOT pad pairs, and the second signal layer | One iron-soldered part; the top stays the only reflow side |
 
-Design rules set in the board: 0.12 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.3 mm copper-to-edge, 4 copper layers.
+Design rules set in the board: 0.127 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.4 mm copper-to-edge, copper planes 0.5 mm from the mounting holes, 4 copper layers.
 
 ### Layer stackup (4 layers)
 

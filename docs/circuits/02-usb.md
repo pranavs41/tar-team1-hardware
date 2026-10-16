@@ -18,7 +18,7 @@ J2 is a generic 16-pin USB-C connector wired for USB 2.0. USB-C puts every signa
 
 The two 5.1 kΩ resistors tell the laptop or charger that a device is plugged in and wants 5 V. Leave them off and most USB-C ports supply nothing at all. CC1 and CC2 each need their own resistor, because the host checks both lines separately to work out which way the cable went in.
 
-We picked a generic connector (LCSC C2765186) at about $0.07 over a name-brand one at $1.03. The ESP32 only does USB 2.0 speeds, and at those speeds the two perform the same.
+The footprint was drawn for a generic connector (LCSC C2765186). The part ordered is the GCT USB4105-GF-A, made outside China, which has the same pad and peg positions; its mounting slots were lengthened 0.4 mm to take its wider legs. The ESP32 only does USB 2.0 speeds, and at those speeds the two perform the same.
 
 ## ESD protection (U2, USBLC6-2SC6)
 
