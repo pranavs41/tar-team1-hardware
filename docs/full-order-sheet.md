@@ -26,9 +26,9 @@ Left for later: the carbon fiber subframe Daniel linked (https://www.amazon.com/
 | Pololu | 2 | [Pololu 5521](https://www.pololu.com/product/5521) | JST-SH 4-pin cable, bare wires on one end, 30 cm | $2.04 | $4.08 | One for the downward sensor, one for the VoCore2 |
 | Amazon | 1 | [M2 nylon standoff, screw and nut kit, 180 pieces (HVAZI or similar)](https://www.amazon.com/s?k=HVAZI+M2+nylon+standoff+screw+nut+kit+180) | Hardware for the flight controller and ESC stack | $9.99 | $9.99 | M2, not M3: an M3 nut would not sit flat on top of the board at three holes. M2 passes through the M3 holes. Link is a search; pick a black M2 nylon kit with standoffs, screws and nuts. One kit covers several drones |
 | RaceDayQuads | 1 | [XT30 connector](https://www.racedayquads.com/products/xt30-connector-male-or-female) | Battery connector, male | $0.99 | $0.99 | Male, for the ESC's battery lead. The battery comes with its own XT30 |
-| Amazon | 1 | [OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2](https://www.amazon.com/dp/B0D318NL5W) | Battery | not read |  | Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total |
+| Amazon | 1 | [OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2](https://www.amazon.com/dp/B0D318NL5W) | Battery | $26.99 | $26.99 | Pack of 2, $13.50 a battery. High-voltage type (charge to 4.35 V a cell), XT30 plug, 60C. Price read 2026-10-15 |
 
-Total: **$228.15**, plus the battery
+Total: **$255.14**
 
 ## Flight controller parts, for 1 board
 
@@ -113,9 +113,9 @@ Total: **$29.17**
 
 | | |
 |---|---|
-| Drone parts | $228.15 |
+| Drone parts | $255.14 |
 | Flight controller parts | $64.96 |
 | Charging board parts | $29.17 |
-| **Total before the battery, shipping and tax** | **$322.28** |
+| **Total before shipping and tax** | **$349.27** |
 
 Links without a product page go to a DigiKey search for the part number.

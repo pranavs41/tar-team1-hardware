@@ -54,7 +54,7 @@ Drone parts (1 drone),Adafruit,1,Adafruit LIS3MDL magnetometer breakout (product
 Drone parts (1 drone),Pololu,2,Pololu 5521,"JST-SH 4-pin cable, bare wires on one end, 30 cm",https://www.pololu.com/product/5521,2.04,4.08,"One for the downward sensor, one for the VoCore2"
 Drone parts (1 drone),Amazon,1,"M2 nylon standoff, screw and nut kit, 180 pieces (HVAZI or similar)",Hardware for the flight controller and ESC stack,https://www.amazon.com/s?k=HVAZI+M2+nylon+standoff+screw+nut+kit+180,9.99,9.99,"M2, not M3: an M3 nut would not sit flat on top of the board at three holes. M2 passes through the M3 holes. Link is a search; pick a black M2 nylon kit with standoffs, screws and nuts. One kit covers several drones"
 Drone parts (1 drone),RaceDayQuads,1,XT30 connector,"Battery connector, male",https://www.racedayquads.com/products/xt30-connector-male-or-female,0.99,0.99,"Male, for the ESC's battery lead. The battery comes with its own XT30"
-Drone parts (1 drone),Amazon,1,"OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2",Battery,https://www.amazon.com/dp/B0D318NL5W,,,"Pack of 2. High-voltage type, XT30 plug, 60C. Price not read, so it is not in the total"
+Drone parts (1 drone),Amazon,1,"OVONIC 2S 1100 mAh 7.6 V 60C battery, pack of 2",Battery,https://www.amazon.com/dp/B0D318NL5W,26.99,26.99,"Pack of 2, $13.50 a battery. High-voltage type (charge to 4.35 V a cell), XT30 plug, 60C. Price read 2026-10-15"
 Charging board parts (1 board),DigiKey,1,BQ25887RGER,"2S boost charger with cell balancing, 4 x 4 mm QFN",https://www.digikey.com/en/products/result?keywords=BQ25887RGER,5.61,5.61,Texas Instruments. DigiKey had about 11 thousand on 2026-10-15; TI's own store was out
 Charging board parts (1 board),DigiKey,1,TPS259474LRPWR,"eFuse with overvoltage cut-off and reverse blocking, 2.7 to 23 V, 2 x 2 mm QFN",https://www.digikey.com/en/products/result?keywords=TPS259474LRPWR,1.95,1.95,"Texas Instruments. Replaces the LM73100, out of stock until December. Same footprint and same pins 1 to 8. Rated to 28 V, survives -15 V (a reversed dock), blocks the battery from the dock contacts, cuts off above the voltage set by its two resistors. Pin 9 needs a current limit resistor"
 Charging board parts (1 board),DigiKey,10,RC0603FR-07470KL,"470 kohm 1% resistor, 0603 (enable pull-up)",https://www.digikey.com/en/products/result?keywords=RC0603FR-07470KL,0.03,0.30,Yageo. From IN to EN/UVLO. The datasheet asks for at least 350 kohm above 5 V or where the input can be reversed
@@ -79,7 +79,7 @@ Charging board parts (1 board),DigiKey,1,SM07B-SRSS-TB,7-pin JST-SH connector to
 Charging board parts (1 board),DigiKey,1,B3B-XH-A,3-pin JST-XH header for the battery's balance plug,https://www.digikey.com/en/products/result?keywords=B3B-XH-A,0.15,0.15,JST
 Charging board parts (1 board),DigiKey,2,SHR-07V-S-B,"7-pin JST-SH plug housing, both ends of the cable to the flight controller",https://www.digikey.com/en/products/detail/jst-sales-america-inc/SHR-07V-S-B/759871,0.15,0.30,JST
 Charging board parts (1 board),DigiKey,7,ASSHSSH28K152,"Pre-crimped JST-SH wire, 150 mm, one per cable pin",https://www.digikey.com/en/products/detail/jst-sales-america-inc/ASSHSSH28K152/6009452,0.46,3.22,"JST. Push one end of each wire into each housing, pin 1 to pin 1"
-,,,,Drone parts,,,228.15,
+,,,,Drone parts,,,255.14,
 ,,,,Flight controller parts,,,64.96,
 ,,,,Charging board parts,,,29.17,
-,,,,"Total before the battery, shipping and tax",,,322.28,
+,,,,Total before shipping and tax,,,349.27,

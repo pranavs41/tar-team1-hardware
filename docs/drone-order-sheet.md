@@ -31,7 +31,7 @@ The propeller's 1.5 mm hole matches the motor's 1.5 mm shaft. Pick a colour that
 |---|---|---|---|---|
 | 1 | AERO SELFIE 30 A 4-in-1 ESC, 2 to 4S, 20 mm hole pattern, with its 8-pin cable | [product page](https://www.amazon.com/dp/B0DQSLQH87) | $28.90 | $28.90 |
 | 2 | Benewake TF-Luna distance sensor (one faces forward, one faces down) | [product page](https://www.amazon.com/dp/B0DKCSF8C5) | $25.99 | $51.98 |
-| 1 | OVONIC 2S 1100 mAh 7.6 V 60C battery with XT30 plug, pack of 2 | [product page](https://www.amazon.com/dp/B0D318NL5W) | not read | |
+| 1 | OVONIC 2S 1100 mAh 7.6 V 60C battery with XT30 plug, pack of 2 | [product page](https://www.amazon.com/dp/B0D318NL5W) | $26.99 | $26.99 |
 | 1 | Carbon fiber subframe, Daniel's pick. **HOLD** until Daniel confirms it | [product page](https://www.amazon.com/dp/B08ZNQCHP8) | not read | |
 
 ## DigiKey
