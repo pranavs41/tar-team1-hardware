@@ -505,7 +505,7 @@
 	(footprint "tar_fc:SMA_L4.4-W2.6-LS5.0-RD"
 		(layer "F.Cu")
 		(uuid "058ad771-2a4b-4893-97bd-31da9eaf2748")
-		(at 95.6 111 180)
+		(at 95.6 110.9 180)
 		(property "Reference" "D5"
 			(at 0 0 180)
 			(layer "F.Fab")
@@ -707,14 +707,14 @@
 		)
 		(pad "1" smd rect
 			(at -2.19 0 180)
-			(size 1.8 1.7)
+			(size 1.8 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 43 "VBAT")
 			(uuid "0c86a747-c754-4a46-9c74-4136c07b1b60")
 		)
 		(pad "2" smd rect
 			(at 2.19 0 180)
-			(size 1.8 1.7)
+			(size 1.8 1.2)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 2 "GND")
 			(uuid "14e1f719-b88b-4a59-b8b0-78e422ae1135")
