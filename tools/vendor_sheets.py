@@ -1,14 +1,12 @@
 """vendor_sheets.py: one order sheet per seller, in the team's purchase-form layout (run from repo root)."""
 import csv, os, re
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill
+from copy import copy
+from openpyxl import Workbook, load_workbook
 
 SRC = "docs/full-order-sheet.csv"
 OUT = "docs/vendor-orders"
-HDR = ["Item", "Quantity", "Cost per Item", "Total Cost", "Item/SKU Number", "Other Specs if Applicable ", "Link", "Total"]
-WIDTHS = {"A": 45, "B": 9, "C": 14.29, "D": 11, "E": 28, "F": 60, "G": 86.29, "H": 11}
-FILL = PatternFill("solid", fgColor="FFF4B083")
-USD = '_("$"* #,##0.00_);_("$"* \\(#,##0.00\\);_("$"* "-"??_);_(@_)'
+# Blank copy of the team's purchase form; every cell style is taken from it
+TPL = load_workbook(os.path.join(os.path.dirname(__file__), "vendor-order-template.xlsx")).active
 BOARD = {"Drone parts (1 drone)": "Drone", "Flight controller parts (1 board)": "Flight controller", "Charging board parts (1 board)": "Charging board"}
 
 rows = [r for r in csv.reader(open(SRC, encoding="utf-8-sig")) if r and r[1] and r[0] != "Group"]
@@ -34,22 +32,26 @@ def specs(r):
     extra = r[4] if r[0].startswith("Drone") else ""
     return "; ".join(x for x in [BOARD.get(r[0], ""), extra, text] if x)
 
+def style(dst, src):
+    dst.font = copy(src.font); dst.fill = copy(src.fill); dst.border = copy(src.border)
+    dst.alignment = copy(src.alignment); dst.number_format = src.number_format; dst.protection = copy(src.protection)
+
 def fill_sheet(ws, seller_rows):
-    ws.append(HDR)
-    for c in ws[1]:
-        c.font = Font(bold=True); c.fill = FILL
+    for col in "ABCDEFGH":
+        c = ws[col + "1"]; c.value = TPL[col + "1"].value; style(c, TPL[col + "1"])
     for i, r in enumerate(seller_rows, start=2):
-        ws.append([item(r), int(r[2]), float(r[6]) if r[6] else None, "=B%d*C%d" % (i, i), sku(r), specs(r), r[5], "=D%d" % i])
-        for col in "CDH":
-            ws["%s%d" % (col, i)].number_format = USD
+        vals = [item(r), int(r[2]), float(r[6]) if r[6] else None, "=B%d*C%d" % (i, i), sku(r), specs(r), r[5], "=D%d" % i]
+        for col, v in zip("ABCDEFGH", vals):
+            c = ws["%s%d" % (col, i)]; c.value = v; style(c, TPL[col + "2"])
         ws["G%d" % i].hyperlink = r[5]
     n = len(seller_rows) + 2
-    ws["G%d" % n] = "Please select fastest shipping available"; ws["G%d" % n].font = Font(bold=True)
-    ws["H%d" % n] = 0; ws["H%d" % n].number_format = USD
-    ws["G%d" % (n + 1)] = "Grand Total"; ws["G%d" % (n + 1)].font = Font(bold=True)
-    ws["H%d" % (n + 1)] = "=SUM(H2:H%d)" % n; ws["H%d" % (n + 1)].font = Font(bold=True); ws["H%d" % (n + 1)].number_format = USD
-    for k, v in WIDTHS.items():
-        ws.column_dimensions[k].width = v
+    for k, (rr, val) in enumerate([(30, "Please select fastest shipping available"), (31, None)]):
+        for col in "GH":
+            c = ws["%s%d" % (col, n + k)]; c.value = TPL["%s%d" % (col, rr)].value; style(c, TPL["%s%d" % (col, rr)])
+    ws["H%d" % (n + 1)] = "=SUM(H2:H%d)" % n
+    for k, d in TPL.column_dimensions.items():
+        ws.column_dimensions[k].width = d.width
+    ws.row_dimensions[1].height = TPL.row_dimensions[1].height
 
 os.makedirs(OUT, exist_ok=True)
 combined = Workbook(); combined.remove(combined.active)
