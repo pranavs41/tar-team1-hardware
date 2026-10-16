@@ -10,7 +10,7 @@ Prices were read from the sellers' pages on 2026-10-11, for a quantity of one, b
 
 | Group | Cost |
 |---|---|
-| Flight controller parts, 77 placed components | $45.52 |
+| Flight controller parts, 77 placed components | $45.54 |
 | Flight controller bare board, one of three from OSH Park | $7.25 |
 | Motors, ESC, propellers | $117.85 |
 | Networking module and two distance sensors (forward and downward) | $73.46 |
@@ -113,12 +113,12 @@ All from DigiKey. Quantity is per board.
 | L2 | Buck inductor, 4.7 µH, 1.9 A rated saturation (2.2 A typical) | CIGW252010EH4R7MNE | Samsung Electro-Mechanics (Korea) | 1 | $0.29 | $0.29 |
 | L1 | Radio supply inductor, 2.0 nH | LQG15HS2N0B02D | Murata (Japan) | 1 | $0.10 | $0.10 |
 | L4 | Crystal line inductor, 24 nH | LQW15AN24NG00D | Murata (Japan) | 1 | $0.12 | $0.12 |
-| C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C33, C34, C36, C38, C39 | 0.1 µF 16 V, 0402 | GRM155R71C104KA88J | Murata (Japan) | 16 | $0.10 | $1.60 |
+| C1, C2, C7 to C9, C17, C24, C25, C28, C29, C31, C34, C36, C38, C39 | 0.1 µF 16 V, 0402 | GRM155R71C104KA88J | Murata (Japan) | 15 | $0.10 | $1.50 |
 | C3, C5, C10, C11, C20 to C23, C37 | 1 µF 10 V, 0402 | CL05A105KP5NNNC | Samsung Electro-Mechanics (Korea) | 9 | $0.10 | $0.90 |
 | C6, C27, C32 | 10 nF 50 V, 0402 | GRM155R71H103KA88D | Murata (Japan) | 3 | $0.10 | $0.30 |
 | C12, C13 | 15 pF 50 V, 0402 | GRM1555C1H150JA01D | Murata (Japan) | 2 | $0.10 | $0.20 |
 | C26 | 2.2 µF 16 V, 0402 | GRM155R61C225KE11J | Murata (Japan) | 1 | $0.22 | $0.22 |
-| C4, C30 | 10 µF 6.3 V, 0603 | GRM188R60J106ME47D | Murata (Japan) | 2 | $0.12 | $0.24 |
+| C4, C30, C40 | 10 µF 6.3 V, 0603 | GRM188R60J106ME47D | Murata (Japan) | 3 | $0.12 | $0.36 |
 | C18, C19 | 22 µF 16 V, 0805 | GRM21BR61C226ME44L | Murata (Japan) | 2 | $0.45 | $0.90 |
 | C16 | 10 µF 25 V, 0805 | [C2012X5R1E106K125AB](https://www.digikey.com/en/products/result?keywords=C2012X5R1E106K125AB) | TDK (Japan) | 1 | $0.34 | $0.34 |
 | R1, R10, R11, R16 | 10 kΩ 1%, 0402 | RC0402FR-0710KL | Yageo (Taiwan) | 4 | $0.10 | $0.40 |
@@ -130,11 +130,11 @@ All from DigiKey. Quantity is per board.
 | R14 | 143 kΩ 1%, 0402 | RC0402FR-07143KL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
 | R15 | 34 kΩ 1%, 0402 | RC0402FR-0734KL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
 | R3 | 0 Ω link, 0402 | RC0402JR-070RL | Yageo (Taiwan) | 1 | $0.10 | $0.10 |
-| | **Total, 77 parts** | | | | | **$45.52** |
+| | **Total, 77 parts** | | | | | **$45.54** |
 
 The J7 price is an estimate from the neighbouring sizes of the same connector; the others were read from DigiKey. Each sensor also needs a cable: a JST-GH 4-pin lead for J5 and a JST-SH 4-pin lead for J8, each joined to the TF-Luna's own cable.
 
-Not fitted, so not bought: C14 and C15 (antenna tuning) and L3 (27 nH, Murata LQG15HS27NJ02D, $0.10, only for an active GPS antenna).
+Not fitted, so not bought: C14 and C15 (antenna tuning) and L3 (27 nH, Murata LQG15HS27NJ02D, $0.10, only for an active GPS antenna). C33 (100 nF on GPIO2) is also left empty on this drone, because GPIO2 is the radio's transmit line and the capacitor would slow it too much.
 
 Passive parts cost a few cents each in tens. Buy at least ten of every resistor and small capacitor; they are easy to lose and the extra cost is under two dollars.
 

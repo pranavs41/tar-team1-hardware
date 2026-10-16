@@ -1,6 +1,6 @@
 # Order sheet: networking drone flight controller, rev A
 
-Status: ready to order, not ordered yet. Files made on 2026-10-13 from the board as it is in this repository.
+Status: ready to order, not ordered yet. Files made on 2026-10-16 from the board as it is in this repository, after a full pre-order review.
 
 This page is written for whoever places the order. There are three orders: the bare boards, a solder paste stencil, and the parts. They do not have to go in together. The parts can be ordered first, and the boards and stencil later. Every file named below is in this folder.
 
@@ -20,7 +20,7 @@ Site: https://oshpark.com
 | Large holes | four 3.2 mm mounting holes on a 20 mm square |
 | Slots | four short slots on the right edge for the USB-C socket |
 | Top layer | parts and most tracks |
-| Bottom layer | a few tracks, one large capacitor footprint, test pads |
+| Bottom layer | a ground fill, many tracks, nine small part footprints, one large capacitor footprint, test pads |
 
 4. Quantity: 3 boards, which is the smallest order.
 
@@ -31,14 +31,14 @@ Site: https://oshpark.com
 | Price | about $21.76 for three boards before shipping. Confirm on the site |
 | Lead time | 9 to 14 days by the site's own figure |
 
-What the board was checked against: 0.127 mm track spacing, 0.15 mm narrowest track, 0.3 mm smallest hole, 0.1 mm copper ring around holes, 0.38 mm from copper to the board edge. Those are the limits published for this service. If the site's own check reports a problem, stop and send the message back before ordering.
+What the board was checked against: 0.127 mm track spacing, 0.15 mm narrowest track, 0.3 mm smallest hole, 0.1 mm copper ring around holes, 0.4 mm from copper to the board edge (the planes stop 0.45 mm from it). Those are the limits published for this service. If the site's own check reports a problem, stop and send the message back before ordering.
 
 ## Order 2: solder paste stencil, OSH Stencils
 
 Site: https://www.oshstencils.com (a separate company from OSH Park, with a similar name)
 
 1. Upload `stencil-top-paste.gtp` as the paste layer and `stencil-outline.gm1` as the board outline. The site also accepts the `.kicad_pcb` file.
-2. Top side only. The bottom side has eight hand-soldered parts (C35 to C39, R14 to R16) and needs no stencil.
+2. Top side only. The bottom side has nine hand-soldered parts (C35 to C40, R14 to R16) and needs no stencil. The stencil has no openings for C14, C15, L3 and C33, the footprints left empty.
 
 | Setting | Value | Why |
 |---|---|---|
@@ -59,7 +59,7 @@ Upload `bom-digikey.csv` with DigiKey's BOM or list upload tool. The columns are
 | Lines | 37. Four parts are bought from other sellers, listed below |
 | Quantities | enough for one board, with extra small resistors, capacitors and LEDs because they are easy to lose. Two of the three bare boards stay empty as spares |
 | Cost with the spare small parts | about $62 at the prices read on 2026-10-11 to 2026-10-14 |
-| Cost of parts for one board | $45.52 |
+| Cost of parts for one board | $45.54 |
 
 To build a second board, order every line again apart from the resistors and small capacitors, which already come in tens.
 
@@ -75,7 +75,7 @@ Four parts are bought elsewhere and are not in `bom-digikey.csv`, and one is sti
 
 DigiKey lists JST connectors with a longer number, for example SM08B-SRSS-TB(LF)(SN). If the upload does not match one, search for the short number and pick the JST part.
 
-Three footprints on the board are left empty on purpose and have no line in the file: C14, C15 and L3.
+Four footprints on the board are left empty on purpose: C14, C15 and L3 have no line in the file, and C33 is in the 0.1 µF line's reference list only as a spare position. **Do not fit C33**: it sits on the radio's transmit line and would stop the UART working.
 
 ## Also needed for assembly
 
@@ -90,14 +90,16 @@ The team already has these, so they are not in any order.
 - The board has almost no part labels printed on it, because there is no room. Place parts from `assembly-top.png`, which shows every reference and marks pin 1 in red.
 - Everything on the top side goes on in one pass with the stencil and the hot plate.
 - **C35**, the large 100 µF capacitor, is on the bottom side. Solder it by hand with an iron after the hot plate pass. The stripe on the part marks its positive end. Match it to the marked end of the footprint, which is the pad joined to the battery line.
-- **Seven small 0402 parts on the bottom side**, soldered by hand after the hot plate pass, with flux and a fine tip. `assembly-bottom.png` shows where.
+- **Eight small parts on the bottom side**, soldered by hand after the hot plate pass, with flux and a fine tip. `assembly-bottom.png` shows where.
   - C36 (100 nF) beside the USB protection chip.
   - R16 (10 kΩ) beside the boot jumper.
   - R14 (143 kΩ) and R15 (34 kΩ) under the 5 V regulator. These are the battery cut-off, and swapping the two values breaks it. 0402 resistors carry no marking, so take each one straight from its labelled tape.
   - C37 (1 µF) under the crystal, and C38 and C39 (100 nF) under the processor's lower and upper edges.
+  - C40 (10 µF, 0603) under R1 near the USB socket. It is the radio's supply reservoir.
 - **The USB-C socket (J2)** has four legs that pass through slots. Its small pads reflow on the hot plate. Solder the four legs by hand afterwards.
 - **JP1 and JP2** on the bottom are bare pad pairs, not parts. Leave them open.
 - **Polarity matters** on D1, D5, the three LEDs, C35, and every chip. Pin 1 is marked on the silkscreen.
+- **D5 and J4** sit close together at the bottom edge. After the hot plate, look between D5's right-hand pad and J4's first three pins under magnification: a bridge there puts the battery on a processor pin.
 - Follow the paste maker's temperature profile. Do not hold the board at peak temperature longer than the profile says; the GPS module and the connectors' plastic are the parts that suffer first.
 - After soldering, follow the bench checks in [`docs/pcb-test-plan.md`](../../../../docs/pcb-test-plan.md) before connecting a battery.
 
