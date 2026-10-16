@@ -12,7 +12,7 @@ Two lines need a decision before they are ordered. They are marked **HOLD** and 
 
 | Qty | Item | Link | Each | Total |
 |---|---|---|---|---|
-| 4 | RCINPower GTS V3 1303 8000KV Plus motor | [product page](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange) | $20.99 | $83.96 |
+| 4 | RCINPower GTS V3 1303 8000KV Plus motor | [product page](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-teal-pink) | $20.99 | $83.96 |
 
 In stock on 2026-10-13. Each motor is sold singly. A fifth as a spare is worth considering, since a crash usually costs a motor.
 

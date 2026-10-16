@@ -12,7 +12,7 @@ Left for later: the carbon fiber subframe Daniel linked (https://www.amazon.com/
 
 | Seller | Qty | Part | What it is | Each | Line total | Note |
 |---|---|---|---|---|---|---|
-| Pyrodrone | 4 | [RCINPower GTS V3 1303 8000KV Plus](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-gold-orange) | Motor | $20.99 | $83.96 | In stock 2026-10-13. A fifth as a spare is worth considering |
+| Pyrodrone | 4 | [RCINPower GTS V3 1303 8000KV Plus (teal/pink)](https://pyrodrone.com/products/rcinpower-gts-v3-1303-8000kv-plus-2-3-inch-cinewhoop-micro-motor-teal-pink) | Motor | $20.99 | $83.96 | Teal/pink, in stock 2026-10-15. The gold/orange colour is sold out; same motor. A fifth as a spare is worth considering |
 | Amazon | 1 | [AERO SELFIE 30 A 4-in-1 ESC](https://www.amazon.com/dp/B0DQSLQH87) | ESC, 2 to 4S, 20 mm holes, comes with its 8-pin cable | $28.90 | $28.90 |  |
 | Amazon | 2 | [Benewake TF-Luna](https://www.amazon.com/dp/B0DKCSF8C5) | Distance sensor, one forward and one down | $25.99 | $51.98 |  |
 | RaceDayQuads | 1 | [Gemfan Hurricane 3018, pack of 8](https://www.racedayquads.com/products/gemfan-hurricane-3018-durable-bi-blade-3-prop-8-pack-1-5mm-choose-your-color) | Propellers, 1.5 mm hole, 4 clockwise and 4 counter-clockwise | $4.99 | $4.99 | Pick a colour that shows in stock |
