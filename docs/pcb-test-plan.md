@@ -87,7 +87,14 @@ Six separate reviews went over the board before ordering: the processor and its 
 
 After the fixes the electrical rules check shows 0 errors. The design rules check shows 0 errors at 0.127 mm, with nothing unconnected and the same seven accepted courtyard overlaps. The schematic and board match, and the current check passes on all 273 pieces of copper on the power paths.
 
-What was left for rev B is listed in the decision log. Also from the review, for the build rather than the board:
+A second round the same day took on most of what had been left for rev B:
+
+- Vias moved out of the pads of C4, C6, C22, C23, C25 and C26.
+- Five more ground vias under the processor, nine in all.
+- A ground pour on the top layer, with ground vias along both RF traces and in pour islands that would otherwise be dropped.
+- U5's pads lengthened 0.2 mm outward.
+
+The design rules check, the schematic match, the current check and the pre-order checks all came out the same as before the round. What is still left is in the decision log. Also from the review, for the build rather than the board:
 
 - Wire the charging board's battery leads to the ESC's battery pads.
 - Pull the C and N wires from the ESC cable on the networking drone.
