@@ -100,6 +100,7 @@ The team already has these, so they are not in any order.
 - **JP1 and JP2** on the bottom are bare pad pairs, not parts. Leave them open.
 - **Polarity matters** on D1, D5, the three LEDs, C35, and every chip. Pin 1 is marked on the silkscreen.
 - **D5 and J4** sit close together at the bottom edge. After the hot plate, look between D5's right-hand pad and J4's first three pins under magnification: a bridge there puts the battery on a processor pin.
+- **Six pads still have a via in them**: the ground ends of C11, C20, C29 and C30, X1's pad 2 and U8's pad 1. The via can draw solder away from the joint. Check them after the hot plate and add a little solder with the iron to any that look thin.
 - Follow the paste maker's temperature profile. Do not hold the board at peak temperature longer than the profile says; the GPS module and the connectors' plastic are the parts that suffer first.
 - After soldering, follow the bench checks in [`docs/pcb-test-plan.md`](../../../../docs/pcb-test-plan.md) before connecting a battery.
 
