@@ -209,8 +209,11 @@ From a 2S battery that is 0.38 A on average and 0.81 A at the worst moment. The 
 | TP1, TP2 | bottom side | UART0 TX and RX: boot log, and flashing if USB fails |
 | TP3 to TP6 | bottom side | VBAT, +5V, +3V3, +3V3_SENS |
 | TP13 | bottom side | I2C SCL |
+| TP14 | bottom side | GND, for the meter's black lead |
 | JP1 | bottom side | RESET: short the pair with tweezers |
 | JP2 | bottom side | BOOT: hold shorted while tapping RESET to force download mode |
+
+Each test pad has its signal name printed beside it on the bottom: TX, RX, VBAT, 5V, 3V3, 3V3S, SCL and GND.
 
 ## Rules that prevent damage
 

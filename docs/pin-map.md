@@ -40,4 +40,4 @@ Keep GPIO3, GPIO45 and GPIO46 floating: they are strapping pins, and GPIO45 sele
 
 Ports: J5 is the sensor port (5 V, SCL, SDA, GND) for the TF-Luna on the I2C bus at address 0x10. J6 is the radio port (5 V, TX GPIO2, RX GPIO10, GND) for the VoCore2. J7 is the charging board port (BATT+, GND, SDA, SCL, /PG on GPIO9, STAT on GPIO8, CD on GPIO7). J8 is the landing sensor port, wired like J5 (5 V, SCL, SDA, GND).
 
-Test pads on the bottom: TP1 U0TXD, TP2 U0RXD, TP3 VBAT, TP4 +5V, TP5 +3V3, TP6 +3V3_SENS, TP13 I2C_SCL. Each one sits on a via of its net.
+Test pads on the bottom: TP1 U0TXD, TP2 U0RXD, TP3 VBAT, TP4 +5V, TP5 +3V3, TP6 +3V3_SENS, TP13 I2C_SCL, TP14 GND. Each one sits on a via of its net.

@@ -89,7 +89,7 @@ LCSC part numbers are in the [repo README](../README.md).
 | J8 | JST-SH 4-pin, top entry | landing sensor port: 5 V, SCL, SDA, GND |
 | JP1, JP2 | pad pairs on the bottom | RESET, BOOT (short to GND with tweezers) |
 | D2, D3, D4 | 0603 LEDs | red power, green status, yellow status |
-| TP1 to TP6, TP13 | test pads (bottom, on vias) | UART0 TX/RX, the four rails, I2C SCL |
+| TP1 to TP6, TP13, TP14 | test pads (bottom, on vias), each labelled | UART0 TX/RX, the four rails, I2C SCL, GND |
 
 ## 5. Power
 
@@ -146,7 +146,7 @@ Top view, 36 wide by 39 tall, 2 mm corner radius. The four 3.2 mm holes (plain, 
 | Bottom centre | U3 buck, L2, D5 TVS, C16 input and C18 output capacitors, the battery divider column | Right above the ESC connector where VBAT enters, switching loop kept small and away from the sensors and both antennas |
 | Bottom edge | J4 ESC connector, centred between the holes | The only connector that must face the ESC |
 | Bottom-right corner | J6 radio port, top entry | The only free spot; no edge has room for another side-entry connector |
-| Bottom side | C35 bulk capacitor at the lower-left corner, seven test pads on vias, the RESET/BOOT pad pairs, and the second signal layer | One iron-soldered part; the top stays the only reflow side |
+| Bottom side | C35 bulk capacitor at the lower-left corner, eight labelled test pads on vias, the RESET/BOOT pad pairs, and the second signal layer | One iron-soldered part; the top stays the only reflow side |
 
 Design rules set in the board: 0.127 mm clearance, 0.2 mm default track, 0.6/0.3 mm vias, 0.4 mm copper-to-edge, copper planes 0.5 mm from the mounting holes, 4 copper layers.
 

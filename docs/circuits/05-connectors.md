@@ -99,7 +99,7 @@ The I2C tracks to J7 and J8 are long. They run on the bottom layer down the left
 
 ## Test points and recovery pads
 
-Seven bare pads on the bottom of the board, each sitting on a via of its net. TP1 and TP2 are UART0 TX and RX, the fallback console and flashing path if USB fails. TP3 to TP6 are VBAT, +5V, +3V3 and +3V3_SENS for checking the rails during bring-up. TP13 is I2C SCL, handy for confirming the bus is alive when the barometer or the port does not answer.
+Eight bare pads on the bottom of the board, each sitting on a via of its net. TP1 and TP2 are UART0 TX and RX, the fallback console and flashing path if USB fails. TP3 to TP6 are VBAT, +5V, +3V3 and +3V3_SENS for checking the rails during bring-up. TP13 is I2C SCL, handy for confirming the bus is alive when the barometer or the port does not answer. TP14 is ground, for the meter's black lead; it sits on a ground via about 6 mm from the 3.3 V pad. Each pad has its signal name printed beside it.
 
 The first layout had eighteen pads, one for every bus line. Routing showed there was no room for most of them: a pad needs a clear 1 mm circle on the bottom copper, and the bottom layer around the ESP32 is full of motor and USB tracks. The IMU SPI lines, SDA, the GPS UART, ESC telemetry and the spare UART lost their pads. They can still be probed on the component pads themselves with a fine tip.
 

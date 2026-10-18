@@ -3,7 +3,7 @@
 Do these in order on every new board. Stop at the first failure.
 
 1. **Visual:** under a magnifier, check the QFN, LGA and WSON (U4) edges for bridges, and that the LEDs, diodes and C35 face the right way.
-2. **No shorts:** with no power, measure resistance from each rail (`VBAT`, `+5V`, `+3V3`, `3V3_SENS`) to GND. Anything under ~100 Ω is a short.
+2. **No shorts:** with no power, measure resistance from each rail (`VBAT`, `+5V`, `+3V3`, `3V3_SENS`) to GND. The test pads are on the bottom with their names printed beside them, and TP14 is GND. Anything under ~100 Ω is a short.
 3. **Current-limited power:** bench supply at 7.4 V, current limit 100 mA. Current should stay well under the limit.
 4. **Rails:** measure `+5V`, `+3V3`, `3V3_SENS` at their test points. The red LED should be on.
 5. **USB:** plug in USB-C; the board should enumerate as "USB JTAG/serial debug unit". If not, hold BOOT, tap RESET, release BOOT and try again.
