@@ -33,6 +33,8 @@ BRANCHES = [
     ("+3V3_SENS", "U5.5", "U8.8", 0.010, 0.022, "sensor 3.3 V to the GPS"),
     ("+3V3_SENS", "U5.5", "U6.8", 0.001, 0.001, "sensor 3.3 V to the gyro"),
     ("+3V3_SENS", "U5.5", "U7.10", 0.001, 0.001, "sensor 3.3 V to the barometer"),
+    ("+3V3", "U4.1", "L1.1", 0.10, 0.30, "3.3 V through the plane to the radio supply filter (peak is a Wi-Fi transmit burst)"),
+    ("+3V3", "U4.1", "U1.46", 0.03, 0.06, "3.3 V through the plane to the processor's digital supply"),
 ]
 
 
@@ -43,6 +45,7 @@ def ampacity(width_mm, k=0.048):
 
 b = pcbnew.LoadBoard(PCB)
 mm = pcbnew.ToMM
+STACK = [b.GetLayerName(l) for l in b.GetEnabledLayers().CuStack()]   # F.Cu, In1.Cu, In2.Cu, B.Cu
 pads = {}
 for f in b.GetFootprints():
     for p in f.Pads():
@@ -59,8 +62,13 @@ for net, src, dst, i_avg, i_pk, label in BRANCHES:
 
     for t in tracks:
         if t.Type() == pcbnew.PCB_VIA_T:
-            a, c = node("F.Cu", t.GetPosition()), node("B.Cu", t.GetPosition())
-            e = ("via", R_VIA, I_VIA, t)
+            # a through via touches every copper layer, so it can reach the inner planes;
+            # joining only F.Cu and B.Cu left anything fed from a plane unreachable
+            stack = [node(ln, t.GetPosition()) for ln in STACK]
+            for a, c in zip(stack, stack[1:]):
+                e = ("via", R_VIA / (len(STACK) - 1), I_VIA, t)
+                adj[a].append((c, e)); adj[c].append((a, e))
+            continue
         else:
             a, c = node(t.GetLayerName(), t.GetStart()), node(t.GetLayerName(), t.GetEnd())
             w = mm(t.GetWidth())
@@ -131,9 +139,12 @@ load_avg = collections.defaultdict(float); load_pk = collections.defaultdict(flo
 for net, src, dst, label, res in report:
     if not res: continue
     _, path, ia, ip = res
+    seen = set()   # a via crossed layer by layer appears once per hop; count it once
     for e in path:
         if e[0] not in ("track", "via"): continue
-        k = id(e[3]); piece[k] = e; load_avg[k] += ia; load_pk[k] += ip
+        k = id(e[3])
+        if k in seen: continue
+        seen.add(k); piece[k] = e if e[0] == "track" else ("via", R_VIA, I_VIA, e[3]); load_avg[k] += ia; load_pk[k] += ip
 
 print("Branches (lowest-resistance path through the routed copper)")
 print("  %-11s %-8s -> %-8s %8s %9s %9s  %s" % ("net", "from", "to", "R mohm", "drop pk", "narrowest", "what"))
