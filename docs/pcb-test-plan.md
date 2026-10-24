@@ -103,6 +103,17 @@ The design rules check, the schematic match, the current check and the pre-order
 
 Two unused GPS pins were also confirmed against the u-blox integration manual: V_BCKP and VIO_SEL are both meant to be left open in a 3.3 V design with no backup battery.
 
+### Deep check, 2026-10-23
+
+The board went through the same deep check as the VTOL flight controller: the design rules check with the schematic match, the electrical rules check, the current check, and measurements of the things those checks do not look at. It found two problems, both fixed:
+
+- The current check could not follow current through a via into the inner layers, so it never saw the 3.3 V plane. Vias now join all four layers, and the 3.3 V rail is checked from U4 through the plane to the radio supply and the processor: 5.5 mΩ, under 2 mV at a transmit burst. All 283 pieces of copper on the power paths pass.
+- The stencil openings on the processor's centre pad sat over its nine ground vias, so paste would have run down the holes. The openings were redrawn as ten smaller ones placed between the vias, covering 36% of the pad and keeping 0.2 mm from every hole. The stencil file and gerbers were regenerated; every other layer is unchanged.
+
+Checked and clean: no tracks on the inner layers, the ground plane in one piece under 85% of the board, every side entry connector opening at the board edge, the processor's supply capacitors within 1.4 mm of their pins, the buck switch node 3.4 mm long with no via, and the USB pair 14.5 and 14.3 mm long with no via. A seventh pad with a via in it, C40's on the bottom, was added to the order notes.
+
+Signal and power tracks run as close as 1.85 mm to the centre of each mounting hole, under where a 6 mm grommet sits. That is fine on rubber grommets, which the team uses. A metal nut or standoff pressed on the board there could wear through the solder mask, so keep metal hardware off the board face.
+
 ## Stage 2: on the bench
 
 The step-by-step list is [bring-up.md](bring-up.md). Its order matters: each step protects the next one.
