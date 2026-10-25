@@ -65,12 +65,12 @@ The cable ties the sensor's pin 5 to ground, which puts it in I2C mode. Its pin 
 
 | Pin | Signal | ESP32 | Connects to on the VoCore2 |
 |---|---|---|---|
-| 1 | 5 V out | | power in (4.5 to 5.5 V) |
-| 2 | TX, flight controller to module | GPIO2 | a UART RX pin |
-| 3 | RX, module to flight controller | GPIO10 | a UART TX pin |
+| 1 | 5 V out | | power in (3.6 to 5.5 V, up to 500 mA) |
+| 2 | TX, flight controller to module | GPIO2 | RXD1, pin 148 |
+| 3 | RX, module to flight controller | GPIO10 | TXD1, pin 147 |
 | 4 | GND | | ground |
 
-Signal levels are 3.3 V on both sides. The two data pins are the same wires as J4 pins 7 and 8, so a drone uses either the ESC's current and telemetry outputs or the networking module, not both. The team's ESC has a current output on its C pad, so that wire must come out of the ESC cable when the module is fitted. Pull the N wire too: the seller calls it "no output", but it lands on GPIO10, the module's receive line. Capacitor C33 is not fitted on this drone; it would slow the transmit line too much for the UART.
+Signal levels are 3.3 V on both sides. Use the VoCore2's UART1, not the other two. UART2 (pins 40 and 42) is its Linux console: it prints the boot log into GPIO10, and whatever the ESP32 sends lands at a login prompt. UART0's TX (pin 30) is a mode pin read at power-up and must stay low, so it can't share a line with an ESP32 input. UART1 may need turning on in the VoCore2's firmware. The two data pins are the same wires as J4 pins 7 and 8, so a drone uses either the ESC's current and telemetry outputs or the networking module, not both. The team's ESC has a current output on its C pad, so that wire must come out of the ESC cable when the module is fitted. Pull the N wire too: the seller calls it "no output", but it lands on GPIO10, the module's receive line. Capacitor C33 is not fitted on this drone; it would slow the transmit line too much for the UART.
 
 The Pololu 5521 cables follow the Qwiic colour order, black, red, blue, yellow from pin 1, which does not match the signals here. On J6: black is 5 V, red is TX, blue is RX, yellow is GND. On J8: black is 5 V, red is SCL, blue is SDA, yellow is GND. Check the colours against pin numbers on the real cable before soldering the bare ends.
 

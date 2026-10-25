@@ -50,8 +50,8 @@ Pins: 5 V, TX, RX, GND. This is the port for the networking module, a VoCore2, w
 | J6 pin | Signal | ESP32 | Connects to on the VoCore2 |
 |---|---|---|---|
 | 1 | 5 V | | power in |
-| 2 | TX, flight controller to radio | GPIO2 | a UART RX pin |
-| 3 | RX, radio to flight controller | GPIO10 | a UART TX pin |
+| 2 | TX, flight controller to radio | GPIO2 | RXD1, pin 148 |
+| 3 | RX, radio to flight controller | GPIO10 | TXD1, pin 147 |
 | 4 | GND | | ground |
 
 The connector points straight up from the board, in the bottom-right corner. Every edge of the board already has a side-entry connector on it, and a top-entry part is the only kind that fits in the corner that was left. Its outline comes within 2.8 mm of the H3 hole centre, 0.2 mm inside the 3 mm keep-out, but its body and pads are more than 3.3 mm away, so a 6 mm grommet or nut still clears it.
