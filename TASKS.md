@@ -2,18 +2,19 @@
 
 Who is building what, and where each piece meets someone else's. Tick a box when a task is done and add new ones under your own name.
 
-Last updated 2026-10-11.
+Last updated 2026-10-25.
 
 ## Owners
 
 | Person | Owns | Status |
 |---|---|---|
-| Pranav | networking drone flight controller PCB, then the mapping drone PCB | flight controller nearly done |
-| Daniel | CAD for the drone frame and the battery holder | in progress |
-| Rishab | charging board | in progress |
+| Pranav | networking drone flight controller PCB, then the ground station PCBs with Rishab | flight controller ordered |
+| Rishab | networking drone charging board, then the ground station PCBs with Pranav | charging board ordered |
+| Rihan | mapping drone PCB, and its power management and charging board | starting |
 | Jadon | ground station CAD, including the space and rails for charging | in progress |
+| Daniel | CAD for the drone frame and the battery holder, then likely the ground station | in progress |
 
-## Pranav: flight controller, then mapping drone PCB
+## Pranav: flight controller, then ground station PCBs
 
 Networking drone flight controller, rev A:
 
@@ -43,7 +44,7 @@ Networking drone flight controller, rev A:
 - [x] Antenna trace width checked for 50 Ω on the fab's layer stack
 - [x] Fab capability check and gerber export dry run
 - [x] Order files made: [`pcb/network-drone-fc/production/rev-A/`](pcb/network-drone-fc/production/rev-A/order-notes.md)
-- [ ] Order rev A: boards from OSH Park, stencil from OSH Stencils, parts from DigiKey
+- [x] Order rev A: boards from OSH Park, stencil from OSH Stencils, parts from DigiKey
 - [x] Order sheet for the rest of the drone written: [`docs/drone-order-sheet.md`](docs/drone-order-sheet.md)
 - [x] Battery settled: OVONIC 2S 1100 mAh with an XT30 plug
 - [ ] Later: decide on and order the carbon fiber subframe (left off the order sheet on 2026-10-13)
@@ -52,12 +53,6 @@ Networking drone flight controller, rev A:
 - [ ] Assemble and run the [bring-up checklist](docs/bring-up.md)
 
 The full plan, with what each check proves, is in [`docs/pcb-test-plan.md`](docs/pcb-test-plan.md).
-
-Mapping drone PCB:
-
-- [ ] Collect requirements: sensors, compute, battery voltage, size
-- [ ] Schematic
-- [ ] Layout
 
 ## Daniel: frame and battery holder
 
@@ -107,6 +102,38 @@ How it connects to the flight controller, through J7 (7-pin JST-SH, part SM07B-S
 
 Three things differ from the charging board's first list: there is no VBAT_SENSE pin, because the flight controller already measures the battery and had no pin left for a second reading; the 10 kΩ pull-ups are not needed, because the flight controller supplies them; and /INT is not connected.
 
+## Rihan: mapping drone PCB
+
+The mapping drone carries a Jetson Orin Nano and a camera. Most of the networking drone flight controller can be reused: the processor block (ESP32-S3, crystal, flash, USB-C, antenna circuit), the gyro, barometer, GPS, ESC connector, LEDs, test pads and ports. The KiCad project is in [`pcb/network-drone-fc/`](pcb/network-drone-fc/) and every pin is listed in [`docs/hardware-reference.md`](docs/hardware-reference.md).
+
+- [ ] Collect requirements: camera, Jetson power mode, battery voltage, frame and ESC size
+- [ ] Power for the Jetson: it draws 7 to 25 W depending on its power mode, far more than the flight controller's 2 A buck. Plan a separate supply sized for it
+- [ ] A serial link from the flight controller to the Jetson. The networking drone board has no free UART, so the pin plan changes here
+- [ ] If the battery is 3S or 4S: change surge diode D5 from SMAJ12A to SMAJ18A, recheck the battery divider, and pick a charger chip that handles that cell count (the BQ25887 is 2S only)
+- [ ] Power management and charging board for the mapping drone
+- [ ] Schematic
+- [ ] Layout
+
+## Pranav and Rishab: ground station PCBs
+
+What the ground station needs:
+
+| Requirement | Plan |
+|---|---|
+| RTK GPS | An RTK base receiver (for example a u-blox ZED-F9P) sending corrections to the drones over the mesh |
+| Mesh radio | A VoCore2, the same module as on the drones, on the same 802.11s mesh |
+| Strong radio | An external 2.4 GHz antenna, 5 to 8 dBi, on the VoCore2's U.FL socket through a pigtail, mounted high |
+| Compute | A computer plugged in at the station, connected to the VoCore2 by Ethernet or USB |
+| Charging | A dock charging board that powers the charging walls; see the charging concept below |
+
+The drones' GPS, the MAX-M10S, is a single-band receiver. It cannot use RTK corrections for centimetre accuracy, so with the current boards a base station improves the drones' position to about a metre at best. Centimetre RTK needs a dual-band receiver such as the ZED-F9P on the drones too. Until then, plan the last part of docking around the downward distance sensor and the shape of the walls, not GPS.
+
+- [ ] Decide the RTK receiver for the base, and whether the drones move to a dual-band receiver in their next revision
+- [ ] Dock charging board: a 5 V buck from a wall adapter, then one current-limited switch per dock (about 1.5 A each), so a short across the walls trips that dock only and recovers by itself
+- [ ] Set the wall voltage to about 5.2 to 5.4 V, to cover the loss in the spring contacts while staying under the drone eFuse's 6.0 V cut-off
+- [ ] Radio board or mount for the VoCore2 and the external antenna
+- [ ] Agree the dock current and the connector to the walls with Jadon
+
 ## Jadon: ground station
 
 - [ ] Ground station CAD
@@ -114,7 +141,7 @@ Three things differ from the charging board's first list: there is no VBAT_SENSE
 
 ## Charging concept
 
-The current idea: a conductive material on the outside of the propeller guard slides into conductive rails on the ground station, and the drone charges through that contact.
+The plan: a conductive material on the outside of the propeller guard, and the ground station's walls spring against it when the drone docks. One side of the drone is 5 V and the other is ground, so each dock has a 5 V wall and a ground wall. A drone docked the wrong way round is not damaged: its eFuse blocks the reversed voltage, and it just doesn't charge.
 
 That one idea crosses three people's work, so these points need an agreed answer:
 
@@ -122,7 +149,7 @@ That one idea crosses three people's work, so these points need an agreed answer
 |---|---|
 | Which part of the guard is positive and which is ground, and how the drone is kept from docking the wrong way round | Daniel, Jadon, Rishab |
 | The size, spacing and position of the contacts on the guard, so they line up with the rails | Daniel, Jadon |
-| What voltage and current the rails supply | Jadon, Rishab |
+| What voltage and current the walls supply | Pranav, Rishab, Jadon |
 | How the wire gets from the guard contacts to the charging board | Daniel, Rishab |
 | What stops the two exposed contacts from shorting on something metal in flight or in the case | Rishab |
 | How the drone knows it is seated, which is what the charger's power-good line on J7 pin 5 is for | Rishab, Pranav |
