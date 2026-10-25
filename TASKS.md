@@ -122,10 +122,19 @@ What the ground station needs:
 |---|---|
 | RTK GPS | A ZED-F9P base, plus a MAX-M10S beside it, the same receiver the drones carry. See "Getting the drones home" below |
 | Mesh radio | A VoCore2, the same module as on the drones, on the same 802.11s mesh |
-| Strong radio | An external 2.4 GHz antenna, 5 to 8 dBi, on the VoCore2's U.FL socket through a pigtail, mounted high |
+| Strong radio | An external 2.4 GHz antenna, 5 to 8 dBi, on the VoCore2's U.FL socket through a pigtail, mounted 2 to 3 m high. Range beyond that comes from the network drones relaying over the mesh. A SiK radio is not used: it cannot mesh, carries about 64 kb/s shared between all drones, and the flight controller has no free port for it |
 | Compute | Anyone's laptop, beside the station on its own battery, so the station does not power it. It joins a Wi-Fi network the station's VoCore2 runs alongside the mesh. An RJ45 jack on the station board is the backup for heavy mapping data, since Wi-Fi to the laptop shares airtime with the mesh. The VoCore2's USB is host only, so a laptop cannot plug into it by USB |
 | Charging | Four docks to start. A dock charging board powers the charging walls; see the charging concept below |
 | Power | Wall outlet or battery for outdoor use, through one input; see "Power" below |
+
+The station box holds two boards. Keeping them apart keeps the high-current dock power away from the GPS and the radio, and either board can be redone without touching the other.
+
+| Board | Owner | What is on it |
+|---|---|---|
+| Power and dock charging board | Rishab | USB-C PD input at 20 V, optional 12 V jack, 5 V dock supply, four current-limited dock switches, a dock LED each, a supply for the main board |
+| Main board | Pranav | ESP32-S3 block copied from the flight controller, ZED-F9P RTK base, MAX-M10S copied from the flight controller, VoCore2 with its external antenna, backup RJ45 jack |
+
+The laptop is the station's computer. Nothing at the station needs a Jetson or a Raspberry Pi.
 
 ### Getting the drones home
 
@@ -163,16 +172,29 @@ The plan is one DC input that either the wall or a battery feeds:
 - Optionally a 12 V barrel jack as a second input, joined to the first through an ideal-diode controller (such as TI's LM74700) so either one can power the station
 - Outdoor battery: a bought USB-C PD power bank of about 100 Wh (the airline limit, if the station ever travels), or a small power station of 250 Wh or more for long days. A custom pack is not needed at this load
 
+### Before the schematics
+
 - [ ] Agree the battery with the team: a 100 Wh USB-C PD bank or a small power station
-- [ ] Input stage on the station board: USB-C PD sink at 20 V, optional 12 V jack, ideal-diode joining
-- [ ] A station processor, reusing the flight controller's ESP32-S3 block, to read the F9P and the M10, switch and monitor the four docks, and talk to the VoCore2 over UART1. The VoCore2's UART2 is its console and UART0's TX is a start-up mode pin, so neither is free for this
+- [ ] Agree with Jadon how many docks fit, where the walls sit, and the connector from the board to the walls
+- [ ] Agree the connector and signals between the two boards: power in, and an on/off and a fault line for each dock
 
-### Charging and radio
+### Rishab: power and dock charging board
 
-- [ ] Dock charging board: a 5 V buck rated 5 A or more from the 20 V input, then one current-limited switch per dock (about 1.5 A each, four docks), so a short across the walls trips that dock only and recovers by itself
+- [ ] Input stage: USB-C PD sink asking for 20 V at 45 W or more, optional 12 V jack, the two joined through an ideal-diode controller
+- [ ] 5 V buck rated 5 A or more, then one current-limited switch per dock (about 1.5 A each, four docks), so a short across the walls trips that dock only and recovers by itself
 - [ ] Set the wall voltage to about 5.2 to 5.4 V, to cover the loss in the spring contacts while staying under the drone eFuse's 6.0 V cut-off
-- [ ] Radio board or mount for the VoCore2 and the external antenna, plus a backup RJ45 jack and its magnetics on the VoCore2's Ethernet port
-- [ ] Agree the dock current and the connector to the walls with Jadon
+- [ ] An LED per dock, and a supply for the main board
+- [ ] Schematic
+- [ ] Layout
+
+### Pranav: main board
+
+- [ ] ESP32-S3 block from the flight controller, to read the F9P and the M10, switch and monitor the four docks, and talk to the VoCore2 over UART1. The VoCore2's UART2 is its console and UART0's TX is a start-up mode pin, so neither is free for this
+- [ ] ZED-F9P RTK base with a connector for the survey antenna
+- [ ] MAX-M10S block from the flight controller
+- [ ] VoCore2 with a pigtail to the external antenna, plus a backup RJ45 jack and its magnetics on its Ethernet port
+- [ ] Schematic
+- [ ] Layout
 
 ## Jadon: ground station
 
