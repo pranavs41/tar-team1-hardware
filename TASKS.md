@@ -120,15 +120,32 @@ What the ground station needs:
 
 | Requirement | Plan |
 |---|---|
-| RTK GPS | An RTK base receiver (for example a u-blox ZED-F9P) sending corrections to the drones over the mesh |
+| RTK GPS | A ZED-F9P base, plus a MAX-M10S beside it, the same receiver the drones carry. See "Getting the drones home" below |
 | Mesh radio | A VoCore2, the same module as on the drones, on the same 802.11s mesh |
 | Strong radio | An external 2.4 GHz antenna, 5 to 8 dBi, on the VoCore2's U.FL socket through a pigtail, mounted high |
 | Compute | A computer plugged in at the station, connected to the VoCore2 by Ethernet or USB |
 | Charging | A dock charging board that powers the charging walls; see the charging concept below |
 
-The drones' GPS, the MAX-M10S, is a single-band receiver. It cannot use RTK corrections for centimetre accuracy, so with the current boards a base station improves the drones' position to about a metre at best. Centimetre RTK needs a dual-band receiver such as the ZED-F9P on the drones too. Until then, plan the last part of docking around the downward distance sensor and the shape of the walls, not GPS.
+### Getting the drones home
 
-- [ ] Decide the RTK receiver for the base, and whether the drones move to a dual-band receiver in their next revision
+The drones' GPS, the MAX-M10S, is a single-band receiver, so it cannot reach centimetre RTK accuracy. The station helps it three ways at once, and the drone uses whichever is working:
+
+1. **Corrections to the drones.** The F9P base sends RTCM corrections over the mesh. Newer M10 firmware accepts them for about 0.5 to 1 m. Check that the drones' MAX-M10S firmware supports RTCM input.
+2. **The station's own M10 error.** The station knows exactly where its M10 sits, from the F9P, so it measures that M10's error and sends it to the drones. Each drone subtracts it from its own reading. Receivers of the same type close together see nearly the same error, which leaves about 0.5 to 1.5 m.
+3. **Direct comparison.** The drone's position is compared with the F9P's. This is the fallback, good to about 1 to 3 m.
+
+That gets a drone to the right dock to within about a metre. The last metre uses a rod or post on the station as a target for the forward TF-Luna. The TF-Luna only measures distance along a narrow beam (about 2°), not direction, so the drone yaws slowly and takes the heading with the shortest distance as the bearing to the post. Make the target wide enough to catch the beam, a flat plate or a post of a few centimetres rather than a thin rod. The downward TF-Luna holds the height, and the shape of the walls guides the guard the last few centimetres.
+
+Centimetre RTK on the drones would need a dual-band receiver such as the ZED-F9P. Keeping the F9P on the station leaves that open for a later revision.
+
+- [ ] RTK base: ZED-F9P with a survey-style antenna, surveyed in when the station is set up
+- [ ] A MAX-M10S at the station beside the F9P antenna, to measure the error the drones see
+- [ ] Software at the station that sends the RTCM corrections and the M10 error over the mesh
+- [ ] Check the drones' MAX-M10S firmware for RTCM input
+- [ ] Docking target on the station for the forward TF-Luna; agree its size and position with Jadon
+
+### Charging and radio
+
 - [ ] Dock charging board: a 5 V buck from a wall adapter, then one current-limited switch per dock (about 1.5 A each), so a short across the walls trips that dock only and recovers by itself
 - [ ] Set the wall voltage to about 5.2 to 5.4 V, to cover the loss in the spring contacts while staying under the drone eFuse's 6.0 V cut-off
 - [ ] Radio board or mount for the VoCore2 and the external antenna
