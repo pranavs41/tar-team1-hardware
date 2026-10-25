@@ -123,8 +123,9 @@ What the ground station needs:
 | RTK GPS | A ZED-F9P base, plus a MAX-M10S beside it, the same receiver the drones carry. See "Getting the drones home" below |
 | Mesh radio | A VoCore2, the same module as on the drones, on the same 802.11s mesh |
 | Strong radio | An external 2.4 GHz antenna, 5 to 8 dBi, on the VoCore2's U.FL socket through a pigtail, mounted high |
-| Compute | A computer plugged in at the station, connected to the VoCore2 by Ethernet or USB |
-| Charging | A dock charging board that powers the charging walls; see the charging concept below |
+| Compute | Anyone's laptop, plugged into the station. It runs on its own battery, so the station does not power it. The VoCore2's USB is host only, so the laptop connects by Ethernet (an RJ45 jack on the station board, or a USB Ethernet adapter on laptops without a port) |
+| Charging | Four docks to start. A dock charging board powers the charging walls; see the charging concept below |
+| Power | Wall outlet or battery for outdoor use, through one input; see "Power" below |
 
 ### Getting the drones home
 
@@ -144,11 +145,33 @@ Centimetre RTK on the drones would need a dual-band receiver such as the ZED-F9P
 - [ ] Check the drones' MAX-M10S firmware for RTCM input
 - [ ] Docking target on the station for the forward TF-Luna; agree its size and position with Jadon
 
+### Power
+
+With the laptop on its own battery, the station's load is small:
+
+| Load | Power |
+|---|---|
+| Four drones charging at once, each charger capped at 0.925 A from 5 V | about 18.5 W |
+| VoCore2, ZED-F9P, MAX-M10S, a small processor for the station | about 2.5 W |
+| Total from the input, with about 90 % converter efficiency | about 23 W |
+
+Recharging one drone takes about 10 Wh (an 8 Wh pack plus losses), and a flat pack takes a little over two hours. Running all four docks flat out for three hours uses about 70 Wh. A 100 Wh battery covers a three-hour session with margin.
+
+The plan is one DC input that either the wall or a battery feeds:
+
+- USB-C power delivery at 20 V and at least 45 W. A wall USB-C charger and a USB-C power bank or power station then use the same socket and cable. The station board needs a USB-C PD sink controller for this (STMicroelectronics STUSB4500, or TI's TPS25730)
+- Optionally a 12 V barrel jack as a second input, joined to the first through an ideal-diode controller (such as TI's LM74700) so either one can power the station
+- Outdoor battery: a bought USB-C PD power bank of about 100 Wh (the airline limit, if the station ever travels), or a small power station of 250 Wh or more for long days. A custom pack is not needed at this load
+
+- [ ] Agree the battery with the team: a 100 Wh USB-C PD bank or a small power station
+- [ ] Input stage on the station board: USB-C PD sink at 20 V, optional 12 V jack, ideal-diode joining
+- [ ] A station processor, reusing the flight controller's ESP32-S3 block, to read the F9P and the M10, switch and monitor the four docks, and talk to the VoCore2 over UART1. The VoCore2's UART2 is its console and UART0's TX is a start-up mode pin, so neither is free for this
+
 ### Charging and radio
 
-- [ ] Dock charging board: a 5 V buck from a wall adapter, then one current-limited switch per dock (about 1.5 A each), so a short across the walls trips that dock only and recovers by itself
+- [ ] Dock charging board: a 5 V buck rated 5 A or more from the 20 V input, then one current-limited switch per dock (about 1.5 A each, four docks), so a short across the walls trips that dock only and recovers by itself
 - [ ] Set the wall voltage to about 5.2 to 5.4 V, to cover the loss in the spring contacts while staying under the drone eFuse's 6.0 V cut-off
-- [ ] Radio board or mount for the VoCore2 and the external antenna
+- [ ] Radio board or mount for the VoCore2 and the external antenna, with an RJ45 jack and its magnetics wired to the VoCore2's Ethernet port for the laptop
 - [ ] Agree the dock current and the connector to the walls with Jadon
 
 ## Jadon: ground station
