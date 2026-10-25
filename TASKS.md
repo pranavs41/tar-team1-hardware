@@ -123,7 +123,7 @@ What the ground station needs:
 | RTK GPS | A ZED-F9P base, plus a MAX-M10S beside it, the same receiver the drones carry. See "Getting the drones home" below |
 | Mesh radio | A VoCore2, the same module as on the drones, on the same 802.11s mesh |
 | Strong radio | An external 2.4 GHz antenna, 5 to 8 dBi, on the VoCore2's U.FL socket through a pigtail, mounted high |
-| Compute | Anyone's laptop, plugged into the station. It runs on its own battery, so the station does not power it. The VoCore2's USB is host only, so the laptop connects by Ethernet (an RJ45 jack on the station board, or a USB Ethernet adapter on laptops without a port) |
+| Compute | Anyone's laptop, beside the station on its own battery, so the station does not power it. It joins a Wi-Fi network the station's VoCore2 runs alongside the mesh. An RJ45 jack on the station board is the backup for heavy mapping data, since Wi-Fi to the laptop shares airtime with the mesh. The VoCore2's USB is host only, so a laptop cannot plug into it by USB |
 | Charging | Four docks to start. A dock charging board powers the charging walls; see the charging concept below |
 | Power | Wall outlet or battery for outdoor use, through one input; see "Power" below |
 
@@ -171,7 +171,7 @@ The plan is one DC input that either the wall or a battery feeds:
 
 - [ ] Dock charging board: a 5 V buck rated 5 A or more from the 20 V input, then one current-limited switch per dock (about 1.5 A each, four docks), so a short across the walls trips that dock only and recovers by itself
 - [ ] Set the wall voltage to about 5.2 to 5.4 V, to cover the loss in the spring contacts while staying under the drone eFuse's 6.0 V cut-off
-- [ ] Radio board or mount for the VoCore2 and the external antenna, with an RJ45 jack and its magnetics wired to the VoCore2's Ethernet port for the laptop
+- [ ] Radio board or mount for the VoCore2 and the external antenna, plus a backup RJ45 jack and its magnetics on the VoCore2's Ethernet port
 - [ ] Agree the dock current and the connector to the walls with Jadon
 
 ## Jadon: ground station
