@@ -4,8 +4,8 @@ The ground station charges up to four drones, runs the RTK base and the mesh rad
 
 | Board | Owner | What it does |
 |---|---|---|
-| Power and dock board | Rishab | Takes power from USB-C or a 12 V jack and drives the four docks' charging walls |
-| Main board | Pranav | ESP32-S3 station processor, ZED-F9P RTK base, MAX-M10S reference receiver, VoCore2 mesh radio, Ethernet jack |
+| Power and dock board | Pranav | Takes power from USB-C or a 12 V jack and drives the four docks' charging walls |
+| Main board | Rishab | ESP32-S3 station processor, ZED-F9P RTK base, MAX-M10S reference receiver, VoCore2 mesh radio, Ethernet jack |
 
 Keeping them apart keeps the dock current away from the GPS and the radio, and either board can be redone without touching the other.
 

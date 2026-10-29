@@ -8,13 +8,13 @@ Last updated 2026-10-25.
 
 | Person | Owns | Status |
 |---|---|---|
-| Pranav | networking drone flight controller PCB, then the ground station PCBs with Rishab | flight controller ordered |
-| Rishab | networking drone charging board, then the ground station PCBs with Pranav | charging board ordered |
+| Pranav | networking drone flight controller PCB, then the ground station's power and dock charging board | flight controller ordered |
+| Rishab | networking drone charging board, then the ground station main board (RTK, VoCore2, station processor) | charging board ordered |
 | Rihan | mapping drone PCB, and its power management and charging board | starting |
 | Jadon | ground station CAD, including the space and rails for charging | in progress |
 | Daniel | CAD for the drone frame and the battery holder, then likely the ground station | in progress |
 
-## Pranav: flight controller, then ground station PCBs
+## Pranav: flight controller, then the ground station power and dock board
 
 Networking drone flight controller, rev A:
 
@@ -131,8 +131,8 @@ The station box holds two boards. Keeping them apart keeps the high-current dock
 
 | Board | Owner | What is on it |
 |---|---|---|
-| Power and dock charging board | Rishab | USB-C PD input at 20 V, optional 12 V jack, 5 V dock supply, four current-limited dock switches, a dock LED each, a supply for the main board |
-| Main board | Pranav | ESP32-S3 block copied from the flight controller, ZED-F9P RTK base, MAX-M10S copied from the flight controller, VoCore2 with its external antenna, backup RJ45 jack |
+| Power and dock charging board | Pranav | USB-C PD input at 20 V, optional 12 V jack, 5 V dock supply, four current-limited dock switches, a dock LED each, a supply for the main board |
+| Main board | Rishab | ESP32-S3 block copied from the flight controller, ZED-F9P RTK base, MAX-M10S copied from the flight controller, VoCore2 with its external antenna, backup RJ45 jack |
 
 The laptop is the station's computer. Nothing at the station needs a Jetson or a Raspberry Pi.
 
@@ -178,7 +178,7 @@ The plan is one DC input that either the wall or a battery feeds:
 - [ ] Agree with Jadon how many docks fit, where the walls sit, and the connector from the board to the walls
 - [ ] Agree the connector and signals between the two boards: power in, and an on/off and a fault line for each dock
 
-### Rishab: power and dock charging board
+### Pranav: power and dock charging board
 
 - [ ] Input stage: USB-C PD sink asking for 20 V at 45 W or more, optional 12 V jack, the two joined through an ideal-diode controller
 - [ ] 5 V buck rated 5 A or more, then one current-limited switch per dock (about 1.5 A each, four docks), so a short across the walls trips that dock only and recovers by itself
@@ -187,7 +187,7 @@ The plan is one DC input that either the wall or a battery feeds:
 - [x] Schematic drafted 2026-10-28, see [`docs/ground-station.md`](docs/ground-station.md). Needs a review, and the open items listed there
 - [ ] Layout
 
-### Pranav: main board
+### Rishab: main board
 
 - [ ] ESP32-S3 block from the flight controller, to read the F9P and the M10, switch and monitor the four docks, and talk to the VoCore2 over UART1. The VoCore2's UART2 is its console and UART0's TX is a start-up mode pin, so neither is free for this
 - [ ] ZED-F9P RTK base with a connector for the survey antenna
