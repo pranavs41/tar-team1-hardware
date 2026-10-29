@@ -20,6 +20,7 @@ pcb/
   network-drone-fc/     KiCad 9 project: the board and the schematic source
     lib/                custom symbols, footprints, 3D models
     production/         gerbers, BOM and notes per board revision
+  ground-station/       the ground station's power and main boards (schematics from Python block files)
 schematics/             the schematic as a PDF
 cad/                    board 3D model (STEP), board pictures, frame CAD
 docs/

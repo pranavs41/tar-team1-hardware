@@ -184,7 +184,7 @@ The plan is one DC input that either the wall or a battery feeds:
 - [ ] 5 V buck rated 5 A or more, then one current-limited switch per dock (about 1.5 A each, four docks), so a short across the walls trips that dock only and recovers by itself
 - [ ] Set the wall voltage to about 5.2 to 5.4 V, to cover the loss in the spring contacts while staying under the drone eFuse's 6.0 V cut-off
 - [ ] An LED per dock, and a supply for the main board
-- [ ] Schematic
+- [x] Schematic drafted 2026-10-28, see [`docs/ground-station.md`](docs/ground-station.md). Needs a review, and the open items listed there
 - [ ] Layout
 
 ### Pranav: main board
@@ -193,7 +193,7 @@ The plan is one DC input that either the wall or a battery feeds:
 - [ ] ZED-F9P RTK base with a connector for the survey antenna
 - [ ] MAX-M10S block from the flight controller
 - [ ] VoCore2 with a pigtail to the external antenna, plus a backup RJ45 jack and its magnetics on its Ethernet port
-- [ ] Schematic
+- [x] Schematic drafted 2026-10-28, see [`docs/ground-station.md`](docs/ground-station.md). Needs a review, and the open items listed there
 - [ ] Layout
 
 ## Jadon: ground station
