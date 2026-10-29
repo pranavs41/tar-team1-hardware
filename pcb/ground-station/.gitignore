@@ -1,0 +1,6 @@
+*.net
+*-erc.rpt
+__pycache__/
+fp-info-cache
+*-backups/
+*.kicad_prl
