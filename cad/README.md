@@ -12,8 +12,8 @@ Mechanical files for the network drone: the flight controller as a 3D part, pict
 
 The frame is 3D printed. Its files live on the team drive:
 
-- STL, for printing: https://drive.google.com/file/d/1vladkpQCeSWTD4HoTr5YP3W7nkRsmsth/view?usp=sharing
-- SLDPRT, SolidWorks source: https://drive.google.com/file/d/1ZKLZhnVlJFwb6PA8m5haO54EwXYErk0C/view?usp=sharing
+- STL, for printing: https://drive.google.com/file/d/1l-JOVaz5pzzjeXH-Jde99uu-7EZffybo/view?usp=sharing
+- SLDPRT, SolidWorks source: https://drive.google.com/file/d/13ipDqzyXRgRS1Xfzf2viNtHA_q0qrNuP/view?usp=sharing
 
 Copies can be added to this folder so the frame is versioned with the board.
 
